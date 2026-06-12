@@ -1,0 +1,53 @@
+# The Return on Thinking - methodology assumptions, version 1 (DRAFT for review)
+# Every contestable number lives here. Bumping `version` REQUIRES restating the
+# full back-series (CI will enforce from P2). Review notes for Allan inline.
+version: 1
+status: draft   # becomes 'active' when Allan approves the PR
+
+r:  # required return construction
+  risk_free_series: treasury_10y          # primary; fred_dgs10 as cross-check
+  equity_risk_premium_series: damodaran_implied_erp
+  debt_spread_series: fred_baa10y         # when FRED is reachable
+  # REVIEW: equity-funded K uses rf+ERP (~8.7% at mid-2026); debt-funded uses rf+Baa spread.
+  # Weighting between them follows the F1/F2 financing mix, updated quarterly.
+
+delta:  # annual economic depreciation bands - THE contested numbers
+  chips_servers:
+    low: 0.18    # ~5.5yr life: the hyperscaler accounting view (10-K schedules)
+    mid: 0.28
+    high: 0.40   # ~2.5yr life: the sceptics' view (Burry arithmetic)
+    # REVIEW: band deliberately spans the public controversy; mid is NOT a claim, just a midpoint.
+  buildings:
+    low: 0.02
+    mid: 0.025
+    high: 0.03
+  power_cooling_other:
+    low: 0.03
+    mid: 0.04
+    high: 0.05
+
+k_allocation:  # share of AI capex by asset class (until SemiAnalysis calibration)
+  hyperscaler: {chips_servers: 0.60, buildings: 0.25, power_cooling_other: 0.15}
+  neocloud:    {chips_servers: 0.75, buildings: 0.15, power_cooling_other: 0.10}
+  # REVIEW: crude; flagged for replacement by Accelerator-Model vintages if SemiAnalysis grants access.
+
+quasi_rent_margin:  # converts AI revenues to quasi-rents (revenue net of operating cost)
+  low: 0.30
+  mid: 0.50
+  high: 0.70
+  # REVIEW: widest band in the system; inference-margin estimates are disputed.
+
+cs:
+  horizons_years: [10, 30]
+  rct_coefficients:  # frozen until annual review; sources in METHODS.md
+    noy_zhang_2023:   {time_saving: 0.40, quality: 0.18}
+    brynjolfsson_li_raymond_2025: {productivity: 0.15}
+    dellacqua_2023:   {tasks: 0.122, speed: 0.251}
+    cui_2026:         {dev_tasks: 0.26}
+
+map:
+  movement_rule: "a move is called only when the new quarterly position lies outside the previous quarter's uncertainty ellipse"
+  trail_quarters: 4
+
+calibration_credits:
+  - "SemiAnalysis (pending response to research-access request, 2026-06-12)"
