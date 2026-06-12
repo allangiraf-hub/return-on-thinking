@@ -31,7 +31,10 @@ k_allocation:  # share of AI capex by asset class (until SemiAnalysis calibratio
   neocloud:    {chips_servers: 0.75, buildings: 0.15, power_cooling_other: 0.10}
   # REVIEW: crude; flagged for replacement by Accelerator-Model vintages if SemiAnalysis grants access.
 
-quasi_rent_margin:  # converts AI revenues to quasi-rents (revenue net of operating cost)
+quasi_rent_margin:  # converts AI revenues to quasi-rents: revenue net of OPERATING costs only
+  # (energy, labour, inference, sales). Depreciation is NOT netted here - it is charged
+  # in the user-cost denominator; netting it twice would double-count (adversarial review
+  # catch, 2026-06-12). m is therefore an EBITDA-type margin, not an EBIT margin.
   low: 0.30
   mid: 0.50
   high: 0.70
