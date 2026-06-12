@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Deal ledger entry",
+  "type": "object",
+  "required": ["id", "announced_date", "parties", "instrument", "amount_usd",
+               "amount_basis", "location_bucket", "primary_source_url", "entered_by"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "announced_date": {"type": "string", "format": "date"},
+    "parties": {"type": "string", "minLength": 3},
+    "instrument": {"enum": ["abs", "private_credit", "lease", "vendor", "spv", "equity_loop"]},
+    "amount_usd": {"type": "number", "exclusiveMinimum": 0},
+    "amount_basis": {"enum": ["disclosed", "estimated"]},
+    "location_bucket": {"enum": ["F3", "F4"]},
+    "primary_source_url": {"type": "string",
+      "pattern": "^https://(www\\.)?(sec\\.gov|.*\\.gov|businesswire\\.com|prnewswire\\.com|globenewswire\\.com|ir\\..*|investors?\\..*|.*\\.com/(press|news|investor).*)"},
+    "discovery_source": {"type": "string"},
+    "circularity_flag": {"type": "boolean"},
+    "notes": {"type": "string"},
+    "entered_by": {"type": "string"},
+    "pr_number": {"type": ["integer", "null"]}
+  }
+}

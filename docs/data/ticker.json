@@ -1,0 +1,312 @@
+{
+ "generated_at": "2026-06-12T13:12:51+00:00",
+ "financing_f1": [
+  {
+   "ticker": "MSFT",
+   "capex_t4q_usd": 97225000000.0,
+   "ocf_t4q_usd": 170141000000.0,
+   "capex_share_of_ocf": 0.571,
+   "source_url": "https://data.sec.gov/"
+  },
+  {
+   "ticker": "GOOGL",
+   "capex_t4q_usd": 109924000000.0,
+   "ocf_t4q_usd": 174353000000.0,
+   "capex_share_of_ocf": 0.63,
+   "source_url": "https://data.sec.gov/"
+  },
+  {
+   "ticker": "AMZN",
+   "capex_t4q_usd": 151003000000.0,
+   "ocf_t4q_usd": 148531000000.0,
+   "capex_share_of_ocf": 1.017,
+   "source_url": "https://data.sec.gov/"
+  },
+  {
+   "ticker": "META",
+   "capex_t4q_usd": 75747000000.0,
+   "ocf_t4q_usd": 124000000000.0,
+   "capex_share_of_ocf": 0.611,
+   "source_url": "https://data.sec.gov/"
+  },
+  {
+   "ticker": "ORCL",
+   "capex_t4q_usd": 48250000000.0,
+   "ocf_t4q_usd": 23514000000.0,
+   "capex_share_of_ocf": 2.052,
+   "source_url": "https://data.sec.gov/"
+  }
+ ],
+ "datacenter_construction": {
+  "unit": "USD mn, SAAR (private, seasonally adjusted)",
+  "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+  "points": [
+   {
+    "date": "2021-05-01",
+    "value": 9311.0
+   },
+   {
+    "date": "2021-06-01",
+    "value": 9303.0
+   },
+   {
+    "date": "2021-07-01",
+    "value": 9728.0
+   },
+   {
+    "date": "2021-08-01",
+    "value": 10432.0
+   },
+   {
+    "date": "2021-09-01",
+    "value": 10768.0
+   },
+   {
+    "date": "2021-10-01",
+    "value": 9735.0
+   },
+   {
+    "date": "2021-11-01",
+    "value": 10512.0
+   },
+   {
+    "date": "2021-12-01",
+    "value": 11389.0
+   },
+   {
+    "date": "2022-01-01",
+    "value": 11075.0
+   },
+   {
+    "date": "2022-02-01",
+    "value": 10533.0
+   },
+   {
+    "date": "2022-03-01",
+    "value": 11360.0
+   },
+   {
+    "date": "2022-04-01",
+    "value": 12255.0
+   },
+   {
+    "date": "2022-05-01",
+    "value": 12075.0
+   },
+   {
+    "date": "2022-06-01",
+    "value": 12150.0
+   },
+   {
+    "date": "2022-07-01",
+    "value": 12708.0
+   },
+   {
+    "date": "2022-08-01",
+    "value": 13018.0
+   },
+   {
+    "date": "2022-09-01",
+    "value": 14470.0
+   },
+   {
+    "date": "2022-10-01",
+    "value": 12879.0
+   },
+   {
+    "date": "2022-11-01",
+    "value": 13771.0
+   },
+   {
+    "date": "2022-12-01",
+    "value": 14347.0
+   },
+   {
+    "date": "2023-01-01",
+    "value": 15849.0
+   },
+   {
+    "date": "2023-02-01",
+    "value": 17866.0
+   },
+   {
+    "date": "2023-03-01",
+    "value": 18096.0
+   },
+   {
+    "date": "2023-04-01",
+    "value": 18155.0
+   },
+   {
+    "date": "2023-05-01",
+    "value": 18108.0
+   },
+   {
+    "date": "2023-06-01",
+    "value": 18623.0
+   },
+   {
+    "date": "2023-07-01",
+    "value": 19550.0
+   },
+   {
+    "date": "2023-08-01",
+    "value": 20246.0
+   },
+   {
+    "date": "2023-09-01",
+    "value": 21129.0
+   },
+   {
+    "date": "2023-10-01",
+    "value": 23838.0
+   },
+   {
+    "date": "2023-11-01",
+    "value": 23723.0
+   },
+   {
+    "date": "2023-12-01",
+    "value": 24450.0
+   },
+   {
+    "date": "2024-01-01",
+    "value": 24926.0
+   },
+   {
+    "date": "2024-02-01",
+    "value": 26292.0
+   },
+   {
+    "date": "2024-03-01",
+    "value": 27778.0
+   },
+   {
+    "date": "2024-04-01",
+    "value": 28344.0
+   },
+   {
+    "date": "2024-05-01",
+    "value": 29975.0
+   },
+   {
+    "date": "2024-06-01",
+    "value": 31241.0
+   },
+   {
+    "date": "2024-07-01",
+    "value": 31740.0
+   },
+   {
+    "date": "2024-08-01",
+    "value": 32941.0
+   },
+   {
+    "date": "2024-09-01",
+    "value": 32960.0
+   },
+   {
+    "date": "2024-10-01",
+    "value": 35858.0
+   },
+   {
+    "date": "2024-11-01",
+    "value": 35621.0
+   },
+   {
+    "date": "2024-12-01",
+    "value": 34977.0
+   },
+   {
+    "date": "2025-01-01",
+    "value": 35771.0
+   },
+   {
+    "date": "2025-02-01",
+    "value": 37127.0
+   },
+   {
+    "date": "2025-03-01",
+    "value": 36880.0
+   },
+   {
+    "date": "2025-04-01",
+    "value": 39596.0
+   },
+   {
+    "date": "2025-05-01",
+    "value": 40065.0
+   },
+   {
+    "date": "2025-06-01",
+    "value": 41383.0
+   },
+   {
+    "date": "2025-07-01",
+    "value": 42193.0
+   },
+   {
+    "date": "2025-08-01",
+    "value": 41541.0
+   },
+   {
+    "date": "2025-09-01",
+    "value": 42336.0
+   },
+   {
+    "date": "2025-10-01",
+    "value": 43741.0
+   },
+   {
+    "date": "2025-11-01",
+    "value": 45299.0
+   },
+   {
+    "date": "2025-12-01",
+    "value": 46771.0
+   },
+   {
+    "date": "2026-01-01",
+    "value": 47914.0
+   },
+   {
+    "date": "2026-02-01",
+    "value": 49112.0
+   },
+   {
+    "date": "2026-03-01",
+    "value": 49746.0
+   },
+   {
+    "date": "2026-04-01",
+    "value": 50706.0
+   }
+  ]
+ },
+ "gpu_rental": {
+  "unit": "USD/GPU-hr",
+  "source_url": "https://console.vast.ai/api/v0/bundles/",
+  "points": [
+   {
+    "date": "2026-06-12",
+    "value": 2.0057,
+    "gpu_model": "H200"
+   },
+   {
+    "date": "2026-06-12",
+    "value": 0.135,
+    "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-06-12",
+    "value": 4.1268,
+    "gpu_model": "B200"
+   }
+  ]
+ },
+ "rates": {
+  "dgs10": null,
+  "baa10y": null
+ },
+ "methodology_version": "pre-v1 (P0 ticker; assumptions file lands in P1)"
+}

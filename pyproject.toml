@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rot"
+version = "0.1.0"
+description = "The Return on Thinking - measuring whether the AI boom pays for itself. returns.priceofthinking.com"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "pandas>=2.0",
+  "requests>=2.31",
+  "xlrd>=2.0",          # Damodaran .xls
+  "openpyxl>=3.1",
+  "potindicators @ git+https://github.com/allangiraf-hub/price-of-thinking-indicators.git",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

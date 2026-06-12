@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Return on Thinking — weekly ticker</title>
+<style>
+  :root{--ink:#1a1a1a;--muted:#6b6b6b;--rule:#e2ded6;--bg:#faf8f4;--panel:#fff;--accent:#b0413e;--blue:#2e5e8c}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,'Times New Roman',serif}
+  .wrap{max-width:880px;margin:0 auto;padding:28px 22px 60px}
+  .crumb{font:13px/1.4 Helvetica,Arial,sans-serif;color:var(--muted)} .crumb a{color:var(--muted)}
+  h1{font-size:32px;margin:10px 0 4px;font-weight:normal}
+  .meta{font:13px/1.5 Helvetica,Arial,sans-serif;color:var(--muted)} .meta a{color:var(--muted)}
+  h2{font-size:20px;font-weight:normal;margin:34px 0 4px;border-top:1px solid var(--rule);padding-top:20px}
+  h2 .num{color:var(--accent);font-family:Helvetica,Arial,sans-serif;font-size:14px;margin-right:8px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 12px;font-style:italic}
+  .panel{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px;margin-bottom:14px}
+  table{border-collapse:collapse;width:100%;font:14px/1.5 Helvetica,Arial,sans-serif}
+  th{text-align:left;color:var(--muted);font-weight:normal;border-bottom:1px solid var(--rule);padding:4px 8px}
+  td{padding:5px 8px;border-bottom:1px solid #f0ece4}
+  .bar{height:10px;background:#dce5ee;border-radius:2px;position:relative}
+  .bar i{display:block;height:100%;background:var(--blue);border-radius:2px}
+  .src{font:11.5px/1.5 Helvetica,Arial,sans-serif;color:#9a9a9a} .src a{color:#9a9a9a}
+  footer{font:12.5px/1.7 Helvetica,Arial,sans-serif;color:var(--muted);border-top:1px solid var(--rule);margin-top:30px;padding-top:14px}
+  svg text{font-family:Helvetica,Arial,sans-serif}
+</style>
+</head>
+<body><div class="wrap">
+  <div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="https://indicators.priceofthinking.com/">Indicators</a> · The Return on Thinking</div>
+  <h1>The Return on Thinking</h1>
+  <div class="meta" id="meta">Loading… · <a href="https://github.com/allangiraf-hub/return-on-thinking">source &amp; methodology</a></div>
+  <p class="sub" style="margin-top:10px">Weekly ticker (P0). The earnings and benefit dials, and the map, arrive with the versioned methodology — this page publishes only directly observed numbers, each with its source.</p>
+
+  <h2><span class="num">1</span>Financing headroom — capex vs own cash flow</h2>
+  <p class="sub">Trailing four quarters. Above 1.0, building consumes more cash than the whole company generates. Firm-level: mostly non-AI cash paying for AI machinery — cross-subsidy capacity, not AI self-financing.</p>
+  <div class="panel"><table id="f1"><thead><tr><th>Company</th><th>Capex, 4q</th><th>Operating cash flow, 4q</th><th>Capex ÷ cash flow</th><th style="width:30%"></th></tr></thead><tbody></tbody></table>
+  <div class="src">Source: SEC EDGAR XBRL company facts (10-K/10-Q); quarterly values derived from year-to-date figures.</div></div>
+
+  <h2><span class="num">2</span>Data-centre construction</h2>
+  <p class="sub">Monthly spending on building data centres in the United States — the durable share of the build-out.</p>
+  <div class="panel"><div id="construction"></div><div class="src" id="construction-src"></div></div>
+
+  <h2><span class="num">3</span>GPU rental prices</h2>
+  <p class="sub">What an hour of a top-end AI chip rents for on the open market. Falling prices would be the first hard evidence of overcapacity; this archive builds weekly and cannot be backfilled.</p>
+  <div class="panel"><div id="gpu"></div><div class="src" id="gpu-src"></div></div>
+
+  <h2><span class="num">4</span>Rates</h2>
+  <p class="sub">The cost of money — one ingredient of what the AI machinery must earn each year to justify itself.</p>
+  <div class="panel"><div id="rates"></div><div class="src">Source: FRED (fredgraph.csv): DGS10, BAA10Y.</div></div>
+
+  <footer>Every number traces to a public primary source. No crash prediction, no bubble verdict — the interpreting dials arrive with the versioned methodology (P1). © Allan Pedersen · MIT licence · part of <a href="https://priceofthinking.com/">The Price of Thinking</a> project.</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const fmtB=v=>'$'+(v/1e9).toFixed(1)+'bn';
+function spark(points,w,h,label){
+  if(!points||!points.length)return '<em class="src">no data yet</em>';
+  const xs=points.map((p,i)=>i),ys=points.map(p=>+p.value);
+  const min=Math.min(...ys),max=Math.max(...ys),pad=(max-min)||1;
+  const X=i=>8+(w-16)*i/Math.max(xs.length-1,1), Y=v=>h-14-(h-26)*((v-min)/pad);
+  const path=points.map((p,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(+p.value).toFixed(1)).join(' ');
+  const last=points[points.length-1];
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%"><path d="${path}" fill="none" stroke="#2e5e8c" stroke-width="2"/>
+    <text x="8" y="${h-2}" font-size="10" fill="#9a9a9a">${points[0].date}</text>
+    <text x="${w-8}" y="${h-2}" font-size="10" fill="#9a9a9a" text-anchor="end">${last.date}</text>
+    <text x="${w-8}" y="12" font-size="11" fill="#333" text-anchor="end">${label}: ${(+last.value).toLocaleString()}</text></svg>`;
+}
+fetch('data/ticker.json').then(r=>r.json()).then(t=>{
+  $('#meta').innerHTML='Last refresh: '+t.generated_at.slice(0,10)+' · updated weekly, automatically · <a href="https://github.com/allangiraf-hub/return-on-thinking">source &amp; methodology</a>';
+  const tb=$('#f1 tbody');
+  (t.financing_f1||[]).sort((a,b)=>b.capex_share_of_ocf-a.capex_share_of_ocf).forEach(f=>{
+    const pct=Math.min(f.capex_share_of_ocf,1.5)/1.5*100;
+    tb.insertAdjacentHTML('beforeend',`<tr><td><strong>${f.ticker}</strong></td><td>${fmtB(f.capex_t4q_usd)}</td><td>${fmtB(f.ocf_t4q_usd)}</td><td><strong>${(100*f.capex_share_of_ocf).toFixed(0)}%</strong></td><td><div class="bar"><i style="width:${pct}%"></i></div></td></tr>`);
+  });
+  if(t.datacenter_construction){$('#construction').innerHTML=spark(t.datacenter_construction.points,820,120,t.datacenter_construction.unit);
+    $('#construction-src').innerHTML='Source: <a href="'+t.datacenter_construction.source_url+'">US Census, Value of Construction Put in Place (C30)</a>';}
+  if(t.gpu_rental){
+    const by={};t.gpu_rental.points.forEach(p=>{(by[p.gpu_model]=by[p.gpu_model]||[]).push(p)});
+    $('#gpu').innerHTML=Object.entries(by).map(([m,pts])=>`<div style="margin-bottom:6px">${spark(pts,820,70,m+' $/hr')}</div>`).join('');
+    $('#gpu-src').innerHTML='Source: <a href="https://vast.ai/">vast.ai public marketplace</a>, weekly median per GPU.';}
+  if(t.rates){$('#rates').innerHTML=['dgs10','baa10y'].map(k=>t.rates[k]?spark(t.rates[k].points,820,80,k.toUpperCase()+' %'):'').join('');}
+}).catch(e=>{$('#meta').textContent='ticker.json not yet generated — run python -m rot.cli weekly';});
+</script>
+</body></html>

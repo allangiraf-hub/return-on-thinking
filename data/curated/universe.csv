@@ -1,0 +1,14 @@
+# The K-holder universe. bucket: hyperscaler | neocloud | chipmaker
+# CIKs resolve at runtime from SEC's ticker map (cached in cik_cache.json).
+ticker,bucket
+MSFT,hyperscaler
+GOOGL,hyperscaler
+AMZN,hyperscaler
+META,hyperscaler
+ORCL,hyperscaler
+CRWV,neocloud
+NBIS,neocloud   # foreign filer - no us-gaap XBRL; covered via FMP in P1
+APLD,neocloud
+IREN,neocloud
+NVDA,chipmaker
+AMD,chipmaker

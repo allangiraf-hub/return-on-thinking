@@ -1,0 +1,38 @@
+name: weekly-refresh
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC, same habit as the indicators repo
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Run collectors and build ticker
+        id: run
+        continue-on-error: true   # commit what succeeded even if a source died
+        run: python -m rot.cli weekly
+      - name: Commit refreshed data
+        run: |
+          git config user.name "rot-bot"
+          git config user.email "actions@github.com"
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "Weekly refresh $(date -u +%F)"
+          git push
+      - name: Dead-source canary
+        if: steps.run.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: `Collector failure in weekly refresh ${new Date().toISOString().slice(0,10)}`,
+              body: "A collector failed - see the workflow log. Sources die quietly; this issue is the maintenance contract.",
+              labels: ["dead-source-canary"],
+            });
