@@ -36,4 +36,6 @@ P1 adds FMP (transcripts, quarterly statements), the assumptions file, the deal 
 
 ## Using the data
 
+**Cite the dataset:** Pedersen, A. (2026). *The Return on Thinking* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20671019 (concept DOI - always resolves to the latest quarterly release)
+
 Compiled series (`data/series/`, `data/curated/`) are licensed **CC-BY-4.0** — use freely, cite the dataset DOI (on the website and each release). Machine-readable schema: `datapackage.json`. Quarterly snapshots are archived on Zenodo automatically via GitHub releases. Code is MIT. Underlying facts remain the property of their sources (SEC, US Census, US Treasury, FRED, vast.ai, et al.).
