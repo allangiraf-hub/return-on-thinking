@@ -1,4 +1,4 @@
 series_id,date,value,unit,source_url,retrieved_at,tier,gpu_model,n_offers
-vastai_gpu_rental,2026-06-12,1.9747,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-12T13:24:24+00:00,T1,H200,6
-vastai_gpu_rental,2026-06-12,0.1517,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-12T13:24:24+00:00,T1,RTX 4090,6
-vastai_gpu_rental,2026-06-12,3.9799,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-12T13:24:24+00:00,T1,B200,9
+vastai_gpu_rental,2026-06-12,1.9881,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-12T13:32:41+00:00,T1,H200,6
+vastai_gpu_rental,2026-06-12,0.1356,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-12T13:32:41+00:00,T1,RTX 4090,5
+vastai_gpu_rental,2026-06-12,3.9768,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-12T13:32:41+00:00,T1,B200,10
