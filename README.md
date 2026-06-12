@@ -34,4 +34,6 @@ pytest -m "not network"       # offline tests
 P0: scaffold + five collectors (edgar, fred, vastai, damodaran, census_c30) + weekly ticker.
 P1 adds FMP (transcripts, quarterly statements), the assumptions file, the deal ledger harvest, and the first Cp band. See the spec for phases.
 
-MIT licence. Data remain the property of their sources.
+## Using the data
+
+Compiled series (`data/series/`, `data/curated/`) are licensed **CC-BY-4.0** — use freely, cite the dataset DOI (on the website and each release). Machine-readable schema: `datapackage.json`. Quarterly snapshots are archived on Zenodo automatically via GitHub releases. Code is MIT. Underlying facts remain the property of their sources (SEC, US Census, US Treasury, FRED, vast.ai, et al.).

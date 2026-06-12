@@ -1,0 +1,35 @@
+name: quarterly-release
+on:
+  schedule:
+    - cron: "0 8 1 1,4,7,10 *"   # first day of each quarter, 08:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute quarter tag
+        id: q
+        run: |
+          # tag names the QUARTER JUST ENDED
+          Y=$(date -u +%Y); M=$(date -u +%-m)
+          PQ=$(( (M - 1) / 3 )); if [ "$PQ" -eq 0 ]; then PQ=4; Y=$((Y - 1)); fi
+          echo "tag=${Y}-Q${PQ}" >> "$GITHUB_OUTPUT"
+      - name: Create release (Zenodo archives it automatically)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tag = '${{ steps.q.outputs.tag }}';
+            try {
+              await github.rest.repos.getReleaseByTag({ owner: context.repo.owner, repo: context.repo.repo, tag });
+              core.info(`Release ${tag} already exists - nothing to do.`);
+            } catch (e) {
+              await github.rest.repos.createRelease({
+                owner: context.repo.owner, repo: context.repo.repo,
+                tag_name: tag, name: `Data release ${tag}`,
+                body: `Quarterly snapshot of The Return on Thinking dataset (returns.priceofthinking.com).\n\nCompiled series data: CC-BY-4.0 (cite the concept DOI). Code: MIT. Underlying facts remain the property of their sources.\nMachine-readable schema: datapackage.json. Methodology: docs/methodology.html (versioned assumptions in data/assumptions/).`,
+              });
+              core.info(`Created release ${tag}.`);
+            }

@@ -1,0 +1,1296 @@
+{
+ "name": "return-on-thinking",
+ "title": "The Return on Thinking - data on whether the AI boom pays for itself",
+ "homepage": "https://returns.priceofthinking.com",
+ "repository": "https://github.com/allangiraf-hub/return-on-thinking",
+ "version": "2026-06-12",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "title": "Creative Commons Attribution 4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/"
+  }
+ ],
+ "contributors": [
+  {
+   "title": "Allan Pedersen",
+   "email": "allan@aroscapital.com",
+   "role": "author"
+  }
+ ],
+ "description": "Compiled series on AI capital spending, financing fragility, and value coverage. Every row carries its public primary source URL, retrieval timestamp and evidence tier. Underlying facts remain the property of their sources (SEC, US Census, US Treasury, FRED, vast.ai, et al.). Cite the concept DOI when using this data.",
+ "resources": [
+  {
+   "name": "census_datacenter_construction",
+   "path": "data/series/census_datacenter_construction.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "damodaran_implied_erp",
+   "path": "data/series/damodaran_implied_erp.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_amd_capex_q",
+   "path": "data/series/edgar_amd_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_amd_debt_issued_q",
+   "path": "data/series/edgar_amd_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_amd_ocf_q",
+   "path": "data/series/edgar_amd_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_amzn_capex_q",
+   "path": "data/series/edgar_amzn_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_amzn_debt_issued_q",
+   "path": "data/series/edgar_amzn_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_amzn_ocf_q",
+   "path": "data/series/edgar_amzn_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_apld_capex_q",
+   "path": "data/series/edgar_apld_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_apld_debt_issued_q",
+   "path": "data/series/edgar_apld_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_apld_ocf_q",
+   "path": "data/series/edgar_apld_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_crwv_capex_q",
+   "path": "data/series/edgar_crwv_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_crwv_debt_issued_q",
+   "path": "data/series/edgar_crwv_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_crwv_ocf_q",
+   "path": "data/series/edgar_crwv_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_googl_capex_q",
+   "path": "data/series/edgar_googl_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_googl_ocf_q",
+   "path": "data/series/edgar_googl_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_iren_capex_q",
+   "path": "data/series/edgar_iren_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_iren_ocf_q",
+   "path": "data/series/edgar_iren_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_meta_capex_q",
+   "path": "data/series/edgar_meta_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_meta_debt_issued_q",
+   "path": "data/series/edgar_meta_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_meta_ocf_q",
+   "path": "data/series/edgar_meta_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_msft_capex_q",
+   "path": "data/series/edgar_msft_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_msft_ocf_q",
+   "path": "data/series/edgar_msft_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_nvda_capex_q",
+   "path": "data/series/edgar_nvda_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_nvda_debt_issued_q",
+   "path": "data/series/edgar_nvda_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_nvda_ocf_q",
+   "path": "data/series/edgar_nvda_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_orcl_capex_q",
+   "path": "data/series/edgar_orcl_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_orcl_debt_issued_q",
+   "path": "data/series/edgar_orcl_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "edgar_orcl_ocf_q",
+   "path": "data/series/edgar_orcl_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_nbis_capex_q",
+   "path": "data/series/fmp_nbis_capex_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_nbis_debt_issued_q",
+   "path": "data/series/fmp_nbis_debt_issued_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_nbis_ocf_q",
+   "path": "data/series/fmp_nbis_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "treasury_10y",
+   "path": "data/series/treasury_10y.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "vastai_gpu_rental",
+   "path": "data/series/vastai_gpu_rental.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     },
+     {
+      "name": "gpu_model",
+      "type": "string"
+     },
+     {
+      "name": "n_offers",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "deal-ledger",
+   "path": "data/curated/ledger.csv",
+   "format": "csv",
+   "description": "AI financing deal ledger; every row carries a primary-source URL. Schema: schemas/ledger.schema.json"
+  }
+ ]
+}

@@ -5,7 +5,7 @@ import sys
 import traceback
 
 from .collectors import census_c30, damodaran, edgar, fmp, fred, treasury, vastai
-from . import ticker
+from . import datapackage, ticker
 
 COLLECTORS = {
     "edgar": edgar.run,
@@ -31,6 +31,7 @@ def weekly() -> int:
             print(f"[FAIL] {name}")
             traceback.print_exc()
     ticker.build()
+    datapackage.build()
     print(f"[ok] ticker built; failures: {failures or 'none'}")
     return 1 if failures else 0
 
@@ -41,6 +42,7 @@ def main() -> None:
         raise SystemExit(weekly())
     if cmd == "ticker":
         ticker.build()
+    datapackage.build()
         return
     if cmd in COLLECTORS:
         print(COLLECTORS[cmd]())
