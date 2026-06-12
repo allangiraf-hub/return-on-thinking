@@ -4,12 +4,13 @@ from __future__ import annotations
 import sys
 import traceback
 
-from .collectors import census_c30, damodaran, edgar, fred, vastai
+from .collectors import census_c30, damodaran, edgar, fred, treasury, vastai
 from . import ticker
 
 COLLECTORS = {
     "edgar": edgar.run,
     "fred": fred.run,
+    "treasury": treasury.run,
     "vastai": vastai.run,
     "damodaran": damodaran.run,
     "census_c30": census_c30.run,

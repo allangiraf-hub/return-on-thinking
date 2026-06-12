@@ -62,6 +62,7 @@ def build() -> dict:
         "datacenter_construction": series_block("census_datacenter_construction"),
         "gpu_rental": series_block("vastai_gpu_rental", keep=2000, extra_cols=["gpu_model"]),
         "rates": {
+            "treasury_10y": series_block("treasury_10y", keep=250),
             "dgs10": series_block("fred_dgs10", keep=120),
             "baa10y": series_block("fred_baa10y", keep=120),
         },

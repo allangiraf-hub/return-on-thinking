@@ -46,7 +46,7 @@
 
   <h2><span class="num">4</span>Rates</h2>
   <p class="sub">The cost of money — one ingredient of what the AI machinery must earn each year to justify itself.</p>
-  <div class="panel"><div id="rates"></div><div class="src">Source: FRED (fredgraph.csv): DGS10, BAA10Y.</div></div>
+  <div class="panel"><div id="rates"></div><div class="src">Sources: US Treasury daily yield curve (10 Yr); FRED (fredgraph.csv): DGS10, BAA10Y when reachable.</div></div>
 
   <footer>Every number traces to a public primary source. No crash prediction, no bubble verdict — the interpreting dials arrive with the versioned methodology (P1). © Allan Pedersen · MIT licence · part of <a href="https://priceofthinking.com/">The Price of Thinking</a> project.</footer>
 </div>
@@ -78,7 +78,7 @@ fetch('data/ticker.json').then(r=>r.json()).then(t=>{
     const by={};t.gpu_rental.points.forEach(p=>{(by[p.gpu_model]=by[p.gpu_model]||[]).push(p)});
     $('#gpu').innerHTML=Object.entries(by).map(([m,pts])=>`<div style="margin-bottom:6px">${spark(pts,820,70,m+' $/hr')}</div>`).join('');
     $('#gpu-src').innerHTML='Source: <a href="https://vast.ai/">vast.ai public marketplace</a>, weekly median per GPU.';}
-  if(t.rates){$('#rates').innerHTML=['dgs10','baa10y'].map(k=>t.rates[k]?spark(t.rates[k].points,820,80,k.toUpperCase()+' %'):'').join('');}
+  if(t.rates){$('#rates').innerHTML=['treasury_10y','dgs10','baa10y'].map(k=>t.rates[k]?spark(t.rates[k].points,820,80,k.toUpperCase()+' %'):'').join('');}
 }).catch(e=>{$('#meta').textContent='ticker.json not yet generated — run python -m rot.cli weekly';});
 </script>
 </body></html>
