@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the system is built — The Return on Thinking</title>
+<style>
+  body{margin:0;background:#faf8f4;color:#1a1a1a;font:16px/1.6 Georgia,'Times New Roman',serif}
+  .wrap{max-width:780px;margin:0 auto;padding:28px 22px 60px}
+  .crumb{font:13px/1.4 Helvetica,Arial,sans-serif;color:#6b6b6b}.crumb a{color:#6b6b6b}
+  h1{font-size:30px;margin:10px 0 4px;font-weight:normal}
+  .meta{font:13px/1.5 Helvetica,Arial,sans-serif;color:#6b6b6b;margin-bottom:16px}
+  h2{font-size:20px;font-weight:normal;margin:32px 0 8px;border-top:1px solid #e2ded6;padding-top:18px}
+  pre{background:#fff;border:1px solid #e2ded6;border-radius:4px;padding:12px;font:12.5px/1.5 Menlo,monospace;overflow-x:auto}
+  code{font:13px Menlo,monospace;background:#f3efe7;padding:1px 4px;border-radius:3px}
+  footer{font:12.5px/1.7 Helvetica,Arial,sans-serif;color:#6b6b6b;border-top:1px solid #e2ded6;margin-top:34px;padding-top:14px}
+</style>
+</head>
+<body><div class="wrap">
+<div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · How the system is built</div>
+<h1>How the system is built — and why this way</h1>
+<div class="meta">12 June 2026 · <a href="https://github.com/allangiraf-hub/return-on-thinking">full source on GitHub (MIT)</a> · <a href="methodology.html">sources &amp; calculations</a></div>
+
+<p>This dashboard is built by one economist and an AI assistant, on infrastructure that costs almost nothing and that anyone can fork. That is a design statement, not a budget constraint: a measure of the AI boom should be reproducible by the people who doubt it.</p>
+
+<h2>The shape of it</h2>
+<pre>
+public sources (SEC, Census, Treasury, FRED, vast.ai, FMP…)
+        │  collectors — one small Python module per source,
+        │  run weekly by GitHub Actions (Mondays 06:00 UTC)
+        ▼
+data/series/*.csv     every row: value + source URL + retrieval time + tier
+data/curated/*.csv    the deal ledger: human-approved, schema-enforced
+data/assumptions/     v1.yaml … — every contestable number, versioned
+        │  quarterly assembly job
+        ▼
+docs/  → this website (GitHub Pages, returns.priceofthinking.com)
+        JSON payloads published alongside the pages for anyone to reuse
+</pre>
+
+<h2>The choices, and the reasons</h2>
+<p><strong>Plain files in a public Git repository, not a database.</strong> Git gives a tamper-evident history of every number ever published — anyone can see what the dashboard said last quarter and what changed since. CSV and JSON survive any future stack. There is no server to fail, nothing to subscribe to, nothing private.</p>
+<p><strong>GitHub Actions on a weekly cron, not a streaming pipeline.</strong> The underlying truths move on filing and survey cadences; weekly is honest. A scheduled batch job that commits its outputs is also auditable in a way a live service is not: the commit log <em>is</em> the provenance.</p>
+<p><strong>A dead-source canary.</strong> Public data sources die quietly — during this system's very first week, FRED's keyless endpoint went down globally. Every weekly run that loses a collector files a public issue automatically (the first one is <a href="https://github.com/allangiraf-hub/return-on-thinking/issues/1">issue #1</a>), and a backup primary source (the US Treasury's own yield file) was added the same day. Failures are part of the public record, by design.</p>
+<p><strong>Humans approve anything that involves judgment, mechanically.</strong> Deal-ledger entries arrive as pull requests; continuous-integration checks reject any entry whose primary-source link is missing or not from an allowed primary domain. Merging is the approval. The AI assistant (Claude) does the harvesting — searching the week's financing news, re-sourcing each deal to a filing or press release, scanning earnings-call transcripts for quantified AI-revenue statements — and a human merges or contests. Every entry records whether it was found contemporaneously or retrospectively, because retrospective discovery has survivorship bias and the bias should be measurable.</p>
+<p><strong>Assumptions are code-reviewed, versioned, and restated.</strong> Every contestable number — depreciation bands, margin bands, allocation shares — lives in one YAML file. Changing any of them requires a version bump, and a version bump republishes the entire back-series under the new method. The dot on the map can never move because we changed our minds about a parameter without saying so.</p>
+<p><strong>Licensed data is used, never republished.</strong> Earnings-call transcripts (via FMP) are scanned, and only short verbatim sentences with full provenance are kept — the evidence, not the document. Paid research (when credited partners join) calibrates assumptions; the published series remain buildable from public sources alone.</p>
+<p><strong>An AI assistant in the loop, with the loop visible.</strong> The system was designed, built, debugged and deployed in collaboration with Claude (Anthropic), which also runs the weekly harvest. The division of labour is published here deliberately: machines fetch, parse, draft and flag; the human decides what enters the record. We think this is what small-team economic measurement will look like, and the repository doubles as a working example.</p>
+
+<h2>What it costs</h2>
+<p>Hosting and pipeline: ~$0 (GitHub free tier, GitHub Pages). Data: one paid API subscription (FMP, for transcripts and foreign filers) and a small set of research subscriptions used for discovery and calibration, all listed in the methodology. Time: roughly half an hour a week of human review, plus a few hours each quarter.</p>
+
+<footer>© Allan Pedersen · MIT licence · part of <a href="https://priceofthinking.com/">The Price of Thinking</a> project · contact: allan@aroscapital.com</footer>
+</div></body></html>

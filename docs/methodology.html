@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources &amp; calculations — The Return on Thinking</title>
+<style>
+  body{margin:0;background:#faf8f4;color:#1a1a1a;font:16px/1.6 Georgia,'Times New Roman',serif}
+  .wrap{max-width:780px;margin:0 auto;padding:28px 22px 60px}
+  .crumb{font:13px/1.4 Helvetica,Arial,sans-serif;color:#6b6b6b}.crumb a{color:#6b6b6b}
+  h1{font-size:30px;margin:10px 0 4px;font-weight:normal}
+  .meta{font:13px/1.5 Helvetica,Arial,sans-serif;color:#6b6b6b;margin-bottom:16px}
+  h2{font-size:20px;font-weight:normal;margin:32px 0 8px;border-top:1px solid #e2ded6;padding-top:18px}
+  h3{font-size:16.5px;margin:18px 0 4px}
+  table{border-collapse:collapse;width:100%;font:13.5px/1.5 Helvetica,Arial,sans-serif;margin:10px 0}
+  th{text-align:left;color:#6b6b6b;font-weight:normal;border-bottom:1px solid #e2ded6;padding:4px 6px}
+  td{padding:5px 6px;border-bottom:1px solid #f0ece4;vertical-align:top}
+  code{font:13px Menlo,monospace;background:#f3efe7;padding:1px 4px;border-radius:3px}
+  .note{background:#fff;border:1px solid #e2ded6;border-radius:4px;padding:12px 16px;font-size:14.5px}
+  footer{font:12.5px/1.7 Helvetica,Arial,sans-serif;color:#6b6b6b;border-top:1px solid #e2ded6;margin-top:34px;padding-top:14px}
+</style>
+</head>
+<body><div class="wrap">
+<div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · Sources &amp; calculations</div>
+<h1>How the numbers are made</h1>
+<div class="meta">Methodology version 1 (active since 12 June 2026) · <a href="https://github.com/allangiraf-hub/return-on-thinking">code &amp; data on GitHub (MIT)</a> · <a href="data/rot-methodology.xlsx">companion spreadsheet</a> · <a href="system.html">how the system is built</a></div>
+
+<p class="note"><strong>The rule behind everything on this site:</strong> every published number traces to a public primary source anyone can check. Where judgment is unavoidable, the judgment is written down in a versioned assumptions file, and changing it forces the entire history to be restated — so movement on the dashboard is never an artifact of changed methods. Specialist research (credited) calibrates assumptions; it never appears as data.</p>
+
+<h2>1. The question and the three dials</h2>
+<p>"Is the AI boom a bubble?" is unanswerable, so this dashboard decomposes it into three measurable questions: is the machinery paying for itself (the <strong>earnings dial</strong>); is the world getting value even where investors aren't (the <strong>benefit dial</strong>); and whose money burns if it goes wrong (the <strong>debt dial</strong>). The intellectual framework — including the adversarial reviews it survived — is documented in the project's research notes; the short version is in <a href="https://priceofthinking.com/chapters/the-boom/">chapter 9 of <em>The Price of Thinking</em></a>.</p>
+
+<h2>2. Data sources and why each was chosen</h2>
+<table>
+<tr><th>Source</th><th>What we take</th><th>Why this source</th><th>Tier</th></tr>
+<tr><td>SEC EDGAR (XBRL company facts)</td><td>Capital spending, operating cash flow, debt issuance, per firm, quarterly (derived from year-to-date figures)</td><td>Audited filings; the only undisputed record of what is actually spent and earned. Free, no key, machine-readable.</td><td>T1</td></tr>
+<tr><td>US Census, Construction Spending (C30)</td><td>Monthly data-centre construction put in place (private, SA)</td><td>The official measure of the durable, building-shaped part of the boom; published monthly since 2014 for this category.</td><td>T1</td></tr>
+<tr><td>US Treasury daily yield curve</td><td>10-year yield</td><td>The primary source for the risk-free rate (chosen over FRED's mirror after FRED's keyless endpoint proved unreliable in production).</td><td>T1</td></tr>
+<tr><td>FRED</td><td>Baa corporate spread (and 10y cross-check)</td><td>The standard public series for credit spreads; retained with a retry-and-canary design.</td><td>T1</td></tr>
+<tr><td>vast.ai public marketplace</td><td>Weekly median rental price per GPU model</td><td>The only open, observable market price of AI compute — a direct market check on what the machinery is worth per hour. This archive cannot be backfilled, so we never delete it.</td><td>T1</td></tr>
+<tr><td>Damodaran (NYU) implied ERP</td><td>Equity risk premium, annual history</td><td>The de-facto public standard for the equity premium; used in the required-return construction.</td><td>T2</td></tr>
+<tr><td>FMP (Financial Modeling Prep)</td><td>Earnings-call transcripts; statements for foreign filers EDGAR misses (e.g. Nebius)</td><td>Licensed aggregator used as a conduit to filed information; full transcripts are never republished — only short, quoted sentences with provenance.</td><td>T2</td></tr>
+<tr><td>Company newsrooms, press-wire services, SEC filings</td><td>The deal ledger: every financing deal, one row, one primary link</td><td>Deals reported only in the press do not enter the ledger until re-sourced to a primary document — our validator enforces this mechanically.</td><td>T1/T2</td></tr>
+<tr><td>Census BTOS · BLS (wages, productivity) · EIA (electricity prices) · Anthropic Economic Index</td><td>Adoption, wages, energy prices, AI task-usage weights</td><td>The benefit dial's ingredients: official surveys where they exist, plus the only public task-level AI usage dataset. (Phase 2.)</td><td>T1/T2</td></tr>
+</table>
+<p><strong>Tiers:</strong> T1 = filed or official statistics. T2 = company-stated or reputable aggregated data. T3 = press-reported (always flagged, never load-bearing alone).</p>
+
+<h2>3. The calculations</h2>
+<h3>Financing headroom (debt dial, F1)</h3>
+<p><code>capex (trailing 4 quarters) ÷ operating cash flow (trailing 4 quarters)</code>, per firm. Above 1.0, building consumes more cash than the whole company generates. Quarterly values are derived by differencing year-to-date cash-flow figures within each fiscal year. Caveat stated wherever shown: hyperscaler cash flow comes mostly from non-AI businesses, so this measures cross-subsidy capacity, not AI self-financing.</p>
+<h3>The deal ledger (debt dial, F3/F4)</h3>
+<p>Each externally financed deal is one row: parties, instrument, amount, location bucket (<code>F3</code> = credit-like external finance to compute owners; <code>F4</code> = vendor or circular capital), primary source URL, and whether it was found contemporaneously or retrospectively — retrospective discovery has survivorship bias, and labelling it lets us measure that bias instead of hiding it.</p>
+<h3>User cost of the capital stock (earnings dial denominator)</h3>
+<p><code>Σ over asset classes of (rᵢ + δᵢ) × Kᵢ</code> — what the stock must earn each year to justify itself: required return plus wear. K accumulates from filed capex, split across chips/servers, buildings, and power by the published allocation assumptions. δ (wear) is carried as a <em>band</em>: chips at 18–40% a year, deliberately spanning the gap between company accounting schedules and the sceptics' arithmetic. r combines the Treasury 10-year with Damodaran's equity premium (equity-funded share) and the Baa spread (debt-funded share), weighted by the observed financing mix.</p>
+<h3>Quasi-rents (earnings dial numerator)</h3>
+<p>Revenues attributable to the capital, <em>net of running costs</em> — a revenue figure is converted through a margin band (30–70%, the widest band in the system, because inference margins are genuinely disputed). Revenue inputs are tier-labelled: filed segment data first, company statements from earnings calls second (each kept as a verbatim sentence with its transcript reference), press reports last and flagged. Two lines are computed: the compute owners' coverage and the wider ecosystem's.</p>
+<h3>Benefit to society (benefit dial)</h3>
+<p>Task-level value coefficients from peer-reviewed experiments × measured usage by occupation × wages × adoption, expressed against the same user cost, at 10- and 30-year horizons. Published explicitly as an <em>estimate with bias in both directions</em>, gross of harms; harm indicators (electricity prices in data-centre states, layoff notices) are tracked separately rather than netted.</p>
+<h3>The map</h3>
+<p>The earnings dial (x) against the benefit dial (y), quarterly, as an uncertainty ellipse spanning the assumption corners. A movement is "called" only when the new position lies outside the previous quarter's ellipse — the published rule that separates signal from assumption noise.</p>
+
+<h2>4. References</h2>
+<p style="font-size:14.5px">Arrow (1962); Nordhaus (2004) "Schumpeterian Profits"; Jorgenson (1963) on user cost; Minsky (1986); Kindleberger (1978); Bernanke, Gertler &amp; Gilchrist (1999); Jordà, Schularick &amp; Taylor (2015) "Leveraged Bubbles"; Perez (2002); Janeway (2012); Pástor &amp; Veronesi (2009); Greenwood, Shleifer &amp; You (2019) "Bubbles for Fama"; Goetzmann et al. (2026); Kogan, Papanikolaou, Seru &amp; Stoffman (2020) "Left Behind"; Noy &amp; Zhang (2023, <em>Science</em>); Brynjolfsson, Li &amp; Raymond (2025, <em>QJE</em>); Dell'Acqua et al. (2023; 2026, <em>Organization Science</em>); Cui et al. (2026, <em>Management Science</em>); Quinn (2018) on the bicycle mania; Garber (1989) and Goldgar (2007) on tulip historiography. Full citations in the repository's METHODS.md.</p>
+
+<footer>No crash prediction, no bubble verdict: levels are uncertain to perhaps a factor of two and only banded movements are called. A stagnant coverage ratio has at least three innocent explanations (investors still learning; competition giving the value away; defensive spending as insurance) — the quarterly notes link to all of them. © Allan Pedersen · MIT licence · contact: allan@aroscapital.com</footer>
+</div></body></html>
