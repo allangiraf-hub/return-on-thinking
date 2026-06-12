@@ -1,0 +1,357 @@
+ticker,year,quarter,call_date,sentence,status
+MSFT,2023,1,2022-10-25,Commercial remaining performance obligation increased 31% and 34% in constant currency to $180 billion.,candidate
+MSFT,2023,2,2023-01-24,Commercial remaining performance obligation increased 29% to 26% in constant currency to $189 billion.,candidate
+MSFT,2023,3,2023-04-25,Commercial remaining performance obligation increased 26% to $196 billion.,candidate
+MSFT,2023,4,2023-07-25,Commercial remaining performance obligation increased 19% and 18% in constant currency to $224 billion.,candidate
+MSFT,2024,1,2023-10-24,"More broadly, we continue to take share across all major categories we serve, and our SIEM, Microsoft Sentinel now has more than 25,000 customers in revenue, surpassed $1 billion annual run-rate, and customers in every industry like Booz Allen Hamilton, Grant Thornton and MetLife use our end-to-end solutions to protect their environments.",candidate
+MSFT,2024,1,2023-10-24,"Commercial remaining performance obligation, increased 18% to $212 billion, and roughly 45% will be recognized in revenue in the next 12 months, up 15% year-over-year.",candidate
+MSFT,2024,2,2024-01-30,"Commercial remaining performance obligation increased 17% and 16% in constant currency to $222 billion, roughly 45% will be recognized in revenue in the next 12 months, up 15% year-over-year.",candidate
+MSFT,2024,3,2024-04-25,Commercial remaining performance obligation increased 20% and 21% in constant currency to $235 billion.,candidate
+MSFT,2024,4,2024-07-30,"Copilot is driving GitHub growth, all up, GitHub’s annual revenue run rate is now $2 billion.",candidate
+MSFT,2024,4,2024-07-30,Commercial remaining performance obligation increased 20% and 21% in constant currency to $269 billion.,candidate
+MSFT,2025,1,2024-10-30,"All up, our AI business is on track to surpass an annual revenue run rate of $10 billion next quarter, which will make it the fastest business in our history to reach this milestone.",candidate
+MSFT,2025,1,2024-10-30,Commercial remaining performance obligation increased 22% and 21% in constant currency to $259 billion.,candidate
+MSFT,2025,1,2024-10-30,"Monetization from these investments continues to grow, and we're excited that only 2.5 years in, our AI business is on track to surpass $10 billion of annual revenue run rate in Q2.",candidate
+MSFT,2025,2,2025-01-29,And our AI business has now surpassed an annual revenue run rate of $13 billion up 175% year-over-year.,candidate
+MSFT,2025,2,2025-01-29,"As you heard from Satya, our AI business annual revenue run rate surpassed $13 billion and was above expectations.",candidate
+MSFT,2025,2,2025-01-29,"Commercial remaining performance obligation increased to $298 billion, up 34% and 36% in constant currency.",candidate
+MSFT,2025,2,2025-01-29,"We have and I think we talked about it, close to $300 billion of RPO, that is committed customer contracts that need to be delivered on.",candidate
+MSFT,2025,3,2025-04-30,"Commercial remaining performance obligation increased to $315 billion, up 34% and 33% in constant currency.",candidate
+MSFT,2025,3,2025-04-30,"The remaining cloud and AI spend was primarily for servers, both CPUs and GPUs, to serve customers based on demand signals including our customer contracted backlog of $315 billion.",candidate
+MSFT,2025,4,2025-07-30,"Commercial remaining performance obligation increased to $368 billion, up 37% and 35% in constant currency.",candidate
+MSFT,2025,4,2025-07-30,"Let me back up and first say, when you think about the full year comments I've made on CapEx as well as the Q1 guidance of over $30 billion, you first have to ground yourself in the fact that we have $368 billion of contracted backlog we need to deliver, not just across Azure but across the breadth of the Microsoft Cloud.",candidate
+MSFT,2026,1,2025-10-29,And our commercial RPO increased over 50% to nearly $400 billion with a weighted average duration of only 2 years.,candidate
+MSFT,2026,1,2025-10-29,Commercial remaining performance obligation increased to $392 billion and was up 51% year-over-year.,candidate
+MSFT,2026,1,2025-10-29,"And I think you noted a number of $100 million contracts, not to go into a lot of detail, but can you just give us a sense of what you're seeing in that 51% RPO and 110-plus percent bookings growth that gives you confidence about what you're seeing in terms of the breadth and extent of some of these deals on a global basis.",candidate
+MSFT,2026,1,2025-10-29,"Let me talk a little bit about maybe connecting a couple of the dots because with $400 billion of RPO, that's sort of short-dated as we talked about, our needs to continue to build out the infrastructure is very high.",candidate
+MSFT,2026,2,2026-01-28,"Two years since it became broadly available, Fabrik's annual revenue run rate is now over $2 billion with over 31,000 customers, and it continues to be the fastest-growing analytics platform on the market with revenue up 60% year over year.",candidate
+MSFT,2026,2,2026-01-28,"Commercial remaining performance obligation, continues to be reported net of reserves, increased to $625 billion.",candidate
+MSFT,2026,2,2026-01-28,"The first thing to focus on is the reason we talked about that number is because 55% or roughly $350 billion is related to the breadth of our portfolio, a breadth of customers, across solutions, across Azure, across industries, across geographies, That is a significant RPO balance, larger than most peers.",candidate
+MSFT,2026,3,2026-04-29,"Our AI business surpassed $37 billion ARR, up 123%.",candidate
+MSFT,2026,3,2026-04-29,"And our agentic products in LinkedIn Talent Solutions, which help hirers automate time-consuming tasks like sourcing, screening and drafting messages have already surpassed a $450 million annualized revenue run rate.",candidate
+MSFT,2026,3,2026-04-29,"As Satya shared, our AI business annual revenue run rate surpassed $37 billion this quarter, growing 123% year-over-year.",candidate
+MSFT,2026,3,2026-04-29,RPO increased to $627 billion and was up 99% year-over-year with a weighted average duration of approximately 2.5 years when including OpenAI.,candidate
+GOOGL,2024,1,2024-04-25,"But in addition, we expect YouTube overall and Cloud to exit 2024 at a combined annual run rate of over $100 billion.",candidate
+GOOGL,2024,1,2024-04-25,And then the second question on just the comment of YouTube and Cloud exiting at $100 billion run rate.,candidate
+GOOGL,2024,4,2025-02-04,"In Cloud and YouTube, we said at the beginning of 2024 that we expected to exit the year at a combined annual revenue run rate of over $100 billion.",candidate
+GOOGL,2024,4,2025-02-04,We met that goal and ended the year at a run rate of $110 billion.,candidate
+GOOGL,2024,4,2025-02-04,"YouTube and cloud revenues combined, ended the year at $110 billion annual run rate.",candidate
+GOOGL,2025,1,2025-04-24,"As we announced last quarter, YouTube and Cloud exited 2024 at a combined annual run rate of $110 billion.",candidate
+GOOGL,2025,2,2025-07-23,Its annual revenue run rate is now more than $50 billion.,candidate
+GOOGL,2025,2,2025-07-23,"Google Cloud backlog increased 18% sequentially in Q2 and 38% year-over-year, reaching $106 billion at the end of the quarter.",candidate
+GOOGL,2025,2,2025-07-23,"In Cloud, as I mentioned, the demand for our products is high as evidenced by the continued revenue growth and the cloud backlog of $106 billion.",candidate
+GOOGL,2025,2,2025-07-23,Cloud has reached an annual revenue run rate of more than $50 billion and is delivering margin expansion while continue to invest to meet customer demand.,candidate
+GOOGL,2025,3,2025-10-29,Cloud backlog grew 46% quarter-over-quarter to $155 billion.,candidate
+GOOGL,2025,3,2025-10-29,"Today, 13 product lines are each at an annual run rate over $1 billion.",candidate
+GOOGL,2025,3,2025-10-29,"Looking at the living room, our long-term bet, more advertisers are adopting interactive direct response ads, leading to an annual revenue run rate exceeding $1 billion globally for this format.",candidate
+GOOGL,2025,3,2025-10-29,"Google Cloud's backlog increased 46% sequentially and 82% year-over-year, reaching $155 billion at the end of the third quarter.",candidate
+GOOGL,2025,3,2025-10-29,"In Cloud, demand for our products remains high as evidenced by the accelerating revenue growth and the $49 billion sequential increase in Cloud backlog in Q3.",candidate
+GOOGL,2025,4,2026-02-04,Cloud significantly accelerated with revenues growing 48% now on an annual run rate of over $70 billion.,candidate
+GOOGL,2025,4,2026-02-04,Backlog grew by 55% quarter over quarter to $240 billion representing a wide breadth of customers driven by demand for AI products.,candidate
+GOOGL,2025,4,2026-02-04,"Google Cloud's backlog increased 55% sequentially and more than doubled year over year, reaching $240 billion at the end of the fourth quarter.",candidate
+GOOGL,2026,1,2026-04-29,"Revenue grew 63%, exceeding $20 billion for the first time and our backlog nearly doubled quarter-on-quarter to over $460 billion.",candidate
+GOOGL,2026,1,2026-04-29,"And Google Cloud's backlog nearly doubled sequentially, reaching $462 billion at the end of the first quarter.",candidate
+GOOGL,2026,1,2026-04-29,"So the backlog, the TPU hardware agreements that Sundar referenced in his prepared remarks, are reflected in our cloud backlog of the $462 billion.",candidate
+AMZN,2023,1,2023-04-27,"In AWS, net sales were $21.4 billion in the first quarter, up 16% year-over-year and representing an annualized sales run rate of more than $85 billion.",candidate
+AMZN,2023,2,2023-08-03,Amazon Business is one of our fastest-growing offerings with a $35 billion annual gross sales run rate.,candidate
+AMZN,2023,2,2023-08-03,"Just if you think about the AWS business being an $88 billion revenue run rate business, to grow double digits on a business that size with the amount of cost optimizing that's been happening, to grow double digits, you have to be adding a lot of new customers and a lot of new workloads just to grow double digits.",candidate
+AMZN,2023,2,2023-08-03,"Just on your Amazon Business question, Mark, $35 billion annual run rate for gross sales is pretty strong growth.",candidate
+AMZN,2023,2,2023-08-03,"But to grow double digits on an $88 billion revenue run rate business, when you're seeing that amount of cost optimization as every company in the world is trying to save as much money as they can in the last year, to still grow double digits on a base that size means that we're acquiring a lot of new customers and a lot of new workloads.",candidate
+AMZN,2023,3,2023-10-26,"AWS revenue grew 12% year-over-year in Q3, with $919 million of incremental quarter-over-quarter revenue and now has the annualized revenue run rate of $92 billion.",candidate
+AMZN,2023,3,2023-10-26,And then we have a $92 billion revenue run rate business where 90% of the global IT spend still resides on premises.,candidate
+AMZN,2023,3,2023-10-26,"And then in your ads business, you're approaching $50 billion run rate and it's compounding in the mid-20s.",candidate
+AMZN,2023,4,2024-02-01,And we're now approaching an annualized revenue run rate of $100 billion.,candidate
+AMZN,2023,4,2024-02-01,"And then on the Gen AI side, it's -- if you look at the Gen AI revenue we have, in absolute numbers, it's a pretty big number, but in the scheme of a $100 billion annual revenue run rate business, it's still relatively small, much smaller than what it will be in the future, where we really believe we're going to drive tens of billions of dollars of revenue over the next several years.",candidate
+AMZN,2024,1,2024-04-30,"We're at $100 billion-plus annualized revenue run rate, yet 85% or more of the global IT spend remains on-premises.",candidate
+AMZN,2024,1,2024-04-30,"Revenue was $25 billion, an increase of 17% year-over-year, and AWS is now a $100 billion annualized revenue run rate business.",candidate
+AMZN,2024,1,2024-04-30,"And I think what people sometimes forget on the AWS side, it's a $100 billion revenue run rate business, that we're still 85-plus percent of the global IT spend is on premises.",candidate
+AMZN,2024,2,2024-08-01,AWS now has an annualized revenue run rate of more than $105 billion.,candidate
+AMZN,2024,2,2024-08-01,"Andy Jassy : On the AWS question, it's always hard to predict what the growth rates are going to be, and it's a relatively large business at $105 billion revenue run rate at this point.",candidate
+AMZN,2024,2,2024-08-01,"I think that -- the one other thing I would say about that, too, Mark, is that -- the business today, as I mentioned, it's a $105 billion revenue run rate business, about 90% of the global IT spend is still on premises.",candidate
+AMZN,2024,3,2024-10-31,AWS grew 19.1% year-over-year and now stands at a $110 billion annualized run rate.,candidate
+AMZN,2024,3,2024-10-31,AWS now has an annualized revenue run rate of $110 billion.,candidate
+AMZN,2024,4,2025-02-06,"That's a $69 billion annual revenue run rate, more than double what it was just four years ago at $29 billion.",candidate
+AMZN,2024,4,2025-02-06,"Moving on to AWS, in Q4, AWS grew 19% year over year and now has a $115 billion annualized revenue run rate.",candidate
+AMZN,2024,4,2025-02-06,AWS now has an annualized revenue run rate of $115 billion.,candidate
+AMZN,2024,4,2025-02-06,"Capital investments were $26.3 billion in the fourth quarter, and we think that run rate will be reasonably representative of our 2025 capital investment rate.",candidate
+AMZN,2025,1,2025-05-01,AWS grew 17% year-over-year in Q1 and now sits at a $117 billion annualized revenue run rate.,candidate
+AMZN,2025,1,2025-05-01,"Before this generation of AI, we thought AWS had the chance to ultimately be a multi $100 billion revenue run rate business.",candidate
+AMZN,2025,1,2025-05-01,AWS now has an annualized revenue run rate of more than $117 billion.,candidate
+AMZN,2025,1,2025-05-01,"And so, when it's still think about 17% year-over-year growth on a $117 billion revenue run rate, it's still pretty significant growth.",candidate
+AMZN,2025,1,2025-05-01,The backlog is $189 billion for Q1.,candidate
+AMZN,2025,2,2025-07-31,"In Q2, AWS grew 17.5% year-over-year and now has over $123 billion annualized revenue run rate.",candidate
+AMZN,2025,2,2025-07-31,AWS now has an annualized revenue run rate of more than $123 billion.,candidate
+AMZN,2025,2,2025-07-31,"So we could be doing more revenue and helping customers more, and we're working very hard on changing that outcome and how much capacity we have, but it's still like if you look at the business, it's $123 billion annual revenue run rate business and it's still early.",candidate
+AMZN,2025,2,2025-07-31,I mean how often do you have an opportunity that's $123 billion of annual revenue run rate where you say it's still early.,candidate
+AMZN,2025,3,2025-10-30,"It's very different having 20% year-over-year growth on a $132 billion annualized run rate than to have a higher percentage growth rate on a meaningfully smaller annual revenue, which is the case with our competitors.",candidate
+AMZN,2025,3,2025-10-30,"Backlog grew to $200 billion by Q3 quarter end and doesn't include several unannounced new deals in October, which together are more than our total deal volume for all of Q3.",candidate
+AMZN,2025,3,2025-10-30,"Connect has recently crested $1 billion annualized revenue run rate with 12 billion minutes of customer interactions being handled by AI in the last year and is being used by large enterprises like Capital One, Toyota, American Airlines, and Ryanair.",candidate
+AMZN,2025,3,2025-10-30,Rufus is on track to deliver over $10 billion in incremental annualized sales.,candidate
+AMZN,2025,3,2025-10-30,AWS revenue increased $2.1 billion quarter-over-quarter and now has an annualized revenue run rate of $132 billion.,candidate
+AMZN,2025,3,2025-10-30,"We are seeing -- we're really pleased with the results from this quarter, 20% year-over-year on an annualized run rate of $132 billion is unusual.",candidate
+AMZN,2025,4,2026-02-05,AWS is now a $142 billion annualized run rate business.,candidate
+AMZN,2025,4,2026-02-05,"And our chips business, inclusive of Graviton and Tranium, is now over $10 billion in annual revenue run rate growing triple-digit percentages year over year.",candidate
+AMZN,2025,4,2026-02-05,"As a reminder, it's very different having 24% year-over-year growth on a $142 billion annualized run rate than to have a higher percentage growth on a meaningfully smaller base which is the case with our competitors.",candidate
+AMZN,2025,4,2026-02-05,We added $2.6 billion in quarter over quarter revenue and AWS now has an annualized revenue run rate of $142 billion.,candidate
+AMZN,2025,4,2026-02-05,"When you are growing 24% year over year with an annualized revenue run rate of $142 billion, you are growing a lot.",candidate
+AMZN,2025,4,2026-02-05,"If you combine Traneum and Graviton, it's well over a $10 billion annualized run rate business it's still very early there so I'm very optimistic about what we're seeing, know, the Project Rainier has gone very well.",candidate
+AMZN,2025,4,2026-02-05,"Which is on backlog, our backlog is $244 billion.",candidate
+AMZN,2025,4,2026-02-05,"So really across the board and, you know, and I just think on the supply and demand, what I would tell you is you know, we're growing 24% year over year a $142 billion annualized run rate business.",candidate
+AMZN,2025,4,2026-02-05,"Just for perspective, that's twice what we had in 2022 when we were in $80 billion annual run rate business.",candidate
+AMZN,2026,1,2026-04-29,AWS is now a $150 billion annualized revenue run rate business.,candidate
+AMZN,2026,1,2026-04-29,"To put our growth in perspective, 3 years after AWS launched, it had a $58 million revenue run rate.",candidate
+AMZN,2026,1,2026-04-29,"In the first 3 years of this AI wave, AWS' AI revenue run rate is over $15 billion, nearly 260x larger.",candidate
+AMZN,2026,1,2026-04-29,"We saw nearly 40% quarter-over-quarter growth in Q1, and our annual revenue run rate is now over $20 billion and growing triple-digit percentages year-over-year, but this somewhat masks the size.",candidate
+AMZN,2026,1,2026-04-29,"If our chips business was a stand-alone business and sold chips produced this year to AWS and other third parties as other leading chip companies do, our annual revenue run rate would be $50 billion.",candidate
+AMZN,2026,1,2026-04-29,And growing 28% on a $150 billion annual run rate basis is not simple to do.,candidate
+AMZN,2026,1,2026-04-29,"On the backlog, the backlog for Q1 is $364 billion.",candidate
+META,2023,1,2023-04-26,I shared last quarter that click to message ads reached a $10 billion revenue run rate.,candidate
+META,2023,2,2023-07-26,"We're seeing good progress on Reels monetization as well with the annual revenue run-rate across our apps now exceeding $10 billion, up from $3 billion last fall.",candidate
+META,2023,3,2023-10-25,"Our AI tools for advertisers are also driving results with Advantage+ shopping campaigns, reaching a $10 billion run rate and more than half of our advertisers using our Advantage+ creative tools to optimize images and text in their ads creative.",candidate
+META,2023,4,2024-02-01,"Outside of business messaging, we're making strong progress with our shops' ads products, which crossed a $2 billion annual run rate in Q4.",candidate
+META,2023,4,2024-02-01,"Shops ads, we talked about the $2 billion annual run rate in Q4 after we just opened availability to all U.S.",candidate
+META,2024,4,2025-01-29,"Adoption of Advantage+ shopping campaigns continues to scale, with revenue surpassing a $20 billion annual run-rate and growing 70% year-over-year in Q4.",candidate
+META,2025,3,2025-10-29,"And as video continues to grow across our apps, Reels now has an annual run rate of over $50 billion.",candidate
+META,2025,3,2025-10-29,And now the annual run rate going through our completely end-to-end AI-powered ad tools has passed $60 billion.,candidate
+META,2025,3,2025-10-29,"The annual run rate of revenue running through our end-to-end automated solutions has now reached $60 billion following the implementation of the new streamlined creation flow, as we continue to see more advertisers leverage the performance benefits of our solutions.",candidate
+META,2025,3,2025-10-29,"And we heard a lot about end-to-end automation here, I think, reaching a $60 billion ARR.",candidate
+META,2025,3,2025-10-29,I think Mark mentioned that the annual revenue run rate now for advertisers who are using these automated options is $60 billion.,candidate
+META,2025,4,2026-01-28,"Paid messaging within WhatsApp continues to scale as well, crossing a $2 billion annual run rate in Q4.",candidate
+META,2026,1,2026-04-29,"Adoption by businesses has been strong following performance improvements we've made over the past year with the annual revenue run rate of our value optimization suite now over $20 billion, more than doubling year-over-year.",candidate
+META,2026,1,2026-04-29,This is contributing to rapid growth in our partnership's ads product with its revenue run rate more than doubling year-over-year in Q1 to $10 billion.,candidate
+ORCL,2023,1,2022-09-12,"Our strategic back-office cloud applications now have annualized revenue of $5.8 billion and grew 33% in constant currency, including Fusion ERP, which was up 38%, NetSuite ERP up 30% and Fusion HCM up 26%.",candidate
+ORCL,2023,1,2022-09-12,"Excluding legacy hosting services, infrastructure cloud services grew 70% with an annualized revenue of $3.2 billion, including OCI consumption revenue, which was up 103%; Cloud at Customer consumption revenue, which was up 92%; and Autonomous Database, which was up 56%.",candidate
+ORCL,2023,1,2022-09-12,"The remaining performance obligation, or RPO balance, is $60.7 billion, up 62% in constant currency due to strong bookings as well as the addition of Cerner.",candidate
+ORCL,2023,1,2022-09-12,We expect Oracle's total cloud business to exceed a $20 billion annual run rate next year.,candidate
+ORCL,2023,2,2022-12-12,"Now, our strategic back-office SaaS applications now have an annualized revenue of $5.9 billion and grew 26% in constant currency, including Fusion ERP, up 28% and NetSuite ERP, up 29%.",candidate
+ORCL,2023,2,2022-12-12,"Now excluding legacy hosting services, infrastructure cloud services revenue grew 69% with an annualized revenue of $3.8 billion, including OCI consumption revenue, which was up 88% and cloud and customer consumption revenue, up 83% and autonomous database up 50%.",candidate
+ORCL,2023,2,2022-12-12,"When I talk about accelerating demand, that demand is reflected in the remaining performance obligation or RPO balance, which is now at $61.2 billion, up 68% in constant currency due to strong cloud bookings as well as to Cerner.",candidate
+ORCL,2023,3,2023-03-09,"Our strategic back-office SaaS applications now have an annualized revenue of $6.2 billion and grew 25% in constant currency, including Fusion ERP, up against 28% and NetSuite ERP, up 26% this quarter.",candidate
+ORCL,2023,3,2023-03-09,"And when you exclude our legacy hosting services, infrastructure cloud services revenue grew 65%, with an annualized revenue of $4.4 billion, including OCI consumption revenue, which was up 86%, cloud customer consumption revenue, up 73%, and autonomous database, up 50%.",candidate
+ORCL,2023,3,2023-03-09,"The remaining performance obligation or RPO balance is $62.3 billion, up 66% in constant currency due to strong cloud bookings as well as Cerner, which Larry will discuss in a moment.",candidate
+ORCL,2023,4,2023-06-12,"Our strategic back office SaaS applications now have an annualized revenue of $6.6 billion, and grew 24%, including Fusion ERP, up 28%, and NetSuite ERP, up 24%.",candidate
+ORCL,2023,4,2023-06-12,"Infrastructure cloud services revenue grew 89%, with an annualized revenue of $5.2 billion, including OCI consumption revenue, which was up 112%.",candidate
+ORCL,2023,4,2023-06-12,"The remaining performance obligation, or RPO balance, is $67.9 billion, up 47% in constant currency, due to strong cloud bookings as well as Cerner.",candidate
+ORCL,2023,4,2023-06-12,"In the aggregate, our generative AI cloud customers have recently signed contracts to purchase more than $2 billion of capacity in Oracle's Gen2 Cloud.",candidate
+ORCL,2024,1,2023-09-11,"In Q1, our remaining performance obligations or RPO, climbed to nearly $65 billion, with the portion excluding Cerner, up 11%.",candidate
+ORCL,2024,1,2023-09-11,"Our strategic back-office SaaS applications now have annualized revenue of $6.9 billion, and they grew 20%.",candidate
+ORCL,2024,1,2023-09-11,"Excluding legacy hosting services, Gen2 Infrastructure cloud services revenue grew 72% with an annualized revenue of $5.6 billion.",candidate
+ORCL,2024,2,2023-12-11,Our strategic back office SaaS applications now have an annualized revenue of $7.1 billion and we're up 19%.,candidate
+ORCL,2024,2,2023-12-11,"Excluding legacy hosting services, Gen 2 infrastructure cloud services revenue grew 55%, with an annualized revenue of $6 billion.",candidate
+ORCL,2024,2,2023-12-11,"Our remaining performance obligation, or RPO, is now over $65 billion, with the portion excluding Cerner up 11% in constant currency.",candidate
+ORCL,2024,2,2023-12-11,"Given the enormity of our pipeline and backlog, I expect CapEx will be somewhere around $8 billion this fiscal year, meaning our second half CapEx will be considerably higher as we bring online more capacity.",candidate
+ORCL,2024,2,2023-12-11,"Oracle's total remaining performance obligations, or RPO, has now reached $65 billion, slightly more than our annual revenue.",candidate
+ORCL,2024,3,2024-03-11,Our strategic back-office SaaS applications now have an annualized revenue of $7.4 billion and were up 18%.,candidate
+ORCL,2024,3,2024-03-11,"Excluding Legacy Hosting Services, OCI Gen2 infrastructure cloud services revenue grew 52% with an annualized revenue of $6.7 billion.",candidate
+ORCL,2024,3,2024-03-11,"And highlighted by cloud database services, which were up 34% and now has annualized revenue of $1.9 billion.",candidate
+ORCL,2024,3,2024-03-11,Our remaining performance obligation or RPO is now over $8 billion with the portion excluding Cerner up 41% in constant currency.,candidate
+ORCL,2024,3,2024-03-11,"That's the measure of demand, the $80 billion RPO is quite a - an acceleration of demand.",candidate
+ORCL,2024,4,2024-06-11,"RPO was $98 billion, up $18 billion from Q3, and up 44% year-over-year from $68 billion last year.",candidate
+ORCL,2024,4,2024-06-11,Our strategic back-office SaaS applications now have annualized revenue of $7.7 billion and were up 16%.,candidate
+ORCL,2024,4,2024-06-11,"Excluding legacy hosting, OCI Gen2 infrastructure cloud services grew 44%, with an annualized revenue of $7.4 billion.",candidate
+ORCL,2024,4,2024-06-11,"Database subscriptions, which includes database license support, were up 6% and highlighted by cloud database services, which were up 26% and now have an annualized revenue of $2 billion.",candidate
+ORCL,2024,4,2024-06-11,"As I mentioned our remaining performance obligations, or RPO is now $98 billion, up 44% in constant currency and the portion excluding Cerner, if you're curious was up 60%.",candidate
+ORCL,2024,4,2024-06-11,"In Q4, Oracle's company-wide RPO increased 44% to $98 billion.",candidate
+ORCL,2024,4,2024-06-11,"In AI alone, we signed contracts with 30 different customers for $12.5 billion in new AI business.",candidate
+ORCL,2024,4,2024-06-11,"These astonishing RPO numbers 44% and $98 billion were driven by massive increases in sales of Oracle Cloud Infrastructure, OCI.",candidate
+ORCL,2025,1,2024-09-09,Our strategic back-office SaaS applications now have annualized revenues of $8.2 billion and were up 18%.,candidate
+ORCL,2025,1,2024-09-09,"Our infrastructure cloud services now have an annualized revenue of $8.6 billion, OCI consumption revenue was up 56% and demand continued to outstrip supply.",candidate
+ORCL,2025,1,2024-09-09,"Cloud database services, which were up 23% and now have annualized revenues of $2.1 billion.",candidate
+ORCL,2025,1,2024-09-09,"Our remaining performance obligations or RPO is now $99 billion, up 52% in constant currency.",candidate
+ORCL,2025,1,2024-09-09,"We spent $2.3 billion on CapEx this quarter, given the demand that you see in our RPO growth and the additional demand we have and see in our pipeline, I expect the fiscal year 2025 CapEx will be double what it was in fiscal 2024.",candidate
+ORCL,2025,2,2024-12-09,"You can see all of this in the momentum in the acceleration of our cloud growth and the 50% growth of our $97 billion RPO number, remaining performance obligation.",candidate
+ORCL,2025,2,2024-12-09,Our infrastructure cloud services now have an annualized revenue of $9.7 billion.,candidate
+ORCL,2025,2,2024-12-09,"Cloud database services, which were up 28% and now have an annualized revenue of $2.2 billion.",candidate
+ORCL,2025,2,2024-12-09,Our strategic back-office SaaS applications now have annualized revenue of $8.4 billion and were up 18%.,candidate
+ORCL,2025,2,2024-12-09,"Our remaining performance obligation or RPO, is now at $97.3 billion, up 50% in constant currency and reflects the growing trend of customers wanting larger and longer contracts as they see firsthand how Oracle Cloud Services are benefiting their businesses.",candidate
+ORCL,2025,2,2024-12-09,"As I mentioned and as you caught in my talking, 28%, it's now annualized revenue, just the cloud database services of $2.2 billion.",candidate
+ORCL,2025,3,2025-03-10,"As you can see, this was our strongest booking quarter ever by a huge margin as we added $48 billion to our backlog.",candidate
+ORCL,2025,3,2025-03-10,Our RPO balance is now $130 billion up from $97 billion last quarter and up from $80 billion last year.,candidate
+ORCL,2025,3,2025-03-10,Our Instructure cloud services now have an annualized revenue of $10.6 billion.,candidate
+ORCL,2025,3,2025-03-10,"Cloud database services, which were up 28%, now have annualized revenue of $2.3 billion, Autonomous Database consumption revenue was up 42% on top of the 32% growth reported last year.",candidate
+ORCL,2025,3,2025-03-10,Our strategic back-office SaaS applications now have annualized revenue of $8.6 billion and were up 8%.,candidate
+ORCL,2025,3,2025-03-10,"The short-term deferred revenue balance was $9 billion, up 3% and operating cash flow for Q3 was $5.9 billion, slightly more than our $5.9 billion in CapEx, as we front-loaded some purchases into the quarter, given the demand that you see in our RPO growth and the additional demand we see in our pipeline.",candidate
+ORCL,2025,3,2025-03-10,"As I mentioned, remaining performance obligations or RPO is now $130 billion, up 63% in constant currency, and it reflects the growing trend of customers wanting larger and longer contracts, as they see firsthand how Oracle Cloud services are benefiting their businesses.",candidate
+ORCL,2025,3,2025-03-10,We got to over $130 billion in RPO without any transactions from Stargate.,candidate
+ORCL,2025,4,2025-06-11,"Our remaining performance obligations now stand at $138 billion, up $8 billion from last quarter and up 41% from last year.",candidate
+ORCL,2025,4,2025-06-11,Our infrastructure cloud services now have an annualized revenue of nearly $12 billion.,candidate
+ORCL,2025,4,2025-06-11,Cloud database services which were up 31% now have annualized revenue of $2.6 billion.,candidate
+ORCL,2025,4,2025-06-11,Our strategic back office SaaS applications now have annualized revenues of $9.3 billion and they were up 20%.,candidate
+ORCL,2025,4,2025-06-11,"As mentioned, remaining performance obligation at the end of Q4 is now $138 billion, up 41% in USD.",candidate
+ORCL,2025,4,2025-06-11,I expect that FY 2026 CapEx will be higher at over $25 billion as we work to meet demand from our backlog.,candidate
+ORCL,2025,4,2025-06-11,Between our $138 billion RPO and even larger pipeline we have a clear line of sight to future revenue growth.,candidate
+ORCL,2026,1,2025-09-09,"At the end of Q1, remaining performance obligations or RPO now top $455 billion.",candidate
+ORCL,2026,1,2025-09-09,"Cloud database services, which were up 32%, now have annualized revenues of nearly $2.8 billion.",candidate
+ORCL,2026,1,2025-09-09,"Given our RPO growth, I now expect fiscal year 2026 CapEx will be around $35 billion.",candidate
+ORCL,2026,1,2025-09-09,Much of this revenue is already booked in our $455 billion RPO number and we are off to a fantastic start this year.,candidate
+ORCL,2026,1,2025-09-09,"Safra, the fact that you delivered over $300 billion of new RPO in Q1, just really amazing to see it's going to require a lot of infrastructure build-out.",candidate
+ORCL,2026,2,2025-12-10,"Remaining Performance Obligations, or RPO, ended the quarter at $523.3 billion, up 433% from last year and up $68 billion since August.",candidate
+ORCL,2026,2,2025-12-10,"However, given the added RPO this quarter, can be monetized quickly starting next year, we now expect fiscal 2026 CapEx will be about $15 billion higher than we forecasted after Q1.",candidate
+ORCL,2026,2,2025-12-10,"As Doug said, this quarter, we contracted for an additional $68 billion of RPO.",candidate
+ORCL,2026,2,2025-12-10,"Cloud applications revenue was up 11%, and that brings us to about a $6 billion annualized run rate.",candidate
+ORCL,2026,3,2026-03-10,"In constant currency, cloud applications revenue was up 11% in the quarter, reaching an annualized run rate of $16.1 billion.",candidate
+ORCL,2026,3,2026-03-10,This is directly visible in our $553 billion RPO.,candidate
+ORCL,2026,4,2026-06-10,"And our remaining performance obligations, or RPO, finished at $638 billion, up 363%.",candidate
+ORCL,2026,4,2026-06-10,"So on the on the applications business, we think double digit growth on a on an in-quarter-- you know, in quarter run rate of $4.1 billion is pretty good.",candidate
+NVDA,2024,3,2023-11-21,Networking now exceeds a $10 billion annualized revenue run rate.,candidate
+NVDA,2024,3,2023-11-21,"We are on track to exit the year at an annualized revenue run rate of $1 billion for our recurring software, support and services offerings.",candidate
+NVDA,2024,3,2023-11-21,Our networking business is already on a $10 billion plus run rate and it's going to get much larger.,candidate
+NVDA,2024,3,2023-11-21,NVIDIA networking now exceeds $10 billion annualized revenue run rate.,candidate
+NVDA,2024,3,2023-11-21,NVIDIA software and services is on track to exit the year at an annualized run rate of $1 billion.,candidate
+NVDA,2024,4,2024-02-21,Networking exceeded a $13 billion annualized revenue run rate.,candidate
+NVDA,2024,4,2024-02-21,"We also made great progress with our software and services offerings, which reached an annualized revenue run rate of $1 billion in Q4.",candidate
+NVDA,2024,4,2024-02-21,And Colette mentioned that it's already at $1 billion run rate and we're really just getting started.,candidate
+NVDA,2025,2,2024-08-28,"We expect our software, SaaS and support revenue to approach a $2 billion annual run rate exiting this year, with NVIDIA AI Enterprise notably contributing to growth.",candidate
+NVDA,2025,2,2024-08-28,"And as Colette mentioned, NVIDIA software will exit the year at a $2 billion run rate.",candidate
+NVDA,2026,2,2025-08-27,"We are on track to achieve over $20 billion in Sovereign AI revenue this year, more than double that of last year.",candidate
+NVDA,2026,2,2025-08-27,Spectrum X Ethernet delivered double-digit sequential and year-over-year growth with annualized revenue exceeding $10 billion.,candidate
+NVDA,2026,2,2025-08-27,"I want to go back to the Spectrum XGS announcement this week and, you know, thinking about the Ethernet product now pushing over $10 billion of annualized revenue.",candidate
+NVDA,2026,3,2025-11-19,"Well, Anthropic recently reported that its annualized run rate revenue has reached $7 billion as of last month, up from $1 billion at the start of the year.",candidate
+NVDA,2026,4,2026-02-25,"In fiscal year 2026, our sovereign AI business more than tripled year-over-year and over $30 billion, driven primarily by customers based in Canada, France, the Netherlands, Singapore and the U.K.",candidate
+NVDA,2026,4,2026-02-25,"Obviously, on the strength of your scale-up and scale-out networking product portfolio, I would seem to remember that first half of last year, your annualized run rate on your Spectrum-X Ethernet switching platform was around $10 billion annualized.",candidate
+NVDA,2027,1,2026-05-20,ACIE revenue was $37 billion and grew 31% quarter over quarter including AI cloud revenue that more than tripled year over year.,candidate
+AMD,2023,4,2024-01-30,"Jean, do you think is it possible for MI300 to finish the year at a run-rate of about $1.5 billion?",candidate
+AMD,2024,2,2024-07-30,"Turning to our data center AI business, we delivered our third straight quarter of record data center GPU revenue with MI300 quarterly revenue exceeding $1 billion for the first time.",candidate
+AMD,2024,3,2024-10-29,"Joe Moore: I wonder if you could talk about the $5 billion of AI revenue, how that breaks down between training and inference, if you're able to assess that and just I know you sort of started off with most of the traction in inference, but you've seen some traction on the training side.",candidate
+AMD,2024,4,2025-02-04,"2024 was an outstanding year, as we accelerated our AI hardware road map to deliver an annual cadence of new Instinct accelerators, expanded our ROCm software suite with significant uplifts in inferencing and training performance, built strong customer relationships with key industry leaders and delivered greater than $5 billion of data center AI revenue for the year.",candidate
+AMD,2025,2,2025-08-05,"And that's with nothing in China, and if the answer to the prior question that GPUs are over $1 billion, that kind of puts you at a $2 billion run rate.",candidate
+AMD,2025,2,2025-08-05,"And then if indeed that gets you pretty close to a couple billion dollars, if the MI300 comes in, do you see it at the same run rate that you exited and then you have the ability to get at the $800 million run rate right away?",candidate
+AMD,2025,3,2025-11-04,We expect this partnership will significantly accelerate our data center AI business with the potential to generate well over $100 billion in revenue over the next few years.,candidate
+AMD,2025,4,2026-02-03,"Lisa, at your Analyst Day back in November, you seem to kind of endorse the high $20 billion AI revenue expectation that was out there on the street for 2027.",candidate
+CRWV,2025,1,2025-05-14,"Our revenue backlog, which includes remaining performance obligation, RPO, plus other amounts we estimate will be recognized as revenue in future periods under committed customer contracts was $259 billion up 63% year-over-year.",candidate
+CRWV,2025,1,2025-05-14,This $4 billion expansion was signed in Q2 and will be reflected in our revenue backlog numbers beginning in Q2.,candidate
+CRWV,2025,1,2025-05-14,"To be clear, this is additive to the Q1 ending revenue backlog of $25.9 billion.",candidate
+CRWV,2025,1,2025-05-14,"Our revenue backlog, which includes remaining performance obligation plus other amounts we will estimate will be recognized as revenue in future periods under our committed customer contracts was $25.9 billion for the quarter, up 63% year-over-year.",candidate
+CRWV,2025,1,2025-05-14,"Because, again, I know we're looking at this RPO figure down 3% sequentially and the $4 billion that'll hit in Q2.",candidate
+CRWV,2025,1,2025-05-14,"When you take the RPO and you add it to the OpenAI contract, you go from $15-ish billion building up to $25 billion last quarter.",candidate
+CRWV,2025,1,2025-05-14,"In addition to that there's another $4 billion that will be entered into the backlog, which includes both RPO and the OpenAI contract that will all cumulatively lead to $29 billion worth of revenue obligations to the company.",candidate
+CRWV,2025,1,2025-05-14,And we just closed another $4 billion contract that is additive to our revenue backlog.,candidate
+CRWV,2025,2,2025-08-12,"We ended the second quarter with $30.1 billion in contracted backlog, up $4 billion from Q1 and doubling year to date.",candidate
+CRWV,2025,2,2025-08-12,"As a result, we anticipate $500 million in fully ramped annual run rate cost savings by 2027 benefiting both the Core Scientific and CoreWeave, Inc.",candidate
+CRWV,2025,2,2025-08-12,Revenue backlog was $30.1 billion up 86% year over year and doubled year to date.,candidate
+CRWV,2025,2,2025-08-12,"Since the beginning of 2024, we have secured over $25 billion of debt and equity to fund the build-out and scale the leading AI cloud platform.",candidate
+CRWV,2025,3,2025-11-10,"We added over $25 billion in revenue backlog in the third quarter alone, bringing us to over $55 billion in revenue backlog to end Q3, almost double Q2 and approaching 4x year to date.",candidate
+CRWV,2025,3,2025-11-10,"Class A Common Stock has reached $50 billion in RPO, faster than any cloud in history.",candidate
+CRWV,2025,3,2025-11-10,"Across our entire storage platform, we have seen rapid customer adoption, eclipsing $100 million in ARR in Q3.",candidate
+CRWV,2025,3,2025-11-10,"Revenue backlog for the quarter ended at $55.6 billion, almost doubling in the third quarter alone.",candidate
+CRWV,2025,3,2025-11-10,Class A Common Stock has successfully secured $14 billion in debt and equity transactions to support our execution on our rapidly growing backlog and efficient scaling for long-term growth.,candidate
+CRWV,2025,3,2025-11-10,"Over the course of this year, we've made tremendous progress, accelerating our revenue backlog growth that now exceeds $55 billion while diversifying our customer base, executing strategic partnerships and acquisitions to strengthen and broaden our platform, accessing new capital pools that meaningfully reduce our cost of capital, and scaling both our capacity and organization at an unprecedented pace.",candidate
+CRWV,2025,4,2026-02-26,"We generated more than $5.1 billion of revenue, up 168% year-over-year, grew our contracted revenue backlog to $66.8 billion, an increase of $11.2 billion sequentially and more than $50 billion year-over-year.",candidate
+CRWV,2025,4,2026-02-26,"And four, a disciplined financial model deliberately designed to invest ahead of revenue to fulfill contracted demand backed by $66.8 billion in revenue backlog and providing strong visibility into durable cash flows, attractive returns, and the ability to drive down our cost of capital.",candidate
+CRWV,2025,4,2026-02-26,"Our revenue backlog has grown to $66.8 billion, and the vast majority of our intended capital deployment is to directly support this long-dated contracted demand, where we have direct visibility into our long-term margins, underpinned by durable cash flow.",candidate
+CRWV,2025,4,2026-02-26,We have $66.8 billion of contracted revenue backlog with every contract for new capacity expected to begin generating revenue by year-end 2026.,candidate
+CRWV,2025,4,2026-02-26,"Demand for CoreWeave Cloud continues to intensify with revenue backlog for the quarter ended at $66.8 billion, up more than 4x this year alone.",candidate
+CRWV,2025,4,2026-02-26,We have $66.8 billion of revenue backlog with every contract for our new capacity expected to begin generating revenue by year-end.,candidate
+CRWV,2025,4,2026-02-26,"To put that in perspective, the 300-basis points improvement represents nearly $700 million in annualized interest savings based on our Q4 debt balance.",candidate
+CRWV,2025,4,2026-02-26,"As we continue on our hyper-growth trajectory, we expect to exit 2026 with annualized run rate revenue of $17 billion to $19 billion, which we expect to grow to more than $30 billion of annualized run rate revenue as we exit 2027.",candidate
+CRWV,2025,4,2026-02-26,"We grew our contracted revenue backlog to $66.8 billion while meaningfully diversifying our customer base, secured more than $18 billion in debt and equity capital at progressively lower costs, and strengthened our platform through new products, services, and strategic acquisitions.",candidate
+CRWV,2025,4,2026-02-26,"We talk about the CapEx numbers that is fundamentally in service of our contracted customer backlog, which we disclosed this quarter to be at $66.8 billion.",candidate
+CRWV,2025,4,2026-02-26,"For instance, we had announced in Q3 that our storage revenue on our platform eclipsed $100 million in ARR.",candidate
+CRWV,2025,4,2026-02-26,Can you just speak to what gives you confidence in the $30 billion run rate by 2027?,candidate
+CRWV,2025,4,2026-02-26,"Moving on to your question around the $30 billion run rate, like what we are doing is we are taking the contracted power that we have, and we are projecting out when the existing contracts that have already been sold, and like I said, we are virtually sold out in 2026 of all of our capacity and then continuing to add contracts that will be allocated once they come online in 2027.",candidate
+CRWV,2026,1,2026-05-07,"We delivered our strongest quarter for customer bookings, signing more than $40 billion of new commitments and growing contracted revenue backlog to nearly $100 billion.",candidate
+CRWV,2026,1,2026-05-07,"This vertical is already approaching $10 billion in our revenue backlog, driven by expanded commitments from existing partners like Jane Street, who added $6 billion of capacity in Q1 and new customers like Hudson River Trading.",candidate
+CRWV,2026,1,2026-05-07,Physical AI and spatial computing has also surpassed $1 billion in revenue backlog contributions.,candidate
+CRWV,2026,1,2026-05-07,"We are also seeing similar trajectories in our software, CPU and networking businesses, each of which we expect to exceed $100 million of ARR by the end of the year.",candidate
+CRWV,2026,1,2026-05-07,"Our backlog is now approaching $100 billion, all tied to contracts that are either online today or expected to begin to come online through 2026 and 2027.",candidate
+CRWV,2026,1,2026-05-07,"Record customer commitments, bringing backlog to nearly $100 billion, more than $2 billion of quarterly revenue and more than 1 gigawatt of active power while unlocking deeper, more efficient sources of financing.",candidate
+CRWV,2026,1,2026-05-07,"Revenue backlog for the quarter ended at $99.4 billion, up nearly 50% sequentially and close to 4x year-over-year.",candidate
+CRWV,2026,1,2026-05-07,We expect CapEx to be $7 billion to $9 billion as we continue to bring significant capacity online in service of our contracted revenue backlog.,candidate
+CRWV,2026,1,2026-05-07,"We now expect to end 2026 with $18 billion to $19 billion of annualized run rate revenue, increasing the low end of our expectations by $1 billion.",candidate
+CRWV,2026,1,2026-05-07,"We continue to expect to grow annualized run rate revenue to more than $30 billion as we exit 2027 more than 75% of which is already contracted, excluding any benefit from not-yet-exercised customer renewals.",candidate
+CRWV,2026,1,2026-05-07,"The second question is that with about $100 billion of revenue backlog, I would say that should translate to about 2 gigawatts that you've now contracted out.",candidate
+NBIS,2024,4,2025-02-20,"Based on the contracts already in place, March analyzed run rate revenue will be at least $220 million, and we have more potential contracts in the pipeline.",candidate
+NBIS,2024,4,2025-02-20,"Given this momentum, as well as the anticipated impact of additional data center capacity that we're building as well as next-generation Blackwell's GPU coming online later this year, our projected December, 2025 analyzed run rate revenue of $750 million to $1 billion is well within reach.",candidate
+NBIS,2024,4,2025-02-20,"As I said earlier, even with existing capacity and based on contracts already in place, our March ARR will be at least $220 million and we have more potential deals to come soon.",candidate
+NBIS,2024,4,2025-02-20,"As I reiterated in the press release today and as Arkady mentioned, we're targeting to exit the year with an ARR of $750 million to $1 billion.",candidate
+NBIS,2024,4,2025-02-20,"So, as you read in our press release and heard from Arkady's prepared remarks, we did reiterate our annualized run rate revenue guidance for exiting 2025 at $750 million to $1 billion.",candidate
+NBIS,2025,1,2025-05-20,"April's annualized run rate revenue was $310 million, and we are continuing to experience strong demand into May.",candidate
+NBIS,2025,1,2025-05-20,"So we feel very confident in our ability to achieve the ARR guidance for the whole year that we gave, which was $750 million to $1 billion.",candidate
+NBIS,2025,1,2025-05-20,"April annualized run rate revenue of $310 million confirms that, and we are seeing the strong momentum continued to May.",candidate
+NBIS,2025,1,2025-05-20,"And in the second half of the year, we expect to bring Blackwells for customers which should provide further support to our revenue profile and gives us confidence that we can deliver on our guidance of $750 million to $1 billion annualized revenue by the end of Q4 2025.",candidate
+NBIS,2025,2,2025-08-07,"That's why we expect to significantly increase our sales in the -- by the end of this year, and that's why we are increasing our ARR guidance for the year-end from the previous $700 million to $1 billion to a new guidance, which is now $900 million to $1.1 billion.",candidate
+NBIS,2025,2,2025-08-07,"For annualized run rate revenue, as Arkady already mentioned, we are raising guidance from $750 million to $1 billion to $900 million to $1.1 billion.",candidate
+NBIS,2025,2,2025-08-07,Reality is that we show strong momentum in Q2 with annualized run rate revenue growing from $249 million in March to $430 million in June.,candidate
+NBIS,2025,2,2025-08-07,It looks like our prior guidance for ARR was $750 million to $1 billion and $400 million to $600 million of core business revenue.,candidate
+NBIS,2025,2,2025-08-07,"We're now increasing the ARR to $900 million to $1.1 billion, but there's no change to the revenue guidance.",candidate
+NBIS,2025,3,2025-11-11,"Based on the strength of demand that we see and our accelerated capacity growth plan, we believe we can achieve annualized run rate revenue (ARR) of $7 to $9 billion by the end of 2026.",candidate
+NBIS,2025,3,2025-11-11,Annualized run rate revenue for the core business at the end of September was $551 million.,candidate
+NBIS,2025,3,2025-11-11,"As such, we remain well on track to hit our ARR guidance of $900 million to $1.1 billion by the end of 2025 while also paving the way for substantial annualized run rate revenue growth in 2026 and beyond.",candidate
+NBIS,2025,3,2025-11-11,So we provided the updated 2026 ARR outlook of $7 to $9 billion.,candidate
+NBIS,2025,3,2025-11-11,What exactly is in the $7 to $9 billion ARR target?,candidate
+NBIS,2025,3,2025-11-11,Let me walk you through the building blocks of how we get to this $7 to $9 billion in ARR.,candidate
+NBIS,2025,3,2025-11-11,"Thirdly, this new capacity that we are putting in place together with our current capacity that has already been sold, and the long-term contracts that we signed with Microsoft and Meta give us the confidence that we can achieve the $7 to $9 billion of ARR, of which more than half is already booked.",candidate
+NBIS,2025,3,2025-11-11,"Incremental ARR in September was around $12 million, down from $180 million the prior quarter and $159 million in March.",candidate
+NBIS,2025,3,2025-11-11,"As such, we remain well on track to hit our ARR guidance range of $900 million to $1.1 billion by the end of 2025 while also paving the way for substantial revenue growth in 2026 and beyond.",candidate
+NBIS,2025,4,2026-02-12,"Based on the strength in demand, we are reiterating our strong execution; we remain confident in our plans for the year ahead: our annualized run-rate revenue of $7 to $9 billion by 2026.",candidate
+NBIS,2026,1,2026-05-13,"Annualized run rate revenue for our Nebius AI business reached $1.9 billion at the end of March, up over 50% from $1.25 billion in the previous quarter.",candidate
+NBIS,2026,1,2026-05-13,"As such, we are reiterating our full year 2026 guidance for annualized run rate revenue of $7 billion to $9 billion, group revenue of between $3 billion and $3.4 billion and group adjusted EBITDA margin of around 40%.",candidate
+NBIS,2026,1,2026-05-13,"And then second, as you pointed out, there's another $15 billion of additional capacity that we, at our discretion, can either allocate to Meta or sell to our AI cloud customers as it comes online for the duration of the 5-year contract.",candidate
+IREN,2026,3,2026-05-07,"We increased ARR under contract to $3.1 billion, remain on track to hit $3.7 billion exiting calendar 2026.",candidate
+IREN,2026,3,2026-05-07,"And this week, signed a $3.4 billion 5-year AI cloud contract with NVIDIA.",candidate
+IREN,2026,3,2026-05-07,"The $3.4 billion AI cloud contract announced today, supporting NVIDIA's own internal workloads is the first step in that partnership.",candidate
+IREN,2026,3,2026-05-07,"In 2026, we are targeting 480 megawatts of AI cloud capacity, 150,000 GPUs and $3.7 billion of ARR by year-end.",candidate
+IREN,2026,3,2026-05-07,"We now have $3.1 billion of ARR under contract, including approximately $700 million of ARR associated with a $3.4 billion 5-year contract for Blackwell GPUs to be deployed across 60 megawatts of air cooled capacity at Childress for NVIDIA.",candidate
+IREN,2026,3,2026-05-07,"Against the full 2026 expansion, we are targeting $3.7 billion of ARR by year-end across 150,000 GPUs.",candidate
+IREN,2026,3,2026-05-07,"This was partially offset by continued growth in AI cloud services revenue, which increased to $33.6 million, compared to $17.3 million in the prior quarter.",candidate
+IREN,2026,3,2026-05-07,"As Dan noted earlier, we continue to target $3.7 billion in ARR by the end of calendar 2026.",candidate
+IREN,2026,3,2026-05-07,I know you threw out a $3.1 billion contracted going to $3.7 billion contracted in ARR here exiting the year.,candidate
+IREN,2026,3,2026-05-07,"Your confidence in that uncontracted capacity and signing contracts, how is the demand out there for that, say, extra $0.5 billion of ARR?",candidate
+APLD,2023,1,2022-10-11,"While this capacity is already contracted out on multi-year agreements and once fully online, we expect to be at a run rate annualized adjusted EBITDA of about $100 million, which we think is quite compelling in the context of our current enterprise value.",candidate
+APLD,2023,1,2022-10-11,"Once operational, this capacity should put us at about $100 million annualized EBITDA run rate.",candidate
+APLD,2023,2,2023-01-09,"We continue to expect that once online, this hosting capacity should put us at an annualized adjusted EBITDA run rate of close to $100 million.",candidate
+APLD,2023,3,2023-04-06,"Once those facilities are online, we will have nearly 500 megawatts of hosting capacity that we expect to put us in an annualized adjusted EBITDA run rate of approximately $100 million.",candidate
+APLD,2023,3,2023-04-06,"From a cash flow perspective, you should, think about as we're building a $100 million run rate for the first year of that run rate, the cash conversion from EBITDA to cash flow is going to be lower.",candidate
+APLD,2023,4,2023-07-24,We expect these facilities to generate approximately $300 million in revenue and $100 million of EBITDA on an annualized basis.,candidate
+APLD,2023,4,2023-07-24,"We also secured our second AI cloud agreement in June, which is worth up to $460 million over 36 months.",candidate
+APLD,2023,4,2023-07-24,So [technical difficulty] annualized when they're fully operational at $300 million.,candidate
+APLD,2023,4,2023-07-24,"And so if you think of a few million in the first quarter and then you think about the datacenter portion being that $300 million a year $75 million a quarter is, it gives you a pretty good idea if you're exiting at 150 kind of where that - where the AI cloud portion would be.",candidate
+APLD,2024,1,2023-10-09,We expect our three sites to produce around $300 million in revenue and $100 million in EBITDA on an annualized basis.,candidate
+APLD,2024,1,2023-10-09,This brings our total annual contract value of AI cloud services contracts at full capacity to approximately $378 million.,candidate
+APLD,2024,2,2024-01-16,We expect our three sites to deliver up to $300 million in revenue and $100 million of adjusted EBITDA on an annualized basis.,candidate
+APLD,2024,2,2024-01-16,The fully commissioned clusters are expected to generate over $200 million of annualized revenue.,candidate
+APLD,2024,2,2024-01-16,We now expect to exit the fiscal year 2024 at an annual revenue run rate of approximately $500 million and an annualized adjusted EBITDA run rate of $250 million.,candidate
+APLD,2024,2,2024-01-16,"And so that 10 clusters plus our blockchain hosting solutions, that gets us to that $500 million run rate.",candidate
+APLD,2024,2,2024-01-16,"I think, Wes, maybe [say] (ph) on an annualized basis with the 10,000, you'd be over $200 million.",candidate
+APLD,2024,2,2024-01-16,"I think at the Analyst Day, which is not too long ago, you talked about the $1.5 million monthly run rate.",candidate
+APLD,2024,4,2024-08-28,"So with the 6 clusters up, that business is roughly $110 million revenue run rate on an annual basis.",candidate
+APLD,2024,4,2024-08-28,"Mike Grondahl: Wes, could you repeat what you said, the 6 clusters are driving an annualized run rate of how much revenue, I heard $100 million, but it kind of came through a little garbled.",candidate
+APLD,2026,1,2025-10-09,"With the CoreWeave lease supporting roughly half a billion in annual net operating income and Polaris Forge Two poised to significantly increase that figure, we are laying the foundation to reach our stated goal of $1 billion of NOI run rate within five years.",candidate
+IREN,2023,2,2023-02-15,"And just to illustrate, at a $25,000 Bitcoin price, this represents an almost three times increase in mining profits with annualized mining profits stepping up from $33 million to $94 million and we expect this to really support some strong operating cash flow going forward.",candidate
+IREN,2023,2,2023-02-15,"So as we can see from the economics and the sort of the boxes shaded green, 5.5 exahash of self-mining delivers a far superior mining profit versus a blended self-mining and hosting model And again, just to illustrate a $25,000 Bitcoin price, self-mining the full 5.5 exahash without any additional cash outlay is expected to generate more than $40 million of additional mining profit on an annualized basis.",candidate
+IREN,2024,2,2024-02-15,"As you can see, with the current Bitcoin price around $50,000 and I believe it's just under $52,000 as of today and using the current global hashrate, the annualized hardware profit is very healthy at both the 10 exahash and as we grow to 20 exahash, looking at around just under $200 million of annualized hardware profit.",candidate
+IREN,2024,2,2024-02-15,"So, based on that cluster, we have used observed pricing from $2 per GPU hour to $3 per GPU hour, delivering a range of annualized hardware profit between $14 million and $21 million.",candidate
+IREN,2024,2,2024-02-15,"So, taking a mid-range, that's between $17 million and $18 million of annualized hardware profit for the AI Cloud Services business.",candidate
+IREN,2024,3,2024-05-15,"So we could go and spend $1 billion on GPUs tomorrow, run rate earnings from that would be somewhere in the order of $400 million plus based on market data and it would use around 10% of our data center capacity.",candidate
+IREN,2024,3,2024-05-15,"We've calculated illustrative electricity cost per Bitcoin of $17,000 and annualized hardware profit of $408 million driving sub two-year paybacks.",candidate
+IREN,2024,4,2024-08-28,"During the financial year, as Dan mentioned, we commenced our AI Cloud Services business and we recorded revenue in relation to that business of $3.1 million.",candidate
+IREN,2024,4,2024-08-28,"We've grown an AI Cloud Service business that was zero six months ago that's now doing annualized revenue of $15 million, servicing half a dozen customers, and the ability to continue investing in people systems processes.",candidate
+IREN,2025,1,2024-11-27,Our current fleet of NVIDIA H100 and H200 GPU supports approximately $32 million of potential annualized hardware profits using less than 2.5 megawatts of data center capacity.,candidate
+IREN,2025,1,2024-11-27,"During the quarter, we achieved an adjusted EBITDA of $2.6 million with Bitcoin mining revenue of $54.3 million and AI Cloud services revenue of $3.2 million.",candidate
+IREN,2025,1,2024-11-27,Closing cash at Bank at 30 September is reported as $98.6 million with strong receipts from Bitcoin mining activities of $49.6 million and AI Cloud services of $3.7 million.,candidate
+IREN,2025,2,2025-02-12,Closing cash at bank at 31st of December 2024 was $427.3 million with receipts from Bitcoin mining activities of $113.6 million and AI cloud services of $3.5 million.,candidate
+IREN,2025,3,2025-05-14,Revenue then hit a record $148 million for the quarter driven by growth in both our Bitcoin mining and our AI Cloud segments.,candidate
+IREN,2025,3,2025-05-14,"After subtracting power, OpEx, REX and layering in our AI cloud contribution of $28 million, we arrive at a $616 million adjusted EBITDA figure.",candidate
+IREN,2025,3,2025-05-14,The closing cash at bank at 31st of March 2025 was $184.3 million with receipts from Bitcoin mining activities of $141.2 million and AI cloud services of $3.8 million.,candidate
+IREN,2025,4,2025-08-28,"In parallel, while we have paused meaningful mining expansion, our 50 exahash platform continues to generate meaningful cash flow, over $1 billion a year in annualized revenue at the current economics, supporting our continued growth in AI.",candidate
+IREN,2025,4,2025-08-28,"Together, these operations are approaching annualized revenue of $1.25 billion.",candidate
+IREN,2025,4,2025-08-28,"During the quarter, we also delivered AI cloud revenue of $7 million.",candidate
+IREN,2025,4,2025-08-28,"In terms of revenue, these GPUs will be delivered and progressively commissioned over the coming months, targeting $200 million to $250 million of annualized revenue by December this year.",candidate
+IREN,2025,4,2025-08-28,There is then a further $200 million to $250 million of annualized revenue on top of this expected to come from the AI cloud business expansion with an increasing contribution from that business over time.,candidate
+IREN,2026,1,2025-11-07,"So earlier this week, we announced a $9.7 billion AI cloud contract with Microsoft, which was a defining milestone for our business that underscores the strength and scalability of our vertically integrated AI cloud platform.",candidate
+IREN,2026,1,2025-11-07,"When fully deployed, this expansion is expected to support in the order of $3.4 billion in annualized run rate revenue.",candidate
+IREN,2026,1,2025-11-07,"This next phase includes the deployment of an additional 40,000 GPUs across our Mackenzie and Canal Flats campuses, which are expected to generate in the order of $1 billion in additional ARR.",candidate
+IREN,2026,1,2025-11-07,"When combined with the $1.9 billion expected from the Microsoft contract and $500 million from our existing 23,000 GPU deployment, this expansion provides a clear pathway to approximately $3.4 billion in total annualized run rate revenue once fully ramped.",candidate
+IREN,2026,1,2025-11-07,"And we also secured an additional $200 million in GPU financing to support our AI cloud expansion in Prince George, bringing total GPU-related financings to $400 million to date at attractive rates.",candidate
+IREN,2026,1,2025-11-07,So we're really pleased to lead us towards that $3.4 billion in ARR by the end of 2026 on returns that are pretty attractive.,candidate
+IREN,2026,2,2026-02-05,"Operationally, execution is tracking well across the portfolio, and we expect to deliver 140,000 GPUs by the end of 2026 positioning us to deliver $3.4 billion in annualized run rate revenue.",candidate
+IREN,2026,2,2026-02-05,"And in British Columbia, we continue to expand our AI cloud footprint with just under $0.5 billion of ARR now under contract for Prince George.",candidate
+IREN,2026,2,2026-02-05,"Today, we have approximately $2.3 billion of annualized revenue run rate under contract, including around $0.4 billion at Prince George which we expect to increase over the coming weeks as we finalize negotiations for the remaining capacity there.",candidate
+IREN,2026,2,2026-02-05,"Based on capacity already contracted and the strong customer engagement for new deployments in Mackenzie and Canal Flats, we're on track to reach our targeted $3.4 billion ARR by the end of 2026.",candidate
+IREN,2026,2,2026-02-05,Our $3.4 billion ARR target for the end of calendar 2026 reflects utilization of only around 10% of our 4.5 gigawatts of secured grid-connected power capacity.,candidate
+IREN,2026,2,2026-02-05,"In addition, we recorded $31.8 million of mining hardware impairment associated with the transition to AI cloud versus $16 million in the prior period.",candidate
+IREN,2026,2,2026-02-05,"With more than 4.5 gigawatts of power and only 10% required to support the $3.4 billion in ARR, we have a clear pathway for continued growth.",candidate
+IREN,2026,2,2026-02-05,"And I wanted to ask about the $2.3 billion of ARR, which I guess, the Microsoft contract plus the $400 million at British Columbia.",candidate
+IREN,2026,2,2026-02-05,"So as I mentioned earlier, Prince George, we already have a lot of operating capacity there and expect over the upcoming weeks to continue to install equipment, allowing us to get to the $0.5 billion annualized revenue run rate at that side.",candidate
+IREN,2026,2,2026-02-05,"In terms of the additional 40,000 GPUs, which equates to around $1 billion of annualized revenue run rate.",candidate
+IREN,2026,2,2026-02-05,When we think about the CapEx required for the rest of the ARR growth target to the $3.4 million.,candidate

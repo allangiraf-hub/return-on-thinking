@@ -17,6 +17,9 @@ jobs:
       - run: pip install -e .
       - name: Run collectors and build ticker
         id: run
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
         continue-on-error: true   # commit what succeeded even if a source died
         run: python -m rot.cli weekly
       - name: Commit refreshed data
