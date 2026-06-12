@@ -2,7 +2,7 @@
 # Every contestable number lives here. Bumping `version` REQUIRES restating the
 # full back-series (CI will enforce from P2). Review notes for Allan inline.
 version: 1
-status: draft   # becomes 'active' when Allan approves the PR
+status: active   # approved by Allan via PR #2, 2026-06-12
 
 r:  # required return construction
   risk_free_series: treasury_10y          # primary; fred_dgs10 as cross-check
