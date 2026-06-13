@@ -1,23 +1,23 @@
 soc,group,employment_m,mean_wage_usd,ai_usage,source_note
-11,Management,10.5,135000,0.70,BLS OEWS May-2024 major group (approx); AI-usage from AEI augmentation pattern
-13,Business & Financial,9.5,90000,0.60,BLS OEWS / AEI
-15,Computer & Mathematical,5.2,110000,0.90,BLS OEWS / AEI - highest AI usage
-17,Architecture & Engineering,2.6,95000,0.55,BLS OEWS / AEI
-19,Life Physical & Social Science,1.4,88000,0.50,BLS OEWS / AEI
-21,Community & Social Service,2.4,55000,0.30,BLS OEWS / AEI
-23,Legal,1.3,115000,0.70,BLS OEWS / AEI
-25,Educational Instruction & Library,9.0,65000,0.40,BLS OEWS / AEI
-27,Arts Design Entertainment & Media,2.0,70000,0.60,BLS OEWS / AEI
-29,Healthcare Practitioners & Technical,9.3,95000,0.40,BLS OEWS / AEI
-31,Healthcare Support,7.0,38000,0.20,BLS OEWS / AEI
-33,Protective Service,3.6,55000,0.15,BLS OEWS / AEI
-35,Food Preparation & Serving,13.5,33000,0.10,BLS OEWS / AEI - low AI usage
-37,Building & Grounds Cleaning,4.5,37000,0.10,BLS OEWS / AEI
-39,Personal Care & Service,6.5,35000,0.15,BLS OEWS / AEI
-41,Sales & Related,13.5,48000,0.40,BLS OEWS / AEI
-43,Office & Administrative Support,18.5,46000,0.60,BLS OEWS / AEI - large high-usage group
-45,Farming Fishing & Forestry,0.5,38000,0.10,BLS OEWS / AEI
-47,Construction & Extraction,7.5,58000,0.15,BLS OEWS / AEI
-49,Installation Maintenance & Repair,6.0,58000,0.20,BLS OEWS / AEI
-51,Production,8.5,45000,0.20,BLS OEWS / AEI
-53,Transportation & Material Moving,14.0,42000,0.20,BLS OEWS / AEI
+11,Management,10.496,135000,0.7,"BLS May-2023 employment (AEI release_2025_02_10, exact); AI-usage from AEI augmentation pattern"
+13,Business & Financial,10.088,90000,0.6,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+15,Computer & Mathematical,5.177,110000,0.9,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI - highest AI usage
+17,Architecture & Engineering,2.54,95000,0.55,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+19,Life Physical & Social Science,1.389,88000,0.5,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+21,Community & Social Service,2.418,55000,0.3,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+23,Legal,1.241,115000,0.7,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+25,Educational Instruction & Library,8.745,65000,0.4,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+27,Arts Design Entertainment & Media,2.106,70000,0.6,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+29,Healthcare Practitioners & Technical,9.284,95000,0.4,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+31,Healthcare Support,7.064,38000,0.2,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+33,Protective Service,3.504,55000,0.15,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+35,Food Preparation & Serving,13.248,33000,0.1,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI - low AI usage
+37,Building & Grounds Cleaning,4.429,37000,0.1,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+39,Personal Care & Service,3.041,35000,0.15,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+41,Sales & Related,13.381,48000,0.4,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+43,Office & Administrative Support,18.533,46000,0.6,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI - large high-usage group
+45,Farming Fishing & Forestry,0.432,38000,0.1,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+47,Construction & Extraction,6.226,58000,0.15,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+49,Installation Maintenance & Repair,5.989,58000,0.2,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+51,Production,8.77,45000,0.2,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI
+53,Transportation & Material Moving,13.753,42000,0.2,employment: BLS May-2023 (AEI release_2025_02_10); BLS OEWS / AEI

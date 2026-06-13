@@ -73,22 +73,22 @@
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.17886262255429938,
-    "h30": 0.1788626225542995,
-    "annual_flow_usd": 29106168750.0
+    "h10": 0.17828983616294114,
+    "h30": 0.17828983616294122,
+    "annual_flow_usd": 29012959687.5
    },
    "mid": {
-    "h10": 1.2152190854674219,
-    "h30": 2.0193563262834875,
-    "annual_flow_usd": 97796727000.0
+    "h10": 1.211327490092523,
+    "h30": 2.0128895765149757,
+    "annual_flow_usd": 97483544550.0
    },
    "high": {
-    "h10": 8.645052587517858,
-    "h30": 28.40994433535653,
-    "annual_flow_usd": 310465800000.0
+    "h10": 8.617367829215697,
+    "h30": 28.318964849189168,
+    "annual_flow_usd": 309471570000.0
    }
   },
-  "exposed_wage_bill_usd": 4312025000000.0,
+  "exposed_wage_bill_usd": 4298216250000.0,
   "macro_crosscheck_flow_usd": 105462000000.0,
   "note": "v3: economy-wide AI productivity value built as a per-occupation sum over SOC major groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed user cost of all K-holders. A projection, not realized value. 30y illustrative."
  },
@@ -105,7 +105,7 @@
  },
  "flows": {
   "private_earnings_flow_usd": 40419573499.5,
-  "social_value_flow_usd": 97796727000.0,
+  "social_value_flow_usd": 97483544550.0,
   "capital_cost_usd": 88906917930.4355
  },
  "methodology_version": "v4"
