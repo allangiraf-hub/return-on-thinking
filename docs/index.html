@@ -82,8 +82,11 @@ Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/map.json').t
  svg.appendChild(tx(X1-8,Y0-10,'PROFIT WITHOUT BENEFIT',{'font-size':12,fill:'#71609a','font-weight':'bold','text-anchor':'end'}));
 
  const t=m.trail[m.trail.length-1];
- const cx=sx(t.cp[1]),cy=sy(t.cs10[1]),rx=Math.max((sx(t.cp[2])-sx(t.cp[0]))/2,6),ry=Math.max((sy(t.cs10[0])-sy(t.cs10[2]))/2,6);
- svg.appendChild(el('ellipse',{cx,cy,rx,ry,fill:t.color,'fill-opacity':0.13,stroke:t.color,'stroke-dasharray':'4 4','stroke-opacity':0.6}));
+ const cx=sx(t.cp[1]),cy=sy(t.cs10[1]);
+ svg.appendChild(el('line',{x1:sx(t.cp[0]),y1:cy,x2:sx(t.cp[2]),y2:cy,stroke:t.color,'stroke-width':2,'stroke-opacity':0.5}));
+ svg.appendChild(el('line',{x1:sx(t.cp[0]),y1:cy-5,x2:sx(t.cp[0]),y2:cy+5,stroke:t.color,'stroke-opacity':0.5}));
+ svg.appendChild(el('line',{x1:sx(t.cp[2]),y1:cy-5,x2:sx(t.cp[2]),y2:cy+5,stroke:t.color,'stroke-opacity':0.5}));
+ svg.appendChild(el('line',{x1:cx,y1:sy(t.cs10[0]),x2:cx,y2:sy(Math.min(t.cs10[2],YMAX)),stroke:t.color,'stroke-width':2,'stroke-opacity':0.5}));
  if(m.trail.length>1){let dd='';m.trail.forEach((p,i)=>dd+=(i?'L':'M')+sx(p.cp[1]).toFixed(1)+' '+sy(p.cs10[1]).toFixed(1)+' ');svg.appendChild(el('path',{d:dd,fill:'none',stroke:t.color,'stroke-width':2}))}
  svg.appendChild(el('circle',{cx,cy,r:9,fill:t.color,stroke:'#fff','stroke-width':2}));
  svg.appendChild(tx(cx,cy-18,'AI '+t.quarter,{'font-size':13,'font-weight':'bold',fill:t.color,'text-anchor':'middle'}));
