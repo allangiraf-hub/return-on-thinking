@@ -23,7 +23,7 @@
 <footer>Bounded estimate, gross of harms; not a floor. © Allan Pedersen.</footer>
 </div>
 <script src="spark.js"></script><script>
-Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/detail.json').then(r=>r.json())]).then(([d,x])=>{
+Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/detail.json?t='+Date.now()).then(r=>r.json())]).then(([d,x])=>{
  const cs=d.benefit_cs.cs;
  document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
  document.getElementById('cs').textContent=cs.low.h10.toFixed(2)+' – '+cs.high.h10.toFixed(2)+'  (mid '+cs.mid.h10.toFixed(2)+', 10-yr)';

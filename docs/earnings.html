@@ -21,7 +21,7 @@
 <footer>Levels uncertain to a factor of several; the corners span depreciation × margin. © Allan Pedersen.</footer>
 </div>
 <script src="spark.js"></script><script>
-Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/detail.json').then(r=>r.json())]).then(([d,x])=>{
+Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/detail.json?t='+Date.now()).then(r=>r.json())]).then(([d,x])=>{
  const cp=d.earnings_cp;
  document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
  document.getElementById('cp').textContent=cp.cp_low.toFixed(2)+' – '+cp.cp_high.toFixed(2)+'  (mid '+cp.cp_mid.toFixed(2)+')';

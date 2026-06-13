@@ -60,7 +60,7 @@ function gauge(label,sub,frac,color,valstr){
 }
 const X0=110,X1=760,Y0=520,Y1=60,XMAX=1.3,YMAX=2.5;
 const sx=v=>X0+(X1-X0)*Math.min(v,XMAX)/XMAX, sy=v=>Y0-(Y0-Y1)*Math.min(v,YMAX)/YMAX;
-Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/map.json').then(r=>r.json())]).then(([d,m])=>{
+Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/map.json?t='+Date.now()).then(r=>r.json())]).then(([d,m])=>{
  document.getElementById('meta').innerHTML='Last assembled '+d.generated_at+' · '+d.quarter+' · updates each quarter · <a href="methodology.html">how the numbers are made</a>';
  const cp=d.earnings_cp, cs=d.benefit_cs.cs, f=d.fragility_f;
  const g=document.getElementById('gauges');

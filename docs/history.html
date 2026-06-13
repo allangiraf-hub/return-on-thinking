@@ -10,7 +10,7 @@
 <footer>Cross-era placements are approximate and ordinal; see each entry's caveat. © Allan Pedersen.</footer>
 </div>
 <script>
-fetch('data/map.json').then(r=>r.json()).then(m=>{
+fetch('data/map.json?t='+Date.now()).then(r=>r.json()).then(m=>{
  document.getElementById('booms').innerHTML=(m.historical_booms||[]).map(b=>
   '<div class="panel"><h3 style="color:'+b.color+'">'+b.name+' <span style="font-weight:normal;color:#6b6b6b">· '+b.era+'</span></h3>'
   +'<table><tr><td style="color:#6b6b6b;width:42%">Did it pay investors? (private coverage)</td><td>'+b.cp[0].toFixed(1)+' – '+b.cp[1].toFixed(1)+'</td></tr>'

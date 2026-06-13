@@ -17,7 +17,7 @@
 <footer>F = location-weighted external-finance dependence + circularity. Hedge &lt; 33% &lt; speculative &lt; 66% &lt; Ponzi. © Allan Pedersen.</footer>
 </div>
 <script>
-Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/ticker.json').then(r=>r.json()),fetch('data/detail.json').then(r=>r.json())]).then(([d,t,x])=>{
+Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/ticker.json?t='+Date.now()).then(r=>r.json()),fetch('data/detail.json?t='+Date.now()).then(r=>r.json())]).then(([d,t,x])=>{
  const f=d.fragility_f, c=f.components;
  document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
  document.getElementById('f').innerHTML='<span style="color:'+f.color+'">'+Math.round(f.F*100)+'% — '+f.stage+'</span>';
