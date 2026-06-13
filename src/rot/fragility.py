@@ -18,21 +18,24 @@ from .universe import load_universe
 STAGE_COLOR = {"hedge": "#1D9E75", "speculative": "#BA7517", "ponzi": "#E24B4A"}
 
 
-def _t4(sid: str) -> float | None:
+def _t4(sid: str, asof=None) -> float | None:
     try:
-        df = read_series(sid).sort_values("date").tail(4)
+        df = read_series(sid).sort_values("date")
     except FileNotFoundError:
         return None
+    if asof is not None:
+        df = df[df["date"] <= pd.Timestamp(asof)]
+    df = df.tail(4)
     return float(df["value"].sum()) if len(df) == 4 else None
 
 
-def _ext_share(tickers: list[str]) -> float | None:
+def _ext_share(tickers: list[str], asof=None) -> float | None:
     cap = ocf = 0.0
     n = 0
     for t in tickers:
         tl = t.lower()
-        c = _t4(f"edgar_{tl}_capex_q") or _t4(f"fmp_{tl}_capex_q")
-        o = _t4(f"edgar_{tl}_ocf_q") or _t4(f"fmp_{tl}_ocf_q")
+        c = _t4(f"edgar_{tl}_capex_q", asof) or _t4(f"fmp_{tl}_capex_q", asof)
+        o = _t4(f"edgar_{tl}_ocf_q", asof) or _t4(f"fmp_{tl}_ocf_q", asof)
         if c and o:
             cap += c
             ocf += o
@@ -50,11 +53,11 @@ def _open_circularity_flags() -> int:
     return int(df["circularity_flag"].astype(str).str.lower().isin(["true", "1"]).sum())
 
 
-def fragility() -> dict:
+def fragility(asof=None) -> dict:
     a = load()["fragility"]
     uni = load_universe()
-    centre = _ext_share(uni[uni.bucket == "hyperscaler"]["ticker"].tolist()) or 0.0
-    edge = _ext_share(uni[uni.bucket == "neocloud"]["ticker"].tolist()) or 0.0
+    centre = _ext_share(uni[uni.bucket == "hyperscaler"]["ticker"].tolist(), asof=asof) or 0.0
+    edge = _ext_share(uni[uni.bucket == "neocloud"]["ticker"].tolist(), asof=asof) or 0.0
     flags = _open_circularity_flags()
 
     # F is pure located-leverage; circular deals are a SEPARATE warning flag, not

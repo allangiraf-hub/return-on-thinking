@@ -23,14 +23,19 @@ CLOUD_FIRMS = {"GOOGL": "google_cloud_ai_share", "ORCL": "oracle_cloud_ai_share"
 NEOCLOUD_FIRMS = ["CRWV", "IREN", "APLD"]        # total revenue, pure-play (T1)
 
 
-def _ai_revenue(corner: str) -> tuple[float, list[dict]]:
+def _ai_revenue(corner: str, asof=None) -> tuple[float, list[dict]]:
     """AI-attributed revenue across the measurable firms, at a revenue corner.
 
     Stated AI ARR (best) + cloud-segment x AI-share (attributed) + neocloud total.
+    asof: if given, only count figures stated on an earnings call ON OR BEFORE
+        that date - so the historical backfill uses what was known then, and the
+        numerator switches on as firms first disclosed AI revenue.
     """
     a = load()
     df = pd.read_csv(CURATED / "ai_revenue.csv")
     df["d"] = pd.to_datetime(df.call_date)
+    if asof is not None:
+        df = df[df["d"] <= pd.Timestamp(asof)]
     contributors = []
     total = 0.0
 
@@ -57,18 +62,18 @@ def _ai_revenue(corner: str) -> tuple[float, list[dict]]:
     return total, contributors
 
 
-def cp_band() -> dict:
+def cp_band(asof=None) -> dict:
     a = load()
     m = a["quasi_rent_margin"]
     out = {}
     for name, (dc, mc, sc, rc) in {"high": ("low", "high", "low", "high"),
                                     "mid": ("mid", "mid", "mid", "mid"),
                                     "low": ("high", "low", "high", "low")}.items():
-        rev, _ = _ai_revenue(rc)
-        uc = user_cost(dc, tickers=CP_FIRMS, share_corner=sc)["user_cost"]
+        rev, _ = _ai_revenue(rc, asof=asof)
+        uc = user_cost(dc, tickers=CP_FIRMS, share_corner=sc, asof=asof)["user_cost"]
         out[name] = (rev * m[mc]) / uc if uc else None
-    rev_mid, contributors = _ai_revenue("mid")
-    ucm = user_cost("mid", tickers=CP_FIRMS)
+    rev_mid, contributors = _ai_revenue("mid", asof=asof)
+    ucm = user_cost("mid", tickers=CP_FIRMS, asof=asof)
     return {
         "cp_low": out["low"], "cp_mid": out["mid"], "cp_high": out["high"],
         "realized_ai_revenue_usd": rev_mid,
@@ -91,7 +96,7 @@ def _exposed_wage_bill() -> float:
     return float((df.employment_m * 1e6 * df.mean_wage_usd * df.ai_usage).sum())
 
 
-def cs_band() -> dict:
+def cs_band(asof=None) -> dict:
     a = load()
     m = a["cs_macro"]
     disc = m["discount_rate"]
@@ -102,7 +107,7 @@ def cs_band() -> dict:
         # flow = exposed wage bill x productivity effect x adoption x social share
         flow0 = exposed * m["rct_effect"][c] * m["adoption_rate"][c] * s_share
         g = m["annual_growth"][c]
-        uc = user_cost({"low": "high", "mid": "mid", "high": "low"}[name])["user_cost"]
+        uc = user_cost({"low": "high", "mid": "mid", "high": "low"}[name], asof=asof)["user_cost"]
         out[name] = {}
         for h in a["cs"]["horizons_years"]:
             out[name][f"h{h}"] = _pv_flow(flow0, g, disc, h) / _pv_flow(uc, 0.0, disc, h)

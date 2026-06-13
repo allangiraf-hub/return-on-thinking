@@ -5,7 +5,7 @@ import sys
 import traceback
 
 from .collectors import census_c30, damodaran, edgar, eia, fmp, fred, treasury, vastai
-from . import datapackage, mapviz, ticker
+from . import backfill as backfill_mod, datapackage, mapviz, ticker
 
 COLLECTORS = {
     "edgar": edgar.run,
@@ -36,6 +36,10 @@ def weekly() -> int:
         print('[ok] dials + map assembled')
     except Exception:
         print('[FAIL] assemble'); traceback.print_exc(); failures.append('assemble')
+    try:
+        print('[ok] trajectory:', backfill_mod.backfill())
+    except Exception:
+        print('[FAIL] backfill'); traceback.print_exc(); failures.append('backfill')
     datapackage.build()
     print(f"[ok] ticker built; failures: {failures or 'none'}")
     return 1 if failures else 0
@@ -47,6 +51,9 @@ def main() -> None:
         raise SystemExit(weekly())
     if cmd == "assemble":
         print(mapviz.assemble())
+        return
+    if cmd == "backfill":
+        print(backfill_mod.backfill())
         return
     if cmd == "ticker":
         ticker.build()

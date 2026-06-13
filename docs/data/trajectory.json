@@ -1,0 +1,359 @@
+{
+ "generated_at": "2026-06-13",
+ "revision_band": 0.2,
+ "call_rule": "A move is 'called' only when the fixed-mid value leaves the prior quarter's +/-20% revision band AND the next quarter confirms it (two-quarter rule) - so single-quarter noise is never a call.",
+ "note": "Historical backfill. The capital stock (denominator) and F come from filed capex/cash-flow truncated at each quarter-end; the Cp numerator is AI revenue stated on or before each quarter; the Cs numerator is a fixed forward projection (no quarterly history), so only its denominator moves. See methodology.",
+ "series": [
+  {
+   "quarter": "2023-Q1",
+   "asof": "2023-03-31",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.4466251560041326,
+    2.973217634860541,
+    20.98224091743627
+   ],
+   "F": 0.5444361342351717,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 34936569506.00088,
+   "K_total_usd": 154361793379.67426,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2023-Q2",
+   "asof": "2023-06-30",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.43547226534118877,
+    2.8785554331491965,
+    20.193707386884654
+   ],
+   "F": 0.5525906854156828,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 36098559642.09916,
+   "K_total_usd": 160255975062.61533,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2023-Q3",
+   "asof": "2023-09-30",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.42197993115912946,
+    2.776128636036508,
+    19.38881501614308
+   ],
+   "F": 0.735630464795214,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 37457670259.52951,
+   "K_total_usd": 166930527436.4187,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": "up"
+   }
+  },
+  {
+   "quarter": "2023-Q4",
+   "asof": "2023-12-31",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.39708236263253405,
+    2.6021378215100173,
+    18.071549110639122
+   ],
+   "F": 0.7709848136217211,
+   "stage": "ponzi",
+   "color": "#E24B4A",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 40127805685.42556,
+   "K_total_usd": 178135192343.754,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2024-Q1",
+   "asof": "2024-03-31",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.3772343544306304,
+    2.4649311566827774,
+    17.049775674430542
+   ],
+   "F": 0.70479420465922,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 42613973958.03211,
+   "K_total_usd": 188953713212.8601,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2024-Q2",
+   "asof": "2024-06-30",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.3509424200808601,
+    2.295198524459221,
+    15.853308012564376
+   ],
+   "F": 0.7460740583061606,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 46003160521.95082,
+   "K_total_usd": 203164679818.7589,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2024-Q3",
+   "asof": "2024-09-30",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.3273915802903363,
+    2.1459073565982982,
+    14.828038462596897
+   ],
+   "F": 0.7682038191806957,
+   "stage": "ponzi",
+   "color": "#E24B4A",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 49443276701.36048,
+   "K_total_usd": 217883804263.23862,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2024-Q4",
+   "asof": "2024-12-31",
+   "cp": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cs10": [
+    0.295738477143987,
+    1.9480262106921507,
+    13.48549937727541
+   ],
+   "F": 0.4733596370320084,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 0.0,
+   "user_cost_usd": 54385641524.76063,
+   "K_total_usd": 238028726037.823,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2025-Q1",
+   "asof": "2025-03-31",
+   "cp": [
+    0.044028088858985855,
+    0.11200424634000639,
+    0.262729782930747
+   ],
+   "cs10": [
+    0.2760226524386376,
+    1.8261811128933862,
+    12.692718786386935
+   ],
+   "F": 0.6623429786492715,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 13000000000.0,
+   "user_cost_usd": 58033514017.56889,
+   "K_total_usd": 256466789548.36792,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": "up"
+   }
+  },
+  {
+   "quarter": "2025-Q2",
+   "asof": "2025-06-30",
+   "cp": [
+    0.04562967645311911,
+    0.13980226944622243,
+    0.4015153922985681
+   ],
+   "cs10": [
+    0.24835492266832998,
+    1.6536126214146833,
+    11.54196113230884
+   ],
+   "F": 0.6656452978608538,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 17923000000.0,
+   "user_cost_usd": 64101248395.30742,
+   "K_total_usd": 281560141179.36084,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2025-Q3",
+   "asof": "2025-09-30",
+   "cp": [
+    0.04149793418628765,
+    0.1277062550751099,
+    0.3680991157986796
+   ],
+   "cs10": [
+    0.2254146799366588,
+    1.5085509135285955,
+    10.573832964991785
+   ],
+   "F": 0.7314937391010408,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 17923000000.0,
+   "user_cost_usd": 70172756962.6823,
+   "K_total_usd": 308012101254.5334,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2025-Q4",
+   "asof": "2025-12-31",
+   "cp": [
+    0.03653234666960609,
+    0.1131167165327084,
+    0.3274180392276381
+   ],
+   "cs10": [
+    0.1988828427456595,
+    1.3392965371182188,
+    9.429156723964088
+   ],
+   "F": 0.6859093353187241,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 17923000000.0,
+   "user_cost_usd": 79223480619.7608,
+   "K_total_usd": 344600902122.2191,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2026-Q1",
+   "asof": "2026-03-31",
+   "cp": [
+    0.0500375345593582,
+    0.1780600738513962,
+    0.5503923252701914
+   ],
+   "cs10": [
+    0.17339938341168906,
+    1.1706715540510348,
+    8.247774249969321
+   ],
+   "F": 0.664160148949274,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 32599250000.0,
+   "user_cost_usd": 91540032795.91582,
+   "K_total_usd": 391857619899.8837,
+   "calls": {
+    "cp": "up",
+    "cs10": null,
+    "F": null
+   }
+  },
+  {
+   "quarter": "2026-Q2",
+   "asof": "2026-06-13",
+   "cp": [
+    0.1507429327695443,
+    0.43873419928619917,
+    1.1673063839194884
+   ],
+   "cs10": [
+    0.1724548841177319,
+    1.1631762540995856,
+    8.183326443430031
+   ],
+   "F": 0.664160148949274,
+   "stage": "speculative",
+   "color": "#BA7517",
+   "ai_revenue_usd": 80839250000.0,
+   "user_cost_usd": 92127819225.76566,
+   "K_total_usd": 391857619899.8837,
+   "provisional": true,
+   "calls": {
+    "cp": null,
+    "cs10": null,
+    "F": null
+   }
+  }
+ ]
+}

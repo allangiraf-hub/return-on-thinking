@@ -57,7 +57,7 @@ def assemble() -> dict:
         "benefit_cs": cs,
         "fragility_f": frag,
         "flows": flows,
-        "methodology_version": "v2",
+        "methodology_version": "v4",
     }
     SITE_DATA.mkdir(parents=True, exist_ok=True)
     (SITE_DATA / "dials.json").write_text(json.dumps(dials, indent=1, default=str))

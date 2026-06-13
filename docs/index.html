@@ -23,6 +23,11 @@
 <div class="panel"><svg id="flow" viewBox="0 0 820 380" width="100%" role="img" aria-label="Annual flows: private earnings vs social value, dot sized by capital cost"></svg>
 <div class="legend" id="flowlegend"></div></div>
 
+<h2>The trajectory: is it moving?</h2>
+<p class="sub">The whole point of this dashboard is the <b>direction of travel</b>, not the level. Each line is the fixed-mid estimate at past quarter-ends, rebuilt from filed capex and the AI revenue firms had disclosed by then. The shaded band is the ±20% revision range around the mid; a move is only <b>called</b> (▲/▼) when the line leaves the prior quarter's band <i>and</i> the next quarter confirms it — so single-quarter noise never counts.</p>
+<div class="panel"><svg id="traj" viewBox="0 0 820 300" width="100%" role="img" aria-label="Trajectory of the three numbers over time with revision bands and called moves"></svg>
+<div class="legend" id="trajlegend"></div></div>
+
 <h2>Look closer</h2>
 <div class="nav">
  <a href="earnings.html">▸ Earnings — does it pay for itself?</a>
@@ -60,7 +65,9 @@ function gauge(label,sub,frac,color,valstr){
 }
 const X0=110,X1=760,Y0=520,Y1=60,XMAX=1.3,YMAX=2.5;
 const sx=v=>X0+(X1-X0)*Math.min(v,XMAX)/XMAX, sy=v=>Y0-(Y0-Y1)*Math.min(v,YMAX)/YMAX;
-Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/map.json?t='+Date.now()).then(r=>r.json())]).then(([d,m])=>{
+Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/map.json?t='+Date.now()).then(r=>r.json()),fetch('data/trajectory.json?t='+Date.now()).then(r=>r.json()).catch(()=>null)]).then(([d,m,tj])=>{
+ // Prefer the backfilled multi-quarter trajectory for the trail; fall back to map.json.
+ if(tj&&tj.series&&tj.series.length){m={...m,trail:tj.series.map(p=>({quarter:p.quarter,cp:p.cp,cs10:p.cs10,F:p.F,stage:p.stage,color:p.color}))}}
  document.getElementById('meta').innerHTML='Last assembled '+d.generated_at+' · '+d.quarter+' · updates each quarter · <a href="methodology.html">how the numbers are made</a>';
  const cp=d.earnings_cp, cs=d.benefit_cs.cs, f=d.fragility_f;
  const g=document.getElementById('gauges');
@@ -87,7 +94,9 @@ Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('dat
  svg.appendChild(el('line',{x1:sx(t.cp[0]),y1:cy-5,x2:sx(t.cp[0]),y2:cy+5,stroke:t.color,'stroke-opacity':0.5}));
  svg.appendChild(el('line',{x1:sx(t.cp[2]),y1:cy-5,x2:sx(t.cp[2]),y2:cy+5,stroke:t.color,'stroke-opacity':0.5}));
  svg.appendChild(el('line',{x1:cx,y1:sy(t.cs10[0]),x2:cx,y2:sy(Math.min(t.cs10[2],YMAX)),stroke:t.color,'stroke-width':2,'stroke-opacity':0.5}));
- if(m.trail.length>1){let dd='';m.trail.forEach((p,i)=>dd+=(i?'L':'M')+sx(p.cp[1]).toFixed(1)+' '+sy(p.cs10[1]).toFixed(1)+' ');svg.appendChild(el('path',{d:dd,fill:'none',stroke:t.color,'stroke-width':2}))}
+ if(m.trail.length>1){let dd='';m.trail.forEach((p,i)=>dd+=(i?'L':'M')+sx(p.cp[1]).toFixed(1)+' '+sy(p.cs10[1]).toFixed(1)+' ');svg.appendChild(el('path',{d:dd,fill:'none',stroke:t.color,'stroke-width':2,'stroke-opacity':0.55}));
+  m.trail.slice(0,-1).forEach(p=>svg.appendChild(el('circle',{cx:sx(p.cp[1]),cy:sy(p.cs10[1]),r:3,fill:'#fff',stroke:p.color||t.color,'stroke-width':1.6})));
+  const f0=m.trail[0];svg.appendChild(tx(sx(f0.cp[1])+6,sy(f0.cs10[1])-6,f0.quarter,{'font-size':9.5,fill:'#888'}))}
  svg.appendChild(el('circle',{cx,cy,r:9,fill:t.color,stroke:'#fff','stroke-width':2}));
  svg.appendChild(tx(cx,cy-18,'AI '+t.quarter,{'font-size':13,'font-weight':'bold',fill:t.color,'text-anchor':'middle'}));
  (m.historical_booms||[]).forEach(p=>{
@@ -124,6 +133,48 @@ Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('dat
  FS.appendChild(tx((fx0+fx1)/2,fy0+30,'Private earnings flow ($bn/yr)',{'font-size':12.5,fill:'#333','text-anchor':'middle'}));
  FS.appendChild(tx(34,(fy0+fy1)/2,'Social value flow ($bn/yr)',{'font-size':12.5,fill:'#333','text-anchor':'middle',transform:`rotate(-90 34 ${(fy0+fy1)/2})`}));
  document.getElementById('flowlegend').innerHTML='AI now: private earnings $'+Math.round(pe)+'bn, social value $'+Math.round(sv)+'bn, against a capital cost of $'+Math.round(uc)+'bn/yr (dot size). Right of the red line = pays for itself privately; above it = pays for itself for the world.';
+
+ // trajectory: three small-multiple time series with revision band + called moves
+ if(tj&&tj.series&&tj.series.length>1){
+  const TS=document.getElementById('traj'), S=tj.series, n=S.length, RB=tj.revision_band||0.2;
+  const cols=[{key:'cp',idx:1,label:'Earnings (Cp)',color:'#D85A30',ref:1},
+              {key:'cs10',idx:1,label:'Benefit (Cs, 10y)',color:'#1D9E75',ref:1},
+              {key:'F',label:'Fragility (F)',color:'#BA7517',ref:null}];
+  const pad=46, gap=30, cw=(820-pad*2-gap*2)/3, ch=200, top=24;
+  cols.forEach((c,ci)=>{
+   const x0=pad+ci*(cw+gap), vals=S.map(p=>Array.isArray(p[c.key])?p[c.key][c.idx]:p[c.key]);
+   const hi=Math.max(...vals, c.ref||0)*1.18||1, X=i=>x0+cw*i/(n-1), Y=v=>top+ch-ch*Math.min(v/hi,1);
+   // axes
+   TS.appendChild(el('line',{x1:x0,y1:top,x2:x0,y2:top+ch,stroke:'#ccc'}));
+   TS.appendChild(el('line',{x1:x0,y1:top+ch,x2:x0+cw,y2:top+ch,stroke:'#ccc'}));
+   if(c.ref!=null){TS.appendChild(el('line',{x1:x0,y1:Y(c.ref),x2:x0+cw,y2:Y(c.ref),stroke:'#b0413e','stroke-dasharray':'4 3','stroke-opacity':0.7}));
+    TS.appendChild(tx(x0+cw,Y(c.ref)-3,'breaks even',{'font-size':9,fill:'#b0413e','text-anchor':'end'}));}
+   // revision band around each mid (drawn as a soft ribbon)
+   let up='',dn='';S.forEach((p,i)=>{const v=vals[i];up+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v*(1+RB)).toFixed(1)+' ';});
+   for(let i=n-1;i>=0;i--){dn+='L'+X(i).toFixed(1)+' '+Y(vals[i]*(1-RB)).toFixed(1)+' ';}
+   TS.appendChild(el('path',{d:up+dn+'Z',fill:c.color,'fill-opacity':0.10,stroke:'none'}));
+   // mid line
+   let dd='';S.forEach((p,i)=>dd+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(vals[i]).toFixed(1)+' ');
+   TS.appendChild(el('path',{d:dd,fill:'none',stroke:c.color,'stroke-width':2}));
+   // points + called markers
+   S.forEach((p,i)=>{
+    const v=vals[i], called=(p.calls||{})[c.key], prov=p.provisional;
+    TS.appendChild(el('circle',{cx:X(i),cy:Y(v),r:prov?4:2.6,fill:prov?'#fff':c.color,stroke:c.color,'stroke-width':prov?2:1}));
+    if(called)TS.appendChild(tx(X(i),Y(v)-9,called==='up'?'▲':'▼',{'font-size':12,fill:c.color,'text-anchor':'middle','font-weight':'bold'}));
+   });
+   // title + endpoints
+   TS.appendChild(tx(x0,top-9,c.label,{'font-size':12,fill:'#333','font-weight':'bold'}));
+   const lastv=vals[n-1];TS.appendChild(tx(x0+cw,top+ch+15,(c.key==='F'?Math.round(lastv*100)+'%':'×'+lastv.toFixed(2)),{'font-size':11,fill:c.color,'text-anchor':'end','font-weight':'bold'}));
+   TS.appendChild(tx(x0,top+ch+15,S[0].quarter,{'font-size':9.5,fill:'#999'}));
+   TS.appendChild(tx(x0+cw,top+ch+27,S[n-1].quarter,{'font-size':9.5,fill:'#999','text-anchor':'end'}));
+  });
+  // collect any called moves for the legend
+  const calls=[];S.forEach(p=>{for(const k in (p.calls||{})){if(p.calls[k])calls.push(p.quarter+' '+(k==='cp'?'earnings':k==='cs10'?'benefit':'fragility')+' '+(p.calls[k]==='up'?'↑':'↓'));}});
+  document.getElementById('trajlegend').innerHTML='Line = fixed-mid estimate; shaded = ±'+Math.round(RB*100)+'% revision band; ▲/▼ = a confirmed called move. '+
+    'Earnings coverage switched on as firms first disclosed AI revenue (2025) and is climbing; benefit-coverage falls as the capital base outgrows realised value; fragility sits with the leveraged edge. '+
+    (calls.length?'<b>Called so far:</b> '+calls.join('; ')+'. ':'No moves called yet. ')+
+    'The latest point (hollow) is the current, not-yet-closed quarter. <a href="methodology.html">how the backfill works</a>.';
+ }
 }).catch(e=>{document.getElementById('meta').textContent='dashboard not yet assembled — run python -m rot.cli assemble'});
 </script>
 </body></html>
