@@ -24,60 +24,57 @@
    "color": "#BA7517"
   }
  ],
- "historical_paths": [
+ "historical_booms": [
   {
-   "name": "Railways 1840s-70s",
-   "kind": "productive_bubble",
-   "points": [
-    [
-     0.15,
-     0.6
-    ],
-    [
-     0.3,
-     0.9
-    ],
-    [
-     0.55,
-     1.3
-    ]
-   ]
+   "id": "railways",
+   "name": "Railways",
+   "era": "1840s-1870s",
+   "cp": [
+    0.5,
+    0.9
+   ],
+   "cs": [
+    1.3,
+    2.4
+   ],
+   "stage": "speculative",
+   "color": "#BA7517",
+   "citation": "Fogel 1964 (US social saving ~3% GNP); Hawke 1970 (UK ~4-5% GDP); Fishlow (private return 8-10%, social ROR ~15%); Mitchell British Historical Statistics; Campbell on 1840s debt 40-60% of capital",
+   "caveat": "ordinal cross-era placement; social savings (% GDP) and dividend yields are not the live Cp/Cs ratio units"
   },
   {
-   "name": "Telecoms fibre 1996-2006",
-   "kind": "productive_bubble",
-   "points": [
-    [
-     0.12,
-     0.5
-    ],
-    [
-     0.25,
-     0.8
-    ],
-    [
-     0.45,
-     1.15
-    ]
-   ]
+   "id": "electrification",
+   "name": "Electrification",
+   "era": "1880s-1930s",
+   "cp": [
+    0.7,
+    1.2
+   ],
+   "cs": [
+    1.6,
+    3.0
+   ],
+   "stage": "ponzi",
+   "color": "#E24B4A",
+   "citation": "David 1990 (Dynamo & Computer); Devine 1983 (+20-30% plant productivity); utility ROE 7-10%; SEC/FTC Insull holding-company investigations (debt+preferred >70% at holding layers, 1932 collapse)",
+   "caveat": "system was sound; the Insull financing EDGE was Ponzi - shown at the fragile end. Cross-era units differ"
   },
   {
-   "name": "Cloud 2012-19 (ended well)",
-   "kind": "healthy_boom",
-   "points": [
-    [
-     0.5,
-     0.7
-    ],
-    [
-     0.8,
-     1.0
-    ],
-    [
-     1.1,
-     1.25
-    ]
-   ]
+   "id": "telecom",
+   "name": "Telecoms & fibre",
+   "era": "1996-2006",
+   "cp": [
+    0.1,
+    0.4
+   ],
+   "cs": [
+    1.3,
+    2.4
+   ],
+   "stage": "ponzi",
+   "color": "#E24B4A",
+   "citation": "Goolsbee-Klenow 2006 (internet consumer surplus); Brynjolfsson-Collis (search surplus); Altman (2002 telecom default rate 20.3%); WorldCom debt/EBITDA >4x; FCC Statistics of Communications Common Carriers",
+   "caveat": "investors wiped out, society kept the fibre - the canonical productive bubble. Cross-era units differ"
   }
  ],
  "thresholds": {

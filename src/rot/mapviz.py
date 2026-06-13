@@ -64,7 +64,7 @@ def assemble() -> dict:
     MAP_FILE.write_text(json.dumps({
         "generated_at": now.isoformat(),
         "trail": trail,
-        "historical_paths": _historical_paths(),
+        "historical_booms": _historical_booms(),
         "thresholds": {"breakeven": 1.0},
     }, indent=1))
 
@@ -91,15 +91,23 @@ def assemble() -> dict:
     return {"quarter": q, "cp_mid": cp["cp_mid"], "cs10_mid": cs10["mid"], "F": frag["F"], "stage": frag["stage"]}
 
 
-def _historical_paths() -> list:
-    """Digitized illustrative trajectories of past technology booms (static).
-    Coordinates are (private coverage, social coverage) at successive phases -
-    schematic, for visual comparison, sourced in METHODS.md."""
-    return [
-        {"name": "Railways 1840s-70s", "kind": "productive_bubble",
-         "points": [[0.15, 0.6], [0.3, 0.9], [0.55, 1.3]]},
-        {"name": "Telecoms fibre 1996-2006", "kind": "productive_bubble",
-         "points": [[0.12, 0.5], [0.25, 0.8], [0.45, 1.15]]},
-        {"name": "Cloud 2012-19 (ended well)", "kind": "healthy_boom",
-         "points": [[0.5, 0.7], [0.8, 1.0], [1.1, 1.25]]},
-    ]
+def _historical_booms() -> list:
+    """Sourced placements of past technology booms - real economic-history figures,
+    placed ORDINALLY on the same axes (cross-era units differ; see caveat per row).
+    Replaces the earlier hand-drawn schematic curves."""
+    import pandas as pd
+    from .config import CURATED as _C
+    p = _C / "historical_booms.csv"
+    if not p.exists():
+        return []
+    df = pd.read_csv(p)
+    out = []
+    for _, r in df.iterrows():
+        out.append({
+            "id": r.id, "name": r["name"], "era": r.era,
+            "cp": [float(r.cp_low), float(r.cp_high)],
+            "cs": [float(r.cs_low), float(r.cs_high)],
+            "stage": r.fragility_stage, "color": r.fragility_color,
+            "citation": r.citation, "caveat": r.caveat,
+        })
+    return out

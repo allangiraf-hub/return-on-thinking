@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historical booms — sources — The Return on Thinking</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · Historical booms</div>
+<h1>The comparison booms — where the numbers come from</h1>
+<div class="meta">Approximate, cross-era placements from published economic history.</div>
+<p class="sub">The dashed boxes on the map are not hand-drawn. Each is placed from real economic-history scholarship on three things: did the capital pay its investors, what value did society get, and how was the build financed. One honesty point governs all of them: the historical figures use different units from our live ratios — social savings as a share of GDP, dividend yields, debt-to-capital — so these are <em>ordinal</em> placements (the right region of the map), not precise coordinates. Each box also carries an uncertainty range, not a point.</p>
+<p class="sub">The striking result: <strong>each past boom lands where the three-part logic predicts</strong> — railways straddling noble-failure and healthy boom, electrification a healthy boom with a fragile financing edge that detonated (the Insull pyramids, 1932), and the fibre boom the canonical productive bubble where investors were wiped out and society kept the cables. That the framework retrodicts the past is some evidence it is capturing something real.</p>
+<div id="booms"></div>
+<div class="nav" style="margin-top:24px"><a href="index.html">← back to the dashboard</a><a href="methodology.html">Methodology</a></div>
+<footer>Cross-era placements are approximate and ordinal; see each entry's caveat. © Allan Pedersen.</footer>
+</div>
+<script>
+fetch('data/map.json').then(r=>r.json()).then(m=>{
+ document.getElementById('booms').innerHTML=(m.historical_booms||[]).map(b=>
+  '<div class="panel"><h3 style="color:'+b.color+'">'+b.name+' <span style="font-weight:normal;color:#6b6b6b">· '+b.era+'</span></h3>'
+  +'<table><tr><td style="color:#6b6b6b;width:42%">Did it pay investors? (private coverage)</td><td>'+b.cp[0].toFixed(1)+' – '+b.cp[1].toFixed(1)+'</td></tr>'
+  +'<tr><td style="color:#6b6b6b">Value to the world? (social coverage)</td><td>'+b.cs[0].toFixed(1)+' – '+b.cs[1].toFixed(1)+'</td></tr>'
+  +'<tr><td style="color:#6b6b6b">Financing fragility</td><td style="color:'+b.color+'">'+b.stage+'</td></tr></table>'
+  +'<div class="src" style="margin-top:8px"><strong>Sources:</strong> '+b.citation+'</div>'
+  +'<div class="src" style="margin-top:4px;font-style:italic">Caveat: '+b.caveat+'</div></div>').join('');
+}).catch(e=>{document.getElementById('booms').innerHTML='<p class="sub">not yet assembled</p>';});
+</script></body></html>

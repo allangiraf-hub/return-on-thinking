@@ -80,7 +80,12 @@ Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/map.json').t
  svg.appendChild(tx(X1-8,Y1+18,'HEALTHY BOOM',{'font-size':12,fill:'#4d7a58','font-weight':'bold','text-anchor':'end'}));
  svg.appendChild(tx(X0+8,Y0-10,'WASTE',{'font-size':12,fill:'#a05a52','font-weight':'bold'}));
  svg.appendChild(tx(X1-8,Y0-10,'PROFIT WITHOUT BENEFIT',{'font-size':12,fill:'#71609a','font-weight':'bold','text-anchor':'end'}));
- (m.historical_paths||[]).forEach(p=>{let dd='';p.points.forEach((pt,i)=>dd+=(i?'L':'M')+sx(pt[0]).toFixed(1)+' '+sy(pt[1]).toFixed(1)+' ');svg.appendChild(el('path',{d:dd,fill:'none',stroke:'#b5ad9e','stroke-width':2}));const l=p.points[p.points.length-1];svg.appendChild(el('circle',{cx:sx(l[0]),cy:sy(l[1]),r:3.5,fill:'#b5ad9e'}));svg.appendChild(tx(sx(l[0])+6,sy(l[1])-4,p.name,{'font-size':10.5,fill:'#998f7d'}))});
+ (m.historical_booms||[]).forEach(p=>{
+   const x=sx(p.cp[0]),y=sy(p.cs[1]),w=sx(p.cp[1])-sx(p.cp[0]),h=sy(p.cs[0])-sy(p.cs[1]);
+   svg.appendChild(el('rect',{x,y,width:Math.max(w,4),height:Math.max(h,4),rx:6,fill:p.color,'fill-opacity':0.08,stroke:p.color,'stroke-opacity':0.45,'stroke-dasharray':'3 3'}));
+   svg.appendChild(tx(x+w/2,y-5,p.name,{'font-size':11,fill:p.color,'text-anchor':'middle','font-weight':'bold'}));
+   svg.appendChild(tx(x+w/2,y+11,p.era,{'font-size':9.5,fill:p.color,'text-anchor':'middle'}));
+ });
  const t=m.trail[m.trail.length-1];
  const cx=sx(t.cp[1]),cy=sy(t.cs10[1]),rx=Math.max((sx(t.cp[2])-sx(t.cp[0]))/2,6),ry=Math.max((sy(t.cs10[0])-sy(t.cs10[2]))/2,6);
  svg.appendChild(el('ellipse',{cx,cy,rx,ry,fill:t.color,'fill-opacity':0.13,stroke:t.color,'stroke-dasharray':'4 4','stroke-opacity':0.6}));
@@ -93,7 +98,7 @@ Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/map.json').t
  svg.appendChild(tx((X0+X1)/2,Y0+34,'Does it pay for itself?  (earnings ÷ cost of the capital; 1.0 = breaks even)',{'font-size':13,fill:'#333','text-anchor':'middle'}));
  svg.appendChild(tx(40,(Y0+Y1)/2,'Value to the world ÷ same cost (10-yr)',{'font-size':13,fill:'#333','text-anchor':'middle',transform:`rotate(-90 40 ${(Y0+Y1)/2})`}));
  svg.appendChild(tx(xb,Y0+14,'1.0',{'font-size':10,fill:'#999','text-anchor':'middle'}));
- document.getElementById('maplegend').innerHTML='Dot colour = financing fragility ('+f.stage+', '+Math.round(f.F*100)+'%). Oval = assumption range. Grey = past booms (schematic). The trail grows one point each quarter — direction of travel is the signal.';
+ document.getElementById('maplegend').innerHTML='Dot colour = financing fragility ('+f.stage+', '+Math.round(f.F*100)+'%). Dashed boxes = past booms, placed from economic-history figures (Fogel, Hawke, David, Goolsbee-Klenow, Altman) - approximate cross-era placements, units differ from the live ratios. <a href=\"history.html\">sources &amp; caveats</a>.';
  document.getElementById('reading').textContent='Reading, '+d.quarter+': AI sits in the noble-failure / productive-bubble corner — earnings cover about '+Math.round(cp.cp_mid*100)+'% of the capital cost while the world gets materially more (×'+cs.mid.h10.toFixed(1)+' over 10 years). Financing is '+f.stage+' overall ('+Math.round(f.F*100)+'%), but the neocloud edge is far more exposed. Whether the dot travels right toward a healthy boom, or stalls, is the open question.';
 
  // flow plot (de-correlated): x=private earnings flow, y=social value flow, dot size=capital cost
