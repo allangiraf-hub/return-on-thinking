@@ -1,0 +1,51 @@
+{
+ "generated_at": "2026-06-13",
+ "quarter": "2026-Q2",
+ "earnings_cp": {
+  "cp_low": 0.05913730233892594,
+  "cp_mid": 0.10490320266558563,
+  "cp_high": 0.1609150876321982,
+  "realized_ai_revenue_usd": 53900000000.0,
+  "user_cost_mid_usd": 256903500705.42862,
+  "K_total_mid_usd": 1112607447553.6184,
+  "contributors": [
+   {
+    "entity": "Microsoft",
+    "value_usd_low": 37000000000.0,
+    "call_date": "2026-04-29"
+   },
+   {
+    "entity": "Amazon AWS",
+    "value_usd_low": 15000000000.0,
+    "call_date": "2026-04-29"
+   },
+   {
+    "entity": "Nebius",
+    "value_usd_low": 1900000000.0,
+    "call_date": "2026-05-13"
+   }
+  ],
+  "note": "Cp = realized AI quasi-rents / user cost of installed stock. Realized K-holder AI revenue only; guidance excluded. Corners span delta x margin. Levels uncertain to a factor of several - watch the trajectory."
+ },
+ "benefit_cs": {
+  "cs": {
+   "low": {
+    "h10": 0.13009657931054072,
+    "h30": 0.1300965793105407,
+    "annual_flow_usd": 35572500000.0
+   },
+   "mid": {
+    "h10": 0.7647646555513388,
+    "h30": 1.9698605017267512,
+    "annual_flow_usd": 128061000000.0
+   },
+   "high": {
+    "h10": 4.89214541588958,
+    "h30": 47.30499377632574,
+    "annual_flow_usd": 474300000000.0
+   }
+  },
+  "note": "Social return: time saved/work improved valued against user cost, at 10y and 30y horizons. Bounded estimate with biases in both directions; gross of harms (see electricity-price and layoff indicators). NOT a floor."
+ },
+ "methodology_version": "v1"
+}

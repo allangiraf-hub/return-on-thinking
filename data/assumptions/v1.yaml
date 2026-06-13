@@ -5,6 +5,8 @@ version: 1
 status: active   # approved by Allan via PR #2, 2026-06-12
 
 r:  # required return construction
+  risk_free_fallback: 0.045   # used only if treasury_10y series unavailable
+  erp_fallback: 0.043         # Damodaran implied ERP, mid-2026
   risk_free_series: treasury_10y          # primary; fred_dgs10 as cross-check
   equity_risk_premium_series: damodaran_implied_erp
   debt_spread_series: fred_baa10y         # when FRED is reachable
@@ -54,3 +56,12 @@ map:
 
 calibration_credits:
   - "SemiAnalysis (pending response to research-access request, 2026-06-12)"
+
+cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 replaces with live collectors.
+  us_employee_compensation_usd: 15500000000000   # ~$15.5tn annual, BEA NIPA 1.10 (2025); pinned
+  ai_exposed_task_share: {low: 0.20, mid: 0.30, high: 0.45}   # AEI augmentation/automation task coverage
+  rct_effect: {low: 0.15, mid: 0.27, high: 0.40}   # weighted productivity effect on affected tasks (A.4 studies)
+  adoption_rate: {low: 0.09, mid: 0.12, high: 0.20}   # Census BTOS firm AI-use, mid-2026
+  appropriability_to_society: 0.85   # social share net of the ~2% Nordhaus producer capture, conservatively 0.85
+  discount_rate: 0.05
+  annual_growth: {low: 0.0, mid: 0.10, high: 0.20}   # value-flow growth as adoption deepens

@@ -49,7 +49,7 @@
 <body><div class="wrap">
   <div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="https://indicators.priceofthinking.com/">Indicators</a> · The Return on Thinking</div>
   <h1>The Return on Thinking</h1>
-  <div class="meta" id="meta">Loading… · <a href="methodology.html">methodology</a> · <a href="data/rot-methodology.xlsx">calculations workbook</a> · <a href="system.html">system design</a> · <a href="https://github.com/allangiraf-hub/return-on-thinking">code &amp; data</a> · <a href="https://doi.org/10.5281/zenodo.20671019">DOI</a></div>
+  <div class="meta" id="meta">Loading… · <a href="map.html"><strong>the map</strong></a> · <a href="methodology.html">methodology</a> · <a href="data/rot-methodology.xlsx">workbook</a> · <a href="system.html">system design</a> · <a href="https://github.com/allangiraf-hub/return-on-thinking">code &amp; data</a> · <a href="https://doi.org/10.5281/zenodo.20671019">DOI</a></div>
   <p class="sub" style="margin-top:10px">Weekly ticker (P0). The earnings and benefit dials, and the map, arrive with the versioned methodology — this page publishes only directly observed numbers, each with its source.</p>
 
   <h2><span class="num">1</span>Financing headroom — capex vs own cash flow</h2>
@@ -87,7 +87,7 @@ function spark(points,w,h,label){
     <text x="${w-8}" y="12" font-size="11" fill="#333" text-anchor="end">${label}: ${(+last.value).toLocaleString()}</text></svg>`;
 }
 fetch('data/ticker.json').then(r=>r.json()).then(t=>{
-  $('#meta').innerHTML='Last refresh: '+t.generated_at.slice(0,10)+' · updated weekly, automatically · <a href="methodology.html">methodology</a> · <a href="data/rot-methodology.xlsx">calculations workbook</a> · <a href="system.html">system design</a> · <a href="https://github.com/allangiraf-hub/return-on-thinking">code &amp; data</a> · <a href="https://doi.org/10.5281/zenodo.20671019">DOI</a>';
+  $('#meta').innerHTML='Last refresh: '+t.generated_at.slice(0,10)+' · updated weekly, automatically · <a href="map.html"><strong>the map</strong></a> · <a href="methodology.html">methodology</a> · <a href="data/rot-methodology.xlsx">workbook</a> · <a href="system.html">system design</a> · <a href="https://github.com/allangiraf-hub/return-on-thinking">code &amp; data</a> · <a href="https://doi.org/10.5281/zenodo.20671019">DOI</a>';
   const tb=$('#f1 tbody');
   (t.financing_f1||[]).sort((a,b)=>b.capex_share_of_ocf-a.capex_share_of_ocf).forEach(f=>{
     const pct=Math.min(f.capex_share_of_ocf,1.5)/1.5*100;

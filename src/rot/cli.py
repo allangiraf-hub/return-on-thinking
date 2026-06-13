@@ -4,14 +4,15 @@ from __future__ import annotations
 import sys
 import traceback
 
-from .collectors import census_c30, damodaran, edgar, fmp, fred, treasury, vastai
-from . import datapackage, ticker
+from .collectors import census_c30, damodaran, edgar, eia, fmp, fred, treasury, vastai
+from . import datapackage, mapviz, ticker
 
 COLLECTORS = {
     "edgar": edgar.run,
     "fred": fred.run,
     "treasury": treasury.run,
     "fmp": fmp.run,
+    "eia": eia.run,
     "vastai": vastai.run,
     "damodaran": damodaran.run,
     "census_c30": census_c30.run,
@@ -30,7 +31,11 @@ def weekly() -> int:
             failures.append(name)
             print(f"[FAIL] {name}")
             traceback.print_exc()
-    ticker.build()
+    try:
+        mapviz.assemble()
+        print('[ok] dials + map assembled')
+    except Exception:
+        print('[FAIL] assemble'); traceback.print_exc(); failures.append('assemble')
     datapackage.build()
     print(f"[ok] ticker built; failures: {failures or 'none'}")
     return 1 if failures else 0
@@ -40,9 +45,11 @@ def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else "weekly"
     if cmd == "weekly":
         raise SystemExit(weekly())
+    if cmd == "assemble":
+        print(mapviz.assemble())
+        return
     if cmd == "ticker":
         ticker.build()
-    datapackage.build()
         return
     if cmd in COLLECTORS:
         print(COLLECTORS[cmd]())
