@@ -31,8 +31,32 @@ def check_ledger() -> list[str]:
     return errors
 
 
+AI_REV = CURATED / "ai_revenue.csv"
+AI_METRICS = {"ai_arr", "cloud_segment_run_rate", "ai_bookings", "ai_silicon_run_rate",
+              "supply_side_context", "lab_arr", "contracted_arr"}
+AI_BASIS = {"realized", "contracted", "guidance", "third_party"}
+
+
+def check_ai_revenue() -> list[str]:
+    errors = []
+    if not AI_REV.exists():
+        return errors
+    with open(AI_REV) as f:
+        for i, row in enumerate(csv.DictReader(f), start=2):
+            for field in ("ticker", "entity", "call_date", "metric", "value_usd_low", "sentence", "tier"):
+                if not row.get(field):
+                    errors.append(f"ai_revenue.csv line {i}: missing {field}")
+            if row.get("metric") and row["metric"] not in AI_METRICS:
+                errors.append(f"ai_revenue.csv line {i}: bad metric {row['metric']}")
+            if row.get("basis") and row["basis"] not in AI_BASIS:
+                errors.append(f"ai_revenue.csv line {i}: bad basis {row['basis']}")
+            if row.get("tier") not in {"T1", "T2", "T3"}:
+                errors.append(f"ai_revenue.csv line {i}: bad tier {row.get('tier')}")
+    return errors
+
+
 def main() -> None:
-    errors = check_ledger()
+    errors = check_ledger() + check_ai_revenue()
     for e in errors:
         print(f"::error::{e}")
     sys.exit(1 if errors else 0)
