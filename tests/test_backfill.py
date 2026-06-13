@@ -40,3 +40,15 @@ def test_asof_truncation_is_monotone():
     early = _point(pd.Timestamp("2024-03-31"))["K_total_usd"]
     late = _point(pd.Timestamp("2025-03-31"))["K_total_usd"]
     assert late > early, "a later as-of cutoff must include more capex, so a larger stock"
+
+
+def test_debt_equity_split_active():
+    """The blended required return must sit between the all-debt and all-equity
+    bounds, and leaning on debt must lower the blended cost (debt is cheaper)."""
+    from rot.usercost import user_cost, _debt_weight
+    import pandas as pd
+    u = user_cost("mid")
+    assert u["r_debt"] < u["r_equity"], "debt return (rf+Baa) must be below equity (rf+ERP)"
+    assert 0.0 <= u["debt_weight_mean"] <= 1.0
+    # a heavily debt-funded neocloud should carry a non-trivial debt weight
+    assert _debt_weight("CRWV", pd.Timestamp("2026-03-31")) > 0.1

@@ -10,8 +10,13 @@ r:  # required return construction
   risk_free_series: treasury_10y          # primary; fred_dgs10 as cross-check
   equity_risk_premium_series: damodaran_implied_erp
   debt_spread_series: fred_baa10y         # when FRED is reachable
-  # REVIEW: equity-funded K uses rf+ERP (~8.7% at mid-2026); debt-funded uses rf+Baa spread.
-  # Weighting between them follows the F1/F2 financing mix, updated quarterly.
+  baa_spread_fallback: 0.017              # Moody's Baa over 10y, mid-2026 (~1.7%); used if FRED series absent
+  # v5: ACTIVE debt/equity split. Equity-funded K uses rf+ERP (~8.7% at mid-2026);
+  # debt-funded uses rf+Baa spread (~6.2%). Per firm, the debt-funded weight is
+  # trailing-4q debt issued / trailing-4q capex (clipped 0..1); the remainder
+  # (internal + new equity) carries the equity required return. So a firm's blended
+  # required return falls as it leans on debt - the neocloud edge's capital is
+  # contractually cheaper (its EXTRA risk lives in F, not here).
 
 delta:  # annual economic depreciation bands - THE contested numbers
   chips_servers:
