@@ -11,7 +11,7 @@
 <div class="gaugewrap" id="gauges"></div>
 
 <h2>The map: where the boom sits</h2>
-<p class="sub">Position shows the two coverage numbers; the dot's <b>colour</b> shows how the build is financed — green cash-funded, amber leverage rising, red debt-carried. Grey lines: how past booms travelled.</p>
+<p class="sub">Position shows the two coverage numbers; the dot's <b>colour</b> shows how the build is financed — green cash-funded, amber leverage rising, red debt-carried. Dashed boxes: past booms, placed from economic-history figures.</p>
 <div class="panel">
  <svg id="map" viewBox="0 0 820 600" width="100%" role="img" aria-label="Value-coverage map with fragility-coloured dot"></svg>
  <div class="legend" id="maplegend"></div>
@@ -80,18 +80,19 @@ Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/map.json').t
  svg.appendChild(tx(X1-8,Y1+18,'HEALTHY BOOM',{'font-size':12,fill:'#4d7a58','font-weight':'bold','text-anchor':'end'}));
  svg.appendChild(tx(X0+8,Y0-10,'WASTE',{'font-size':12,fill:'#a05a52','font-weight':'bold'}));
  svg.appendChild(tx(X1-8,Y0-10,'PROFIT WITHOUT BENEFIT',{'font-size':12,fill:'#71609a','font-weight':'bold','text-anchor':'end'}));
- (m.historical_booms||[]).forEach(p=>{
-   const x=sx(p.cp[0]),y=sy(p.cs[1]),w=sx(p.cp[1])-sx(p.cp[0]),h=sy(p.cs[0])-sy(p.cs[1]);
-   svg.appendChild(el('rect',{x,y,width:Math.max(w,4),height:Math.max(h,4),rx:6,fill:p.color,'fill-opacity':0.08,stroke:p.color,'stroke-opacity':0.45,'stroke-dasharray':'3 3'}));
-   svg.appendChild(tx(x+w/2,y-5,p.name,{'font-size':11,fill:p.color,'text-anchor':'middle','font-weight':'bold'}));
-   svg.appendChild(tx(x+w/2,y+11,p.era,{'font-size':9.5,fill:p.color,'text-anchor':'middle'}));
- });
+
  const t=m.trail[m.trail.length-1];
  const cx=sx(t.cp[1]),cy=sy(t.cs10[1]),rx=Math.max((sx(t.cp[2])-sx(t.cp[0]))/2,6),ry=Math.max((sy(t.cs10[0])-sy(t.cs10[2]))/2,6);
  svg.appendChild(el('ellipse',{cx,cy,rx,ry,fill:t.color,'fill-opacity':0.13,stroke:t.color,'stroke-dasharray':'4 4','stroke-opacity':0.6}));
  if(m.trail.length>1){let dd='';m.trail.forEach((p,i)=>dd+=(i?'L':'M')+sx(p.cp[1]).toFixed(1)+' '+sy(p.cs10[1]).toFixed(1)+' ');svg.appendChild(el('path',{d:dd,fill:'none',stroke:t.color,'stroke-width':2}))}
  svg.appendChild(el('circle',{cx,cy,r:9,fill:t.color,stroke:'#fff','stroke-width':2}));
  svg.appendChild(tx(cx,cy-18,'AI '+t.quarter,{'font-size':13,'font-weight':'bold',fill:t.color,'text-anchor':'middle'}));
+ (m.historical_booms||[]).forEach(p=>{
+   const x=sx(p.cp[0]),y=sy(p.cs[1]),w=sx(p.cp[1])-sx(p.cp[0]),h=sy(p.cs[0])-sy(p.cs[1]);
+   svg.appendChild(el('rect',{x,y,width:Math.max(w,4),height:Math.max(h,4),rx:6,fill:p.color,'fill-opacity':0.06,stroke:p.color,'stroke-opacity':0.7,'stroke-dasharray':'3 3'}));
+   svg.appendChild(tx(x+w/2,y-5,p.name,{'font-size':11,fill:p.color,'text-anchor':'middle','font-weight':'bold'}));
+   svg.appendChild(tx(x+w/2,y+11,p.era,{'font-size':9.5,fill:p.color,'text-anchor':'middle'}));
+ });
  if(t.cs10[2]>YMAX)svg.appendChild(tx(cx+12,sy(YMAX)+4,'↑ high corner off-frame',{'font-size':10,fill:t.color}));
  svg.appendChild(el('line',{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:'#444','stroke-width':1.4}));
  svg.appendChild(el('line',{x1:X0,y1:Y0,x2:X0,y2:Y1,stroke:'#444','stroke-width':1.4}));
