@@ -63,5 +63,5 @@
   },
   "note": "v2: F = max(centre, edge) external-finance share + circularity bonus. The headline tracks wherever the leverage actually sits - the centre self-funds, the neocloud edge does not. A weighted average hid the edge."
  },
- "methodology_version": "v1"
+ "methodology_version": "v2"
 }
