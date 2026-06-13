@@ -1,11 +1,10 @@
 """User cost of the AI capital stock: UC = Sum_i (r_i + delta_i) K_i.
 
-K is built by perpetual inventory from filed quarterly capex of the K-holder
-universe (hyperscalers + neoclouds), split across asset classes by the
-allocation shares in the assumptions file. This treats recent capex of these
-firms as AI-attributable - an acknowledged upper bound on AI capital, stated
-on the methodology page. r combines the Treasury 10y and the equity premium;
-delta is taken at low/mid/high corners. Returns the user cost at each corner.
+v2: K is AI-ATTRIBUTED. Each firm's quarterly capex is multiplied by an
+ai_capex_share (banded, per bucket) before accumulation, so the stock reflects
+AI/data-centre capital rather than all corporate capex. The denominator can be
+restricted to a firm subset so a coverage ratio always compares the same
+population in numerator and denominator (the adversarial-review fix).
 """
 from __future__ import annotations
 
@@ -15,55 +14,63 @@ from .assumptions import load
 from .seriesio import read_series
 from .universe import load_universe
 
-CLASS_KEYS = {"chips_servers": "chips_servers", "buildings": "buildings", "power_cooling_other": "power_cooling_other"}
 
-
-def _kholder_capex_quarterly() -> pd.DataFrame:
-    """Summed quarterly capex across hyperscalers + neoclouds (USD)."""
-    uni = load_universe()
-    frames = []
-    for _, firm in uni[uni.bucket.isin(["hyperscaler", "neocloud"])].iterrows():
-        t = firm.ticker.lower()
-        for sid in (f"edgar_{t}_capex_q", f"fmp_{t}_capex_q"):
-            try:
-                df = read_series(sid)[["date", "value"]].copy()
-                frames.append(df)
-                break
-            except FileNotFoundError:
-                continue
-    allcx = pd.concat(frames)
-    allcx["q"] = allcx["date"].dt.to_period("Q")
-    return allcx.groupby("q")["value"].sum().reset_index().sort_values("q")
+def _firm_capex_q(ticker: str) -> pd.Series | None:
+    t = ticker.lower()
+    for sid in (f"edgar_{t}_capex_q", f"fmp_{t}_capex_q"):
+        try:
+            return read_series(sid).sort_values("date").set_index("date")["value"]
+        except FileNotFoundError:
+            continue
+    return None
 
 
 def _perpetual_inventory(capex_q: pd.Series, delta_annual: float) -> float:
-    """Installed stock after running quarterly capex through PIM at given delta."""
-    dq = 1 - (1 - delta_annual) ** 0.25  # quarterly depreciation
+    dq = 1 - (1 - delta_annual) ** 0.25
     k = 0.0
     for cx in capex_q:
         k = k * (1 - dq) + cx
     return k
 
 
-def user_cost(corner: str = "mid") -> dict:
-    """User cost ($/yr) and the K it rests on, at a delta corner (low/mid/high)."""
+def user_cost(corner: str = "mid", tickers: list[str] | None = None,
+              share_corner: str | None = None) -> dict:
+    """AI-attributed user cost ($/yr) at a delta corner, over a firm subset.
+
+    tickers: restrict to these firms (default: all hyperscalers + neoclouds).
+    share_corner: which ai_capex_share band to use (defaults to `corner`).
+    """
     a = load()
-    cx = _kholder_capex_quarterly()
-    # required return (decimal): risk-free + equity premium, from the rate series.
+    uni = load_universe().set_index("ticker")
+    if tickers is None:
+        tickers = uni[uni.bucket.isin(["hyperscaler", "neocloud"])].index.tolist()
+    sc = share_corner or corner
+
     try:
         rf = read_series("treasury_10y")["value"].iloc[-1] / 100
     except FileNotFoundError:
         rf = a["r"].get("risk_free_fallback", 0.045)
-    erp = a["r"].get("erp_fallback", 0.043)
-    r = rf + erp
-    alloc = a["k_allocation"]["hyperscaler"]
-    uc, kt = 0.0, 0.0
+    r = rf + a["r"].get("erp_fallback", 0.043)
+
+    uc = kt = 0.0
     detail = {}
-    for cls, share in alloc.items():
-        band = a["delta"][cls]
-        delta = band[{"low": "low", "mid": "mid", "high": "high"}[corner]]
-        k_cls = _perpetual_inventory(cx["value"] * share, delta)
-        uc += (r + delta) * k_cls
-        kt += k_cls
-        detail[cls] = {"K": k_cls, "delta": delta}
-    return {"user_cost": uc, "K_total": kt, "r": r, "corner": corner, "detail": detail}
+    for tk in tickers:
+        if tk not in uni.index:
+            continue
+        bucket = uni.loc[tk, "bucket"]
+        if bucket not in ("hyperscaler", "neocloud"):
+            continue
+        cx = _firm_capex_q(tk)
+        if cx is None or cx.empty:
+            continue
+        ai_share = a["ai_capex_share"][bucket][sc]
+        alloc = a["k_allocation"]["neocloud" if bucket == "neocloud" else "hyperscaler"]
+        for cls, ashare in alloc.items():
+            delta = a["delta"][cls][corner]
+            k_cls = _perpetual_inventory(cx * ai_share * ashare, delta)
+            uc += (r + delta) * k_cls
+            kt += k_cls
+            detail.setdefault(cls, 0.0)
+            detail[cls] += k_cls
+    return {"user_cost": uc, "K_total": kt, "r": r, "corner": corner,
+            "ai_share_corner": sc, "tickers": tickers, "detail": detail}

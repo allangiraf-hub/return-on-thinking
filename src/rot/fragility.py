@@ -1,9 +1,10 @@
-"""Fragility index F (0-1): whose money carries the AI build, and how exposed.
+"""Fragility index F - v2: weakest-link, not a weighted average.
 
-Components (weights in assumptions): aggregate external-finance share across
-all K-holders, the same ratio for the neocloud tier alone (the fragile edge),
-and a circularity penalty from the deal ledger. Mapped to a Minsky stage and
-a traffic-light colour for the map dot.
+The v1 weighted average put 50% of the weight on an aggregate term that nets the
+cash-rich centre against the leveraged edge - hiding exactly the edge risk the
+framework says matters most (adversarial review 2026-06-13). v2 uses
+F = max(centre external share, edge external share), with circular deals shown as
+a separate flag rather than averaged into invisibility.
 """
 from __future__ import annotations
 
@@ -26,7 +27,6 @@ def _t4(sid: str) -> float | None:
 
 
 def _ext_share(tickers: list[str]) -> float | None:
-    """max(0, (sum capex - sum OCF)/sum capex) over a set of firms, trailing 4q."""
     cap = ocf = 0.0
     n = 0
     for t in tickers:
@@ -37,9 +37,7 @@ def _ext_share(tickers: list[str]) -> float | None:
             cap += c
             ocf += o
             n += 1
-    if not cap or n == 0:
-        return None
-    return max(0.0, (cap - ocf) / cap)
+    return max(0.0, (cap - ocf) / cap) if cap and n else None
 
 
 def _open_circularity_flags() -> int:
@@ -55,26 +53,20 @@ def _open_circularity_flags() -> int:
 def fragility() -> dict:
     a = load()["fragility"]
     uni = load_universe()
-    hyper_neo = uni[uni.bucket.isin(["hyperscaler", "neocloud"])]["ticker"].tolist()
-    neo = uni[uni.bucket == "neocloud"]["ticker"].tolist()
-
-    agg = _ext_share(hyper_neo) or 0.0
-    neo_int = _ext_share(neo) or 0.0
+    centre = _ext_share(uni[uni.bucket == "hyperscaler"]["ticker"].tolist()) or 0.0
+    edge = _ext_share(uni[uni.bucket == "neocloud"]["ticker"].tolist()) or 0.0
     flags = _open_circularity_flags()
-    circ = min(1.0, flags / a["circularity_full_at"])
 
-    F = (a["weight_aggregate_external"] * agg
-         + a["weight_neocloud_intensity"] * neo_int
-         + a["weight_circularity"] * circ)
-    F = max(0.0, min(1.0, F))
-
+    # F is pure located-leverage; circular deals are a SEPARATE warning flag, not
+    # averaged or added into the number (the v1 mistake was burying signals in a blend).
+    F = max(0.0, min(1.0, max(centre, edge)))
     th = a["stage_thresholds"]
     stage = "hedge" if F < th["hedge"] else "speculative" if F < th["speculative"] else "ponzi"
     return {
         "F": F, "stage": stage, "color": STAGE_COLOR[stage],
-        "components": {"aggregate_external_share": agg, "neocloud_intensity": neo_int,
-                       "circularity_flags": flags, "circularity_component": circ},
-        "note": "F = location-weighted external-finance dependence of the build, plus a "
-                "circularity penalty. Hedge (cash-funded) < 0.33 < speculative < 0.66 < Ponzi. "
-                "The centre is solid; fragility concentrates at the neocloud edge.",
+        "components": {"centre_external_share": centre, "edge_external_share": edge,
+                       "circularity_flags": flags},
+        "note": "v2: F = max(centre, edge) external-finance share + circularity bonus. "
+                "The headline tracks wherever the leverage actually sits - the centre self-funds, "
+                "the neocloud edge does not. A weighted average hid the edge.",
     }

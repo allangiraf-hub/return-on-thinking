@@ -2,12 +2,17 @@
  "generated_at": "2026-06-13",
  "quarter": "2026-Q2",
  "earnings_cp": {
-  "cp_low": 0.05913730233892594,
-  "cp_mid": 0.10490320266558563,
-  "cp_high": 0.1609150876321982,
+  "cp_low": 0.18965948835819232,
+  "cp_mid": 0.500245286935658,
+  "cp_high": 1.2201995796278928,
   "realized_ai_revenue_usd": 53900000000.0,
-  "user_cost_mid_usd": 256903500705.42862,
-  "K_total_mid_usd": 1112607447553.6184,
+  "user_cost_mid_usd": 53873571033.69639,
+  "K_total_mid_usd": 234339389866.35837,
+  "firms": [
+   "MSFT",
+   "AMZN",
+   "NBIS"
+  ],
   "contributors": [
    {
     "entity": "Microsoft",
@@ -25,39 +30,38 @@
     "call_date": "2026-05-13"
    }
   ],
-  "note": "Cp = realized AI quasi-rents / user cost of installed stock. Realized K-holder AI revenue only; guidance excluded. Corners span delta x margin. Levels uncertain to a factor of several - watch the trajectory."
+  "note": "v2: AI-attributed revenue of the firms that disclose it, over the AI-attributed user cost of the same firms. Population-consistent. Realized only; guidance excluded."
  },
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.13009657931054072,
-    "h30": 0.1300965793105407,
-    "annual_flow_usd": 35572500000.0
+    "h10": 0.1239812247760551,
+    "h30": 0.1239812247760551,
+    "annual_flow_usd": 20925000000.0
    },
    "mid": {
-    "h10": 0.7647646555513388,
-    "h30": 1.9698605017267512,
-    "annual_flow_usd": 128061000000.0
+    "h10": 1.2543455990081396,
+    "h30": 2.084373715813272,
+    "annual_flow_usd": 105462000000.0
    },
    "high": {
-    "h10": 4.89214541588958,
-    "h30": 47.30499377632574,
-    "annual_flow_usd": 474300000000.0
+    "h10": 13.237099029556756,
+    "h30": 43.50063146339798,
+    "annual_flow_usd": 502200000000.0
    }
   },
-  "note": "Social return: time saved/work improved valued against user cost, at 10y and 30y horizons. Bounded estimate with biases in both directions; gross of harms (see electricity-price and layoff indicators). NOT a floor."
+  "note": "v2: economy-wide AI productivity value (banded appropriability) over the AI-attributed user cost of all K-holders. A projection, not realized value. 30-year horizon illustrative."
  },
  "fragility_f": {
-  "F": 0.27816405957970963,
-  "stage": "hedge",
-  "color": "#1D9E75",
+  "F": 0.664160148949274,
+  "stage": "speculative",
+  "color": "#BA7517",
   "components": {
-   "aggregate_external_share": 0.0,
-   "neocloud_intensity": 0.664160148949274,
-   "circularity_flags": 1,
-   "circularity_component": 0.125
+   "centre_external_share": 0.0,
+   "edge_external_share": 0.664160148949274,
+   "circularity_flags": 1
   },
-  "note": "F = location-weighted external-finance dependence of the build, plus a circularity penalty. Hedge (cash-funded) < 0.33 < speculative < 0.66 < Ponzi. The centre is solid; fragility concentrates at the neocloud edge."
+  "note": "v2: F = max(centre, edge) external-finance share + circularity bonus. The headline tracks wherever the leverage actually sits - the centre self-funds, the neocloud edge does not. A weighted average hid the edge."
  },
  "methodology_version": "v1"
 }

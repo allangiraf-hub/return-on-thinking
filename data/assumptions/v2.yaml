@@ -1,0 +1,77 @@
+# The Return on Thinking - methodology assumptions, version 1 (DRAFT for review)
+# Every contestable number lives here. Bumping `version` REQUIRES restating the
+# full back-series (CI will enforce from P2). Review notes for Allan inline.
+version: 2
+status: active   # v2: population-consistent attribution, F max-aggregator, Cs banded appropriability (adversarial review 2026-06-13)
+
+r:  # required return construction
+  risk_free_fallback: 0.045   # used only if treasury_10y series unavailable
+  erp_fallback: 0.043         # Damodaran implied ERP, mid-2026
+  risk_free_series: treasury_10y          # primary; fred_dgs10 as cross-check
+  equity_risk_premium_series: damodaran_implied_erp
+  debt_spread_series: fred_baa10y         # when FRED is reachable
+  # REVIEW: equity-funded K uses rf+ERP (~8.7% at mid-2026); debt-funded uses rf+Baa spread.
+  # Weighting between them follows the F1/F2 financing mix, updated quarterly.
+
+delta:  # annual economic depreciation bands - THE contested numbers
+  chips_servers:
+    low: 0.18    # ~5.5yr life: the hyperscaler accounting view (10-K schedules)
+    mid: 0.28
+    high: 0.40   # ~2.5yr life: the sceptics' view (Burry arithmetic)
+    # REVIEW: band deliberately spans the public controversy; mid is NOT a claim, just a midpoint.
+  buildings:
+    low: 0.02
+    mid: 0.025
+    high: 0.03
+  power_cooling_other:
+    low: 0.03
+    mid: 0.04
+    high: 0.05
+
+ai_capex_share:  # NEW v2 - fraction of each bucket's capex that is AI/data-centre, banded
+  hyperscaler: {low: 0.25, mid: 0.40, high: 0.60}   # rising but not all capex is AI
+  neocloud: {low: 0.95, mid: 1.0, high: 1.0}        # neocloud capex is essentially all AI compute
+
+k_allocation:  # share of AI capex by asset class (until SemiAnalysis calibration)
+  hyperscaler: {chips_servers: 0.60, buildings: 0.25, power_cooling_other: 0.15}
+  neocloud:    {chips_servers: 0.75, buildings: 0.15, power_cooling_other: 0.10}
+  # REVIEW: crude; flagged for replacement by Accelerator-Model vintages if SemiAnalysis grants access.
+
+quasi_rent_margin:  # converts AI revenues to quasi-rents: revenue net of OPERATING costs only
+  # (energy, labour, inference, sales). Depreciation is NOT netted here - it is charged
+  # in the user-cost denominator; netting it twice would double-count (adversarial review
+  # catch, 2026-06-12). m is therefore an EBITDA-type margin, not an EBIT margin.
+  low: 0.30
+  mid: 0.50
+  high: 0.70
+  # REVIEW: widest band in the system; inference-margin estimates are disputed.
+
+cs:
+  horizons_years: [10, 30]
+  rct_coefficients:  # frozen until annual review; sources in METHODS.md
+    noy_zhang_2023:   {time_saving: 0.40, quality: 0.18}
+    brynjolfsson_li_raymond_2025: {productivity: 0.15}
+    dellacqua_2023:   {tasks: 0.122, speed: 0.251}
+    cui_2026:         {dev_tasks: 0.26}
+
+map:
+  movement_rule: "a move is called only when the new quarterly position lies outside the previous quarter's uncertainty ellipse"
+  trail_quarters: 4
+
+calibration_credits:
+  - "SemiAnalysis (pending response to research-access request, 2026-06-12)"
+
+cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 replaces with live collectors.
+  us_employee_compensation_usd: 15500000000000   # ~$15.5tn annual, BEA NIPA 1.10 (2025); pinned
+  ai_exposed_task_share: {low: 0.20, mid: 0.30, high: 0.45}   # AEI augmentation/automation task coverage
+  rct_effect: {low: 0.15, mid: 0.27, high: 0.40}   # weighted productivity effect on affected tasks (A.4 studies)
+  adoption_rate: {low: 0.09, mid: 0.12, high: 0.20}   # Census BTOS firm AI-use, mid-2026
+  appropriability_to_society: {low: 0.50, mid: 0.70, high: 0.90}   # v2 - banded (was fixed 0.85); social share of gross productivity value
+  discount_rate: 0.05
+  annual_growth: {low: 0.0, mid: 0.06, high: 0.12}   # v2 - tamed (was up to 0.20); 30y horizon is illustrative only
+
+fragility:  # F index - v2: weakest-link (max of centre vs edge), not a weighted average
+  aggregator: max                   # v2 - F = max(centre, edge) + circularity; a blend hid the edge risk
+  circularity_bonus: 0.15           # circular deals add up to this on top of the max
+  circularity_full_at: 6            # this many open flags = full circularity bonus
+  stage_thresholds: {hedge: 0.33, speculative: 0.75}   # hedge=green(cash); speculative=amber(rolling); ponzi=red(wholly external)
