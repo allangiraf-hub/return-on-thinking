@@ -11,6 +11,7 @@ import datetime as dt
 import json
 
 from .config import SITE_DATA
+from .assumptions import load
 from .dials import cp_band, cs_band
 from .fragility import fragility
 from .ticker import build as build_ticker  # reuse F1 etc.
@@ -46,11 +47,16 @@ def assemble() -> dict:
     trail = [p for p in trail if p["quarter"] != q] + [point]
     trail = trail[-8:]  # keep last 8 quarters
 
+    qr_flow = cp["realized_ai_revenue_usd"] * load()["quasi_rent_margin"]["mid"]
+    flows = {"private_earnings_flow_usd": qr_flow,
+             "social_value_flow_usd": cs["cs"]["mid"]["annual_flow_usd"],
+             "capital_cost_usd": cp["user_cost_mid_usd"]}
     dials = {
         "generated_at": now.isoformat(), "quarter": q,
         "earnings_cp": cp,
         "benefit_cs": cs,
         "fragility_f": frag,
+        "flows": flows,
         "methodology_version": "v2",
     }
     SITE_DATA.mkdir(parents=True, exist_ok=True)

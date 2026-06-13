@@ -28,6 +28,11 @@ delta:  # annual economic depreciation bands - THE contested numbers
     mid: 0.04
     high: 0.05
 
+revenue_attribution:  # v3 - AI share of segment revenue for firms that don't state an AI ARR
+  google_cloud_ai_share: {low: 0.15, mid: 0.25, high: 0.35}   # AI slice of Google Cloud (Vertex/Gemini/AI infra)
+  oracle_cloud_ai_share: {low: 0.04, mid: 0.10, high: 0.18}   # OCI-AI is a small slice of Cloud & License
+  # neoclouds: total revenue used directly (pure-play AI); META excluded (AI monetized via ad uplift, no revenue line)
+
 ai_capex_share:  # NEW v2 - fraction of each bucket's capex that is AI/data-centre, banded
   hyperscaler: {low: 0.25, mid: 0.40, high: 0.60}   # rising but not all capex is AI
   neocloud: {low: 0.95, mid: 1.0, high: 1.0}        # neocloud capex is essentially all AI compute

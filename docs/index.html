@@ -18,6 +18,11 @@
 </div>
 <p class="sub" id="reading"></p>
 
+<h2>The same picture in dollars</h2>
+<p class="sub">The coverage map divides by capital cost on both axes, which can couple them to the interest-rate environment. This view plots the raw annual flows instead — private earnings against value to the world — with the dot sized by the capital cost it must cover. As the trail grows, it moves in dollars, independent of rates.</p>
+<div class="panel"><svg id="flow" viewBox="0 0 820 380" width="100%" role="img" aria-label="Annual flows: private earnings vs social value, dot sized by capital cost"></svg>
+<div class="legend" id="flowlegend"></div></div>
+
 <h2>Look closer</h2>
 <div class="nav">
  <a href="earnings.html">▸ Earnings — does it pay for itself?</a>
@@ -90,6 +95,26 @@ Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/map.json').t
  svg.appendChild(tx(xb,Y0+14,'1.0',{'font-size':10,fill:'#999','text-anchor':'middle'}));
  document.getElementById('maplegend').innerHTML='Dot colour = financing fragility ('+f.stage+', '+Math.round(f.F*100)+'%). Oval = assumption range. Grey = past booms (schematic). The trail grows one point each quarter — direction of travel is the signal.';
  document.getElementById('reading').textContent='Reading, '+d.quarter+': AI sits in the noble-failure / productive-bubble corner — earnings cover about '+Math.round(cp.cp_mid*100)+'% of the capital cost while the world gets materially more (×'+cs.mid.h10.toFixed(1)+' over 10 years). Financing is '+f.stage+' overall ('+Math.round(f.F*100)+'%), but the neocloud edge is far more exposed. Whether the dot travels right toward a healthy boom, or stalls, is the open question.';
+
+ // flow plot (de-correlated): x=private earnings flow, y=social value flow, dot size=capital cost
+ const fl=d.flows, FS=document.getElementById('flow');
+ const fx0=90,fx1=760,fy0=320,fy1=40, FX=v=>fx0+(fx1-fx0)*Math.min(v/140,1), FY=v=>fy0-(fy0-fy1)*Math.min(v/140,1);
+ const uc=fl.capital_cost_usd/1e9, pe=fl.private_earnings_flow_usd/1e9, sv=fl.social_value_flow_usd/1e9;
+ FS.appendChild(el('rect',{x:fx0,y:fy1,width:FX(uc)-fx0,height:FY(uc)-fy1,fill:'#f6e9e7'}));
+ FS.appendChild(el('rect',{x:FX(uc),y:fy1,width:fx1-FX(uc),height:FY(uc)-fy1,fill:'#eaf1ea'}));
+ FS.appendChild(el('line',{x1:FX(uc),y1:fy1,x2:FX(uc),y2:fy0,stroke:'#b0413e','stroke-dasharray':'5 4'}));
+ FS.appendChild(el('line',{x1:fx0,y1:FY(uc),x2:fx1,y2:FY(uc),stroke:'#b0413e','stroke-dasharray':'5 4'}));
+ FS.appendChild(tx(FX(uc)+6,fy1+14,'breaks even (private) →',{'font-size':10.5,fill:'#b0413e'}));
+ FS.appendChild(tx(fx0+6,FY(uc)-6,'breaks even (social) ↑',{'font-size':10.5,fill:'#b0413e'}));
+ const dr=Math.max(10,Math.sqrt(uc)*1.6);
+ FS.appendChild(el('circle',{cx:FX(pe),cy:FY(sv),r:dr,fill:t.color,'fill-opacity':0.18,stroke:t.color}));
+ FS.appendChild(el('circle',{cx:FX(pe),cy:FY(sv),r:6,fill:t.color}));
+ FS.appendChild(tx(FX(pe),FY(sv)-dr-6,'AI '+t.quarter,{'font-size':12,'font-weight':'bold',fill:t.color,'text-anchor':'middle'}));
+ FS.appendChild(el('line',{x1:fx0,y1:fy0,x2:fx1,y2:fy0,stroke:'#444','stroke-width':1.2}));
+ FS.appendChild(el('line',{x1:fx0,y1:fy0,x2:fx0,y2:fy1,stroke:'#444','stroke-width':1.2}));
+ FS.appendChild(tx((fx0+fx1)/2,fy0+30,'Private earnings flow ($bn/yr)',{'font-size':12.5,fill:'#333','text-anchor':'middle'}));
+ FS.appendChild(tx(34,(fy0+fy1)/2,'Social value flow ($bn/yr)',{'font-size':12.5,fill:'#333','text-anchor':'middle',transform:`rotate(-90 34 ${(fy0+fy1)/2})`}));
+ document.getElementById('flowlegend').innerHTML='AI now: private earnings $'+Math.round(pe)+'bn, social value $'+Math.round(sv)+'bn, against a capital cost of $'+Math.round(uc)+'bn/yr (dot size). Right of the red line = pays for itself privately; above it = pays for itself for the world.';
 }).catch(e=>{document.getElementById('meta').textContent='dashboard not yet assembled — run python -m rot.cli assemble'});
 </script>
 </body></html>

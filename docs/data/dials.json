@@ -2,55 +2,95 @@
  "generated_at": "2026-06-13",
  "quarter": "2026-Q2",
  "earnings_cp": {
-  "cp_low": 0.18965948835819232,
-  "cp_mid": 0.500245286935658,
-  "cp_high": 1.2201995796278928,
-  "realized_ai_revenue_usd": 53900000000.0,
-  "user_cost_mid_usd": 53873571033.69639,
-  "K_total_mid_usd": 234339389866.35837,
+  "cp_low": 0.1507429327695443,
+  "cp_mid": 0.43873419928619917,
+  "cp_high": 1.1673063839194884,
+  "realized_ai_revenue_usd": 80839250000.0,
+  "user_cost_mid_usd": 92127819225.76566,
+  "K_total_mid_usd": 391857619899.8837,
   "firms": [
    "MSFT",
    "AMZN",
-   "NBIS"
+   "GOOGL",
+   "ORCL",
+   "NBIS",
+   "CRWV",
+   "IREN",
+   "APLD"
   ],
   "contributors": [
    {
     "entity": "Microsoft",
-    "value_usd_low": 37000000000.0,
-    "call_date": "2026-04-29"
+    "value": 37000000000.0,
+    "basis": "stated AI ARR",
+    "tier": "T2"
    },
    {
     "entity": "Amazon AWS",
-    "value_usd_low": 15000000000.0,
-    "call_date": "2026-04-29"
+    "value": 15000000000.0,
+    "basis": "stated AI ARR",
+    "tier": "T2"
    },
    {
     "entity": "Nebius",
-    "value_usd_low": 1900000000.0,
-    "call_date": "2026-05-13"
+    "value": 1900000000.0,
+    "basis": "stated AI ARR",
+    "tier": "T2"
+   },
+   {
+    "entity": "Google Cloud",
+    "value": 14676250000.0,
+    "basis": "cloud x 25% AI",
+    "tier": "T3"
+   },
+   {
+    "entity": "Oracle",
+    "value": 4923000000.0,
+    "basis": "cloud x 10% AI",
+    "tier": "T3"
+   },
+   {
+    "entity": "Applied Digital",
+    "value": 356000000.0,
+    "basis": "neocloud total",
+    "tier": "T1"
+   },
+   {
+    "entity": "CoreWeave",
+    "value": 6227000000.0,
+    "basis": "neocloud total",
+    "tier": "T1"
+   },
+   {
+    "entity": "IREN",
+    "value": 757000000.0,
+    "basis": "neocloud total",
+    "tier": "T1"
    }
   ],
-  "note": "v2: AI-attributed revenue of the firms that disclose it, over the AI-attributed user cost of the same firms. Population-consistent. Realized only; guidance excluded."
+  "note": "v3: AI-attributed revenue of every measurable K-holder (stated AI ARR + cloud-segment x AI-share + neocloud total) over the AI-attributed user cost of the same firms. Meta excluded (AI monetized via ad uplift, no revenue line). Population-consistent."
  },
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.1239812247760551,
-    "h30": 0.1239812247760551,
-    "annual_flow_usd": 20925000000.0
+    "h10": 0.1724548841177319,
+    "h30": 0.17245488411773197,
+    "annual_flow_usd": 29106168750.0
    },
    "mid": {
-    "h10": 1.2543455990081396,
-    "h30": 2.084373715813272,
-    "annual_flow_usd": 105462000000.0
+    "h10": 1.1631762540995856,
+    "h30": 1.932875606866608,
+    "annual_flow_usd": 97796727000.0
    },
    "high": {
-    "h10": 13.237099029556756,
-    "h30": 43.50063146339798,
-    "annual_flow_usd": 502200000000.0
+    "h10": 8.183326443430031,
+    "h30": 26.892589302646403,
+    "annual_flow_usd": 310465800000.0
    }
   },
-  "note": "v2: economy-wide AI productivity value (banded appropriability) over the AI-attributed user cost of all K-holders. A projection, not realized value. 30-year horizon illustrative."
+  "exposed_wage_bill_usd": 4312025000000.0,
+  "macro_crosscheck_flow_usd": 105462000000.0,
+  "note": "v3: economy-wide AI productivity value built as a per-occupation sum over SOC major groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed user cost of all K-holders. A projection, not realized value. 30y illustrative."
  },
  "fragility_f": {
   "F": 0.664160148949274,
@@ -62,6 +102,11 @@
    "circularity_flags": 1
   },
   "note": "v2: F = max(centre, edge) external-finance share + circularity bonus. The headline tracks wherever the leverage actually sits - the centre self-funds, the neocloud edge does not. A weighted average hid the edge."
+ },
+ "flows": {
+  "private_earnings_flow_usd": 40419625000.0,
+  "social_value_flow_usd": 97796727000.0,
+  "capital_cost_usd": 92127819225.76566
  },
  "methodology_version": "v2"
 }

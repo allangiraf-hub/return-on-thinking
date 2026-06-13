@@ -32,7 +32,7 @@ def check_ledger() -> list[str]:
 
 
 AI_REV = CURATED / "ai_revenue.csv"
-AI_METRICS = {"ai_arr", "cloud_segment_run_rate", "ai_bookings", "ai_silicon_run_rate",
+AI_METRICS = {"ai_arr", "cloud_segment_run_rate", "cloud_segment_revenue", "neocloud_total_revenue", "ai_bookings", "ai_silicon_run_rate",
               "supply_side_context", "lab_arr", "contracted_arr"}
 AI_BASIS = {"realized", "contracted", "guidance", "third_party"}
 
