@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 import traceback
 
-from .collectors import census_c30, damodaran, edgar, eia, fmp, fred, treasury, vastai
+from .collectors import census_c30, damodaran, edgar, eia, fmp, fmp_revenue, fred, treasury, vastai
 from . import backfill as backfill_mod, datapackage, mapviz, ticker
 
 COLLECTORS = {
@@ -12,6 +12,7 @@ COLLECTORS = {
     "fred": fred.run,
     "treasury": treasury.run,
     "fmp": fmp.run,
+    "fmp_revenue": fmp_revenue.run,
     "eia": eia.run,
     "vastai": vastai.run,
     "damodaran": damodaran.run,

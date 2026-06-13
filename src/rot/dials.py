@@ -12,6 +12,7 @@ import pandas as pd
 
 from .assumptions import load
 from .config import CURATED
+from .seriesio import read_series
 from .usercost import user_cost
 
 # Cp covers every K-holder whose AI revenue is measurable. META is excluded:
@@ -21,6 +22,34 @@ CP_FIRMS = ["MSFT", "AMZN", "GOOGL", "ORCL", "NBIS", "CRWV", "IREN", "APLD"]
 STATED_FIRMS = ["MSFT", "AMZN", "NBIS"]          # stated AI ARR (T2)
 CLOUD_FIRMS = {"GOOGL": "google_cloud_ai_share", "ORCL": "oracle_cloud_ai_share"}  # attributed (T3)
 NEOCLOUD_FIRMS = ["CRWV", "IREN", "APLD"]        # total revenue, pure-play (T1)
+_NEO_NAME = {"CRWV": "CoreWeave", "IREN": "IREN", "APLD": "Applied Digital"}
+_CLOUD_NAME = {"GOOGL": "Google Cloud", "ORCL": "Oracle"}
+
+
+def _neocloud_trailing4(tk: str, asof=None):
+    """Self-refreshing neocloud revenue: trailing-4q from the auto-collected
+    fmp_<t>_revenue_q series (v5). Returns None if the series is absent so the
+    caller can fall back to the pinned ai_revenue.csv value."""
+    try:
+        s = read_series(f"fmp_{tk.lower()}_revenue_q").sort_values("date")
+    except FileNotFoundError:
+        return None
+    if asof is not None:
+        s = s[s["date"] <= pd.Timestamp(asof)]
+    s = s.tail(4)
+    return float(s["value"].sum()) if len(s) == 4 else None
+
+
+def _cloud_segment(tk: str, asof=None):
+    """Self-refreshing cloud-segment revenue: latest annual fmp_<t>_cloud_segment_rev_a
+    as of `asof` (v5). None if absent -> caller falls back to pinned CSV."""
+    try:
+        s = read_series(f"fmp_{tk.lower()}_cloud_segment_rev_a").sort_values("date")
+    except FileNotFoundError:
+        return None
+    if asof is not None:
+        s = s[s["date"] <= pd.Timestamp(asof)]
+    return float(s["value"].iloc[-1]) if len(s) else None
 
 
 def _ai_revenue(corner: str, asof=None) -> tuple[float, list[dict]]:
@@ -45,19 +74,34 @@ def _ai_revenue(corner: str, asof=None) -> tuple[float, list[dict]]:
         contributors.append({"entity": r.entity, "value": r.value_usd_low, "basis": "stated AI ARR", "tier": "T2"})
 
     for tk, share_key in CLOUD_FIRMS.items():
-        seg = df[(df.metric == "cloud_segment_revenue") & (df.ticker == tk)]
-        if seg.empty:
-            continue
-        r = seg.sort_values("d").iloc[-1]
+        # v5: prefer the self-refreshing fmp segment series; fall back to pinned CSV.
+        seg_rev = _cloud_segment(tk, asof)
+        src = "auto"
+        if seg_rev is None:
+            seg = df[(df.metric == "cloud_segment_revenue") & (df.ticker == tk)]
+            if seg.empty:
+                continue
+            seg_rev = float(seg.sort_values("d").iloc[-1].value_usd_low)
+            src = "pinned"
         share = a["revenue_attribution"][share_key][corner]
-        v = r.value_usd_low * share
+        v = seg_rev * share
         total += v
-        contributors.append({"entity": r.entity, "value": v, "basis": f"cloud x {int(share*100)}% AI", "tier": "T3"})
+        contributors.append({"entity": _CLOUD_NAME.get(tk, tk), "value": v,
+                             "basis": f"cloud x {int(share*100)}% AI ({src})", "tier": "T3"})
 
-    neo = df[(df.metric == "neocloud_total_revenue") & (df.ticker.isin(NEOCLOUD_FIRMS))]
-    for _, r in neo.sort_values("d").groupby("ticker").tail(1).iterrows():
-        total += r.value_usd_low
-        contributors.append({"entity": r.entity, "value": r.value_usd_low, "basis": "neocloud total", "tier": "T1"})
+    for tk in NEOCLOUD_FIRMS:
+        # v5: prefer trailing-4q from the self-refreshing revenue series; fall back to CSV.
+        neo_rev = _neocloud_trailing4(tk, asof)
+        src = "auto"
+        if neo_rev is None:
+            neo = df[(df.metric == "neocloud_total_revenue") & (df.ticker == tk)]
+            if neo.empty:
+                continue
+            neo_rev = float(neo.sort_values("d").iloc[-1].value_usd_low)
+            src = "pinned"
+        total += neo_rev
+        contributors.append({"entity": _NEO_NAME.get(tk, tk), "value": neo_rev,
+                             "basis": f"neocloud total ({src})", "tier": "T1"})
 
     return total, contributors
 

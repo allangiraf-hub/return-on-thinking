@@ -1,0 +1,6 @@
+series_id,date,value,unit,source_url,retrieved_at,tier
+fmp_apld_revenue_q,2025-02-28,52921000.0,USD,https://financialmodelingprep.com/stable/income-statement?symbol=APLD&period=quarter,2026-06-13T15:54:19+00:00,T1
+fmp_apld_revenue_q,2025-05-31,38013000.0,USD,https://financialmodelingprep.com/stable/income-statement?symbol=APLD&period=quarter,2026-06-13T15:54:19+00:00,T1
+fmp_apld_revenue_q,2025-08-31,64215999.0,USD,https://financialmodelingprep.com/stable/income-statement?symbol=APLD&period=quarter,2026-06-13T15:54:19+00:00,T1
+fmp_apld_revenue_q,2025-11-30,126589000.0,USD,https://financialmodelingprep.com/stable/income-statement?symbol=APLD&period=quarter,2026-06-13T15:54:19+00:00,T1
+fmp_apld_revenue_q,2026-02-28,126637000.0,USD,https://financialmodelingprep.com/stable/income-statement?symbol=APLD&period=quarter,2026-06-13T15:54:19+00:00,T1

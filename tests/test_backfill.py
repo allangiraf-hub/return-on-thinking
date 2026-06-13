@@ -42,6 +42,20 @@ def test_asof_truncation_is_monotone():
     assert late > early, "a later as-of cutoff must include more capex, so a larger stock"
 
 
+def test_revenue_self_refresh_path():
+    """v5: neocloud + cloud-segment revenue come from the auto-collected fmp_*
+    series (trailing-4q / latest annual), and the contributors are tagged 'auto'
+    when the series is present. Reconciles with the filings we validated against."""
+    from rot.dials import _ai_revenue, _neocloud_trailing4
+    import pandas as pd
+    rev, contribs = _ai_revenue("mid")
+    autos = [c for c in contribs if "(auto)" in c["basis"]]
+    assert autos, "expected the self-refreshing series to drive neocloud/cloud lines"
+    # CoreWeave trailing-4q must match the validated ~$6.23bn filing sum
+    crwv = _neocloud_trailing4("CRWV", pd.Timestamp("2026-03-31"))
+    assert crwv is not None and abs(crwv - 6.227e9) < 5e7
+
+
 def test_debt_equity_split_active():
     """The blended required return must sit between the all-debt and all-equity
     bounds, and leaning on debt must lower the blended cost (debt is cheaper)."""

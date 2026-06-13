@@ -1,0 +1,4 @@
+series_id,date,value,unit,source_url,retrieved_at,tier
+fmp_orcl_cloud_segment_rev_a,2023-05-31,41086000000.0,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=ORCL,2026-06-13T15:54:19+00:00,T1
+fmp_orcl_cloud_segment_rev_a,2024-05-31,44464000000.0,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=ORCL,2026-06-13T15:54:19+00:00,T1
+fmp_orcl_cloud_segment_rev_a,2025-05-31,49230000000.0,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=ORCL,2026-06-13T15:54:19+00:00,T1
