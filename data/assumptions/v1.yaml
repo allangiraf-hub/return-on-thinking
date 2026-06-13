@@ -65,3 +65,10 @@ cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 r
   appropriability_to_society: 0.85   # social share net of the ~2% Nordhaus producer capture, conservatively 0.85
   discount_rate: 0.05
   annual_growth: {low: 0.0, mid: 0.10, high: 0.20}   # value-flow growth as adoption deepens
+
+fragility:  # F index weights and Minsky-stage thresholds
+  weight_aggregate_external: 0.50   # (capex - OCF)/capex, all K-holders
+  weight_neocloud_intensity: 0.40   # same ratio, neocloud tier only - the fragile edge
+  weight_circularity: 0.10          # scaled open circular-deal flags
+  circularity_full_at: 8            # this many open flags = max circularity component
+  stage_thresholds: {hedge: 0.33, speculative: 0.66}   # below hedge=green, below spec=amber, else red

@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Earnings — The Return on Thinking</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · Earnings</div>
+<h1>Earnings — is the machinery paying for itself?</h1>
+<div class="meta" id="meta">Loading…</div>
+<p class="sub">The coverage ratio: the quasi-rents the AI capital actually earns, against the annual cost of holding it. A gap is normal for a young technology — the trajectory is the signal, not the level.</p>
+<div class="panel"><h3>Coverage ratio (Cp)</h3><div id="cp" style="font:bold 26px Helvetica,Arial,sans-serif"></div><div class="legend" id="cpn"></div></div>
+<h2>What the AI capital earns</h2>
+<p class="sub">Realized AI revenue stated on earnings calls (K-holders only; guidance and chipmaker revenue excluded). Each figure is kept with its verbatim sentence.</p>
+<div class="panel"><table id="rev"><thead><tr><th>Company</th><th>AI revenue (realized)</th><th>As of</th><th>Basis</th></tr></thead><tbody></tbody></table>
+<div class="src">Source: company earnings-call transcripts, tier T2; full evidence in the repository's <code>data/curated/ai_revenue.csv</code>.</div></div>
+<h2>What it costs to hold — the user cost</h2>
+<div class="panel" id="ucpanel"></div>
+<h2>Data-centre construction</h2>
+<p class="sub">The durable, building-shaped part of the build-out — monthly, since 2014.</p>
+<div class="panel"><div id="constr"></div><div class="src">Source: <a href="https://www.census.gov/construction/c30/c30index.html">US Census C30</a>, private SA.</div></div>
+<h2>GPU rental prices</h2>
+<p class="sub">The open-market price of an hour of AI compute — a check on what the machinery is worth. Falling prices would be the first hard evidence of overcapacity.</p>
+<div class="panel"><div id="gpu"></div><div class="src">Source: <a href="https://vast.ai/">vast.ai</a> marketplace, weekly medians; append-only archive.</div></div>
+<div class="nav" style="margin-top:24px"><a href="index.html">← back to the dashboard</a><a href="benefit.html">Benefit →</a><a href="fragility.html">Fragility →</a><a href="methodology.html">Methodology</a></div>
+<footer>Levels uncertain to a factor of several; the corners span depreciation × margin. © Allan Pedersen.</footer>
+</div>
+<script src="spark.js"></script><script>
+Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/detail.json').then(r=>r.json())]).then(([d,x])=>{
+ const cp=d.earnings_cp;
+ document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
+ document.getElementById('cp').textContent=cp.cp_low.toFixed(2)+' – '+cp.cp_high.toFixed(2)+'  (mid '+cp.cp_mid.toFixed(2)+')';
+ document.getElementById('cpn').textContent='Realized AI revenue $'+(cp.realized_ai_revenue_usd/1e9).toFixed(0)+'bn ÷ annual user cost $'+(cp.user_cost_mid_usd/1e9).toFixed(0)+'bn of a $'+(cp.K_total_mid_usd/1e12).toFixed(1)+'tn installed stock. 1.0 = pays for itself. Realized only; guidance excluded.';
+ const tb=document.querySelector('#rev tbody');
+ x.ai_revenue.filter(r=>r.basis==='realized'&&r.metric==='ai_arr').sort((a,b)=>b.value_usd_low-a.value_usd_low).forEach(r=>{
+  tb.insertAdjacentHTML('beforeend','<tr><td><strong>'+r.entity+'</strong></td><td>$'+(r.value_usd_low/1e9).toFixed(0)+'bn</td><td>'+r.call_date+'</td><td>'+r.basis+'</td></tr>');});
+ document.getElementById('ucpanel').innerHTML='<div style="font:bold 22px Helvetica,Arial,sans-serif">$'+(cp.user_cost_mid_usd/1e9).toFixed(0)+'bn / year <span style="font-weight:normal;font-size:14px;color:#6b6b6b">(mid)</span></div>'
+  +'<div class="legend">User cost = Σ (required return + depreciation) × capital, by asset class. The installed stock (~$'+(cp.K_total_mid_usd/1e12).toFixed(1)+'tn) is built by perpetual inventory from K-holder capex — an upper bound on AI capital. Depreciation carried as a band (chips 18–40%/yr).</div>';
+ document.getElementById('constr').innerHTML=spark(x.construction,860,120,'$mn SAAR');
+ if(x.gpu_rental){const by={};x.gpu_rental.forEach(p=>{(by[p.gpu_model]=by[p.gpu_model]||[]).push(p)});
+  document.getElementById('gpu').innerHTML=Object.entries(by).map(([m,pts])=>'<div style="margin-bottom:6px">'+spark(pts,860,64,m+' $/hr')+'</div>').join('');}
+}).catch(e=>{document.getElementById('meta').textContent='not yet assembled';});
+</script></body></html>

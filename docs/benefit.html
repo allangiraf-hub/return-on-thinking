@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Benefit — The Return on Thinking</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · Benefit</div>
+<h1>Benefit — is the world getting value, even where investors aren't?</h1>
+<div class="meta" id="meta">Loading…</div>
+<p class="sub">The value society gets back — time saved, work improved — set against the same capital cost. The most important number in the debate, and the one nobody else tracks as a live series. A bounded estimate, gross of harms; the harms are shown separately below.</p>
+<div class="panel"><h3>Social return (Cs)</h3>
+ <div id="cs" style="font:bold 26px Helvetica,Arial,sans-serif"></div><div class="legend" id="csn"></div></div>
+<h2>How it is built</h2>
+<div class="panel"><div class="legend">Per-task productivity effects from randomised experiments × measured AI usage by occupation × wages × adoption, integrated over a horizon and set against the user cost. Published as a range with acknowledged biases in both directions — the experimental tasks were chosen because AI was expected to help, so this is not a floor.</div>
+<table style="margin-top:10px"><thead><tr><th>Experiment</th><th>Measured effect</th><th>Domain</th></tr></thead><tbody>
+<tr><td>Noy &amp; Zhang 2023 (<em>Science</em>)</td><td>−40% time, +18% quality</td><td>professional writing</td></tr>
+<tr><td>Brynjolfsson, Li &amp; Raymond 2025 (<em>QJE</em>)</td><td>+15% issues/hour</td><td>customer support</td></tr>
+<tr><td>Dell'Acqua et al. 2023/26</td><td>+12% tasks, +25% speed (inside frontier)</td><td>consulting</td></tr>
+<tr><td>Cui et al. 2026</td><td>+26% tasks</td><td>software development</td></tr>
+</tbody></table>
+<div class="src">Usage weights: Anthropic Economic Index. Wages: BLS OEWS. Adoption: Census BTOS.</div></div>
+<h2>The minus side — harms, tracked not netted</h2>
+<p class="sub">The benefit number is published <em>before</em> subtracting harms. Two indicators stand beside it rather than inside it.</p>
+<div class="panel"><h3>Electricity prices in data-centre states</h3><div id="elec"></div>
+<div class="src">Source: <a href="https://www.eia.gov/electricity/data.php">EIA</a>, all-sectors retail price, cents/kWh.</div></div>
+<div class="nav" style="margin-top:24px"><a href="index.html">← back to the dashboard</a><a href="earnings.html">Earnings →</a><a href="fragility.html">Fragility →</a><a href="methodology.html">Methodology</a></div>
+<footer>Bounded estimate, gross of harms; not a floor. © Allan Pedersen.</footer>
+</div>
+<script src="spark.js"></script><script>
+Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/detail.json').then(r=>r.json())]).then(([d,x])=>{
+ const cs=d.benefit_cs.cs;
+ document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
+ document.getElementById('cs').textContent=cs.low.h10.toFixed(2)+' – '+cs.high.h10.toFixed(2)+'  (mid '+cs.mid.h10.toFixed(2)+', 10-yr)';
+ document.getElementById('csn').textContent='30-year horizon: '+cs.low.h30.toFixed(2)+' – '+cs.high.h30.toFixed(2)+' (mid '+cs.mid.h30.toFixed(2)+'). 1.0 = the world gets back what the capital cost. Annual value flow ≈ $'+(cs.mid.annual_flow_usd/1e9).toFixed(0)+'bn (mid). The wide high corner reflects genuine uncertainty about how deep adoption goes.';
+ const states={va:'Virginia',tx:'Texas',oh:'Ohio',ia:'Iowa',or:'Oregon',az:'Arizona'};
+ document.getElementById('elec').innerHTML=Object.entries(states).map(([k,n])=>x.elec[k]?'<div style="margin-bottom:6px">'+spark(x.elec[k],860,60,n+' ¢/kWh')+'</div>':'').join('');
+}).catch(e=>{document.getElementById('meta').textContent='not yet assembled';});
+</script></body></html>

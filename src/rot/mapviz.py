@@ -12,6 +12,7 @@ import json
 
 from .config import SITE_DATA
 from .dials import cp_band, cs_band
+from .fragility import fragility
 from .ticker import build as build_ticker  # reuse F1 etc.
 
 MAP_FILE = SITE_DATA / "map.json"
@@ -26,6 +27,7 @@ def assemble() -> dict:
     cs = cs_band()
     cs10 = {k: cs["cs"][k]["h10"] for k in ("low", "mid", "high")}
     cs30 = {k: cs["cs"][k]["h30"] for k in ("low", "mid", "high")}
+    frag = fragility()
     now = dt.date.today()
     q = _quarter_label(now)
 
@@ -34,6 +36,7 @@ def assemble() -> dict:
         "cp": [cp["cp_low"], cp["cp_mid"], cp["cp_high"]],
         "cs10": [cs10["low"], cs10["mid"], cs10["high"]],
         "cs30": [cs30["low"], cs30["mid"], cs30["high"]],
+        "F": frag["F"], "stage": frag["stage"], "color": frag["color"],
     }
 
     # append to trail (idempotent within a quarter)
@@ -47,6 +50,7 @@ def assemble() -> dict:
         "generated_at": now.isoformat(), "quarter": q,
         "earnings_cp": cp,
         "benefit_cs": cs,
+        "fragility_f": frag,
         "methodology_version": "v1",
     }
     SITE_DATA.mkdir(parents=True, exist_ok=True)
@@ -57,8 +61,28 @@ def assemble() -> dict:
         "historical_paths": _historical_paths(),
         "thresholds": {"breakeven": 1.0},
     }, indent=1))
+
+    # detail payloads for the three dial pages
+    import pandas as pd
+    from .seriesio import read_series as _rs
+    from .config import CURATED as _CUR
+    def _series_json(sid, keep=120, cols=("date","value")):
+        try:
+            df = _rs(sid).sort_values("date").tail(keep)
+        except FileNotFoundError:
+            return None
+        df = df.assign(date=df["date"].dt.date.astype(str))
+        return json.loads(df[list(cols)].to_json(orient="records"))
+    detail = {
+        "construction": _series_json("census_datacenter_construction"),
+        "gpu_rental": _series_json("vastai_gpu_rental", keep=4000, cols=("date","value","gpu_model")) if (SITE_DATA.parent.parent/"data"/"series"/"vastai_gpu_rental.csv").exists() else None,
+        "elec": {st: _series_json(f"eia_elec_price_{st}") for st in ("va","tx","oh","ia","or","az")},
+        "ai_revenue": json.loads(pd.read_csv(_CUR/"ai_revenue.csv").to_json(orient="records")) if (_CUR/"ai_revenue.csv").exists() else [],
+        "ledger": json.loads(pd.read_csv(_CUR/"ledger.csv").to_json(orient="records")) if (_CUR/"ledger.csv").exists() else [],
+    }
+    (SITE_DATA/"detail.json").write_text(json.dumps(detail, indent=1, default=str))
     build_ticker()  # refresh the weekly ticker too
-    return {"quarter": q, "cp_mid": cp["cp_mid"], "cs10_mid": cs10["mid"]}
+    return {"quarter": q, "cp_mid": cp["cp_mid"], "cs10_mid": cs10["mid"], "F": frag["F"], "stage": frag["stage"]}
 
 
 def _historical_paths() -> list:

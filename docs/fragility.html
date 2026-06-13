@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fragility — The Return on Thinking</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · Fragility</div>
+<h1>Fragility — whose money burns if it goes wrong?</h1>
+<div class="meta" id="meta">Loading…</div>
+<p class="sub">Not how much is borrowed, but <em>where</em> the leverage sits. The centre — the hyperscalers — funds itself from cash flow; fragility concentrates at the neocloud edge. In every past crisis the financing was the fast variable.</p>
+<div class="panel"><h3>Fragility index (F)</h3><div id="f" style="font:bold 26px Helvetica,Arial,sans-serif"></div><div class="legend" id="fn"></div>
+<div id="fbar" style="margin-top:10px"></div></div>
+<h2>Financing headroom, firm by firm</h2>
+<p class="sub">Trailing-year capital spending ÷ operating cash flow. Above 100%, the build consumes more than the whole company generates.</p>
+<div class="panel"><table id="f1"><thead><tr><th>Company</th><th>Capex 4q</th><th>Cash flow 4q</th><th>Capex ÷ cash flow</th></tr></thead><tbody></tbody></table>
+<div class="src">Source: SEC EDGAR XBRL; neoclouds via licensed aggregator (T2).</div></div>
+<h2>The deal ledger</h2>
+<p class="sub">Every externally financed arrangement — one row, one primary document. Deals reported only in the press are excluded until re-sourced; their absence is itself a finding.</p>
+<div class="panel"><table id="ledger"><thead><tr><th>Deal</th><th>Amount</th><th>Type</th><th>Where</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+<div class="nav" style="margin-top:24px"><a href="index.html">← back to the dashboard</a><a href="earnings.html">Earnings →</a><a href="benefit.html">Benefit →</a><a href="methodology.html">Methodology</a></div>
+<footer>F = location-weighted external-finance dependence + circularity. Hedge &lt; 33% &lt; speculative &lt; 66% &lt; Ponzi. © Allan Pedersen.</footer>
+</div>
+<script>
+Promise.all([fetch('data/dials.json').then(r=>r.json()),fetch('data/ticker.json').then(r=>r.json()),fetch('data/detail.json').then(r=>r.json())]).then(([d,t,x])=>{
+ const f=d.fragility_f, c=f.components;
+ document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
+ document.getElementById('f').innerHTML='<span style="color:'+f.color+'">'+Math.round(f.F*100)+'% — '+f.stage+'</span>';
+ document.getElementById('fn').textContent='Aggregate external-finance share '+Math.round(c.aggregate_external_share*100)+'% (the centre self-funds), neocloud edge intensity '+Math.round(c.neocloud_intensity*100)+'% (the fragile tier), '+c.circularity_flags+' open circular-deal flag(s). The index is systemic; the edge is far more exposed than the headline.';
+ document.getElementById('fbar').innerHTML='<svg viewBox="0 0 600 36" width="100%"><rect x="0" y="10" width="600" height="14" rx="7" fill="#D3D1C7"/><rect x="0" y="10" width="'+(600*0.33)+'" height="14" rx="7" fill="#1D9E75" fill-opacity="0.25"/><rect x="'+(600*0.33)+'" y="10" width="'+(600*0.33)+'" height="14" fill="#BA7517" fill-opacity="0.25"/><rect x="'+(600*0.66)+'" y="10" width="'+(600*0.34)+'" height="14" rx="7" fill="#E24B4A" fill-opacity="0.25"/><circle cx="'+(600*f.F)+'" cy="17" r="8" fill="'+f.color+'" stroke="#fff" stroke-width="2"/><text x="2" y="34" font-size="10" fill="#888">hedge</text><text x="200" y="34" font-size="10" fill="#888">speculative</text><text x="598" y="34" font-size="10" fill="#888" text-anchor="end">Ponzi</text></svg>';
+ const tb=document.querySelector('#f1 tbody');
+ (t.financing_f1||[]).sort((a,b)=>b.capex_share_of_ocf-a.capex_share_of_ocf).forEach(r=>tb.insertAdjacentHTML('beforeend','<tr><td><strong>'+r.ticker+'</strong></td><td>$'+(r.capex_t4q_usd/1e9).toFixed(0)+'bn</td><td>$'+(r.ocf_t4q_usd/1e9).toFixed(0)+'bn</td><td><strong>'+Math.round(100*r.capex_share_of_ocf)+'%</strong></td></tr>'));
+ const lb=document.querySelector('#ledger tbody');
+ (x.ledger||[]).forEach(r=>lb.insertAdjacentHTML('beforeend','<tr><td>'+r.parties+'</td><td>$'+(r.amount_usd/1e9).toFixed(1)+'bn</td><td>'+r.instrument+'</td><td>'+r.location_bucket+(r.circularity_flag?' ⟳':'')+'</td><td><a href="'+r.primary_source_url+'">primary</a></td></tr>'));
+}).catch(e=>{document.getElementById('meta').textContent='not yet assembled';});
+</script></body></html>

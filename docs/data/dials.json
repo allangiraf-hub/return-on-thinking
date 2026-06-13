@@ -47,5 +47,17 @@
   },
   "note": "Social return: time saved/work improved valued against user cost, at 10y and 30y horizons. Bounded estimate with biases in both directions; gross of harms (see electricity-price and layoff indicators). NOT a floor."
  },
+ "fragility_f": {
+  "F": 0.27816405957970963,
+  "stage": "hedge",
+  "color": "#1D9E75",
+  "components": {
+   "aggregate_external_share": 0.0,
+   "neocloud_intensity": 0.664160148949274,
+   "circularity_flags": 1,
+   "circularity_component": 0.125
+  },
+  "note": "F = location-weighted external-finance dependence of the build, plus a circularity penalty. Hedge (cash-funded) < 0.33 < speculative < 0.66 < Ponzi. The centre is solid; fragility concentrates at the neocloud edge."
+ },
  "methodology_version": "v1"
 }
