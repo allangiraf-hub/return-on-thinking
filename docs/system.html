@@ -18,7 +18,7 @@
 <body><div class="wrap">
 <div class="crumb"><a href="https://priceofthinking.com/">The Price of Thinking</a> · <a href="index.html">The Return on Thinking</a> · How the system is built</div>
 <h1>How the system is built — and why this way</h1>
-<div class="meta">12 June 2026 · <a href="https://github.com/allangiraf-hub/return-on-thinking">full source on GitHub (MIT)</a> · <a href="methodology.html">sources &amp; calculations</a></div>
+<div class="meta">Updated 14 June 2026 · <a href="https://github.com/allangiraf-hub/return-on-thinking">full source on GitHub (MIT)</a> · <a href="methodology.html">sources &amp; calculations</a></div>
 
 <p>This dashboard is built by one economist and an AI assistant, on infrastructure that costs almost nothing and that anyone can fork. That is a design statement, not a budget constraint: a measure of the AI boom should be reproducible by the people who doubt it.</p>
 
@@ -30,7 +30,7 @@ public sources (SEC, Census, Treasury, FRED, vast.ai, FMP…)
         ▼
 data/series/*.csv     every row: value + source URL + retrieval time + tier
 data/curated/*.csv    the deal ledger: human-approved, schema-enforced
-data/assumptions/     v1.yaml … — every contestable number, versioned
+data/assumptions/     v2.yaml — every contestable number, versioned (methodology v5)
         │  quarterly assembly job
         ▼
 docs/  → this website (GitHub Pages, returns.priceofthinking.com)
@@ -39,6 +39,7 @@ docs/  → this website (GitHub Pages, returns.priceofthinking.com)
 
 <h2>The choices, and the reasons</h2>
 <p><strong>Plain files in a public Git repository, not a database.</strong> Git gives a tamper-evident history of every number ever published — anyone can see what the dashboard said last quarter and what changed since. CSV and JSON survive any future stack. There is no server to fail, nothing to subscribe to, nothing private.</p>
+<p><strong>The charts are a thin view over the open data.</strong> The dashboard fetches the same published JSON anyone can download and draws it in the browser with a standard charting library — there is no private state and no server-side computation behind the picture. Reproduce the page from the repository, or take the JSON and draw your own; the numbers are identical either way.</p>
 <p><strong>GitHub Actions on a weekly cron, not a streaming pipeline.</strong> The underlying truths move on filing and survey cadences; weekly is honest. A scheduled batch job that commits its outputs is also auditable in a way a live service is not: the commit log <em>is</em> the provenance.</p>
 <p><strong>A dead-source canary.</strong> Public data sources die quietly — during this system's very first week, FRED's keyless endpoint went down globally. Every weekly run that loses a collector files a public issue automatically (the first one is <a href="https://github.com/allangiraf-hub/return-on-thinking/issues/1">issue #1</a>), and a backup primary source (the US Treasury's own yield file) was added the same day. Failures are part of the public record, by design.</p>
 <p><strong>Humans approve anything that involves judgment, mechanically.</strong> Deal-ledger entries arrive as pull requests; continuous-integration checks reject any entry whose primary-source link is missing or not from an allowed primary domain. Merging is the approval. The AI assistant (Claude) does the harvesting — searching the week's financing news, re-sourcing each deal to a filing or press release, scanning earnings-call transcripts for quantified AI-revenue statements — and a human merges or contests. Every entry records whether it was found contemporaneously or retrospectively, because retrospective discovery has survivorship bias and the bias should be measurable.</p>
