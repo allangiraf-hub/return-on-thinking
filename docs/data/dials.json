@@ -2,12 +2,12 @@
  "generated_at": "2026-06-14",
  "quarter": "2026-Q2",
  "earnings_cp": {
-  "cp_low": 0.15522565737417354,
-  "cp_mid": 0.4546279911662889,
-  "cp_high": 1.2214159670585274,
+  "cp_low": 0.1118160307551826,
+  "cp_mid": 0.289775313010177,
+  "cp_high": 0.7154626344718377,
   "realized_ai_revenue_usd": 80839146999.0,
-  "user_cost_mid_usd": 88906917930.4355,
-  "K_total_mid_usd": 391857619899.8837,
+  "user_cost_mid_usd": 139485910927.41034,
+  "K_total_mid_usd": 618672562309.8092,
   "firms": [
    "MSFT",
    "AMZN",
@@ -73,23 +73,23 @@
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.11955409854862943,
-    "h30": 0.11955409854862946,
-    "annual_flow_usd": 19454940990.0
+    "h10": 0.0954062423604279,
+    "h30": 0.09540624236042787,
+    "annual_flow_usd": 21616601100.0
    },
    "mid": {
-    "h10": 0.8122682102463401,
-    "h30": 1.3497639796934258,
-    "annual_flow_usd": 65368601726.399994
+    "h10": 0.6438948422104227,
+    "h30": 1.0699742446678207,
+    "annual_flow_usd": 81710752158.0
    },
    "high": {
-    "h10": 5.778465362110111,
-    "h30": 18.98957555427305,
-    "annual_flow_usd": 207519370560.0
+    "h10": 3.695643678379912,
+    "h30": 12.144869001454028,
+    "annual_flow_usd": 228271307616.0
    }
   },
   "exposed_wage_bill_usd": 2882213480000.0,
-  "macro_crosscheck_flow_usd": 105462000000.0,
+  "macro_crosscheck_flow_usd": 131827499999.99998,
   "note": "v3: economy-wide AI productivity value built as a per-occupation sum over SOC major groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed user cost of all K-holders. A projection, not realized value. 30y illustrative."
  },
  "fragility_f": {
@@ -105,8 +105,8 @@
  },
  "flows": {
   "private_earnings_flow_usd": 40419573499.5,
-  "social_value_flow_usd": 65368601726.399994,
-  "capital_cost_usd": 88906917930.4355
+  "social_value_flow_usd": 81710752158.0,
+  "capital_cost_usd": 139485910927.41034
  },
  "methodology_version": "v5"
 }

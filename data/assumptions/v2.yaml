@@ -39,7 +39,7 @@ revenue_attribution:  # v3 - AI share of segment revenue for firms that don't st
   # neoclouds: total revenue used directly (pure-play AI); META excluded (AI monetized via ad uplift, no revenue line)
 
 ai_capex_share:  # NEW v2 - fraction of each bucket's capex that is AI/data-centre, banded
-  hyperscaler: {low: 0.25, mid: 0.40, high: 0.60}   # rising but not all capex is AI
+  hyperscaler: {low: 0.45, mid: 0.65, high: 0.85}   # v5: raised from 0.25/0.40/0.60 - mid-2026 evidence (Dell'Oro: top-4 data-centre capex +78% YoY 1Q2026; analyst/guidance ~70-90% of hyperscaler capex is AI/data-centre, Amazon ~50-70% pulls the blend down). SemiAnalysis calibration still pending; 'AI-specific' vs 'all data-centre' is a definitional judgment.
   neocloud: {low: 0.95, mid: 1.0, high: 1.0}        # neocloud capex is essentially all AI compute
 
 k_allocation:  # share of AI capex by asset class (until SemiAnalysis calibration)
@@ -75,7 +75,7 @@ cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 r
   us_employee_compensation_usd: 15500000000000   # ~$15.5tn annual, BEA NIPA 1.10 (2025); pinned
   ai_exposed_task_share: {low: 0.20, mid: 0.30, high: 0.45}   # AEI augmentation/automation task coverage
   rct_effect: {low: 0.15, mid: 0.27, high: 0.40}   # task-share-weighted productivity effect on affected tasks; mid 0.27 = central of the AEI-share-weighted RCT mean 0.26-0.30 (Cui +26%, Noy-Zhang -40%t, Brynjolfsson +14%, Dell'Acqua +12%, weighted by AEI occupation share) - see data/curated/rct_effects.csv; low/high span the lab->field discount and the throughput-optimistic read
-  adoption_rate: {low: 0.09, mid: 0.12, high: 0.20}   # Census BTOS firm AI-use, mid-2026
+  adoption_rate: {low: 0.10, mid: 0.15, high: 0.22}   # v5: Census BTOS AI-use, spanning the Nov-2025 question break - 'AI in producing goods/services' ~10% late-2025 (low) to 'AI in any business function' ~19.8% May-2026 (high, plans slightly higher); mid 0.15 bridges. Firm-count weighting understates employment-weighted adoption.
   appropriability_to_society: {low: 0.50, mid: 0.70, high: 0.90}   # v2 - banded (was fixed 0.85); social share of gross productivity value
   discount_rate: 0.05
   annual_growth: {low: 0.0, mid: 0.06, high: 0.12}   # v2 - tamed (was up to 0.20); 30y horizon is illustrative only

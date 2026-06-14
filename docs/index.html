@@ -117,8 +117,8 @@ Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('dat
 
  // flow plot (de-correlated): x=private earnings flow, y=social value flow, dot size=capital cost
  const fl=d.flows, FS=document.getElementById('flow');
- const fx0=90,fx1=760,fy0=320,fy1=40, FX=v=>fx0+(fx1-fx0)*Math.min(v/140,1), FY=v=>fy0-(fy0-fy1)*Math.min(v/140,1);
  const uc=fl.capital_cost_usd/1e9, pe=fl.private_earnings_flow_usd/1e9, sv=fl.social_value_flow_usd/1e9;
+ const fx0=90,fx1=760,fy0=320,fy1=40, FM=Math.max(160, uc*1.25), FX=v=>fx0+(fx1-fx0)*Math.min(v/FM,1), FY=v=>fy0-(fy0-fy1)*Math.min(v/FM,1);
  FS.appendChild(el('rect',{x:fx0,y:fy1,width:FX(uc)-fx0,height:FY(uc)-fy1,fill:'#f6e9e7'}));
  FS.appendChild(el('rect',{x:FX(uc),y:fy1,width:fx1-FX(uc),height:FY(uc)-fy1,fill:'#eaf1ea'}));
  FS.appendChild(el('line',{x1:FX(uc),y1:fy1,x2:FX(uc),y2:fy0,stroke:'#b0413e','stroke-dasharray':'5 4'}));
