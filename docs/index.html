@@ -8,24 +8,28 @@
 <div class="meta" id="meta">Loading…</div>
 <p class="sub">Is the AI boom paying for itself — in money, and for the world? Three measured numbers, from public filings. No crash prediction; the direction of travel is the signal.</p>
 
-<div class="gaugewrap" id="gauges"></div>
+<div class="gaugewrap" id="gauges" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+ <div class="panel"><div id="g_cp" style="height:168px"></div></div>
+ <div class="panel"><div id="g_cs" style="height:168px"></div></div>
+ <div class="panel"><div id="g_f" style="height:168px"></div></div>
+</div>
 
 <h2>The map: where the boom sits</h2>
-<p class="sub">Position shows the two coverage numbers; the dot's <b>colour</b> shows how the build is financed — green cash-funded, amber leverage rising, red debt-carried. Dashed boxes: past booms, placed from economic-history figures.</p>
+<p class="sub">Position shows the two coverage numbers; the dot's <b>colour</b> shows how the build is financed — green cash-funded, amber leverage rising, red debt-carried. The amber trail is AI's own path since 2023; grey boxes and arrows are past booms and the direction they travelled, placed from economic-history figures.</p>
 <div class="panel">
- <svg id="map" viewBox="0 0 820 600" width="100%" role="img" aria-label="Value-coverage map with fragility-coloured dot"></svg>
+ <div id="map" style="height:540px"></div>
  <div class="legend" id="maplegend"></div>
 </div>
 <p class="sub" id="reading"></p>
 
 <h2>The same picture in dollars</h2>
-<p class="sub">The coverage map divides by capital cost on both axes, which can couple them to the interest-rate environment. This view plots the raw annual flows instead — private earnings against value to the world — with the dot sized by the capital cost it must cover. As the trail grows, it moves in dollars, independent of rates.</p>
-<div class="panel"><svg id="flow" viewBox="0 0 820 380" width="100%" role="img" aria-label="Annual flows: private earnings vs social value, dot sized by capital cost"></svg>
+<p class="sub">The coverage map divides by capital cost on both axes, which can couple them to the interest-rate environment. This view plots the raw annual flows instead — private earnings against value to the world — with the dot sized by the capital cost it must cover.</p>
+<div class="panel"><div id="flow" style="height:400px"></div>
 <div class="legend" id="flowlegend"></div></div>
 
 <h2>The trajectory: is it moving?</h2>
 <p class="sub">The whole point of this dashboard is the <b>direction of travel</b>, not the level. Each line is the fixed-mid estimate at past quarter-ends, rebuilt from filed capex and the AI revenue firms had disclosed by then. The shaded band is the ±20% revision range around the mid; a move is only <b>called</b> (▲/▼) when the line leaves the prior quarter's band <i>and</i> the next quarter confirms it — so single-quarter noise never counts.</p>
-<div class="panel"><svg id="traj" viewBox="0 0 820 300" width="100%" role="img" aria-label="Trajectory of the three numbers over time with revision bands and called moves"></svg>
+<div class="panel"><div id="traj" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;"><div id="tj_cp" style="height:220px"></div><div id="tj_cs" style="height:220px"></div><div id="tj_f" style="height:220px"></div></div>
 <div class="legend" id="trajlegend"></div></div>
 
 <h2>Look closer</h2>
@@ -43,139 +47,130 @@
 
 <footer>1.0 = pays for itself. Levels are uncertain to a factor of several; only banded movements are called. Benefit is a bounded estimate, gross of harms. © Allan Pedersen · open methods · part of <a href="https://priceofthinking.com/">The Price of Thinking</a>.</footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 <script>
-const NS='http://www.w3.org/2000/svg';
-function el(t,a,k){const e=document.createElementNS(NS,t);for(x in a)e.setAttribute(x,a[x]);(k||[]).forEach(c=>e.appendChild(c));return e}
-function tx(x,y,s,o){const e=el('text',Object.assign({x,y},o||{}));e.textContent=s;return e}
-function gauge(label,sub,frac,color,valstr){
- // semicircle gauge, frac 0..1 of the arc
- const W=260,cx=130,cy=120,r=82;
- const a0=Math.PI, a1=Math.PI*(1-Math.min(frac,1));
- const arc=(from,to)=>{const x0=cx+r*Math.cos(from),y0=cy+r*Math.sin(from),x1=cx+r*Math.cos(to),y1=cy+r*Math.sin(to);const large=(from-to)>Math.PI?1:0;return `M${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 ${large} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`};
- const s=el('svg',{viewBox:`0 0 ${W} 150`,width:'100%',role:'img','aria-label':label+' '+valstr});
- s.appendChild(el('path',{d:arc(a0,0),fill:'none',stroke:'#D3D1C7','stroke-width':12,'stroke-linecap':'round'}));
- s.appendChild(el('path',{d:arc(a0,a1),fill:'none',stroke:color,'stroke-width':12,'stroke-linecap':'round'}));
- const na=a1, nx=cx+(r-6)*Math.cos(na), ny=cy+(r-6)*Math.sin(na);
- s.appendChild(el('line',{x1:cx,y1:cy,x2:nx.toFixed(1),y2:ny.toFixed(1),stroke:'#26215C','stroke-width':3,'stroke-linecap':'round'}));
- s.appendChild(el('circle',{cx,cy,r:5,fill:'#26215C'}));
- s.appendChild(tx(cx,cy-22,valstr,{'text-anchor':'middle','font-size':24,'font-weight':500,fill:'#1a1a1a'}));
- s.appendChild(tx(cx,cy+22,label,{'text-anchor':'middle','font-size':13.5,fill:'#1a1a1a','font-weight':500}));
- s.appendChild(tx(cx,cy+40,sub,{'text-anchor':'middle','font-size':12,fill:'#6b6b6b'}));
- return s;
+const CORAL='#D85A30',TEAL='#1D9E75',AMBER='#BA7517',RED='#E24B4A',PURPLE='#7F77DD',
+ HIST='#7a796f',ARROW='#5F5E5A',FAINT='#b9b6ab',TXT='#444441',PANEL='#ffffff',BREAK='#b0413e';
+function fragColor(f){ return f.color || (f.F<0.33?TEAL:(f.F<0.75?AMBER:RED)); }
+function fmtv(v){ return '×'+v.toFixed(2); }
+const insts=[];
+function E(id){ const c=echarts.init(document.getElementById(id)); insts.push(c); return c; }
+
+function gauge(id,val,o){
+ const c=E(id);
+ c.setOption({series:[{type:'gauge',startAngle:200,endAngle:-20,min:0,max:o.max,center:['50%','60%'],radius:'88%',splitNumber:o.split||3,
+  axisLine:{lineStyle:{width:11,color:o.bands}},
+  pointer:{width:4,length:'58%',itemStyle:{color:o.needle}},
+  anchor:{show:true,size:9,itemStyle:{color:o.needle}},
+  axisTick:{distance:-13,length:4,lineStyle:{color:FAINT}},
+  splitLine:{distance:-13,length:11,lineStyle:{color:FAINT,width:2}},
+  axisLabel:{distance:-2,fontSize:11,color:TXT,formatter:o.lab||function(){return '';}},
+  detail:{valueAnimation:true,formatter:o.fmt,fontSize:22,color:TXT,offsetCenter:[0,'-10%']},
+  title:{offsetCenter:[0,'33%'],fontSize:12,color:TXT},
+  data:[{value:val,name:o.name}]}]});
 }
-const X0=110,X1=760,Y0=520,Y1=60,XMAX=1.3,YMAX=2.5;
-const sx=v=>X0+(X1-X0)*Math.min(v,XMAX)/XMAX, sy=v=>Y0-(Y0-Y1)*Math.min(v,YMAX)/YMAX;
-Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/map.json?t='+Date.now()).then(r=>r.json()),fetch('data/trajectory.json?t='+Date.now()).then(r=>r.json()).catch(()=>null)]).then(([d,m,tj])=>{
- // Prefer the backfilled multi-quarter trajectory for the trail; fall back to map.json.
- if(tj&&tj.series&&tj.series.length){m={...m,trail:tj.series.map(p=>({quarter:p.quarter,cp:p.cp,cs10:p.cs10,F:p.F,stage:p.stage,color:p.color}))}}
+
+Promise.all([
+ fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),
+ fetch('data/map.json?t='+Date.now()).then(r=>r.json()),
+ fetch('data/trajectory.json?t='+Date.now()).then(r=>r.json()).catch(()=>null)
+]).then(([d,m,tj])=>{
+ const cp=d.earnings_cp, cs=d.benefit_cs.cs, f=d.fragility_f, fl=d.flows, frag=fragColor(f);
  document.getElementById('meta').innerHTML='Last assembled '+d.generated_at+' · '+d.quarter+' · updates each quarter · <a href="methodology.html">how the numbers are made</a>';
- const cp=d.earnings_cp, cs=d.benefit_cs.cs, f=d.fragility_f;
- const g=document.getElementById('gauges');
- const gE=document.createElement('div');gE.className='panel';gE.appendChild(gauge('earnings','does it pay? (1.0=breakeven)',Math.min(cp.cp_mid,1),'#D85A30','×'+cp.cp_mid.toFixed(2)));g.appendChild(gE);
- const gB=document.createElement('div');gB.className='panel';gB.appendChild(gauge('benefit','value to the world (10-yr)',Math.min(cs.mid.h10/1.5,1),'#1D9E75','×'+cs.mid.h10.toFixed(2)));g.appendChild(gB);
- const gF=document.createElement('div');gF.className='panel';gF.appendChild(gauge('fragility',f.stage+' — whose money',f.F,f.color,Math.round(f.F*100)+'%'));g.appendChild(gF);
- // map
- const svg=document.getElementById('map'), xb=sx(1), yb=sy(1);
- svg.appendChild(el('rect',{x:X0,y:Y1,width:xb-X0,height:yb-Y1,fill:'#f3ede2'}));
- svg.appendChild(el('rect',{x:xb,y:Y1,width:X1-xb,height:yb-Y1,fill:'#eaf1ea'}));
- svg.appendChild(el('rect',{x:X0,y:yb,width:xb-X0,height:Y0-yb,fill:'#f6e9e7'}));
- svg.appendChild(el('rect',{x:xb,y:yb,width:X1-xb,height:Y0-yb,fill:'#efeaf3'}));
- svg.appendChild(el('line',{x1:xb,y1:Y1,x2:xb,y2:Y0,stroke:'#bbb','stroke-dasharray':'5 4'}));
- svg.appendChild(el('line',{x1:X0,y1:yb,x2:X1,y2:yb,stroke:'#bbb','stroke-dasharray':'5 4'}));
- svg.appendChild(tx(X0+8,Y1+18,'NOBLE FAILURE',{'font-size':12,fill:'#8a7a55','font-weight':'bold'}));
- svg.appendChild(tx(X0+8,Y1+33,'investors lose, society wins',{'font-size':11,fill:'#9a8d6e'}));
- svg.appendChild(tx(X1-8,Y1+18,'HEALTHY BOOM',{'font-size':12,fill:'#4d7a58','font-weight':'bold','text-anchor':'end'}));
- svg.appendChild(tx(X0+8,Y0-10,'WASTE',{'font-size':12,fill:'#a05a52','font-weight':'bold'}));
- svg.appendChild(tx(X1-8,Y0-10,'PROFIT WITHOUT BENEFIT',{'font-size':12,fill:'#71609a','font-weight':'bold','text-anchor':'end'}));
+ const bk=function(v){return Math.abs(v-1)<0.02?'1.0':'';};
 
- const t=m.trail[m.trail.length-1];
- const cx=sx(t.cp[1]),cy=sy(t.cs10[1]);
- svg.appendChild(el('line',{x1:sx(t.cp[0]),y1:cy,x2:sx(t.cp[2]),y2:cy,stroke:t.color,'stroke-width':2,'stroke-opacity':0.5}));
- svg.appendChild(el('line',{x1:sx(t.cp[0]),y1:cy-5,x2:sx(t.cp[0]),y2:cy+5,stroke:t.color,'stroke-opacity':0.5}));
- svg.appendChild(el('line',{x1:sx(t.cp[2]),y1:cy-5,x2:sx(t.cp[2]),y2:cy+5,stroke:t.color,'stroke-opacity':0.5}));
- svg.appendChild(el('line',{x1:cx,y1:sy(t.cs10[0]),x2:cx,y2:sy(Math.min(t.cs10[2],YMAX)),stroke:t.color,'stroke-width':2,'stroke-opacity':0.5}));
- if(m.trail.length>1){let dd='';m.trail.forEach((p,i)=>dd+=(i?'L':'M')+sx(p.cp[1]).toFixed(1)+' '+sy(p.cs10[1]).toFixed(1)+' ');svg.appendChild(el('path',{d:dd,fill:'none',stroke:t.color,'stroke-width':2,'stroke-opacity':0.55}));
-  m.trail.slice(0,-1).forEach(p=>svg.appendChild(el('circle',{cx:sx(p.cp[1]),cy:sy(p.cs10[1]),r:3,fill:'#fff',stroke:p.color||t.color,'stroke-width':1.6})));
-  const f0=m.trail[0];svg.appendChild(tx(sx(f0.cp[1])+6,sy(f0.cs10[1])-6,f0.quarter,{'font-size':9.5,fill:'#888'}))}
- svg.appendChild(el('circle',{cx,cy,r:9,fill:t.color,stroke:'#fff','stroke-width':2}));
- svg.appendChild(tx(cx,cy-18,'AI '+t.quarter,{'font-size':13,'font-weight':'bold',fill:t.color,'text-anchor':'middle'}));
- (m.historical_booms||[]).forEach(p=>{
-   const x=sx(p.cp[0]),y=sy(p.cs[1]),w=sx(p.cp[1])-sx(p.cp[0]),h=sy(p.cs[0])-sy(p.cs[1]);
-   svg.appendChild(el('rect',{x,y,width:Math.max(w,4),height:Math.max(h,4),rx:6,fill:p.color,'fill-opacity':0.06,stroke:p.color,'stroke-opacity':0.7,'stroke-dasharray':'3 3'}));
-   svg.appendChild(tx(x+w/2,y-5,p.name,{'font-size':11,fill:p.color,'text-anchor':'middle','font-weight':'bold'}));
-   svg.appendChild(tx(x+w/2,y+11,p.era,{'font-size':9.5,fill:p.color,'text-anchor':'middle'}));
+ // ---- gauges ----
+ gauge('g_cp',cp.cp_mid,{max:1.5,bands:[[1/1.5,CORAL],[1,TEAL]],needle:CORAL,name:'earnings',fmt:function(v){return fmtv(v);},lab:bk});
+ gauge('g_cs',cs.mid.h10,{max:1.5,bands:[[1/1.5,CORAL],[1,TEAL]],needle:TEAL,name:'benefit (10-yr)',fmt:function(v){return fmtv(v);},lab:bk});
+ gauge('g_f',f.F,{max:1,split:4,bands:[[0.33,TEAL],[0.75,AMBER],[1,RED]],needle:frag,name:'fragility ('+f.stage+')',fmt:function(v){return Math.round(v*100)+'%';}});
+
+ // ---- map ----
+ const mc=E('map');
+ const trail=(tj&&tj.series?tj.series:[]).map(p=>[p.cp[1],p.cs10[1]]);
+ const tdata=trail.map((p,i)=> i===trail.length-1
+   ?{value:p,symbolSize:17,itemStyle:{color:frag,opacity:1,borderColor:PANEL,borderWidth:2},label:{show:true,position:'right',formatter:'AI '+d.quarter+' · 10-yr',color:frag,fontSize:11,fontWeight:'bold'}}
+   :{value:p,symbolSize:5,itemStyle:{color:frag,opacity:0.36,borderColor:PANEL,borderWidth:1}});
+ if(tdata.length) tdata[0].label={show:true,position:'left',formatter:(tj.series[0].quarter),color:FAINT,fontSize:11};
+ const booms=m.historical_booms||[];
+ const bAreas=booms.map(b=>[{xAxis:b.cp[0],yAxis:b.cs[0],itemStyle:{color:HIST,opacity:0.10,borderColor:HIST,borderWidth:1.3,borderType:'dashed'},label:{show:true,position:'insideTop',color:HIST,fontSize:11,fontWeight:'bold',formatter:b.name}},{xAxis:b.cp[1],yAxis:b.cs[1]}]);
+ const bArrows=booms.map(b=>{ const dx=b.cp[1]-b.cp[0],dy=b.cs[1]-b.cs[0];
+   return [{coord:[b.cp[0]+0.18*dx,b.cs[0]+0.12*dy]},{coord:[b.cp[1]-0.18*dx,b.cs[1]-0.12*dy]}]; });
+ const ymax=Math.max(3.2, cs.mid.h30+0.3, ...booms.map(b=>b.cs[1]));
+ mc.setOption({
+  grid:{left:58,right:22,top:16,bottom:48},
+  xAxis:{min:0,max:1.3,name:'earnings ÷ cost  (Cp)',nameLocation:'middle',nameGap:28,nameTextStyle:{color:TXT,fontSize:12},axisLine:{lineStyle:{color:FAINT}},axisLabel:{color:TXT},splitLine:{show:false}},
+  yAxis:{min:0,max:ymax,name:'value to the world ÷ cost  (Cs)',nameLocation:'middle',nameGap:38,nameTextStyle:{color:TXT,fontSize:12},axisLine:{lineStyle:{color:FAINT}},axisLabel:{color:TXT},splitLine:{show:false}},
+  series:[
+   {type:'scatter',silent:true,symbolSize:0,data:[
+     {value:[0.05,ymax*0.97],label:{show:true,formatter:'noble failure',color:FAINT,fontSize:11,position:'right'}},
+     {value:[1.25,ymax*0.97],label:{show:true,formatter:'healthy boom',color:FAINT,fontSize:11,position:'left'}},
+     {value:[0.05,0.08],label:{show:true,formatter:'waste',color:FAINT,fontSize:11,position:'right'}},
+     {value:[1.25,0.08],label:{show:true,formatter:'profit, no benefit',color:FAINT,fontSize:11,position:'left'}}],
+    markLine:{silent:true,symbol:'none',lineStyle:{color:FAINT,type:'dashed'},label:{show:false},data:[{xAxis:1},{yAxis:1}]},
+    markArea:{silent:true,data:bAreas}},
+   {type:'line',data:[],silent:true,markLine:{silent:true,symbol:['none','arrow'],symbolSize:10,lineStyle:{color:ARROW,width:1.8},label:{show:false},data:bArrows}},
+   {type:'line',z:9,symbol:'circle',lineStyle:{color:frag,width:1.5,type:'dotted'},data:[{value:[cp.cp_mid,cs.mid.h10],symbolSize:0},{value:[cp.cp_mid,cs.mid.h30],symbolSize:9,itemStyle:{color:PANEL,borderColor:frag,borderWidth:2},label:{show:true,position:'top',formatter:'30-yr '+fmtv(cs.mid.h30),color:frag,fontSize:11}}]},
+   {type:'line',z:10,symbol:'circle',data:tdata,lineStyle:{color:frag,width:2,opacity:0.55}}
+  ]
  });
- if(t.cs10[2]>YMAX)svg.appendChild(tx(cx+12,sy(YMAX)+4,'↑ high corner off-frame',{'font-size':10,fill:t.color}));
- svg.appendChild(el('line',{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:'#444','stroke-width':1.4}));
- svg.appendChild(el('line',{x1:X0,y1:Y0,x2:X0,y2:Y1,stroke:'#444','stroke-width':1.4}));
- svg.appendChild(tx((X0+X1)/2,Y0+34,'Does it pay for itself?  (earnings ÷ cost of the capital; 1.0 = breaks even)',{'font-size':13,fill:'#333','text-anchor':'middle'}));
- svg.appendChild(tx(40,(Y0+Y1)/2,'Value to the world ÷ same cost (10-yr)',{'font-size':13,fill:'#333','text-anchor':'middle',transform:`rotate(-90 40 ${(Y0+Y1)/2})`}));
- svg.appendChild(tx(xb,Y0+14,'1.0',{'font-size':10,fill:'#999','text-anchor':'middle'}));
- document.getElementById('maplegend').innerHTML='Dot colour = financing fragility ('+f.stage+', '+Math.round(f.F*100)+'%). Dashed boxes = past booms, placed from economic-history figures (Fogel, Hawke, David, Goolsbee-Klenow, Altman) - approximate cross-era placements, units differ from the live ratios. <a href=\"history.html\">sources &amp; caveats</a>.';
- const _h10=cs.mid.h10,_h30=cs.mid.h30; const _soc=_h10>=1?('the broader value to the world is larger still — ×'+_h10.toFixed(1)+' of the cost over 10 years'):('counting the broader value to the world, it covers the cost only over a longer horizon — ×'+_h10.toFixed(1)+' at 10 years, ×'+_h30.toFixed(1)+' at 30');
- document.getElementById('reading').textContent='Reading, '+d.quarter+': earnings cover about '+Math.round(cp.cp_mid*100)+'% of the capital cost; '+_soc+'. Financing is '+f.stage+' overall ('+Math.round(f.F*100)+'%), but the neocloud edge is far more exposed. Whether the dot travels up and to the right toward a healthy boom, or stalls, is the open question.';
+ document.getElementById('maplegend').innerHTML='Dot &amp; trail colour = financing fragility ('+f.stage+', '+Math.round(f.F*100)+'%). The amber line is AI quarter by quarter; the vertical reach is the 10-year benefit (×'+cs.mid.h10.toFixed(2)+') up to the 30-year (×'+cs.mid.h30.toFixed(2)+'). Grey boxes &amp; arrows = past booms and their ordinal direction of travel (Fogel, Hawke, David, Goolsbee-Klenow, Altman) — illustrative cross-era placements, not quarterly tracks. <a href="history.html">sources &amp; caveats</a>.';
+ const h10=cs.mid.h10,h30=cs.mid.h30, soc=h10>=1?('the broader value to the world is larger still — ×'+h10.toFixed(1)+' of the cost over 10 years'):('counting the broader value to the world, it covers the cost only over a longer horizon — ×'+h10.toFixed(1)+' at 10 years, ×'+h30.toFixed(1)+' at 30');
+ document.getElementById('reading').textContent='Reading, '+d.quarter+': earnings cover about '+Math.round(cp.cp_mid*100)+'% of the capital cost; '+soc+'. Financing is '+f.stage+' overall ('+Math.round(f.F*100)+'%), but the neocloud edge is far more exposed. Whether the dot travels up and to the right toward a healthy boom — as the past booms did — or stalls, is the open question.';
 
- // flow plot (de-correlated): x=private earnings flow, y=social value flow, dot size=capital cost
- const fl=d.flows, FS=document.getElementById('flow');
+ // ---- flow ----
+ const fc=E('flow');
  const uc=fl.capital_cost_usd/1e9, pe=fl.private_earnings_flow_usd/1e9, sv=fl.social_value_flow_usd/1e9;
- const fx0=90,fx1=760,fy0=320,fy1=40, FM=Math.max(160, uc*1.25), FX=v=>fx0+(fx1-fx0)*Math.min(v/FM,1), FY=v=>fy0-(fy0-fy1)*Math.min(v/FM,1);
- FS.appendChild(el('rect',{x:fx0,y:fy1,width:FX(uc)-fx0,height:FY(uc)-fy1,fill:'#f6e9e7'}));
- FS.appendChild(el('rect',{x:FX(uc),y:fy1,width:fx1-FX(uc),height:FY(uc)-fy1,fill:'#eaf1ea'}));
- FS.appendChild(el('line',{x1:FX(uc),y1:fy1,x2:FX(uc),y2:fy0,stroke:'#b0413e','stroke-dasharray':'5 4'}));
- FS.appendChild(el('line',{x1:fx0,y1:FY(uc),x2:fx1,y2:FY(uc),stroke:'#b0413e','stroke-dasharray':'5 4'}));
- FS.appendChild(tx(FX(uc)+6,fy1+14,'breaks even (private) →',{'font-size':10.5,fill:'#b0413e'}));
- FS.appendChild(tx(fx0+6,FY(uc)-6,'breaks even (social) ↑',{'font-size':10.5,fill:'#b0413e'}));
- const dr=Math.max(10,Math.sqrt(uc)*1.6);
- FS.appendChild(el('circle',{cx:FX(pe),cy:FY(sv),r:dr,fill:t.color,'fill-opacity':0.18,stroke:t.color}));
- FS.appendChild(el('circle',{cx:FX(pe),cy:FY(sv),r:6,fill:t.color}));
- FS.appendChild(tx(FX(pe),FY(sv)-dr-6,'AI '+t.quarter,{'font-size':12,'font-weight':'bold',fill:t.color,'text-anchor':'middle'}));
- FS.appendChild(el('line',{x1:fx0,y1:fy0,x2:fx1,y2:fy0,stroke:'#444','stroke-width':1.2}));
- FS.appendChild(el('line',{x1:fx0,y1:fy0,x2:fx0,y2:fy1,stroke:'#444','stroke-width':1.2}));
- FS.appendChild(tx((fx0+fx1)/2,fy0+30,'Private earnings flow ($bn/yr)',{'font-size':12.5,fill:'#333','text-anchor':'middle'}));
- FS.appendChild(tx(34,(fy0+fy1)/2,'Social value flow ($bn/yr)',{'font-size':12.5,fill:'#333','text-anchor':'middle',transform:`rotate(-90 34 ${(fy0+fy1)/2})`}));
+ const FM=Math.max(160,uc*1.3,sv*1.2,pe*1.2);
+ fc.setOption({
+  grid:{left:64,right:22,top:18,bottom:46},
+  xAxis:{min:0,max:FM,name:'private earnings flow ($bn/yr)',nameLocation:'middle',nameGap:28,nameTextStyle:{color:TXT,fontSize:12},axisLine:{lineStyle:{color:FAINT}},axisLabel:{color:TXT},splitLine:{show:false}},
+  yAxis:{min:0,max:FM,name:'social value flow ($bn/yr)',nameLocation:'middle',nameGap:42,nameTextStyle:{color:TXT,fontSize:12},axisLine:{lineStyle:{color:FAINT}},axisLabel:{color:TXT},splitLine:{show:false}},
+  series:[{type:'scatter',symbolSize:Math.max(18,Math.sqrt(uc)*2.2),data:[[pe,sv]],itemStyle:{color:frag,opacity:0.22,borderColor:frag,borderWidth:1.5},
+     label:{show:true,formatter:'AI '+d.quarter,position:'top',color:frag,fontSize:12,fontWeight:'bold'},
+     markLine:{silent:true,symbol:'none',label:{show:true,fontSize:10,color:BREAK},lineStyle:{color:BREAK,type:'dashed'},
+       data:[{xAxis:uc,label:{formatter:'breaks even (private)',position:'insideEndTop'}},{yAxis:uc,label:{formatter:'breaks even (social)',position:'insideEndTop'}}]}},
+   {type:'scatter',symbolSize:9,data:[[pe,sv]],itemStyle:{color:frag},silent:true}]
+ });
  document.getElementById('flowlegend').innerHTML='AI now: private earnings $'+Math.round(pe)+'bn, social value $'+Math.round(sv)+'bn, against a capital cost of $'+Math.round(uc)+'bn/yr (dot size). Right of the red line = pays for itself privately; above it = pays for itself for the world.';
 
- // trajectory: three small-multiple time series with revision band + called moves
+ // ---- trajectory (3 small multiples) ----
  if(tj&&tj.series&&tj.series.length>1){
-  const TS=document.getElementById('traj'), S=tj.series, n=S.length, RB=tj.revision_band||0.2;
-  const cols=[{key:'cp',idx:1,label:'Earnings (Cp)',color:'#D85A30',ref:1},
-              {key:'cs10',idx:1,label:'Benefit (Cs, 10y)',color:'#1D9E75',ref:1},
-              {key:'F',label:'Fragility (F)',color:'#BA7517',ref:null}];
-  const pad=46, gap=30, cw=(820-pad*2-gap*2)/3, ch=200, top=24;
-  cols.forEach((c,ci)=>{
-   const x0=pad+ci*(cw+gap), vals=S.map(p=>Array.isArray(p[c.key])?p[c.key][c.idx]:p[c.key]);
-   const hi=Math.max(...vals, c.ref||0)*1.18||1, X=i=>x0+cw*i/(n-1), Y=v=>top+ch-ch*Math.min(v/hi,1);
-   // axes
-   TS.appendChild(el('line',{x1:x0,y1:top,x2:x0,y2:top+ch,stroke:'#ccc'}));
-   TS.appendChild(el('line',{x1:x0,y1:top+ch,x2:x0+cw,y2:top+ch,stroke:'#ccc'}));
-   if(c.ref!=null){TS.appendChild(el('line',{x1:x0,y1:Y(c.ref),x2:x0+cw,y2:Y(c.ref),stroke:'#b0413e','stroke-dasharray':'4 3','stroke-opacity':0.7}));
-    TS.appendChild(tx(x0+cw,Y(c.ref)-3,'breaks even',{'font-size':9,fill:'#b0413e','text-anchor':'end'}));}
-   // revision band around each mid (drawn as a soft ribbon)
-   let up='',dn='';S.forEach((p,i)=>{const v=vals[i];up+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v*(1+RB)).toFixed(1)+' ';});
-   for(let i=n-1;i>=0;i--){dn+='L'+X(i).toFixed(1)+' '+Y(vals[i]*(1-RB)).toFixed(1)+' ';}
-   TS.appendChild(el('path',{d:up+dn+'Z',fill:c.color,'fill-opacity':0.10,stroke:'none'}));
-   // mid line
-   let dd='';S.forEach((p,i)=>dd+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(vals[i]).toFixed(1)+' ');
-   TS.appendChild(el('path',{d:dd,fill:'none',stroke:c.color,'stroke-width':2}));
-   // points + called markers
-   S.forEach((p,i)=>{
-    const v=vals[i], called=(p.calls||{})[c.key], prov=p.provisional;
-    TS.appendChild(el('circle',{cx:X(i),cy:Y(v),r:prov?4:2.6,fill:prov?'#fff':c.color,stroke:c.color,'stroke-width':prov?2:1}));
-    if(called)TS.appendChild(tx(X(i),Y(v)-9,called==='up'?'▲':'▼',{'font-size':12,fill:c.color,'text-anchor':'middle','font-weight':'bold'}));
+  const S=tj.series, RB=tj.revision_band||0.2, qs=S.map(p=>p.quarter), n=S.length;
+  const specs=[{id:'tj_cp',key:'cp',label:'earnings (Cp)',color:CORAL,ref:1},
+               {id:'tj_cs',key:'cs10',label:'benefit (Cs, 10y)',color:TEAL,ref:1},
+               {id:'tj_f',key:'F',label:'fragility (F)',color:AMBER,ref:null}];
+  specs.forEach(sp=>{
+   const c=E(sp.id);
+   const vals=S.map(p=>Array.isArray(p[sp.key])?p[sp.key][1]:p[sp.key]);
+   const lower=vals.map(v=>+(v*(1-RB)).toFixed(4)), band=vals.map(v=>+(v*2*RB).toFixed(4));
+   const ymx=Math.max.apply(null,vals.concat([sp.ref||0]))*1.2||1;
+   const mid=S.map((p,i)=>{ const cl=(p.calls||{})[sp.key], prov=(i===n-1);
+     const it=prov?{color:PANEL,borderColor:sp.color,borderWidth:2}:{color:sp.color};
+     const o={value:vals[i],symbolSize:prov?7:4,itemStyle:it};
+     if(cl) o.label={show:true,formatter:cl==='up'?'▲':'▼',color:sp.color,position:'top',fontSize:12,fontWeight:'bold'};
+     return o; });
+   c.setOption({
+    title:[{text:sp.label,left:4,top:2,textStyle:{fontSize:12,color:TXT,fontWeight:500}},
+           {text:(sp.key==='F'?Math.round(vals[n-1]*100)+'%':fmtv(vals[n-1])),right:4,top:2,textStyle:{fontSize:12,color:sp.color,fontWeight:500}}],
+    grid:{left:6,right:8,top:30,bottom:22,containLabel:true},
+    xAxis:{type:'category',data:qs,boundaryGap:false,axisTick:{show:false},axisLine:{lineStyle:{color:FAINT}},
+      axisLabel:{fontSize:10,color:FAINT,interval:function(i){return i===0||i===n-1;}}},
+    yAxis:{type:'value',min:0,max:ymx,axisLabel:{show:false},splitLine:{show:false},axisLine:{show:false},axisTick:{show:false}},
+    series:[
+     {type:'line',data:lower,stack:'b'+sp.key,symbol:'none',lineStyle:{opacity:0},areaStyle:{opacity:0},silent:true},
+     {type:'line',data:band,stack:'b'+sp.key,symbol:'none',lineStyle:{opacity:0},areaStyle:{color:sp.color,opacity:0.12},silent:true},
+     {type:'line',data:mid,symbol:'circle',lineStyle:{color:sp.color,width:2},itemStyle:{color:sp.color},
+       markLine:sp.ref!=null?{silent:true,symbol:'none',lineStyle:{color:BREAK,type:'dashed',opacity:0.7},label:{show:true,formatter:'breaks even',position:'insideEndTop',fontSize:9,color:BREAK},data:[{yAxis:sp.ref}]}:undefined}
+    ]
    });
-   // title + endpoints
-   TS.appendChild(tx(x0,top-9,c.label,{'font-size':12,fill:'#333','font-weight':'bold'}));
-   const lastv=vals[n-1];TS.appendChild(tx(x0+cw,top+ch+15,(c.key==='F'?Math.round(lastv*100)+'%':'×'+lastv.toFixed(2)),{'font-size':11,fill:c.color,'text-anchor':'end','font-weight':'bold'}));
-   TS.appendChild(tx(x0,top+ch+15,S[0].quarter,{'font-size':9.5,fill:'#999'}));
-   TS.appendChild(tx(x0+cw,top+ch+27,S[n-1].quarter,{'font-size':9.5,fill:'#999','text-anchor':'end'}));
   });
-  // collect any called moves for the legend
   const calls=[];S.forEach(p=>{for(const k in (p.calls||{})){if(p.calls[k])calls.push(p.quarter+' '+(k==='cp'?'earnings':k==='cs10'?'benefit':'fragility')+' '+(p.calls[k]==='up'?'↑':'↓'));}});
   document.getElementById('trajlegend').innerHTML='Line = fixed-mid estimate; shaded = ±'+Math.round(RB*100)+'% revision band; ▲/▼ = a confirmed called move. '+
-    'Earnings coverage switched on as firms first disclosed AI revenue (2025) and is climbing; benefit-coverage falls as the capital base outgrows realised value; fragility sits with the leveraged edge. '+
-    (calls.length?'<b>Called so far:</b> '+calls.join('; ')+'. ':'No moves called yet. ')+
-    'The latest point (hollow) is the current, not-yet-closed quarter. <a href="methodology.html">how the backfill works</a>.';
+   (calls.length?'<b>Called so far:</b> '+calls.join('; ')+'. ':'No moves called yet. ')+
+   'The latest point (hollow) is the current, not-yet-closed quarter. <a href="methodology.html">how the backfill works</a>.';
  }
-}).catch(e=>{document.getElementById('meta').textContent='dashboard not yet assembled — run python -m rot.cli assemble'});
+
+ window.addEventListener('resize',function(){insts.forEach(function(c){c&&c.resize();});});
+}).catch(function(e){document.getElementById('meta').textContent='dashboard not yet assembled — run python -m rot.cli assemble';console.error(e);});
 </script>
 </body></html>
