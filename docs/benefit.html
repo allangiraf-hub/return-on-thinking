@@ -10,11 +10,11 @@
 <div class="panel"><div class="legend">Per-task productivity effects from randomised experiments × measured AI usage by occupation × wages × adoption, integrated over a horizon and set against the user cost. Published as a range with acknowledged biases in both directions — the experimental tasks were chosen because AI was expected to help, so this is not a floor.</div>
 <table style="margin-top:10px"><thead><tr><th>Experiment</th><th>Measured effect</th><th>Domain</th></tr></thead><tbody>
 <tr><td>Noy &amp; Zhang 2023 (<em>Science</em>)</td><td>−40% time, +18% quality</td><td>professional writing</td></tr>
-<tr><td>Brynjolfsson, Li &amp; Raymond 2025 (<em>QJE</em>)</td><td>+15% issues/hour</td><td>customer support</td></tr>
+<tr><td>Brynjolfsson, Li &amp; Raymond 2025 (<em>QJE</em>)</td><td>+14% issues/hour</td><td>customer support</td></tr>
 <tr><td>Dell'Acqua et al. 2023/26</td><td>+12% tasks, +25% speed (inside frontier)</td><td>consulting</td></tr>
 <tr><td>Cui et al. 2026</td><td>+26% tasks</td><td>software development</td></tr>
 </tbody></table>
-<div class="src">Usage weights: Anthropic Economic Index. Wages: BLS OEWS. Adoption: Census BTOS.</div></div>
+<div class="src">Usage weights: Anthropic Economic Index. Wages: BLS OEWS. Adoption: Census BTOS. The productivity coefficient ρ is the AEI-occupation-share-weighted mean of these four trials (0.26–0.30; mid held at 0.27) — derivation in <code>data/curated/rct_effects.csv</code>.</div></div>
 <h2>The minus side — harms, tracked not netted</h2>
 <p class="sub">The benefit number is published <em>before</em> subtracting harms. Two indicators stand beside it rather than inside it.</p>
 <div class="panel"><h3>Electricity prices in data-centre states</h3><div id="elec"></div>
@@ -25,7 +25,7 @@
 <script src="spark.js"></script><script>
 Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/detail.json?t='+Date.now()).then(r=>r.json())]).then(([d,x])=>{
  const cs=d.benefit_cs.cs;
- document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
+ document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology '+(d.methodology_version||'');
  document.getElementById('cs').textContent=cs.low.h10.toFixed(2)+' – '+cs.high.h10.toFixed(2)+'  (mid '+cs.mid.h10.toFixed(2)+', 10-yr)';
  document.getElementById('csn').textContent='30-year horizon: '+cs.low.h30.toFixed(2)+' – '+cs.high.h30.toFixed(2)+' (mid '+cs.mid.h30.toFixed(2)+'). 1.0 = the world gets back what the capital cost. Annual value flow ≈ $'+(cs.mid.annual_flow_usd/1e9).toFixed(0)+'bn (mid). The wide high corner reflects genuine uncertainty about how deep adoption goes.';
  const states={va:'Virginia',tx:'Texas',oh:'Ohio',ia:'Iowa',or:'Oregon',az:'Arizona'};

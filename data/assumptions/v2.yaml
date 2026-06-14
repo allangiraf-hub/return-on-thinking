@@ -74,7 +74,7 @@ calibration_credits:
 cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 replaces with live collectors.
   us_employee_compensation_usd: 15500000000000   # ~$15.5tn annual, BEA NIPA 1.10 (2025); pinned
   ai_exposed_task_share: {low: 0.20, mid: 0.30, high: 0.45}   # AEI augmentation/automation task coverage
-  rct_effect: {low: 0.15, mid: 0.27, high: 0.40}   # weighted productivity effect on affected tasks (A.4 studies)
+  rct_effect: {low: 0.15, mid: 0.27, high: 0.40}   # task-share-weighted productivity effect on affected tasks; mid 0.27 = central of the AEI-share-weighted RCT mean 0.26-0.30 (Cui +26%, Noy-Zhang -40%t, Brynjolfsson +14%, Dell'Acqua +12%, weighted by AEI occupation share) - see data/curated/rct_effects.csv; low/high span the lab->field discount and the throughput-optimistic read
   adoption_rate: {low: 0.09, mid: 0.12, high: 0.20}   # Census BTOS firm AI-use, mid-2026
   appropriability_to_society: {low: 0.50, mid: 0.70, high: 0.90}   # v2 - banded (was fixed 0.85); social share of gross productivity value
   discount_rate: 0.05

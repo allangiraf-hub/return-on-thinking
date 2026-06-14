@@ -1,0 +1,6 @@
+study,year,venue,domain,soc_group,aei_conversation_share_pct,weight_normalized,effect_throughput,effect_conservative,study_type,source_stat
+Cui et al.,2025,SSRN / MIT (three GitHub Copilot field experiments),software development,Computer & Mathematical,37.2,0.607,0.261,0.261,field,"+26.08% weekly pull requests (SE 10.3%)"
+Noy & Zhang,2023,Science 381(6654):187-192,professional writing,Arts Design Entertainment & Media,10.3,0.168,0.667,0.40,lab,"-40% time taken (=+66.7% throughput), +18% grade/quality"
+"Brynjolfsson, Li & Raymond",2025,Quarterly Journal of Economics (Generative AI at Work),customer support,Office & Administrative Support,7.9,0.129,0.14,0.14,field,"+13.8% issues resolved/hr overall; ~+34% novices, ~0 experienced"
+Dell'Acqua et al.,2023,Harvard Business School WP 24-013 (BCG field experiment),management consulting,Business & Financial,5.9,0.096,0.122,0.122,lab,"inside-frontier: +12.2% tasks completed, 25.1% faster, +0.4 SD quality"
+WEIGHTED_AVERAGE,,,,,61.3,1.000,0.300,0.255,,"AEI-share-weighted mean across the four studies; central estimate 0.26-0.30. Adopted rct_effect mid=0.27 (cs_macro in assumptions); band low 0.15 / high 0.40 span the lab-to-field generalization discount and the throughput-optimistic read. Weights = each study's mapped SOC group AEI Feb-2025 conversation share, normalized over the four covered domains."
