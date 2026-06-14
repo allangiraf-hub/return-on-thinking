@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-13",
+ "generated_at": "2026-06-14",
  "quarter": "2026-Q2",
  "earnings_cp": {
   "cp_low": 0.15522565737417354,
@@ -73,22 +73,22 @@
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.17828983616294114,
-    "h30": 0.17828983616294122,
-    "annual_flow_usd": 29012959687.5
+    "h10": 0.11955409854862943,
+    "h30": 0.11955409854862946,
+    "annual_flow_usd": 19454940990.0
    },
    "mid": {
-    "h10": 1.211327490092523,
-    "h30": 2.0128895765149757,
-    "annual_flow_usd": 97483544550.0
+    "h10": 0.8122682102463401,
+    "h30": 1.3497639796934258,
+    "annual_flow_usd": 65368601726.399994
    },
    "high": {
-    "h10": 8.617367829215697,
-    "h30": 28.318964849189168,
-    "annual_flow_usd": 309471570000.0
+    "h10": 5.778465362110111,
+    "h30": 18.98957555427305,
+    "annual_flow_usd": 207519370560.0
    }
   },
-  "exposed_wage_bill_usd": 4298216250000.0,
+  "exposed_wage_bill_usd": 2882213480000.0,
   "macro_crosscheck_flow_usd": 105462000000.0,
   "note": "v3: economy-wide AI productivity value built as a per-occupation sum over SOC major groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed user cost of all K-holders. A projection, not realized value. 30y illustrative."
  },
@@ -105,8 +105,8 @@
  },
  "flows": {
   "private_earnings_flow_usd": 40419573499.5,
-  "social_value_flow_usd": 97483544550.0,
+  "social_value_flow_usd": 65368601726.399994,
   "capital_cost_usd": 88906917930.4355
  },
- "methodology_version": "v4"
+ "methodology_version": "v5"
 }
