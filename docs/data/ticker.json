@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-14T08:09:08+00:00",
+ "generated_at": "2026-06-15T08:13:45+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -301,6 +301,21 @@
     "date": "2026-06-12",
     "value": 3.9768,
     "gpu_model": "B200"
+   },
+   {
+    "date": "2026-06-15",
+    "value": 1.975,
+    "gpu_model": "H200"
+   },
+   {
+    "date": "2026-06-15",
+    "value": 0.1983,
+    "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-06-15",
+    "value": 3.9581,
+    "gpu_model": "B200"
    }
   ]
  },
@@ -309,10 +324,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-06-12",
-     "value": 4.36
-    },
     {
      "date": "2025-06-13",
      "value": 4.41
@@ -1308,6 +1319,10 @@
     {
      "date": "2026-06-11",
      "value": 4.45
+    },
+    {
+     "date": "2026-06-12",
+     "value": 4.48
     }
    ]
   },
