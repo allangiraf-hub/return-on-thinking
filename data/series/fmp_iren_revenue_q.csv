@@ -1,9 +1,9 @@
 series_id,date,value,unit,source_url,retrieved_at,tier
-fmp_iren_revenue_q,2024-06-30,56798000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2024-09-30,52764000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2024-12-31,116144000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2025-03-31,144823000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2025-06-30,187292000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2025-09-30,240295000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2025-12-31,184692000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
-fmp_iren_revenue_q,2026-03-31,144795000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T08:13:40+00:00,T1
+fmp_iren_revenue_q,2024-06-30,56798000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2024-09-30,52764000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2024-12-31,116144000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2025-03-31,144823000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2025-06-30,187292000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2025-09-30,240295000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2025-12-31,184692000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
+fmp_iren_revenue_q,2026-03-31,144795000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=IREN&period=quarter,2026-06-15T11:43:00+00:00,T1
