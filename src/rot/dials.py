@@ -74,13 +74,20 @@ def _ai_revenue(corner: str, asof=None) -> tuple[float, list[dict]]:
         contributors.append({"entity": r.entity, "value": r.value_usd_low, "basis": "stated AI ARR", "tier": "T2"})
 
     for tk, share_key in CLOUD_FIRMS.items():
-        # v5: prefer the self-refreshing fmp segment series; fall back to pinned CSV.
+        # Switch-on discipline (v5.1 fix): recognise AI-attributed cloud revenue
+        # only once the firm has DISCLOSED a cloud-segment figure on an earnings
+        # call as of `asof` (a row in ai_revenue.csv; df is already asof-filtered).
+        # The self-refreshing fmp annual series reaches back into the pre-AI era
+        # (GOOGL to 2018, ORCL to 2013), so using it unconditionally back-projects
+        # AI revenue into years before any disclosure - violating the backfill
+        # "switch-on" doctrine and overstating the historical numerator.
+        seg = df[(df.metric == "cloud_segment_revenue") & (df.ticker == tk)]
+        if seg.empty:
+            continue  # not yet disclosed as of `asof` -> contributes zero
+        # disclosed: prefer the self-refreshing fmp segment value; else the pinned figure.
         seg_rev = _cloud_segment(tk, asof)
         src = "auto"
         if seg_rev is None:
-            seg = df[(df.metric == "cloud_segment_revenue") & (df.ticker == tk)]
-            if seg.empty:
-                continue
             seg_rev = float(seg.sort_values("d").iloc[-1].value_usd_low)
             src = "pinned"
         share = a["revenue_attribution"][share_key][corner]
