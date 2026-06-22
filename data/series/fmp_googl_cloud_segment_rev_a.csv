@@ -1,4 +1,9 @@
 series_id,date,value,unit,source_url,retrieved_at,tier
-fmp_googl_cloud_segment_rev_a,2023-12-31,33088000000.0,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-13T15:54:19+00:00,T1
-fmp_googl_cloud_segment_rev_a,2024-12-31,43229000000.0,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-13T15:54:19+00:00,T1
-fmp_googl_cloud_segment_rev_a,2025-12-31,58705000000.0,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-13T15:54:19+00:00,T1
+fmp_googl_cloud_segment_rev_a,2018-12-31,5838000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2019-12-31,8918000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2020-12-31,13059000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2021-12-31,19206000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2022-12-31,26280000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2023-12-31,33088000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2024-12-31,43229000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
+fmp_googl_cloud_segment_rev_a,2025-12-31,58705000000,USD,https://financialmodelingprep.com/stable/revenue-product-segmentation?symbol=GOOGL,2026-06-22T07:12:46+00:00,T1
