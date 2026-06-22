@@ -1,9 +1,9 @@
 series_id,date,value,unit,source_url,retrieved_at,tier
-fmp_crwv_revenue_q,2024-06-30,395371000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2024-09-30,583941000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2024-12-31,747430000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2025-03-31,981632000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2025-06-30,1212788000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2025-09-30,1364676000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2025-12-31,1571904000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
-fmp_crwv_revenue_q,2026-03-31,2078000000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T07:12:45+00:00,T1
+fmp_crwv_revenue_q,2024-06-30,395371000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2024-09-30,583941000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2024-12-31,747430000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2025-03-31,981632000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2025-06-30,1212788000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2025-09-30,1364676000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2025-12-31,1571904000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1
+fmp_crwv_revenue_q,2026-03-31,2078000000,USD,https://financialmodelingprep.com/stable/income-statement?symbol=CRWV&period=quarter,2026-06-22T11:28:03+00:00,T1

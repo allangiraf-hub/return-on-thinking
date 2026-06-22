@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-22T07:12:51+00:00",
+ "generated_at": "2026-06-22T11:28:09+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -319,17 +319,17 @@
    },
    {
     "date": "2026-06-22",
-    "value": 1.9365,
+    "value": 1.9743,
     "gpu_model": "H200"
    },
    {
     "date": "2026-06-22",
-    "value": 0.2278,
+    "value": 0.1689,
     "gpu_model": "RTX 4090"
    },
    {
     "date": "2026-06-22",
-    "value": 3.6934,
+    "value": 3.7103,
     "gpu_model": "B200"
    }
   ]

@@ -514,17 +514,17 @@
   },
   {
    "date": "2026-06-22",
-   "value": 1.9365,
+   "value": 1.9743,
    "gpu_model": "H200"
   },
   {
    "date": "2026-06-22",
-   "value": 0.2278,
+   "value": 0.1689,
    "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-06-22",
-   "value": 3.6934,
+   "value": 3.7103,
    "gpu_model": "B200"
   }
  ],
@@ -3334,7 +3334,7 @@
    "circularity_flag": false,
    "notes": "Two tranches: $500m 2.00% due 2029 + $500m 3.00% due 2031",
    "entered_by": "claude+allan",
-   "discovery_mode": 2,
+   "discovery_mode": "2",
    "pr_number": "retrospective"
   },
   {
@@ -3350,7 +3350,7 @@
    "circularity_flag": false,
    "notes": "$2.0bn 2031 + $1.75bn 2033 proposed; final sizing reported ~$4bn",
    "entered_by": "claude+allan",
-   "discovery_mode": 2,
+   "discovery_mode": "2",
    "pr_number": "retrospective"
   },
   {
@@ -3366,7 +3366,7 @@
    "circularity_flag": false,
    "notes": "Delayed-draw term loan facility 2024; see 10-K debt footnote for full facility stack; announced date approximate (facility closed Oct 2024)",
    "entered_by": "claude+allan",
-   "discovery_mode": 2,
+   "discovery_mode": "2",
    "pr_number": "retrospective"
   },
   {
@@ -3382,7 +3382,7 @@
    "circularity_flag": true,
    "notes": "Includes portions of previously announced Microsoft and NVIDIA strategic investments - vendor capital into a customer",
    "entered_by": "claude+allan",
-   "discovery_mode": 2,
+   "discovery_mode": "2",
    "pr_number": "retrospective"
   },
   {
@@ -3398,8 +3398,152 @@
    "circularity_flag": false,
    "notes": "Bloomberg reported the raise as tied to NVIDIA chip purchases (vendor link not confirmed in primary release); announced date approximate from corporate post",
    "entered_by": "claude+allan",
-   "discovery_mode": 2,
+   "discovery_mode": "2",
    "pr_number": "retrospective"
+  },
+  {
+   "id": "applied-digital-revolver-2026",
+   "announced_date": "2026-06-08",
+   "parties": "Applied Digital (APLD) / Goldman Sachs (arranger), First National Bank of Omaha (agent)",
+   "instrument": "private_credit",
+   "amount_usd": 350000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://ir.applieddigital.com/news-events/press-releases/detail/153/applied-digital-secures-revolving-credit-facility-of-up-to",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-15 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "$350m committed revolving credit facility + $200m accordion (up to $550m). Closed May 29 2026, announced June 8. Secured by non-data-center project assets; SOFR+225bps; matures May 29 2029. Neocloud K-holder. JUDGMENT CALL: instrument=private_credit (Goldman-arranged secured revolver; enum has no 'revolver'/'bank_facility'). amount=committed $350m.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "coreweave-senior-notes-2026-06",
+   "announced_date": "2026-06-11",
+   "parties": "CoreWeave (CRWV) / 144A qualified institutional buyers",
+   "instrument": "private_credit",
+   "amount_usd": 3557400000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Pricing-of-1-25-Billion-of-Senior-Notes-and-2-Billion-of-Senior-Notes/default.aspx",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-15 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "144A senior UNSECURED notes: $1.25bn 9.625% due 2032 + EUR2bn 8.500% due 2032. Priced June 11, closing June 18 2026. EUR2bn converted at ECB ref 1.1537 (2026-06-11)=$2.307bn -> total ~$3.557bn. JUDGMENT CALL: instrument=private_credit as external sub-IG (high-yield) credit to a neocloud K-holder; enum lacks plain 'senior_notes'. Proceeds: general corporate incl. debt repayment.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "hut8-beacon-point-notes-2026",
+   "announced_date": "2026-06-04",
+   "parties": "Hut 8 (HUT) / Beacon Point DC LLC (SPV issuer) / 144A QIBs; JPMorgan + Goldman Sachs bookrunners",
+   "instrument": "abs",
+   "amount_usd": 4250000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-15 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "$4.25bn 6.129% senior SECURED notes due 2042, issued by SPV Beacon Point DC LLC, non-recourse to Hut 8, rated Baa2, fully amortizing. Funds 352MW Nueces County TX data center leased to undisclosed AA-or-higher tenant (likely hyperscaler). Priced June 4, closed June 9 2026. JUDGMENT CALL: instrument='abs' (lease/asset-backed, rated, 144A); could be 'spv'/project-finance. Pricing PR: prnewswire.com/news-releases/.../302792238.html",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "keel-infrastructure-convertible-2026",
+   "announced_date": "2026-06-09",
+   "parties": "Keel Infrastructure (KEEL) / Bitfarms Ltd. (guarantor) / 144A QIBs",
+   "instrument": "convertible_notes",
+   "amount_usd": 458000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.globenewswire.com/news-release/2026/06/09/3309321/0/en/keel-infrastructure-announces-closing-of-458-million-of-convertible-senior-notes.html",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-15 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "$458m 1.250% convertible senior notes due Jan 15 2032 (incl. $58m greenshoe), senior unsecured, fully guaranteed by Bitfarms Ltd. Conversion ~$7.41 (25% premium); net proceeds ~$445.4m for AI/HPC data-center development (Panther Creek, Sharon, Moses Lake). Smaller speculative developer; <1yr cash runway per analysts.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "broadcom-aixpv-anthropic-2026",
+   "announced_date": "2026-06-09",
+   "parties": "Apollo + Blackstone (lead lenders) / Broadcom (AI XPV, residual-value guarantee) / Anthropic (lessee) / Google TPUs; SPV by Apollo Atlas SP",
+   "instrument": "spv",
+   "amount_usd": 35000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://ir.apollo.com/news-events/press-releases/detail/629/apollo-leads-35-billion-capital-solution-for-broadcom-ai",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-15 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": true,
+   "notes": "Initial $35bn tranche of Broadcom AI XPV Platform (targets >20GW compute by 2028). SPV (Apollo Atlas SP) buys Google/Broadcom-codesigned TPUs and leases to Anthropic; debt serviced by lease payments. Tranches: $6bn A1 (UST+100bps, banks) + $24bn A2 (5.75%) both w/ Broadcom residual-value guarantee (mid-IG private ratings) + $4.5bn B (8.5%, unguaranteed) + ~$0.8bn Apollo Atlas equity. CIRCULAR: chip vendor (Broadcom) backstops financing for chips used by an AI lab. Anthropic >1GW at Fluidstack sites from mid-2026. Co-primary: blackstone.com/news/press/broadcom-apollo-and-blackstone-establish-landmark-strategic-platform-...",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "cipher-stingray-notes-2026",
+   "announced_date": "2026-06-08",
+   "parties": "Cipher Digital Inc. (CIFR) / Stingray Compute LLC (SPV issuer) / 144A QIBs; Amazon Data Services (tenant)",
+   "instrument": "abs",
+   "amount_usd": 810000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://investors.cipherdigital.com/news-releases/news-release-details/cipher-digital-inc-announces-pricing-8100-million-senior-secured",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-22 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "$810.0m senior SECURED notes 6.000% due 2031, issued by SPV Stingray Compute LLC; funds 70MW data center in Andrews, TX pre-leased to Amazon Data Services (15-yr triple-net + Amazon parent guarantee, ~$2.0bn contracted revenue). Priced June 8, closing ~June 15 2026. Proceeds: finance Stingray facility, reimburse ~$61.5m prior equity, fund debt service reserves. JUDGMENT CALL: instrument='abs' (SPV lease/asset-backed; mirrors Hut 8 Beacon Point coding). Announced June 8 - missed in prior harvest, caught 2026-06-22.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "applied-digital-computeco3-notes-2026",
+   "announced_date": "2026-06-09",
+   "parties": "Applied Digital Corporation (APLD) / APLD ComputeCo 3 LLC (subsidiary issuer) / 144A QIBs; CoreWeave (tenant)",
+   "instrument": "abs",
+   "amount_usd": 1590000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://ir.applieddigital.com/news-events/press-releases/detail/156/applied-digital-announces-pricing-of-1-59-billion-of",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-22 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "$1.59bn senior SECURED notes 7.000% due 2031, issued by subsidiary APLD ComputeCo 3 LLC, funding the fourth building at Polaris Forge 1 (Ellendale, ND); secured by APLD ELN-04 project entities; campus leased to CoreWeave (~$7.5bn / 15-yr / 300MW). Announced June 9, closed June 16 2026. SEPARATE instrument from the $350m APLD revolver already in ledger. JUDGMENT CALL: instrument='abs' (project/lease-backed secured notes). Announced June 9 - missed in prior harvest, caught 2026-06-22.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "duos-edge-usdai-facility-2026",
+   "announced_date": "2026-06-05",
+   "parties": "Duos Technologies (DUOT) / Duos Edge AI - GPUaaS, LLC (bankruptcy-remote borrower) / USD.AI (lender)",
+   "instrument": "private_credit",
+   "amount_usd": 98100000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/1396536/000107997326000826/duot_8k.htm",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-22 (Perplexity/Tavily/Firecrawl); re-sourced to SEC 8-K",
+   "circularity_flag": false,
+   "notes": "$98.1m three-year asset-based debt facility from specialty lender USD.AI to Duos Edge AI - GPUaaS, LLC (bankruptcy-remote subsidiary), collateralized by 2,304 NVIDIA B300 GPUs, funding a GPU-as-a-service deployment. Event date June 5; 8-K filed June 11 2026. Coupon not disclosed. JUDGMENT CALL: instrument='private_credit' (non-bank GPU-backed asset-based finance). Small but a clean GPU-collateralized ABF data point. Announced June 5 - missed in prior harvest, caught 2026-06-22.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
+  },
+  {
+   "id": "switch-revolver-lc-2026",
+   "announced_date": "2026-06-10",
+   "parties": "Switch, Ltd. / syndicate arranged by TD Securities, Wells Fargo, BBVA, Natixis",
+   "instrument": "private_credit",
+   "amount_usd": 6000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.prnewswire.com/news-releases/switch-expands-corporate-revolving-credit-and-letter-of-credit-facilities-to-nearly-10-billion-302796143.html",
+   "discovery_source": "Cowork contemporaneous harvest 2026-06-22 (Perplexity/Tavily/Firecrawl)",
+   "circularity_flag": false,
+   "notes": "Switch (private; DigitalBridge/IFM-owned) extended and upsized its Corporate Revolving Credit Facility to MORE THAN $6bn and its syndicated performance Letter-of-Credit facility to $3.5bn (combined ~$10bn, up from $2.6bn in Apr 2026). Arrangers TD Securities, Wells Fargo, BBVA, Natixis. For gigawatt-scale AI/cloud campus growth, power procurement, contracted pipeline. Announced June 10 2026. JUDGMENT CALLS: (1) instrument='private_credit' although this is a SYNDICATED BANK facility (enum lacks 'revolver'/'bank_facility'); (2) amount=$6.0bn revolver only (committed, largely undrawn); $3.5bn LC excluded to avoid double-count; total ~$10bn; (3) committed-capacity vs drawn-debt - flagged for Allan.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null
   }
  ]
 }
