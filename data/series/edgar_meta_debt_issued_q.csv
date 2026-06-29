@@ -1,5 +1,5 @@
 series_id,date,value,unit,source_url,retrieved_at,tier
-edgar_meta_debt_issued_q,2022-09-30,9921000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T09:25:33+00:00,T1
-edgar_meta_debt_issued_q,2023-06-30,8455000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T09:25:33+00:00,T1
-edgar_meta_debt_issued_q,2024-09-30,10432000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T09:25:33+00:00,T1
-edgar_meta_debt_issued_q,2025-12-31,29906000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T09:25:33+00:00,T1
+edgar_meta_debt_issued_q,2022-09-30,9921000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T10:15:37+00:00,T1
+edgar_meta_debt_issued_q,2023-06-30,8455000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T10:15:37+00:00,T1
+edgar_meta_debt_issued_q,2024-09-30,10432000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T10:15:37+00:00,T1
+edgar_meta_debt_issued_q,2025-12-31,29906000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001326801/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-06-29T10:15:37+00:00,T1

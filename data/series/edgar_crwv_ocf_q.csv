@@ -1,9 +1,9 @@
 series_id,date,value,unit,source_url,retrieved_at,tier
-edgar_crwv_ocf_q,2023-12-31,1833000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2024-03-31,2039038000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2024-09-30,641222000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2024-12-31,186564000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2025-03-31,61168000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2025-09-30,1689134000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2025-12-31,1558949000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
-edgar_crwv_ocf_q,2026-03-31,2984000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T09:25:36+00:00,T1
+edgar_crwv_ocf_q,2023-12-31,1833000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2024-03-31,2039038000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2024-09-30,641222000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2024-12-31,186564000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2025-03-31,61168000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2025-09-30,1689134000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2025-12-31,1558949000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
+edgar_crwv_ocf_q,2026-03-31,2984000000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001769628/us-gaap/NetCashProvidedByUsedInOperatingActivities.json,2026-06-29T10:15:41+00:00,T1
