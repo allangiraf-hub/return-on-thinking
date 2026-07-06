@@ -5,6 +5,7 @@
 <div class="meta" id="meta">Loading…</div>
 <p class="sub">The coverage ratio: the quasi-rents the AI capital actually earns, against the annual cost of holding it. A gap is normal for a young technology — the trajectory is the signal, not the level.</p>
 <div class="panel"><h3>Coverage ratio (Cp)</h3><div id="cp" style="font:bold 26px Helvetica,Arial,sans-serif"></div><div class="legend" id="cpn"></div></div>
+<p class="sub" style="font-size:13px;color:#6b6b6b">Two bars are often confused. This ratio sets earnings against depreciation <em>plus a required return on the whole installed stock</em> — a stricter test than &ldquo;revenue vs depreciation&rdquo; alone, which is why it sits well below 1.0 even as the picture improves. On the looser depreciation-only test, independent bottom-up work (Exponential View, <em>The State of the AI Economy</em>, 25&nbsp;Jun&nbsp;2026) finds quarterly AI revenue first cleared quarterly infrastructure depreciation around Q4&nbsp;2025&nbsp;/&nbsp;Q1&nbsp;2026 — consistent with this dial&rsquo;s upward trajectory. <a href="https://intelligence.exponentialview.co/">Source</a>.</p>
 <h2>What the AI capital earns</h2>
 <p class="sub">Realized AI revenue stated on earnings calls (K-holders only; guidance and chipmaker revenue excluded). Each figure is kept with its verbatim sentence.</p>
 <div class="panel"><table id="rev"><thead><tr><th>Company</th><th>AI revenue (realized)</th><th>As of</th><th>Basis</th></tr></thead><tbody></tbody></table>
@@ -23,7 +24,7 @@
 <script src="spark.js"></script><script>
 Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('data/detail.json?t='+Date.now()).then(r=>r.json())]).then(([d,x])=>{
  const cp=d.earnings_cp;
- document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology v1';
+ document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology '+(d.methodology_version||'v5');
  document.getElementById('cp').textContent=cp.cp_low.toFixed(2)+' – '+cp.cp_high.toFixed(2)+'  (mid '+cp.cp_mid.toFixed(2)+')';
  document.getElementById('cpn').textContent='Realized AI revenue $'+(cp.realized_ai_revenue_usd/1e9).toFixed(0)+'bn ÷ annual user cost $'+(cp.user_cost_mid_usd/1e9).toFixed(0)+'bn of a $'+(cp.K_total_mid_usd/1e12).toFixed(1)+'tn installed stock. 1.0 = pays for itself. Realized only; guidance excluded.';
  const tb=document.querySelector('#rev tbody');

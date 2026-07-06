@@ -3,6 +3,9 @@
 # full back-series (CI will enforce from P2). Review notes for Allan inline.
 version: 2
 status: active   # v2: population-consistent attribution, F max-aggregator, Cs banded appropriability (adversarial review 2026-06-13)
+# CHANGELOG 2026-07-06: chips_servers depreciation mid recentred 0.28->0.20 on mid-2026 longer-life
+# evidence (EV 'State of the AI Economy' 25 Jun 2026 + Meta 5.5yr + Nvidia 4-6yr + GPU rental yields).
+# Band (low 0.18 / high 0.40) unchanged; back-series restated on the same run (movement stays real).
 
 r:  # required return construction
   risk_free_fallback: 0.045   # used only if treasury_10y series unavailable
@@ -21,17 +24,30 @@ r:  # required return construction
 delta:  # annual economic depreciation bands - THE contested numbers
   chips_servers:
     low: 0.18    # ~5.5yr life: the hyperscaler accounting view (10-K schedules)
-    mid: 0.28
-    high: 0.40   # ~2.5yr life: the sceptics' view (Burry arithmetic)
-    # REVIEW: band deliberately spans the public controversy; mid is NOT a claim, just a midpoint.
+    mid: 0.20    # ~5yr life: evidence-weighted central estimate (see REVIEW). Not the arithmetic midpoint.
+    high: 0.40   # ~2.5yr life: the sceptics' view (Burry arithmetic) - retained as the fast-obsolescence tail
+    # REVIEW 2026-07-06: mid recentred 0.28 -> 0.20 toward the longer-life evidence that accumulated through
+    # mid-2026. Exponential View's report (25 Jun 2026) defends a 6-year life and shows GPU gross rental
+    # YIELDS persisting past the 6-year mark - a market price of the user cost, exactly the discipline the
+    # framework (value-coverage-framework.md S2) asks for. Meta extended server life to 5.5yr; Nvidia argues
+    # 4-6yr from utilisation. The band still spans the controversy: low 0.18 = the ~6yr accounting view,
+    # high 0.40 = Burry's 2-3yr replacement thesis (still live - he estimates a 4-6yr->2-3yr shift would cut
+    # cumulative hyperscaler earnings >$176bn 2026-28; Amazon shortened a server subset 6->5yr). Mid is now an
+    # evidence-weighted central estimate, deliberately asymmetric toward the low end - not the midpoint.
   buildings:
     low: 0.02
     mid: 0.025
     high: 0.03
+    # REVIEW 2026-07-06: retained at the framework's 2-3% shell taxonomy. EV depreciates 'buildings/other
+    # infrastructure' over 14yr (~0.071), but that lumps the real-estate shell with shorter-lived fit-out;
+    # the shell alone is a 30-50yr asset, so the band stands.
   power_cooling_other:
     low: 0.03
     mid: 0.04
     high: 0.05
+    # REVIEW 2026-07-06: reviewed against EV's 14yr non-chip figure and retained; the 0.03-0.05 band
+    # (20-33yr) already spans realistic power/cooling equipment lives, and EV's 14yr is a lumped
+    # shell+gear number, not a clean power/cooling input.
 
 revenue_attribution:  # v3 - AI share of segment revenue for firms that don't state an AI ARR
   google_cloud_ai_share: {low: 0.15, mid: 0.25, high: 0.35}   # AI slice of Google Cloud (Vertex/Gemini/AI infra)
