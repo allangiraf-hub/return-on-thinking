@@ -26,6 +26,8 @@ STAGE_COLOR = {"hedge": "#1D9E75", "speculative": "#BA7517", "ponzi": "#E24B4A"}
 
 _OFF_BALANCE = ("abs", "spv")                                   # engineered to stay out of the ratio
 _DEBT_LIKE = ("private_credit", "convertible_notes", "abs", "spv")
+_DRAWN_DEFAULT = {"abs": 1.0, "convertible_notes": 1.0, "private_credit": 0.7, "spv": 0.3,
+                  "lease": 0.5, "vendor": 0.5, "equity": 1.0, "equity_loop": 1.0}
 
 
 def _t4(sid: str, asof=None) -> float | None:
@@ -76,6 +78,10 @@ def _ledger(asof=None) -> pd.DataFrame:
     df = pd.read_csv(p)
     df["amt"] = pd.to_numeric(df["amount_usd"], errors="coerce").fillna(0.0)
     df["d"] = pd.to_datetime(df["announced_date"], errors="coerce")
+    # drawn basis (S9.3): per-deal drawn_fraction if present, else instrument default.
+    frac = pd.to_numeric(df.get("drawn_fraction"), errors="coerce") if "drawn_fraction" in df.columns else pd.Series(index=df.index, dtype=float)
+    frac = frac.where(frac.notna(), df["instrument"].astype(str).map(_DRAWN_DEFAULT).fillna(1.0))
+    df["amt_drawn"] = df["amt"] * frac.clip(0.0, 1.0)
     if asof is not None:
         df = df[df["d"] <= pd.Timestamp(asof)]
     return df
@@ -95,8 +101,9 @@ def fragility(asof=None) -> dict:
 
     led = _ledger(asof=asof)
     inst = led["instrument"].astype(str) if not led.empty else pd.Series(dtype=str)
-    off_bs = float(led.loc[inst.isin(_OFF_BALANCE), "amt"].sum()) if not led.empty else 0.0
-    debt_like = float(led.loc[inst.isin(_DEBT_LIKE), "amt"].sum()) if not led.empty else 0.0
+    off_bs = float(led.loc[inst.isin(_OFF_BALANCE), "amt_drawn"].sum()) if not led.empty else 0.0
+    off_bs_committed = float(led.loc[inst.isin(_OFF_BALANCE), "amt"].sum()) if not led.empty else 0.0
+    debt_like = float(led.loc[inst.isin(_DEBT_LIKE), "amt_drawn"].sum()) if not led.empty else 0.0
     equity = float(led.loc[inst.eq("equity"), "amt"].sum()) if not led.empty else 0.0
     flags = _circularity_flags(led)
     capex_ttm = _ai_capex_ttm(asof=asof)
@@ -124,6 +131,7 @@ def fragility(asof=None) -> dict:
             "circularity_bonus_applied": circ,
             "ledger_debt_like_usd": debt_like,
             "ledger_off_balance_debt_usd": off_bs,
+            "ledger_off_balance_committed_usd": off_bs_committed,
             "ledger_equity_usd": equity,
             "ai_capex_ttm_usd": capex_ttm,
             "edge_plus_offbalance_variant": min(1.0, edge + off_bs_intensity),

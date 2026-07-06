@@ -3453,7 +3453,8 @@
    "notes": "Two tranches: $500m 2.00% due 2029 + $500m 3.00% due 2031",
    "entered_by": "claude+allan",
    "discovery_mode": "2",
-   "pr_number": "retrospective"
+   "pr_number": "retrospective",
+   "drawn_fraction": 1.0
   },
   {
    "id": "nebius-convertible-2026",
@@ -3469,7 +3470,8 @@
    "notes": "$2.0bn 2031 + $1.75bn 2033 proposed; final sizing reported ~$4bn",
    "entered_by": "claude+allan",
    "discovery_mode": "2",
-   "pr_number": "retrospective"
+   "pr_number": "retrospective",
+   "drawn_fraction": 1.0
   },
   {
    "id": "coreweave-credit-facilities",
@@ -3485,7 +3487,8 @@
    "notes": "Delayed-draw term loan facility 2024; see 10-K debt footnote for full facility stack; announced date approximate (facility closed Oct 2024)",
    "entered_by": "claude+allan",
    "discovery_mode": "2",
-   "pr_number": "retrospective"
+   "pr_number": "retrospective",
+   "drawn_fraction": 0.6
   },
   {
    "id": "anthropic-series-g",
@@ -3501,7 +3504,8 @@
    "notes": "Includes portions of previously announced Microsoft and NVIDIA strategic investments - vendor capital into a customer",
    "entered_by": "claude+allan",
    "discovery_mode": "2",
-   "pr_number": "retrospective"
+   "pr_number": "retrospective",
+   "drawn_fraction": 1.0
   },
   {
    "id": "xai-series-e",
@@ -3517,7 +3521,8 @@
    "notes": "Bloomberg reported the raise as tied to NVIDIA chip purchases (vendor link not confirmed in primary release); announced date approximate from corporate post",
    "entered_by": "claude+allan",
    "discovery_mode": "2",
-   "pr_number": "retrospective"
+   "pr_number": "retrospective",
+   "drawn_fraction": 1.0
   },
   {
    "id": "applied-digital-revolver-2026",
@@ -3533,7 +3538,8 @@
    "notes": "$350m committed revolving credit facility + $200m accordion (up to $550m). Closed May 29 2026, announced June 8. Secured by non-data-center project assets; SOFR+225bps; matures May 29 2029. Neocloud K-holder. JUDGMENT CALL: instrument=private_credit (Goldman-arranged secured revolver; enum has no 'revolver'/'bank_facility'). amount=committed $350m.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 0.2
   },
   {
    "id": "coreweave-senior-notes-2026-06",
@@ -3549,7 +3555,8 @@
    "notes": "144A senior UNSECURED notes: $1.25bn 9.625% due 2032 + EUR2bn 8.500% due 2032. Priced June 11, closing June 18 2026. EUR2bn converted at ECB ref 1.1537 (2026-06-11)=$2.307bn -> total ~$3.557bn. JUDGMENT CALL: instrument=private_credit as external sub-IG (high-yield) credit to a neocloud K-holder; enum lacks plain 'senior_notes'. Proceeds: general corporate incl. debt repayment.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "hut8-beacon-point-notes-2026",
@@ -3565,7 +3572,8 @@
    "notes": "$4.25bn 6.129% senior SECURED notes due 2042, issued by SPV Beacon Point DC LLC, non-recourse to Hut 8, rated Baa2, fully amortizing. Funds 352MW Nueces County TX data center leased to undisclosed AA-or-higher tenant (likely hyperscaler). Priced June 4, closed June 9 2026. JUDGMENT CALL: instrument='abs' (lease/asset-backed, rated, 144A); could be 'spv'/project-finance. Pricing PR: prnewswire.com/news-releases/.../302792238.html",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "keel-infrastructure-convertible-2026",
@@ -3581,7 +3589,8 @@
    "notes": "$458m 1.250% convertible senior notes due Jan 15 2032 (incl. $58m greenshoe), senior unsecured, fully guaranteed by Bitfarms Ltd. Conversion ~$7.41 (25% premium); net proceeds ~$445.4m for AI/HPC data-center development (Panther Creek, Sharon, Moses Lake). Smaller speculative developer; <1yr cash runway per analysts.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "broadcom-aixpv-anthropic-2026",
@@ -3597,7 +3606,8 @@
    "notes": "Initial $35bn tranche of Broadcom AI XPV Platform (targets >20GW compute by 2028). SPV (Apollo Atlas SP) buys Google/Broadcom-codesigned TPUs and leases to Anthropic; debt serviced by lease payments. Tranches: $6bn A1 (UST+100bps, banks) + $24bn A2 (5.75%) both w/ Broadcom residual-value guarantee (mid-IG private ratings) + $4.5bn B (8.5%, unguaranteed) + ~$0.8bn Apollo Atlas equity. CIRCULAR: chip vendor (Broadcom) backstops financing for chips used by an AI lab. Anthropic >1GW at Fluidstack sites from mid-2026. Co-primary: blackstone.com/news/press/broadcom-apollo-and-blackstone-establish-landmark-strategic-platform-...",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 0.2
   },
   {
    "id": "cipher-stingray-notes-2026",
@@ -3613,7 +3623,8 @@
    "notes": "$810.0m senior SECURED notes 6.000% due 2031, issued by SPV Stingray Compute LLC; funds 70MW data center in Andrews, TX pre-leased to Amazon Data Services (15-yr triple-net + Amazon parent guarantee, ~$2.0bn contracted revenue). Priced June 8, closing ~June 15 2026. Proceeds: finance Stingray facility, reimburse ~$61.5m prior equity, fund debt service reserves. JUDGMENT CALL: instrument='abs' (SPV lease/asset-backed; mirrors Hut 8 Beacon Point coding). Announced June 8 - missed in prior harvest, caught 2026-06-22.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "applied-digital-computeco3-notes-2026",
@@ -3629,7 +3640,8 @@
    "notes": "$1.59bn senior SECURED notes 7.000% due 2031, issued by subsidiary APLD ComputeCo 3 LLC, funding the fourth building at Polaris Forge 1 (Ellendale, ND); secured by APLD ELN-04 project entities; campus leased to CoreWeave (~$7.5bn / 15-yr / 300MW). Announced June 9, closed June 16 2026. SEPARATE instrument from the $350m APLD revolver already in ledger. JUDGMENT CALL: instrument='abs' (project/lease-backed secured notes). Announced June 9 - missed in prior harvest, caught 2026-06-22.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "duos-edge-usdai-facility-2026",
@@ -3645,7 +3657,8 @@
    "notes": "$98.1m three-year asset-based debt facility from specialty lender USD.AI to Duos Edge AI - GPUaaS, LLC (bankruptcy-remote subsidiary), collateralized by 2,304 NVIDIA B300 GPUs, funding a GPU-as-a-service deployment. Event date June 5; 8-K filed June 11 2026. Coupon not disclosed. JUDGMENT CALL: instrument='private_credit' (non-bank GPU-backed asset-based finance). Small but a clean GPU-collateralized ABF data point. Announced June 5 - missed in prior harvest, caught 2026-06-22.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "switch-revolver-lc-2026",
@@ -3661,7 +3674,8 @@
    "notes": "Switch (private; DigitalBridge/IFM-owned) extended and upsized its Corporate Revolving Credit Facility to MORE THAN $6bn and its syndicated performance Letter-of-Credit facility to $3.5bn (combined ~$10bn, up from $2.6bn in Apr 2026). Arrangers TD Securities, Wells Fargo, BBVA, Natixis. For gigawatt-scale AI/cloud campus growth, power procurement, contracted pipeline. Announced June 10 2026. JUDGMENT CALLS: (1) instrument='private_credit' although this is a SYNDICATED BANK facility (enum lacks 'revolver'/'bank_facility'); (2) amount=$6.0bn revolver only (committed, largely undrawn); $3.5bn LC excluded to avoid double-count; total ~$10bn; (3) committed-capacity vs drawn-debt - flagged for Allan.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 0.2
   },
   {
    "id": "sharon-ai-convertible-2026",
@@ -3677,7 +3691,8 @@
    "notes": "$700m 4.750% convertible senior notes due 2032-06-15, senior unsecured with US + Australian subsidiary guarantees; initial conversion ~$99.66 (45% premium to $68.73); covenants include a GPU-value-tied debt maintenance test and a $25m secured-debt cap. Part of a US$1.6bn SharonAI strategic financing announced 2026-06-17 (also ~$900m common stock + pre-funded warrants, recorded separately as sharon-ai-equity-2026; combined $1.6bn -- do NOT double-count). Proceeds fund a 6-year NVIDIA compute collaboration deploying up to 40,000 Grace Blackwell GB300 GPUs for Australian AI factories. NVIDIA is chip SUPPLIER, not financier/shareholder (an Apr-2026 8-K corrected a prior erroneous NVIDIA-strategic-shareholder statement) -> circularity false. JUDGMENT CALLS: (1) split the $1.6bn package into convertible + equity rows to preserve instrument detail; (2) F3 as external credit-like finance to a neocloud K-holder. CAVEAT: SPAC-completed late-2025 with several governance events -> speculative credit. Convertible sized $700m per businesswire primary and the $1.6bn total ($900m + $700m); one auto-extraction read $600m, resolved to $700m.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "sharon-ai-equity-2026",
@@ -3693,7 +3708,8 @@
    "notes": "~$900m private placement: 6,719,896 common shares + pre-funded warrants for 6,374,823 shares at $68.73/share. Equity leg of the US$1.6bn SharonAI strategic financing announced 2026-06-17 (debt leg = $700m 4.750% convertible, recorded as sharon-ai-convertible-2026; combined $1.6bn -- do NOT double-count). Australian neocloud (K-holder); funds an NVIDIA GB300 GPU buildout for Australian AI factories. JUDGMENT CALL: F3 as external finance to a neocloud K-holder; circularity false (NVIDIA is supplier, not investor).",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 1.0
   },
   {
    "id": "helix-digital-infrastructure-2026",
@@ -3709,7 +3725,8 @@
    "notes": "New vertically-integrated AI-infrastructure operating company (not a fund) launched 2026-06-11 with MORE THAN $10bn of committed long-duration capital; KKR anchor (balance sheet + managed vehicles), KIA, NVIDIA and Vistra as founding investors. NVIDIA = cornerstone strategic partner deploying NVIDIA DSX AI-factory infrastructure with priority/first-look rights to supply Helix investments (chip vendor taking equity in infrastructure that buys its chips -> CIRCULAR). Vistra = preferred power provider. Helix builds/owns/operates hyperscale data centers, power and connectivity for hyperscalers (Anthropic/Google/Meta cited). JUDGMENT CALLS: (1) instrument=equity (committed equity capital; mirrors the anthropic-series-g circular-equity coding rather than the enum value equity_loop); (2) amount = $10bn disclosed FLOOR (more than $10bn, open to additional institutional capital; committed, not yet deployed to specific assets); (3) F4 + circularity true for vendor (NVIDIA) equity participation. Announced June 11 -- just outside the prior harvest June-10 cutoff.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
-   "pr_number": null
+   "pr_number": null,
+   "drawn_fraction": 0.3
   }
  ]
 }

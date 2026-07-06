@@ -110,14 +110,15 @@
   "components": {
    "centre_external_share": 0.0,
    "edge_external_share": 0.664160148949274,
-   "off_balance_ledger_intensity": 0.1230645870254433,
+   "off_balance_ledger_intensity": 0.040332091546153685,
    "circularity_flags": 3,
    "circularity_bonus_applied": 0.075,
-   "ledger_debt_like_usd": 65063500000.0,
-   "ledger_off_balance_debt_usd": 41650000000.0,
+   "ledger_debt_like_usd": 28983500000.0,
+   "ledger_off_balance_debt_usd": 13650000000.0,
+   "ledger_off_balance_committed_usd": 41650000000.0,
    "ledger_equity_usd": 60900000000.0,
    "ai_capex_ttm_usd": 338440172000.0,
-   "edge_plus_offbalance_variant": 0.7872247359747173
+   "edge_plus_offbalance_variant": 0.7044922404954277
   },
   "note": "v3 (S9.3): F = max(centre, edge, off-balance ledger leverage) + circularity bonus. The weakest-link located leverage now includes SPV/ABS finance engineered to stay out of the filed capex/OCF ratio, plus a reciprocal-capital bonus. Ledger intensity is coarse (commitments not draws; discovery bias), reported, and binds only if it exceeds the filed edge; equity finance is excluded from leverage."
  },
