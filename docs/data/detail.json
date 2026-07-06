@@ -3454,7 +3454,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "2",
    "pr_number": "retrospective",
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "nebius-convertible-2026",
@@ -3471,7 +3472,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "2",
    "pr_number": "retrospective",
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "coreweave-credit-facilities",
@@ -3488,7 +3490,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "2",
    "pr_number": "retrospective",
-   "drawn_fraction": 0.6
+   "drawn_fraction": 0.6,
+   "drawn_source": "estimated"
   },
   {
    "id": "anthropic-series-g",
@@ -3505,7 +3508,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "2",
    "pr_number": "retrospective",
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "xai-series-e",
@@ -3522,7 +3526,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "2",
    "pr_number": "retrospective",
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "applied-digital-revolver-2026",
@@ -3539,7 +3544,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.2
+   "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
   },
   {
    "id": "coreweave-senior-notes-2026-06",
@@ -3556,7 +3562,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "hut8-beacon-point-notes-2026",
@@ -3573,7 +3580,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "keel-infrastructure-convertible-2026",
@@ -3590,7 +3598,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "broadcom-aixpv-anthropic-2026",
@@ -3607,7 +3616,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.2
+   "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
   },
   {
    "id": "cipher-stingray-notes-2026",
@@ -3624,7 +3634,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "applied-digital-computeco3-notes-2026",
@@ -3641,7 +3652,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "duos-edge-usdai-facility-2026",
@@ -3658,7 +3670,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "switch-revolver-lc-2026",
@@ -3675,7 +3688,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.2
+   "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
   },
   {
    "id": "sharon-ai-convertible-2026",
@@ -3692,7 +3706,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "sharon-ai-equity-2026",
@@ -3709,7 +3724,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 1.0
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   },
   {
    "id": "helix-digital-infrastructure-2026",
@@ -3726,7 +3742,8 @@
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.3
+   "drawn_fraction": 0.3,
+   "drawn_source": "estimated"
   }
  ]
 }

@@ -24,8 +24,8 @@ from .universe import load_universe
 
 STAGE_COLOR = {"hedge": "#1D9E75", "speculative": "#BA7517", "ponzi": "#E24B4A"}
 
-_OFF_BALANCE = ("abs", "spv")                                   # engineered to stay out of the ratio
-_DEBT_LIKE = ("private_credit", "convertible_notes", "abs", "spv")
+_OFF_BALANCE = ("abs", "spv", "lease", "vendor")                # engineered to stay out of the ratio
+_DEBT_LIKE = ("private_credit", "convertible_notes", "abs", "spv", "lease", "vendor")
 _DRAWN_DEFAULT = {"abs": 1.0, "convertible_notes": 1.0, "private_credit": 0.7, "spv": 0.3,
                   "lease": 0.5, "vendor": 0.5, "equity": 1.0, "equity_loop": 1.0}
 
@@ -105,6 +105,8 @@ def fragility(asof=None) -> dict:
     off_bs_committed = float(led.loc[inst.isin(_OFF_BALANCE), "amt"].sum()) if not led.empty else 0.0
     debt_like = float(led.loc[inst.isin(_DEBT_LIKE), "amt_drawn"].sum()) if not led.empty else 0.0
     equity = float(led.loc[inst.eq("equity"), "amt"].sum()) if not led.empty else 0.0
+    _obmask = inst.isin(_OFF_BALANCE)
+    off_bs_estimated = float(led.loc[_obmask & (led.get("drawn_source", "estimated").astype(str) == "estimated"), "amt_drawn"].sum()) if not led.empty else 0.0
     flags = _circularity_flags(led)
     capex_ttm = _ai_capex_ttm(asof=asof)
 
@@ -132,6 +134,7 @@ def fragility(asof=None) -> dict:
             "ledger_debt_like_usd": debt_like,
             "ledger_off_balance_debt_usd": off_bs,
             "ledger_off_balance_committed_usd": off_bs_committed,
+            "ledger_off_balance_estimated_drawn_usd": off_bs_estimated,
             "ledger_equity_usd": equity,
             "ai_capex_ttm_usd": capex_ttm,
             "edge_plus_offbalance_variant": min(1.0, edge + off_bs_intensity),

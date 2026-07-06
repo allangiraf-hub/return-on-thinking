@@ -116,6 +116,7 @@
    "ledger_debt_like_usd": 28983500000.0,
    "ledger_off_balance_debt_usd": 13650000000.0,
    "ledger_off_balance_committed_usd": 41650000000.0,
+   "ledger_off_balance_estimated_drawn_usd": 7000000000.0,
    "ledger_equity_usd": 60900000000.0,
    "ai_capex_ttm_usd": 338440172000.0,
    "edge_plus_offbalance_variant": 0.7044922404954277
