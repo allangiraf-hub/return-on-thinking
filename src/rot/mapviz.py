@@ -12,7 +12,7 @@ import json
 
 from .config import SITE_DATA
 from .assumptions import load
-from .dials import cp_band, cs_band
+from .dials import cp_band, cs_band, cp_ecosystem_band
 from .fragility import fragility
 from .ticker import build as build_ticker  # reuse F1 etc.
 
@@ -54,6 +54,7 @@ def assemble() -> dict:
     dials = {
         "generated_at": now.isoformat(), "quarter": q,
         "earnings_cp": cp,
+        "earnings_cp_ecosystem": cp_ecosystem_band(),
         "benefit_cs": cs,
         "fragility_f": frag,
         "flows": flows,

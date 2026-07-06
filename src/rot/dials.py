@@ -173,3 +173,42 @@ def cs_band(asof=None) -> dict:
                 "groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed "
                 "user cost of all K-holders. A projection, not realized value. 30y illustrative.",
     }
+
+
+def cp_ecosystem_band(asof=None) -> dict:
+    """Ecosystem coverage line: the whole GenAI stack's quasi-rents (apps + models +
+    hosting, deduplicated) over the SAME K-holder user cost - the 'ecosystem total
+    alongside' the K-holder Cp (value-coverage-framework S2). Revenue is the Exponential
+    View triangulation figure (tier T2, an external model - calibration shown distinct
+    from the filed K-holder line), banded $110bn TTM (low) to $175bn run-rate (high).
+    Live snapshot only: EV is a single point with no back-history, so this is deliberately
+    NOT put on the trajectory. Returns {} if the ecosystem_total row is absent."""
+    a = load()
+    df = pd.read_csv(CURATED / "ai_revenue.csv")
+    eco = df[df.metric == "ecosystem_total"]
+    if eco.empty:
+        return {}
+    r = eco.sort_values("call_date").iloc[-1]
+    lo, hi = float(r.value_usd_low), float(r.value_usd_high)
+    mid = (lo + hi) / 2.0
+    m = a["quasi_rent_margin"]
+    kh = cp_band(asof=asof)
+    corners = {"high": ("low", "high", "low"), "mid": ("mid", "mid", "mid"),
+               "low": ("high", "low", "high")}
+    out = {}
+    for name, (dc, mc, sc) in corners.items():
+        ec = hi if name == "high" else lo if name == "low" else mid
+        uc = user_cost(dc, tickers=CP_FIRMS, share_corner=sc, asof=asof)["user_cost"]
+        out[name] = (ec * m[mc]) / uc if uc else None
+    return {
+        "cp_eco_low": out["low"], "cp_eco_mid": out["mid"], "cp_eco_high": out["high"],
+        "ecosystem_revenue_low_usd": lo, "ecosystem_revenue_high_usd": hi,
+        "kholder_cp_mid": kh.get("cp_mid"),
+        "wedge_mid": (out["mid"] - kh["cp_mid"]) if kh.get("cp_mid") is not None else None,
+        "source": "Exponential View, The State of the AI Economy (2026), deduplicated; tier T2",
+        "note": "Ecosystem quasi-rents (full GenAI stack, deduplicated) over the K-holder user cost - "
+                "the ecosystem line the framework reports ALONGSIDE the K-holder Cp (S2). Revenue is an "
+                "external-model estimate (EV), banded 110bn TTM to 175bn run-rate, flagged distinct from "
+                "the filed K-holder line and NOT put on the trajectory. The wedge (ecosystem minus "
+                "K-holder) is the value captured above the capital-holders - the S5 competition read-out.",
+    }

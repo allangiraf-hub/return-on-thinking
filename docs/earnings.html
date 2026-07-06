@@ -6,6 +6,7 @@
 <p class="sub">The coverage ratio: the quasi-rents the AI capital actually earns, against the annual cost of holding it. A gap is normal for a young technology — the trajectory is the signal, not the level.</p>
 <div class="panel"><h3>Coverage ratio (Cp)</h3><div id="cp" style="font:bold 26px Helvetica,Arial,sans-serif"></div><div class="legend" id="cpn"></div></div>
 <p class="sub" style="font-size:13px;color:#6b6b6b">Two bars are often confused. This ratio sets earnings against depreciation <em>plus a required return on the whole installed stock</em> — a stricter test than &ldquo;revenue vs depreciation&rdquo; alone, which is why it sits well below 1.0 even as the picture improves. On the looser depreciation-only test, independent bottom-up work (Exponential View, <em>The State of the AI Economy</em>, 25&nbsp;Jun&nbsp;2026) finds quarterly AI revenue first cleared quarterly infrastructure depreciation around Q4&nbsp;2025&nbsp;/&nbsp;Q1&nbsp;2026 — consistent with this dial&rsquo;s upward trajectory. <a href="https://intelligence.exponentialview.co/">Source</a>.</p>
+<div class="panel" id="ecopanel" style="display:none"><h3>Ecosystem coverage — the whole stack, alongside</h3><div id="cpeco" style="font:bold 22px Helvetica,Arial,sans-serif"></div><div class="legend" id="econ"></div></div>
 <h2>What the AI capital earns</h2>
 <p class="sub">Realized AI revenue stated on earnings calls (K-holders only; guidance and chipmaker revenue excluded). Each figure is kept with its verbatim sentence.</p>
 <div class="panel"><table id="rev"><thead><tr><th>Company</th><th>AI revenue (realized)</th><th>As of</th><th>Basis</th></tr></thead><tbody></tbody></table>
@@ -27,6 +28,10 @@ Promise.all([fetch('data/dials.json?t='+Date.now()).then(r=>r.json()),fetch('dat
  document.getElementById('meta').innerHTML='Assembled '+d.generated_at+' · '+d.quarter+' · methodology '+(d.methodology_version||'v5');
  document.getElementById('cp').textContent=cp.cp_low.toFixed(2)+' – '+cp.cp_high.toFixed(2)+'  (mid '+cp.cp_mid.toFixed(2)+')';
  document.getElementById('cpn').textContent='Realized AI revenue $'+(cp.realized_ai_revenue_usd/1e9).toFixed(0)+'bn ÷ annual user cost $'+(cp.user_cost_mid_usd/1e9).toFixed(0)+'bn of a $'+(cp.K_total_mid_usd/1e12).toFixed(1)+'tn installed stock. 1.0 = pays for itself. Realized only; guidance excluded.';
+ const eco=d.earnings_cp_ecosystem;
+ if(eco&&eco.cp_eco_mid!=null){document.getElementById('ecopanel').style.display='';
+  document.getElementById('cpeco').textContent=eco.cp_eco_low.toFixed(2)+' \u2013 '+eco.cp_eco_high.toFixed(2)+'  (mid '+eco.cp_eco_mid.toFixed(2)+')';
+  document.getElementById('econ').innerHTML='Whole-stack GenAI quasi-rents (apps + models + hosting, deduplicated) over the same capital cost \u2014 reported <em>alongside</em> the K-holder line. Revenue $'+(eco.ecosystem_revenue_low_usd/1e9).toFixed(0)+'\u2013'+(eco.ecosystem_revenue_high_usd/1e9).toFixed(0)+'bn (Exponential View, deduplicated; external estimate, tier T2 \u2014 not a filed number). Wedge vs K-holders +'+eco.wedge_mid.toFixed(2)+' = value captured above the capital-holders (apps &amp; labs).';}
  const tb=document.querySelector('#rev tbody');
  x.ai_revenue.filter(r=>r.basis==='realized'&&r.metric==='ai_arr').sort((a,b)=>b.value_usd_low-a.value_usd_low).forEach(r=>{
   tb.insertAdjacentHTML('beforeend','<tr><td><strong>'+r.entity+'</strong></td><td>$'+(r.value_usd_low/1e9).toFixed(0)+'bn</td><td>'+r.call_date+'</td><td>'+r.basis+'</td></tr>');});
