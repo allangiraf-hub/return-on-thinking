@@ -104,15 +104,15 @@
   "note": "v3: economy-wide AI productivity value built as a per-occupation sum over SOC major groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed user cost of all K-holders. A projection, not realized value. 30y illustrative."
  },
  "fragility_f": {
-  "F": 0.764160148949274,
-  "stage": "ponzi",
-  "color": "#E24B4A",
+  "F": 0.7241601489492739,
+  "stage": "speculative",
+  "color": "#BA7517",
   "components": {
    "centre_external_share": 0.0,
    "edge_external_share": 0.664160148949274,
    "off_balance_ledger_intensity": 0.040332091546153685,
    "circularity_flags": 4,
-   "circularity_bonus_applied": 0.09999999999999999,
+   "circularity_bonus_applied": 0.06,
    "ledger_debt_like_usd": 28983500000.0,
    "ledger_off_balance_debt_usd": 13650000000.0,
    "ledger_off_balance_committed_usd": 41650000000.0,

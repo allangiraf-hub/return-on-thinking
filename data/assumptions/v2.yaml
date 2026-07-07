@@ -99,5 +99,5 @@ cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 r
 fragility:  # F index - v2: weakest-link (max of centre vs edge), not a weighted average
   aggregator: max                   # v2 - F = max(centre, edge) + circularity; a blend hid the edge risk
   circularity_bonus: 0.15           # circular deals add up to this on top of the max
-  circularity_full_at: 6            # this many open flags = full circularity bonus
+  circularity_full_at: 10           # v6 2026-07-06: raised 6->10 so a single circular deal cannot tip the headline; circular deals are now common (4 by mid-2026), so "full circularity" is a higher bar. Each flag now = +0.015.
   stage_thresholds: {hedge: 0.33, speculative: 0.75}   # hedge=green(cash); speculative=amber(rolling); ponzi=red(wholly external)
