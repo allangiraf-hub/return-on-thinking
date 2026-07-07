@@ -3744,6 +3744,24 @@
    "pr_number": null,
    "drawn_fraction": 0.3,
    "drawn_source": "estimated"
+  },
+  {
+   "id": "together-ai-series-c-2026",
+   "announced_date": "2026-07-01",
+   "parties": "Together AI / Aramco Ventures (lead); Vista Equity, General Catalyst, Emergence Capital, NVIDIA, March Capital, Pegatron, SE Ventures (Schneider Electric), S Ventures (SentinelOne)",
+   "instrument": "equity",
+   "amount_usd": 800000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-%24800-Million-at-%248.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All",
+   "discovery_source": "Cowork contemporaneous harvest 2026-07-06 (Perplexity/Firecrawl)",
+   "circularity_flag": true,
+   "notes": "$800m Series C at $8.3bn post-money; led by Aramco Ventures (Prosperity7 / Late-Stage Venturing), with NVIDIA, Vista Equity, General Catalyst, Emergence, March Capital, Pegatron, SE Ventures (Schneider Electric), S Ventures (SentinelOne). Together AI = the 'AI Native Cloud' neocloud that rents NVIDIA GPU clusters (production inference/training); annual bookings >$1.15bn last quarter; plans ~50x capacity growth over 5 years. CIRCULAR: chip vendor (NVIDIA) equity into a neocloud that buys its GPUs -> F4, circularity_flag=true (mirrors helix / anthropic-series-g vendor-equity coding; contrast sharon-ai-equity F3 where NVIDIA was supplier-only). JUDGMENT CALL: instrument=equity.",
+   "entered_by": "claude+allan",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
   }
  ]
 }
