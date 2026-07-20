@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-13T08:40:26+00:00",
+ "generated_at": "2026-07-20T08:32:39+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -319,22 +319,17 @@
    },
    {
     "date": "2026-06-22",
+    "value": 0.1689,
+    "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-06-22",
     "value": 3.7103,
     "gpu_model": "B200"
    },
    {
     "date": "2026-06-22",
     "value": 1.9743,
-    "gpu_model": "H200"
-   },
-   {
-    "date": "2026-06-22",
-    "value": 0.1689,
-    "gpu_model": "RTX 4090"
-   },
-   {
-    "date": "2026-06-29",
-    "value": 2.4851,
     "gpu_model": "H200"
    },
    {
@@ -346,6 +341,11 @@
     "date": "2026-06-29",
     "value": 4.3472,
     "gpu_model": "B200"
+   },
+   {
+    "date": "2026-06-29",
+    "value": 2.4851,
+    "gpu_model": "H200"
    },
    {
     "date": "2026-07-06",
@@ -364,17 +364,27 @@
    },
    {
     "date": "2026-07-13",
-    "value": 1.4678,
-    "gpu_model": "H100 SXM"
-   },
-   {
-    "date": "2026-07-13",
     "value": 1.9372,
     "gpu_model": "H200"
    },
    {
     "date": "2026-07-13",
+    "value": 1.4678,
+    "gpu_model": "H100 SXM"
+   },
+   {
+    "date": "2026-07-13",
     "value": 0.2952,
+    "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-07-20",
+    "value": 1.9372,
+    "gpu_model": "H200"
+   },
+   {
+    "date": "2026-07-20",
+    "value": 0.1356,
     "gpu_model": "RTX 4090"
    }
   ]
@@ -384,26 +394,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-07-11",
-     "value": 4.43
-    },
-    {
-     "date": "2025-07-14",
-     "value": 4.43
-    },
-    {
-     "date": "2025-07-15",
-     "value": 4.5
-    },
-    {
-     "date": "2025-07-16",
-     "value": 4.46
-    },
-    {
-     "date": "2025-07-17",
-     "value": 4.47
-    },
     {
      "date": "2025-07-18",
      "value": 4.44
@@ -1383,6 +1373,26 @@
     {
      "date": "2026-07-10",
      "value": 4.56
+    },
+    {
+     "date": "2026-07-13",
+     "value": 4.62
+    },
+    {
+     "date": "2026-07-14",
+     "value": 4.58
+    },
+    {
+     "date": "2026-07-15",
+     "value": 4.55
+    },
+    {
+     "date": "2026-07-16",
+     "value": 4.57
+    },
+    {
+     "date": "2026-07-17",
+     "value": 4.55
     }
    ]
   },
@@ -1390,26 +1400,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
    "points": [
-    {
-     "date": "2026-01-16",
-     "value": 4.24
-    },
-    {
-     "date": "2026-01-20",
-     "value": 4.3
-    },
-    {
-     "date": "2026-01-21",
-     "value": 4.26
-    },
-    {
-     "date": "2026-01-22",
-     "value": 4.26
-    },
-    {
-     "date": "2026-01-23",
-     "value": 4.24
-    },
     {
      "date": "2026-01-26",
      "value": 4.22
@@ -1869,6 +1859,26 @@
     {
      "date": "2026-07-09",
      "value": 4.54
+    },
+    {
+     "date": "2026-07-10",
+     "value": 4.56
+    },
+    {
+     "date": "2026-07-13",
+     "value": 4.62
+    },
+    {
+     "date": "2026-07-14",
+     "value": 4.58
+    },
+    {
+     "date": "2026-07-15",
+     "value": 4.55
+    },
+    {
+     "date": "2026-07-16",
+     "value": 4.57
     }
    ]
   },
@@ -1876,26 +1886,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y",
    "points": [
-    {
-     "date": "2026-01-15",
-     "value": 1.65
-    },
-    {
-     "date": "2026-01-16",
-     "value": 1.63
-    },
-    {
-     "date": "2026-01-20",
-     "value": 1.65
-    },
-    {
-     "date": "2026-01-21",
-     "value": 1.62
-    },
-    {
-     "date": "2026-01-22",
-     "value": 1.59
-    },
     {
      "date": "2026-01-23",
      "value": 1.61
@@ -2355,6 +2345,26 @@
     {
      "date": "2026-07-09",
      "value": 1.56
+    },
+    {
+     "date": "2026-07-10",
+     "value": 1.58
+    },
+    {
+     "date": "2026-07-13",
+     "value": 1.56
+    },
+    {
+     "date": "2026-07-14",
+     "value": 1.6
+    },
+    {
+     "date": "2026-07-15",
+     "value": 1.6
+    },
+    {
+     "date": "2026-07-16",
+     "value": 1.59
     }
    ]
   }
