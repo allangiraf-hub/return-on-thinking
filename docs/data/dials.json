@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-07-20",
+ "generated_at": "2026-07-27",
  "quarter": "2026-Q3",
  "earnings_cp": {
-  "cp_low": 0.10986363539897821,
-  "cp_mid": 0.30541930442810283,
-  "cp_high": 0.7038875752231637,
+  "cp_low": 0.10473078180904688,
+  "cp_mid": 0.2921660876964423,
+  "cp_high": 0.6738204853709254,
   "realized_ai_revenue_usd": 80839146999.0,
-  "user_cost_mid_usd": 132341253200.04114,
-  "K_total_mid_usd": 676189024781.4347,
+  "user_cost_mid_usd": 138344507462.12387,
+  "K_total_mid_usd": 700121705613.7458,
   "firms": [
    "MSFT",
    "AMZN",
@@ -71,31 +71,31 @@
   "note": "v3: AI-attributed revenue of every measurable K-holder (stated AI ARR + cloud-segment x AI-share + neocloud total) over the AI-attributed user cost of the same firms. Meta excluded (AI monetized via ad uplift, no revenue line). Population-consistent."
  },
  "earnings_cp_ecosystem": {
-  "cp_eco_low": 0.1678126163908314,
-  "cp_eco_mid": 0.5383808772938071,
-  "cp_eco_high": 1.3588855992166333,
+  "cp_eco_low": 0.15997237346286564,
+  "cp_eco_mid": 0.51501863938839,
+  "cp_eco_high": 1.3008397736490978,
   "ecosystem_revenue_low_usd": 110000000000.0,
   "ecosystem_revenue_high_usd": 175000000000.0,
-  "kholder_cp_mid": 0.30541930442810283,
-  "wedge_mid": 0.2329615728657043,
+  "kholder_cp_mid": 0.2921660876964423,
+  "wedge_mid": 0.22285255169194768,
   "source": "Exponential View, The State of the AI Economy (2026), deduplicated; tier T2",
   "note": "Ecosystem quasi-rents (full GenAI stack, deduplicated) over the K-holder user cost - the ecosystem line the framework reports ALONGSIDE the K-holder Cp (S2). Revenue is an external-model estimate (EV), banded 110bn TTM to 175bn run-rate, flagged distinct from the filed K-holder line and NOT put on the trajectory. The wedge (ecosystem minus K-holder) is the value captured above the capital-holders - the S5 competition read-out."
  },
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.09397202064242768,
-    "h30": 0.09397202064242773,
+    "h10": 0.09012642990822567,
+    "h30": 0.09012642990822567,
     "annual_flow_usd": 21616164615.0
    },
    "mid": {
-    "h10": 0.6799415060240537,
-    "h30": 1.1298737800552787,
+    "h10": 0.6538813249425455,
+    "h30": 1.0865690030316397,
     "annual_flow_usd": 81709102244.7
    },
    "high": {
-    "h10": 3.6438214326690304,
-    "h30": 11.974567305648842,
+    "h10": 3.5057233873687177,
+    "h30": 11.520740363581634,
     "annual_flow_usd": 228266698334.4
    }
   },
@@ -110,7 +110,7 @@
   "components": {
    "centre_external_share": 0.0,
    "edge_external_share": 0.664160148949274,
-   "off_balance_ledger_intensity": 0.040332091546153685,
+   "off_balance_ledger_intensity": 0.03866298339011042,
    "circularity_flags": 4,
    "circularity_bonus_applied": 0.06,
    "ledger_debt_like_usd": 28983500000.0,
@@ -118,15 +118,15 @@
    "ledger_off_balance_committed_usd": 41650000000.0,
    "ledger_off_balance_estimated_drawn_usd": 7000000000.0,
    "ledger_equity_usd": 61700000000.0,
-   "ai_capex_ttm_usd": 338440172000.0,
-   "edge_plus_offbalance_variant": 0.7044922404954277
+   "ai_capex_ttm_usd": 353050872000.0,
+   "edge_plus_offbalance_variant": 0.7028231323393844
   },
   "note": "v3 (S9.3): F = max(centre, edge, off-balance ledger leverage) + circularity bonus. The weakest-link located leverage now includes SPV/ABS finance engineered to stay out of the filed capex/OCF ratio, plus a reciprocal-capital bonus. Ledger intensity is coarse (commitments not draws; discovery bias), reported, and binds only if it exceeds the filed edge; equity finance is excluded from leverage."
  },
  "flows": {
   "private_earnings_flow_usd": 40419573499.5,
   "social_value_flow_usd": 81709102244.7,
-  "capital_cost_usd": 132341253200.04114
+  "capital_cost_usd": 138344507462.12387
  },
  "methodology_version": "v5"
 }

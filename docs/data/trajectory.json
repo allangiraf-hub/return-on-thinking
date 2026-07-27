@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-20",
+ "generated_at": "2026-07-27",
  "revision_band": 0.2,
  "call_rule": "A move is 'called' only when the fixed-mid value leaves the prior quarter's +/-20% revision band AND the next quarter confirms it (two-quarter rule) - so single-quarter noise is never a call.",
  "note": "Historical backfill. The capital stock (denominator) and F come from filed capex/cash-flow truncated at each quarter-end; the Cp numerator is AI revenue stated on or before each quarter; the Cs numerator is a fixed forward projection (no quarterly history), so only its denominator moves. See methodology.",
@@ -333,21 +333,21 @@
    "quarter": "2026-Q2",
    "asof": "2026-06-30",
    "cp": [
-    0.11039253382702476,
-    0.3074384689599854,
-    0.7088654246015527
+    0.10576477979036343,
+    0.2961363764137124,
+    0.6836018948680894
    ],
    "cs10": [
-    0.09444500309827059,
-    0.6846436600467513,
-    3.67077242889537
+    0.09103888221475565,
+    0.6629953524226363,
+    3.557939463900679
    ],
    "F": 0.709160148949274,
    "stage": "speculative",
    "color": "#BA7517",
    "ai_revenue_usd": 80839146999.0,
-   "user_cost_usd": 131472075164.28532,
-   "K_total_usd": 676189024781.4347,
+   "user_cost_usd": 136489728107.67601,
+   "K_total_usd": 700121705613.7458,
    "calls": {
     "cp": "up",
     "cs10": null,
@@ -356,23 +356,23 @@
   },
   {
    "quarter": "2026-Q3",
-   "asof": "2026-07-20",
+   "asof": "2026-07-27",
    "cp": [
-    0.10986363539897821,
-    0.30541930442810283,
-    0.7038875752231637
+    0.10473078180904688,
+    0.2921660876964423,
+    0.6738204853709254
    ],
    "cs10": [
-    0.09397202064242768,
-    0.6799415060240537,
-    3.6438214326690304
+    0.09012642990822567,
+    0.6538813249425455,
+    3.5057233873687177
    ],
    "F": 0.7241601489492739,
    "stage": "speculative",
    "color": "#BA7517",
    "ai_revenue_usd": 80839146999.0,
-   "user_cost_usd": 132341253200.04114,
-   "K_total_usd": 676189024781.4347,
+   "user_cost_usd": 138344507462.12387,
+   "K_total_usd": 700121705613.7458,
    "provisional": true,
    "calls": {
     "cp": null,
