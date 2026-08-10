@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-03T08:56:56+00:00",
+ "generated_at": "2026-08-10T07:03:09+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -41,10 +41,6 @@
   "unit": "USD mn, SAAR (private, seasonally adjusted)",
   "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
   "points": [
-   {
-    "date": "2021-06-01",
-    "value": 9312.0
-   },
    {
     "date": "2021-07-01",
     "value": 9752.0
@@ -275,11 +271,15 @@
    },
    {
     "date": "2026-04-01",
-    "value": 58977.0
+    "value": 61859.0
    },
    {
     "date": "2026-05-01",
-    "value": 59307.0
+    "value": 63843.0
+   },
+   {
+    "date": "2026-06-01",
+    "value": 68297.0
    }
   ]
  },
@@ -339,13 +339,13 @@
    },
    {
     "date": "2026-06-29",
-    "value": 2.4851,
-    "gpu_model": "H200"
+    "value": 4.3472,
+    "gpu_model": "B200"
    },
    {
     "date": "2026-06-29",
-    "value": 4.3472,
-    "gpu_model": "B200"
+    "value": 2.4851,
+    "gpu_model": "H200"
    },
    {
     "date": "2026-07-06",
@@ -396,6 +396,11 @@
     "date": "2026-08-03",
     "value": 0.2278,
     "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-08-10",
+    "value": 0.1356,
+    "gpu_model": "RTX 4090"
    }
   ]
  },
@@ -404,26 +409,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-08-01",
-     "value": 4.23
-    },
-    {
-     "date": "2025-08-04",
-     "value": 4.22
-    },
-    {
-     "date": "2025-08-05",
-     "value": 4.22
-    },
-    {
-     "date": "2025-08-06",
-     "value": 4.22
-    },
-    {
-     "date": "2025-08-07",
-     "value": 4.23
-    },
     {
      "date": "2025-08-08",
      "value": 4.27
@@ -1403,6 +1388,26 @@
     {
      "date": "2026-07-31",
      "value": 4.75
+    },
+    {
+     "date": "2026-08-03",
+     "value": 4.7
+    },
+    {
+     "date": "2026-08-04",
+     "value": 4.63
+    },
+    {
+     "date": "2026-08-05",
+     "value": 4.63
+    },
+    {
+     "date": "2026-08-06",
+     "value": 4.69
+    },
+    {
+     "date": "2026-08-07",
+     "value": 4.65
     }
    ]
   },
@@ -1410,26 +1415,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
    "points": [
-    {
-     "date": "2026-02-09",
-     "value": 4.22
-    },
-    {
-     "date": "2026-02-10",
-     "value": 4.16
-    },
-    {
-     "date": "2026-02-11",
-     "value": 4.18
-    },
-    {
-     "date": "2026-02-12",
-     "value": 4.09
-    },
-    {
-     "date": "2026-02-13",
-     "value": 4.04
-    },
     {
      "date": "2026-02-17",
      "value": 4.05
@@ -1889,6 +1874,26 @@
     {
      "date": "2026-07-30",
      "value": 4.68
+    },
+    {
+     "date": "2026-07-31",
+     "value": 4.75
+    },
+    {
+     "date": "2026-08-03",
+     "value": 4.7
+    },
+    {
+     "date": "2026-08-04",
+     "value": 4.63
+    },
+    {
+     "date": "2026-08-05",
+     "value": 4.63
+    },
+    {
+     "date": "2026-08-06",
+     "value": 4.69
     }
    ]
   },
@@ -1896,26 +1901,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y",
    "points": [
-    {
-     "date": "2026-02-06",
-     "value": 1.65
-    },
-    {
-     "date": "2026-02-09",
-     "value": 1.64
-    },
-    {
-     "date": "2026-02-10",
-     "value": 1.66
-    },
-    {
-     "date": "2026-02-11",
-     "value": 1.67
-    },
-    {
-     "date": "2026-02-12",
-     "value": 1.68
-    },
     {
      "date": "2026-02-13",
      "value": 1.72
@@ -2375,6 +2360,26 @@
     {
      "date": "2026-07-30",
      "value": 1.64
+    },
+    {
+     "date": "2026-07-31",
+     "value": 1.63
+    },
+    {
+     "date": "2026-08-03",
+     "value": 1.61
+    },
+    {
+     "date": "2026-08-04",
+     "value": 1.64
+    },
+    {
+     "date": "2026-08-05",
+     "value": 1.62
+    },
+    {
+     "date": "2026-08-06",
+     "value": 1.61
     }
    ]
   }
