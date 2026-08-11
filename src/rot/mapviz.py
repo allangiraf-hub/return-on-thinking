@@ -1,9 +1,18 @@
 """Assemble the quarterly dials + map payloads for the website.
 
-Writes docs/data/dials.json (the three dials with bands) and appends the
-current (Cp, Cs) position to docs/data/map.json's trail. The map plots the
-private-vs-social coverage quadrant; Cs uses the 10-year horizon for the axis,
-with the 30-year value carried alongside.
+Writes docs/data/dials.json (the three dials with bands) and docs/data/map.json,
+whose trail is REBUILT from the restated back-series (trajectory.json) on every
+run - not appended to. The map plots the private-vs-social coverage quadrant;
+Cs uses the 10-year horizon for the axis, with the 30-year value carried alongside.
+
+v5.2 (2026-08-11 audit): the trail used to be append-only, so points written
+under superseded assumptions were never restated - map.json's 2026-Q2 point was
+still carrying the pre-July F 0.664 / Cs 0.640 while trajectory.json restated the
+same quarter. Nothing on the site rendered that array (index.html draws the trail
+from trajectory.json), but it was served publicly and contradicted the project's
+rule that any assumption change republishes the whole back-series. It is now
+derived, so it self-heals; the declared map.trail_quarters is finally honoured
+(it was defined-but-unused, the code hard-coding 8).
 """
 from __future__ import annotations
 
@@ -17,6 +26,33 @@ from .fragility import fragility
 from .ticker import build as build_ticker  # reuse F1 etc.
 
 MAP_FILE = SITE_DATA / "map.json"
+TRAJ_FILE = SITE_DATA / "trajectory.json"
+
+# Single source of truth for the version string the site prints (v5.2 audit:
+# this was hard-coded to "v5" here while the methodology page and the working
+# paper had moved to v5.2).
+METHODOLOGY_VERSION = "v5.2"
+
+
+def _trail_from_trajectory(n: int, q: str, point: dict) -> list:
+    """Last `n` quarters of the restated back-series, with the live point last.
+
+    trajectory.json holds [low, mid, high] triples per quarter, the same shape
+    the map point uses, so the restated history maps straight across."""
+    if not TRAJ_FILE.exists():
+        return [point]
+    series = json.loads(TRAJ_FILE.read_text()).get("series", [])
+    trail = []
+    for r in series:
+        if r.get("quarter") == q:
+            continue  # the live point supersedes any backfilled current quarter
+        trail.append({
+            "quarter": r["quarter"], "generated_at": r.get("asof", ""),
+            "cp": r["cp"], "cs10": r["cs10"], "cs30": r.get("cs30", r["cs10"]),
+            "F": r["F"], "stage": r["stage"], "color": r["color"],
+            "restated": True,
+        })
+    return trail[-(max(1, n) - 1):] + [point] if n > 1 else [point]
 
 
 def _quarter_label(d: dt.date) -> str:
@@ -40,12 +76,11 @@ def assemble() -> dict:
         "F": frag["F"], "stage": frag["stage"], "color": frag["color"],
     }
 
-    # append to trail (idempotent within a quarter)
-    trail = []
-    if MAP_FILE.exists():
-        trail = json.loads(MAP_FILE.read_text()).get("trail", [])
-    trail = [p for p in trail if p["quarter"] != q] + [point]
-    trail = trail[-8:]  # keep last 8 quarters
+    # Trail: rebuilt from the restated back-series so it can never carry a
+    # superseded vintage (v5.2 audit). Falls back to the current point alone if
+    # the trajectory has not been built yet (first run / fresh checkout).
+    n_trail = int(load()["map"].get("trail_quarters", 4))
+    trail = _trail_from_trajectory(n_trail, q, point)
 
     qr_flow = cp["realized_ai_revenue_usd"] * load()["quasi_rent_margin"]["mid"]
     flows = {"private_earnings_flow_usd": qr_flow,
@@ -58,7 +93,7 @@ def assemble() -> dict:
         "benefit_cs": cs,
         "fragility_f": frag,
         "flows": flows,
-        "methodology_version": "v5",
+        "methodology_version": METHODOLOGY_VERSION,
     }
     SITE_DATA.mkdir(parents=True, exist_ok=True)
     (SITE_DATA / "dials.json").write_text(json.dumps(dials, indent=1, default=str))
