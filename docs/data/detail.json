@@ -3500,6 +3500,38 @@
    "notes": "EXTERNAL TRIANGULATION ONLY - a full-stack deduplicated ecosystem Vp. NOT summed into Cp (which is the K-holder line per value-coverage-framework.md S2). Use to sanity-check the ecosystem total the framework says belongs 'alongside' the K-holder Cp.",
    "entered_by": "claude+allan",
    "pr_number": null
+  },
+  {
+   "ticker": "AMZN",
+   "entity": "Amazon AWS",
+   "year": 2026,
+   "quarter": 2,
+   "call_date": "2026-07-30",
+   "metric": "ai_arr",
+   "value_usd_low": 25000000000.0,
+   "value_usd_high": 25000000000.0,
+   "basis": "realized",
+   "sentence": "Our AI revenue run rate climbed significantly quarter over quarter and is now also over $25 billion, growing triple-digit percentages year over year.",
+   "tier": "T2",
+   "notes": "Jassy Q2-2026 call; supersedes the 2026-04-29 $15bn row; same call: AWS total annualized run rate $169bn (+37% accelerating)",
+   "entered_by": "claude+allan",
+   "pr_number": null
+  },
+  {
+   "ticker": "IREN",
+   "entity": "IREN",
+   "year": 2027,
+   "quarter": 1,
+   "call_date": "2026-07-20",
+   "metric": "contracted_arr",
+   "value_usd_low": 3400000000.0,
+   "value_usd_high": 3400000000.0,
+   "basis": "contracted",
+   "sentence": "$2.8bn of new contracts signed; year-end 2026 ARR target raised from $3.7bn to more than $4bn, with approximately $3.4bn (~85%) already under contract.",
+   "tier": "T2",
+   "notes": "8-K 2026-07-20; customers incl. Microsoft, NVIDIA, Perplexity; ~45% GPU-capex prepayments; context row (contracted basis - not in the Cp numerator)",
+   "entered_by": "claude+allan",
+   "pr_number": null
   }
  ],
  "ledger": [

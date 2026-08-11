@@ -49,7 +49,7 @@ def test_revenue_self_refresh_path():
     from rot.dials import _ai_revenue, _neocloud_trailing4
     import pandas as pd
     rev, contribs = _ai_revenue("mid")
-    autos = [c for c in contribs if "(auto)" in c["basis"]]
+    autos = [c for c in contribs if "(auto" in c["basis"]]
     assert autos, "expected the self-refreshing series to drive neocloud/cloud lines"
     # CoreWeave trailing-4q must match the validated ~$6.23bn filing sum
     crwv = _neocloud_trailing4("CRWV", pd.Timestamp("2026-03-31"))

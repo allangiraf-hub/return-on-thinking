@@ -27,6 +27,10 @@ BASE = "https://financialmodelingprep.com/stable"
 NEOCLOUDS = ["CRWV", "IREN", "APLD"]
 # (ticker -> the segment label FMP reports for the cloud line)
 CLOUD_SEGMENT = {"GOOGL": "Google Cloud", "ORCL": "Cloud And License Business"}
+# v5.2 (2026-08-11): quarterly segment series for a trailing-4q revenue base - the annual
+# series lags the 10-K by up to a year (review 2026-08-11: FY2025 $58.7bn vs TTM $77.6bn).
+# ORCL deliberately stays annual-only until the FY2026 segment re-cut is reviewed.
+CLOUD_SEGMENT_Q = {"GOOGL": "Google Cloud"}
 
 
 def _key() -> str:
@@ -75,6 +79,24 @@ def _cloud_segment(ticker: str, label: str) -> str | None:
     return sid
 
 
+def _cloud_segment_q(ticker: str, label: str) -> str | None:
+    rows = _get("revenue-product-segmentation", symbol=ticker, period="quarter", limit=24)
+    recs = []
+    for r in rows:
+        data = r.get("data") or {}
+        if label in data and data[label]:
+            recs.append({"date": r["date"], "value": abs(data[label])})
+    if not recs:
+        return None
+    df = pd.DataFrame(recs)
+    df["unit"] = "USD"
+    df["source_url"] = f"{BASE}/revenue-product-segmentation?symbol={ticker}&period=quarter"
+    df["tier"] = "T1"
+    sid = f"fmp_{ticker.lower()}_cloud_segment_rev_q"
+    write_series(sid, df[df["value"] > 0])
+    return sid
+
+
 def run() -> list[str]:
     written = []
     for tk in NEOCLOUDS:
@@ -87,6 +109,13 @@ def run() -> list[str]:
     for tk, label in CLOUD_SEGMENT.items():
         try:
             sid = _cloud_segment(tk, label)
+            if sid:
+                written.append(sid)
+        except requests.HTTPError:
+            continue
+    for tk, label in CLOUD_SEGMENT_Q.items():
+        try:
+            sid = _cloud_segment_q(tk, label)
             if sid:
                 written.append(sid)
         except requests.HTTPError:

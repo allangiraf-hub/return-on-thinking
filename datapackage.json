@@ -1427,6 +1427,43 @@
    }
   },
   {
+   "name": "fmp_googl_cloud_segment_rev_q",
+   "path": "data/series/fmp_googl_cloud_segment_rev_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
    "name": "fmp_iren_revenue_q",
    "path": "data/series/fmp_iren_revenue_q.csv",
    "format": "csv",

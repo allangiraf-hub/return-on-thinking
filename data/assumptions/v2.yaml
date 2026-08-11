@@ -3,6 +3,11 @@
 # full back-series (CI will enforce from P2). Review notes for Allan inline.
 version: 2
 status: active   # v2: population-consistent attribution, F max-aggregator, Cs banded appropriability (adversarial review 2026-06-13)
+# CHANGELOG 2026-08-11 (methods & data review -> research/reviews/return-on-thinking-methods-data-review-2026-08-11.md):
+# oracle AI share mid 0.10->0.18; hyperscaler ai_capex_share mid 0.65->0.75 (Dell'Oro ~75%); adoption mid 0.15->0.20
+# (band {0.12,0.20,0.32}, BTOS 21.5% firm-wtd / Census WP-26-25 32% empl-wtd); compensation pin 15.5->15.73tn (BEA 2025);
+# occupations.csv employment+wages -> OEWS May-2025; AWS stated AI ARR $15bn->$25bn+ (Jassy 2026-07-30);
+# GOOGL cloud base -> trailing-4q of the NEW quarterly segment series (self-refreshing). Back-series restated same run.
 # CHANGELOG 2026-07-06: chips_servers depreciation mid recentred 0.28->0.20 on mid-2026 longer-life
 # evidence (EV 'State of the AI Economy' 25 Jun 2026 + Meta 5.5yr + Nvidia 4-6yr + GPU rental yields).
 # Band (low 0.18 / high 0.40) unchanged; back-series restated on the same run (movement stays real).
@@ -51,11 +56,11 @@ delta:  # annual economic depreciation bands - THE contested numbers
 
 revenue_attribution:  # v3 - AI share of segment revenue for firms that don't state an AI ARR
   google_cloud_ai_share: {low: 0.15, mid: 0.25, high: 0.35}   # AI slice of Google Cloud (Vertex/Gemini/AI infra)
-  oracle_cloud_ai_share: {low: 0.04, mid: 0.10, high: 0.18}   # OCI-AI is a small slice of Cloud & License
+  oracle_cloud_ai_share: {low: 0.10, mid: 0.18, high: 0.26}   # REVIEW 2026-08-11: raised from {0.04,0.10,0.18}. FY2026 (reported 2026-06-10): OCI/IaaS $18.1bn +77% (Q4 +93%), RPO $638bn with the call attributing most of the Q3/Q4 RPO increase to "large scale AI contracts" (prepaid/customer-supplied GPUs); implied AI revenue $8-12bn = 16-24% of the FY2025 base this share applies to. Base is still the FMP FY2025 annual segment; RECHECK the share when FMP ingests the FY2026 10-K (segment re-cut).
   # neoclouds: total revenue used directly (pure-play AI); META excluded (AI monetized via ad uplift, no revenue line)
 
 ai_capex_share:  # NEW v2 - fraction of each bucket's capex that is AI/data-centre, banded
-  hyperscaler: {low: 0.45, mid: 0.65, high: 0.85}   # v5: raised from 0.25/0.40/0.60 - mid-2026 evidence (Dell'Oro: top-4 data-centre capex +78% YoY 1Q2026; analyst/guidance ~70-90% of hyperscaler capex is AI/data-centre, Amazon ~50-70% pulls the blend down). SemiAnalysis calibration still pending; 'AI-specific' vs 'all data-centre' is a definitional judgment.
+  hyperscaler: {low: 0.55, mid: 0.75, high: 0.90}   # v5.2 2026-08-11: raised from {0.45,0.65,0.85} - Dell'Oro (10 Jun 2026): 2026 global DC capex >$1tn and ~75% of hyperscaler capex is AI infrastructure (~$450bn); MSFT FY26Q4: 'roughly 2/3 of our CapEx was for short-lived assets' + DC shells/leases on top; big-4 2026 capex guidance $720-745bn (AMZN ~$220bn, GOOGL $195-205bn, META $130-145bn, MSFT ~$175-190bn est). SemiAnalysis calibration still pending; prior note (v5, +78% YoY) retained in git history.
   neocloud: {low: 0.95, mid: 1.0, high: 1.0}        # neocloud capex is essentially all AI compute
 
 k_allocation:  # share of AI capex by asset class (until SemiAnalysis calibration)
@@ -88,10 +93,10 @@ calibration_credits:
   - "SemiAnalysis (pending response to research-access request, 2026-06-12)"
 
 cs_macro:  # social-return inputs - bounded estimate, every figure sourced. v2 replaces with live collectors.
-  us_employee_compensation_usd: 15500000000000   # ~$15.5tn annual, BEA NIPA 1.10 (2025); pinned
+  us_employee_compensation_usd: 15730000000000   # ~$15.73tn 2025 annual, BEA NIPA compensation of employees (FRED COE quarterly: 15,510.9/15,610.3/15,836.9/15,949.6; Q2-2026 16,230 SAAR); refreshed 2026-08-11 from the 15.5tn pin
   ai_exposed_task_share: {low: 0.20, mid: 0.30, high: 0.45}   # AEI augmentation/automation task coverage
   rct_effect: {low: 0.15, mid: 0.27, high: 0.40}   # task-share-weighted productivity effect on affected tasks; mid 0.27 = central of the AEI-share-weighted RCT mean 0.26-0.30 (Cui +26%, Noy-Zhang -40%t, Brynjolfsson +14%, Dell'Acqua +12%, weighted by AEI occupation share) - see data/curated/rct_effects.csv; low/high span the lab->field discount and the throughput-optimistic read
-  adoption_rate: {low: 0.10, mid: 0.15, high: 0.22}   # v5: Census BTOS AI-use, spanning the Nov-2025 question break - 'AI in producing goods/services' ~10% late-2025 (low) to 'AI in any business function' ~19.8% May-2026 (high, plans slightly higher); mid 0.15 bridges. Firm-count weighting understates employment-weighted adoption.
+  adoption_rate: {low: 0.12, mid: 0.20, high: 0.32}   # v5.2 2026-08-11: BTOS 'any business function' = 21.5% (period 202615, late Jul 2026; expect-in-6m 24.3%; pre-break production-use question discontinued) - the old mid 0.15 sat BELOW the observed firm-weighted floor. Employment-weighted runs ~1.8-2.3x firm-weighted: Census WP-26-25/NBER w35141 (BTOS AI supplement): 18% firm-weighted -> 32% employment-weighted (worker-task use 23%->41%); Fed RPS individual work use ~41-43%. low 0.12 = firm-weighted floor, mid 0.20 = current firm-weighted reading, high 0.32 = employment-weighted. Cs multiplies a WAGE BILL, so employment-weighting is arguably the correct concept - kept as the HIGH, not the mid (conservative; revisit at v6).
   appropriability_to_society: {low: 0.50, mid: 0.70, high: 0.90}   # v2 - banded (was fixed 0.85); social share of gross productivity value
   discount_rate: 0.05
   annual_growth: {low: 0.0, mid: 0.06, high: 0.12}   # v2 - tamed (was up to 0.20); 30y horizon is illustrative only

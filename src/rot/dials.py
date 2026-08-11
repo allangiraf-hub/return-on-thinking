@@ -41,15 +41,29 @@ def _neocloud_trailing4(tk: str, asof=None):
 
 
 def _cloud_segment(tk: str, asof=None):
-    """Self-refreshing cloud-segment revenue: latest annual fmp_<t>_cloud_segment_rev_a
-    as of `asof` (v5). None if absent -> caller falls back to pinned CSV."""
+    """Self-refreshing cloud-segment revenue, (value, kind) - v5.2.
+
+    Prefers the trailing-4q sum of the QUARTERLY segment series (kind "ttm"),
+    falling back to the latest ANNUAL segment figure (kind "annual"); (None, None)
+    if neither exists so the caller uses the pinned CSV. Rationale (review
+    2026-08-11): the annual series lags the 10-K by up to a year - Google Cloud
+    FY2025 $58.7bn vs $77.6bn TTM through Q2-2026 on the same T1 FMP data."""
+    try:
+        q = read_series(f"fmp_{tk.lower()}_cloud_segment_rev_q").sort_values("date")
+        if asof is not None:
+            q = q[q["date"] <= pd.Timestamp(asof)]
+        q = q.tail(4)
+        if len(q) == 4:
+            return float(q["value"].sum()), "ttm"
+    except FileNotFoundError:
+        pass
     try:
         s = read_series(f"fmp_{tk.lower()}_cloud_segment_rev_a").sort_values("date")
     except FileNotFoundError:
-        return None
+        return None, None
     if asof is not None:
         s = s[s["date"] <= pd.Timestamp(asof)]
-    return float(s["value"].iloc[-1]) if len(s) else None
+    return (float(s["value"].iloc[-1]), "annual") if len(s) else (None, None)
 
 
 def _ai_revenue(corner: str, asof=None) -> tuple[float, list[dict]]:
@@ -85,8 +99,8 @@ def _ai_revenue(corner: str, asof=None) -> tuple[float, list[dict]]:
         if seg.empty:
             continue  # not yet disclosed as of `asof` -> contributes zero
         # disclosed: prefer the self-refreshing fmp segment value; else the pinned figure.
-        seg_rev = _cloud_segment(tk, asof)
-        src = "auto"
+        seg_rev, seg_kind = _cloud_segment(tk, asof)
+        src = f"auto {seg_kind}"
         if seg_rev is None:
             seg_rev = float(seg.sort_values("d").iloc[-1].value_usd_low)
             src = "pinned"
