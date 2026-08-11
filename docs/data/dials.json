@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-10",
+ "generated_at": "2026-08-11",
  "quarter": "2026-Q3",
  "earnings_cp": {
   "cp_low": 0.09768050064249027,
@@ -84,18 +84,18 @@
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.08464074265495504,
-    "h30": 0.08464074265495505,
+    "h10": 0.08464074265495505,
+    "h30": 0.08464074265495507,
     "annual_flow_usd": 21616164615.0
    },
    "mid": {
-    "h10": 0.6172864790689824,
-    "h30": 1.0257585414384325,
+    "h10": 0.6172864790689825,
+    "h30": 1.0257585414384327,
     "annual_flow_usd": 81709102244.7
    },
    "high": {
     "h10": 3.31223331408635,
-    "h30": 10.884880470799368,
+    "h30": 10.884880470799366,
     "annual_flow_usd": 228266698334.4
    }
   },
@@ -104,22 +104,22 @@
   "note": "v3: economy-wide AI productivity value built as a per-occupation sum over SOC major groups (usage-weighted wage bill x effect x adoption x social share), over the AI-attributed user cost of all K-holders. A projection, not realized value. 30y illustrative."
  },
  "fragility_f": {
-  "F": 0.7369503028217212,
-  "stage": "speculative",
-  "color": "#BA7517",
+  "F": 0.7819503028217213,
+  "stage": "ponzi",
+  "color": "#E24B4A",
   "components": {
    "centre_external_share": 0.0,
    "edge_external_share": 0.6769503028217213,
-   "off_balance_ledger_intensity": 0.03586179789978967,
-   "circularity_flags": 4,
-   "circularity_bonus_applied": 0.06,
-   "ledger_debt_like_usd": 28983500000.0,
-   "ledger_off_balance_debt_usd": 13650000000.0,
-   "ledger_off_balance_committed_usd": 41650000000.0,
+   "off_balance_ledger_intensity": 0.08102401811205226,
+   "circularity_flags": 7,
+   "circularity_bonus_applied": 0.105,
+   "ledger_debt_like_usd": 47696700000.0,
+   "ledger_off_balance_debt_usd": 30840000000.0,
+   "ledger_off_balance_committed_usd": 58840000000.0,
    "ledger_off_balance_estimated_drawn_usd": 7000000000.0,
-   "ledger_equity_usd": 61700000000.0,
+   "ledger_equity_usd": 72700000000.0,
    "ai_capex_ttm_usd": 380627877000.0,
-   "edge_plus_offbalance_variant": 0.712812100721511
+   "edge_plus_offbalance_variant": 0.7579743209337736
   },
   "note": "v3 (S9.3): F = max(centre, edge, off-balance ledger leverage) + circularity bonus. The weakest-link located leverage now includes SPV/ABS finance engineered to stay out of the filed capex/OCF ratio, plus a reciprocal-capital bonus. Ledger intensity is coarse (commitments not draws; discovery bias), reported, and binds only if it exceeds the filed edge; equity finance is excluded from leverage."
  },

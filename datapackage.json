@@ -3,7 +3,7 @@
  "title": "The Return on Thinking - data on whether the AI boom pays for itself",
  "homepage": "https://returns.priceofthinking.com",
  "repository": "https://github.com/allangiraf-hub/return-on-thinking",
- "version": "2026-06-12",
+ "version": "2026-08-11",
  "licenses": [
   {
    "name": "CC-BY-4.0",
@@ -1094,6 +1094,376 @@
    }
   },
   {
+   "name": "eia_elec_price_az",
+   "path": "data/series/eia_elec_price_az.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "eia_elec_price_ia",
+   "path": "data/series/eia_elec_price_ia.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "eia_elec_price_oh",
+   "path": "data/series/eia_elec_price_oh.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "eia_elec_price_or",
+   "path": "data/series/eia_elec_price_or.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "eia_elec_price_tx",
+   "path": "data/series/eia_elec_price_tx.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "eia_elec_price_va",
+   "path": "data/series/eia_elec_price_va.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_apld_revenue_q",
+   "path": "data/series/fmp_apld_revenue_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_crwv_revenue_q",
+   "path": "data/series/fmp_crwv_revenue_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_googl_cloud_segment_rev_a",
+   "path": "data/series/fmp_googl_cloud_segment_rev_a.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_iren_revenue_q",
+   "path": "data/series/fmp_iren_revenue_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
    "name": "fmp_nbis_capex_q",
    "path": "data/series/fmp_nbis_capex_q.csv",
    "format": "csv",
@@ -1170,6 +1540,117 @@
   {
    "name": "fmp_nbis_ocf_q",
    "path": "data/series/fmp_nbis_ocf_q.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fmp_orcl_cloud_segment_rev_a",
+   "path": "data/series/fmp_orcl_cloud_segment_rev_a.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fred_baa10y",
+   "path": "data/series/fred_baa10y.csv",
+   "format": "csv",
+   "schema": {
+    "fields": [
+     {
+      "name": "series_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     },
+     {
+      "name": "unit",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     },
+     {
+      "name": "retrieved_at",
+      "type": "string"
+     },
+     {
+      "name": "tier",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fred_dgs10",
+   "path": "data/series/fred_dgs10.csv",
    "format": "csv",
    "schema": {
     "fields": [
