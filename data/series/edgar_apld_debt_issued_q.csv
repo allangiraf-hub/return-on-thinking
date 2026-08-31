@@ -1,3 +1,3 @@
 series_id,date,value,unit,source_url,retrieved_at,tier
-edgar_apld_debt_issued_q,2025-11-30,19500000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001144879/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-08-24T06:30:19+00:00,T1
-edgar_apld_debt_issued_q,2026-05-31,18500000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001144879/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-08-24T06:30:19+00:00,T1
+edgar_apld_debt_issued_q,2025-11-30,19500000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001144879/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-08-31T11:55:50+00:00,T1
+edgar_apld_debt_issued_q,2026-05-31,18500000.0,USD,https://data.sec.gov/api/xbrl/companyconcept/CIK0001144879/us-gaap/ProceedsFromIssuanceOfLongTermDebt.json,2026-08-31T11:55:50+00:00,T1

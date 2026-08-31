@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-27T07:37:44+00:00",
+ "generated_at": "2026-08-31T11:56:55+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -349,6 +349,11 @@
    },
    {
     "date": "2026-07-06",
+    "value": 3.0909,
+    "gpu_model": "H200"
+   },
+   {
+    "date": "2026-07-06",
     "value": 0.1817,
     "gpu_model": "RTX 4090"
    },
@@ -356,11 +361,6 @@
     "date": "2026-07-06",
     "value": 4.9762,
     "gpu_model": "B200"
-   },
-   {
-    "date": "2026-07-06",
-    "value": 3.0909,
-    "gpu_model": "H200"
    },
    {
     "date": "2026-07-13",
@@ -411,6 +411,11 @@
     "date": "2026-08-24",
     "value": 0.135,
     "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-08-31",
+    "value": 0.1342,
+    "gpu_model": "RTX 4090"
    }
   ]
  },
@@ -419,26 +424,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-08-22",
-     "value": 4.26
-    },
-    {
-     "date": "2025-08-25",
-     "value": 4.28
-    },
-    {
-     "date": "2025-08-26",
-     "value": 4.26
-    },
-    {
-     "date": "2025-08-27",
-     "value": 4.24
-    },
-    {
-     "date": "2025-08-28",
-     "value": 4.22
-    },
     {
      "date": "2025-08-29",
      "value": 4.23
@@ -1418,6 +1403,26 @@
     {
      "date": "2026-08-21",
      "value": 4.74
+    },
+    {
+     "date": "2026-08-24",
+     "value": 4.7
+    },
+    {
+     "date": "2026-08-25",
+     "value": 4.64
+    },
+    {
+     "date": "2026-08-26",
+     "value": 4.66
+    },
+    {
+     "date": "2026-08-27",
+     "value": 4.67
+    },
+    {
+     "date": "2026-08-28",
+     "value": 4.73
     }
    ]
   },
@@ -1425,26 +1430,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
    "points": [
-    {
-     "date": "2026-03-03",
-     "value": 4.06
-    },
-    {
-     "date": "2026-03-04",
-     "value": 4.09
-    },
-    {
-     "date": "2026-03-05",
-     "value": 4.13
-    },
-    {
-     "date": "2026-03-06",
-     "value": 4.15
-    },
-    {
-     "date": "2026-03-09",
-     "value": 4.12
-    },
     {
      "date": "2026-03-10",
      "value": 4.15
@@ -1904,6 +1889,26 @@
     {
      "date": "2026-08-20",
      "value": 4.69
+    },
+    {
+     "date": "2026-08-21",
+     "value": 4.74
+    },
+    {
+     "date": "2026-08-24",
+     "value": 4.7
+    },
+    {
+     "date": "2026-08-25",
+     "value": 4.64
+    },
+    {
+     "date": "2026-08-26",
+     "value": 4.66
+    },
+    {
+     "date": "2026-08-27",
+     "value": 4.67
     }
    ]
   },
@@ -1911,26 +1916,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y",
    "points": [
-    {
-     "date": "2026-03-02",
-     "value": 1.78
-    },
-    {
-     "date": "2026-03-03",
-     "value": 1.78
-    },
-    {
-     "date": "2026-03-04",
-     "value": 1.74
-    },
-    {
-     "date": "2026-03-05",
-     "value": 1.76
-    },
-    {
-     "date": "2026-03-06",
-     "value": 1.75
-    },
     {
      "date": "2026-03-09",
      "value": 1.78
@@ -2390,6 +2375,26 @@
     {
      "date": "2026-08-20",
      "value": 1.64
+    },
+    {
+     "date": "2026-08-21",
+     "value": 1.63
+    },
+    {
+     "date": "2026-08-24",
+     "value": 1.63
+    },
+    {
+     "date": "2026-08-25",
+     "value": 1.62
+    },
+    {
+     "date": "2026-08-26",
+     "value": 1.61
+    },
+    {
+     "date": "2026-08-27",
+     "value": 1.6
     }
    ]
   }
