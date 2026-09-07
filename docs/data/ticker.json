@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-31T11:56:55+00:00",
+ "generated_at": "2026-09-07T10:49:59+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -41,10 +41,6 @@
   "unit": "USD mn, SAAR (private, seasonally adjusted)",
   "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
   "points": [
-   {
-    "date": "2021-07-01",
-    "value": 9752.0
-   },
    {
     "date": "2021-08-01",
     "value": 10495.0
@@ -275,11 +271,15 @@
    },
    {
     "date": "2026-05-01",
-    "value": 63843.0
+    "value": 65688.0
    },
    {
     "date": "2026-06-01",
-    "value": 68297.0
+    "value": 70755.0
+   },
+   {
+    "date": "2026-07-01",
+    "value": 75166.0
    }
   ]
  },
@@ -349,11 +349,6 @@
    },
    {
     "date": "2026-07-06",
-    "value": 3.0909,
-    "gpu_model": "H200"
-   },
-   {
-    "date": "2026-07-06",
     "value": 0.1817,
     "gpu_model": "RTX 4090"
    },
@@ -361,6 +356,11 @@
     "date": "2026-07-06",
     "value": 4.9762,
     "gpu_model": "B200"
+   },
+   {
+    "date": "2026-07-06",
+    "value": 3.0909,
+    "gpu_model": "H200"
    },
    {
     "date": "2026-07-13",
@@ -416,6 +416,11 @@
     "date": "2026-08-31",
     "value": 0.1342,
     "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-09-07",
+    "value": 0.1277,
+    "gpu_model": "RTX 4090"
    }
   ]
  },
@@ -424,26 +429,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-08-29",
-     "value": 4.23
-    },
-    {
-     "date": "2025-09-02",
-     "value": 4.28
-    },
-    {
-     "date": "2025-09-03",
-     "value": 4.22
-    },
-    {
-     "date": "2025-09-04",
-     "value": 4.17
-    },
-    {
-     "date": "2025-09-05",
-     "value": 4.1
-    },
     {
      "date": "2025-09-08",
      "value": 4.05
@@ -1423,6 +1408,26 @@
     {
      "date": "2026-08-28",
      "value": 4.73
+    },
+    {
+     "date": "2026-08-31",
+     "value": 4.75
+    },
+    {
+     "date": "2026-09-01",
+     "value": 4.79
+    },
+    {
+     "date": "2026-09-02",
+     "value": 4.79
+    },
+    {
+     "date": "2026-09-03",
+     "value": 4.77
+    },
+    {
+     "date": "2026-09-04",
+     "value": 4.78
     }
    ]
   },
@@ -1430,26 +1435,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
    "points": [
-    {
-     "date": "2026-03-10",
-     "value": 4.15
-    },
-    {
-     "date": "2026-03-11",
-     "value": 4.21
-    },
-    {
-     "date": "2026-03-12",
-     "value": 4.27
-    },
-    {
-     "date": "2026-03-13",
-     "value": 4.28
-    },
-    {
-     "date": "2026-03-16",
-     "value": 4.23
-    },
     {
      "date": "2026-03-17",
      "value": 4.2
@@ -1909,6 +1894,26 @@
     {
      "date": "2026-08-27",
      "value": 4.67
+    },
+    {
+     "date": "2026-08-28",
+     "value": 4.73
+    },
+    {
+     "date": "2026-08-31",
+     "value": 4.75
+    },
+    {
+     "date": "2026-09-01",
+     "value": 4.79
+    },
+    {
+     "date": "2026-09-02",
+     "value": 4.79
+    },
+    {
+     "date": "2026-09-03",
+     "value": 4.77
     }
    ]
   },
@@ -1916,26 +1921,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y",
    "points": [
-    {
-     "date": "2026-03-09",
-     "value": 1.78
-    },
-    {
-     "date": "2026-03-10",
-     "value": 1.77
-    },
-    {
-     "date": "2026-03-11",
-     "value": 1.84
-    },
-    {
-     "date": "2026-03-12",
-     "value": 1.84
-    },
-    {
-     "date": "2026-03-13",
-     "value": 1.83
-    },
     {
      "date": "2026-03-16",
      "value": 1.85
@@ -2395,6 +2380,26 @@
     {
      "date": "2026-08-27",
      "value": 1.6
+    },
+    {
+     "date": "2026-08-28",
+     "value": 1.54
+    },
+    {
+     "date": "2026-08-31",
+     "value": 1.59
+    },
+    {
+     "date": "2026-09-01",
+     "value": 1.58
+    },
+    {
+     "date": "2026-09-02",
+     "value": 1.58
+    },
+    {
+     "date": "2026-09-03",
+     "value": 1.57
     }
    ]
   }
