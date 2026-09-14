@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-07",
+ "generated_at": "2026-09-14",
  "revision_band": 0.2,
  "call_rule": "A move is 'called' only when the fixed-mid value leaves the prior quarter's +/-20% revision band AND the next quarter confirms it (two-quarter rule) - so single-quarter noise is never a call.",
  "note": "Historical backfill. The capital stock (denominator) and F come from filed capex/cash-flow truncated at each quarter-end; the Cp numerator is AI revenue stated on or before each quarter; the Cs numerator is a fixed forward projection (no quarterly history), so only its denominator moves. See methodology.",
@@ -308,9 +308,9 @@
    "quarter": "2026-Q1",
    "asof": "2026-03-31",
    "cp": [
-    0.05204227417182433,
-    0.15455850749929093,
-    0.37123034157803375
+    0.0520489217612268,
+    0.1545838106429432,
+    0.3712994600472871
    ],
    "cs10": [
     0.12263941318672877,
@@ -320,7 +320,7 @@
    "F": 0.6791642528071377,
    "stage": "speculative",
    "color": "#BA7517",
-   "ai_revenue_usd": 45812047000.0,
+   "ai_revenue_usd": 45819547000.0,
    "user_cost_usd": 148202928914.18536,
    "K_total_usd": 765016731330.7281,
    "calls": {
@@ -333,9 +333,9 @@
    "quarter": "2026-Q2",
    "asof": "2026-06-30",
    "cp": [
-    0.10163088292916024,
-    0.26947255613827187,
-    0.5934815332920876
+    0.10163664767207754,
+    0.26949475787555704,
+    0.5935421940270211
    ],
    "cs10": [
     0.10644612845875004,
@@ -345,7 +345,7 @@
    "F": 0.6964595098946553,
    "stage": "speculative",
    "color": "#BA7517",
-   "ai_revenue_usd": 91030902000.0,
+   "ai_revenue_usd": 91038402000.0,
    "user_cost_usd": 168905701019.30933,
    "K_total_usd": 863919492589.3689,
    "calls": {
@@ -356,23 +356,23 @@
   },
   {
    "quarter": "2026-Q3",
-   "asof": "2026-09-07",
+   "asof": "2026-09-14",
    "cp": [
-    0.11436171383565094,
-    0.29698942329984485,
-    0.6452096406311923
+    0.11048642789151106,
+    0.28747034292337065,
+    0.6246864880148301
    ],
    "cs10": [
-    0.10504906390747572,
-    0.7849181199088309,
-    4.350350441361816
+    0.10191894118620122,
+    0.7625113327698853,
+    4.226464145774223
    ],
    "F": 0.7564595098946553,
    "stage": "ponzi",
    "color": "#E24B4A",
-   "ai_revenue_usd": 102130902000.0,
-   "user_cost_usd": 171943668675.51233,
-   "K_total_usd": 863919492589.3689,
+   "ai_revenue_usd": 102138402000.0,
+   "user_cost_usd": 177650329006.6803,
+   "K_total_usd": 883089831776.0128,
    "provisional": true,
    "calls": {
     "cp": null,
