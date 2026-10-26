@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-19T11:26:56+00:00",
+ "generated_at": "2026-10-26T11:39:02+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -24,9 +24,9 @@
   },
   {
    "ticker": "META",
-   "capex_t4q_usd": 89325000000.0,
-   "ocf_t4q_usd": 130301000000.0,
-   "capex_share_of_ocf": 0.686,
+   "capex_t4q_usd": 104438000000.0,
+   "ocf_t4q_usd": 133087000000.0,
+   "capex_share_of_ocf": 0.785,
    "source_url": "https://data.sec.gov/"
   },
   {
@@ -364,11 +364,6 @@
    },
    {
     "date": "2026-07-13",
-    "value": 1.4678,
-    "gpu_model": "H100 SXM"
-   },
-   {
-    "date": "2026-07-13",
     "value": 0.2952,
     "gpu_model": "RTX 4090"
    },
@@ -376,6 +371,11 @@
     "date": "2026-07-13",
     "value": 1.9372,
     "gpu_model": "H200"
+   },
+   {
+    "date": "2026-07-13",
+    "value": 1.4678,
+    "gpu_model": "H100 SXM"
    },
    {
     "date": "2026-07-20",
@@ -461,6 +461,11 @@
     "date": "2026-10-19",
     "value": 0.2937,
     "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-10-26",
+    "value": 0.1144,
+    "gpu_model": "RTX 4090"
    }
   ]
  },
@@ -469,26 +474,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-10-17",
-     "value": 4.02
-    },
-    {
-     "date": "2025-10-20",
-     "value": 4.0
-    },
-    {
-     "date": "2025-10-21",
-     "value": 3.98
-    },
-    {
-     "date": "2025-10-22",
-     "value": 3.97
-    },
-    {
-     "date": "2025-10-23",
-     "value": 4.01
-    },
     {
      "date": "2025-10-24",
      "value": 4.02
@@ -1468,6 +1453,26 @@
     {
      "date": "2026-10-16",
      "value": 5.09
+    },
+    {
+     "date": "2026-10-19",
+     "value": 5.15
+    },
+    {
+     "date": "2026-10-20",
+     "value": 5.12
+    },
+    {
+     "date": "2026-10-21",
+     "value": 5.13
+    },
+    {
+     "date": "2026-10-22",
+     "value": 4.96
+    },
+    {
+     "date": "2026-10-23",
+     "value": 5.0
     }
    ]
   },
@@ -1475,26 +1480,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
    "points": [
-    {
-     "date": "2026-04-24",
-     "value": 4.31
-    },
-    {
-     "date": "2026-04-27",
-     "value": 4.35
-    },
-    {
-     "date": "2026-04-28",
-     "value": 4.36
-    },
-    {
-     "date": "2026-04-29",
-     "value": 4.42
-    },
-    {
-     "date": "2026-04-30",
-     "value": 4.4
-    },
     {
      "date": "2026-05-01",
      "value": 4.39
@@ -1954,6 +1939,26 @@
     {
      "date": "2026-10-15",
      "value": 5.1
+    },
+    {
+     "date": "2026-10-16",
+     "value": 5.09
+    },
+    {
+     "date": "2026-10-19",
+     "value": 5.15
+    },
+    {
+     "date": "2026-10-20",
+     "value": 5.12
+    },
+    {
+     "date": "2026-10-21",
+     "value": 5.13
+    },
+    {
+     "date": "2026-10-22",
+     "value": 4.96
     }
    ]
   },
@@ -1961,26 +1966,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y",
    "points": [
-    {
-     "date": "2026-04-24",
-     "value": 1.7
-    },
-    {
-     "date": "2026-04-27",
-     "value": 1.7
-    },
-    {
-     "date": "2026-04-28",
-     "value": 1.7
-    },
-    {
-     "date": "2026-04-29",
-     "value": 1.69
-    },
-    {
-     "date": "2026-04-30",
-     "value": 1.7
-    },
     {
      "date": "2026-05-01",
      "value": 1.69
@@ -2440,6 +2425,26 @@
     {
      "date": "2026-10-15",
      "value": 1.44
+    },
+    {
+     "date": "2026-10-16",
+     "value": 1.46
+    },
+    {
+     "date": "2026-10-19",
+     "value": 1.46
+    },
+    {
+     "date": "2026-10-20",
+     "value": 1.44
+    },
+    {
+     "date": "2026-10-21",
+     "value": 1.44
+    },
+    {
+     "date": "2026-10-22",
+     "value": 1.46
     }
    ]
   }
