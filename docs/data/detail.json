@@ -1,10 +1,6 @@
 {
  "construction": [
   {
-   "date": "2016-09-01",
-   "value": 4220.0
-  },
-  {
    "date": "2016-10-01",
    "value": 3703.0
   },
@@ -474,11 +470,15 @@
   },
   {
    "date": "2026-07-01",
-   "value": 79007.0
+   "value": 80718.0
   },
   {
    "date": "2026-08-01",
-   "value": 84950.0
+   "value": 88815.0
+  },
+  {
+   "date": "2026-09-01",
+   "value": 96462.0
   }
  ],
  "gpu_rental": [
@@ -529,6 +529,11 @@
   },
   {
    "date": "2026-06-29",
+   "value": 0.1517,
+   "gpu_model": "RTX 4090"
+  },
+  {
+   "date": "2026-06-29",
    "value": 4.3472,
    "gpu_model": "B200"
   },
@@ -536,11 +541,6 @@
    "date": "2026-06-29",
    "value": 2.4851,
    "gpu_model": "H200"
-  },
-  {
-   "date": "2026-06-29",
-   "value": 0.1517,
-   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-07-06",
@@ -559,6 +559,11 @@
   },
   {
    "date": "2026-07-13",
+   "value": 1.4678,
+   "gpu_model": "H100 SXM"
+  },
+  {
+   "date": "2026-07-13",
    "value": 0.2952,
    "gpu_model": "RTX 4090"
   },
@@ -568,19 +573,14 @@
    "gpu_model": "H200"
   },
   {
-   "date": "2026-07-13",
-   "value": 1.4678,
-   "gpu_model": "H100 SXM"
+   "date": "2026-07-20",
+   "value": 0.1356,
+   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-07-20",
    "value": 1.9372,
    "gpu_model": "H200"
-  },
-  {
-   "date": "2026-07-20",
-   "value": 0.1356,
-   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-07-27",
@@ -624,13 +624,13 @@
   },
   {
    "date": "2026-09-21",
-   "value": 1.4674,
-   "gpu_model": "H100 SXM"
+   "value": 0.1144,
+   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-09-21",
-   "value": 0.1144,
-   "gpu_model": "RTX 4090"
+   "value": 1.4674,
+   "gpu_model": "H100 SXM"
   },
   {
    "date": "2026-09-28",
@@ -664,6 +664,11 @@
   },
   {
    "date": "2026-11-02",
+   "value": 0.1207,
+   "gpu_model": "RTX 4090"
+  },
+  {
+   "date": "2026-11-09",
    "value": 0.1207,
    "gpu_model": "RTX 4090"
   }
@@ -4568,12 +4573,12 @@
    "primary_source_url": "https://www.prnewswire.com/news-releases/hut-8-expands-corporate-liquidity-with-1-07-billion-senior-secured-revolving-credit-facility-302890926.html",
    "discovery_source": "Cowork scheduled harvest 2026-10-05 (Perplexity search + WebSearch + Exa); primary PRNewswire release fetched via Exa fetch in this run and the terms read from it; announced 2026-09-28 06:30 ET, i.e. after the previous harvest run of the same day",
    "circularity_flag": false,
-   "notes": "$1.07bn four-year senior secured REVOLVING credit facility at the PARENT level; closing announced 2026-09-28 (Miami). Drawn margin SOFR + 150 to 200 bp on a consolidated total debt-to-market-capitalization grid, initial margin SOFR + 175 bp at closing; $1.07bn letter-of-credit sublimit for site-development collateral (interconnection deposits, obligations to utilities and equipment vendors); borrowings repayable without prepayment penalties. J.P. Morgan lead left arranger, bookrunner and administrative agent; Citi, Goldman Sachs and Morgan Stanley joint lead arrangers and joint bookrunners; 'a syndicate of 12 lenders'. The PR sets the facility beside '$7.5 billion of fully amortizing, non-recourse investment-grade project financing' at the River Bend and Beacon Point campuses - only Beacon Point ($4.25bn, hut8-beacon-point-notes-2026) is in the ledger; the River Bend project notes are a BACKFILL candidate. Second Hut 8 row: a corporate liquidity layer above the project bonds, which the CFO describes as funding projects through development until long-term non-recourse financing is placed. JUDGMENT CALLS: (1) instrument=private_credit (bank revolver; enum lacks 'revolver'; mirrors applied-digital-revolver / nscale-revolver / switch-revolver-lc coding); (2) amount = $1.07bn committed capacity; (3) drawn_fraction=0.2 estimated - a revolver is largely undrawn at close and the PR states no drawn amount; (4) announced_date = PR date 2026-09-28 (press gives 2026-09-24 as the closing date; that date is not in the PR); (5) F3 non-circular.",
+   "notes": "$1.07bn four-year senior secured REVOLVING credit facility at the PARENT level; closing announced 2026-09-28 (Miami). Drawn margin SOFR + 150 to 200 bp on a consolidated total debt-to-market-capitalization grid, initial margin SOFR + 175 bp at closing; $1.07bn letter-of-credit sublimit for site-development collateral (interconnection deposits, obligations to utilities and equipment vendors); borrowings repayable without prepayment penalties. J.P. Morgan lead left arranger, bookrunner and administrative agent; Citi, Goldman Sachs and Morgan Stanley joint lead arrangers and joint bookrunners; 'a syndicate of 12 lenders'. The PR sets the facility beside '$7.5 billion of fully amortizing, non-recourse investment-grade project financing' at the River Bend and Beacon Point campuses - only Beacon Point ($4.25bn, hut8-beacon-point-notes-2026) is in the ledger; the River Bend project notes are a BACKFILL candidate. Second Hut 8 row: a corporate liquidity layer above the project bonds, which the CFO describes as funding projects through development until long-term non-recourse financing is placed. JUDGMENT CALLS: (1) instrument=private_credit (bank revolver; enum lacks 'revolver'; mirrors applied-digital-revolver / nscale-revolver / switch-revolver-lc coding); (2) amount = $1.07bn committed capacity; (3) drawn_fraction=0.2 estimated - a revolver is largely undrawn at close and the PR states no drawn amount; (4) announced_date = PR date 2026-09-28 (press gives 2026-09-24 as the closing date; that date is not in the PR); (5) F3 non-circular. RESTATED 2026-11-09 (weekly harvest): drawn_fraction 0.2 estimated -> 0.0 reported - Hut 8's Q3 2026 results release of 2026-11-04 (SEC Form 8-K Ex. 99.1, https://www.sec.gov/Archives/edgar/data/1964789/000110465926122347/tm2628741d1_ex99-1.htm, fetched via Exa fetch in this run) states 'No borrowings were outstanding under the facility as of September 30, 2026. Subsequent to quarter-end, the Company issued $3.9 million of letters of credit under the facility.'",
    "entered_by": "claude",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.2,
-   "drawn_source": "estimated"
+   "drawn_fraction": 0.0,
+   "drawn_source": "reported"
   },
   {
    "id": "helix-samsung-equity-2026",
@@ -4947,6 +4952,42 @@
    "discovery_source": "Cowork scheduled harvest 2026-11-02 (Perplexity research); primary = Eagle Point Business Wire release of 2026-10-29 (Greenwich, Conn. dateline), fetched via Exa fetch in this run and the terms read from it",
    "circularity_flag": false,
    "notes": "$137.5m senior secured credit facility provided by Eagle Point to a subsidiary of Energy Vault, announced 2026-10-29, 'directly originated and structured' to support 'procurement of 275 MW of reciprocating engine generation capacity utilizing Rolls-Royce MTU technology for deployment across its hyperscale AI and data center infrastructure projects'; equipment deliveries expected H2 2027 through H1 2028. Coupon, tenor and the specific projects are NOT disclosed; Energy Vault's Asset Vault president: 'securing 275 MW ... together with dedicated financing supporting the procurement, we are taking greater control over ... equipment availability and capital'. Third behind-the-meter power-equipment credit in a fortnight after atlas-energy-bridge-2026 ($424m, GS/Barclays) and the unledgered Crusoe/NBSF $700m facility: lenders now finance gas gensets for AI campuses as a stand-alone asset class. JUDGMENT CALLS: (1) in scope on the atlas-energy-bridge precedent - credit for power equipment explicitly destined for hyperscale AI / data-centre projects, although the borrower is an energy company and no data-centre customer is named - reverse if Allan wants the ledger kept to compute and shells; (2) instrument=private_credit (direct-lender senior secured equipment facility); (3) F3 non-circular (Rolls-Royce is the equipment vendor only); (4) drawn_fraction=0.2 estimated - procurement facility with deliveries from H2 2027, utilisation not stated - FLAG; (5) announced_date = release date 2026-10-29.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
+  },
+  {
+   "id": "pure-dc-platform-growth-facility-2026",
+   "announced_date": "2026-11-04",
+   "parties": "Pure Data Centres Group (Pure DC; private; Oaktree-backed hyperscale cloud and AI data-centre developer-operator, Europe and Middle East; borrower) / Citigroup Global Markets, First Abu Dhabi Bank (FAB) and Infranity (new lenders) with ABN AMRO, Allianz Global Investors and SMBC",
+   "instrument": "private_credit",
+   "amount_usd": 780000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395084/0/en/pure-dc-unveils-2billion-financing-framework-to-scale-its-differentiated-pan-european-middle-east-cloud-ai-infrastructure-platform.html",
+   "discovery_source": "Cowork scheduled harvest 2026-11-09 (Perplexity search + Exa search; Perplexity research as cross-check); primary = Pure DC GlobeNewswire release of 2026-11-04 (London dateline), fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": false,
+   "notes": "$780m 'Platform Growth Facility' with a $1.1bn accordion announced 2026-11-04, 'creating a framework to expand financing to approximately $1.9billion'. A corporate-level facility - the CFO says it 'strengthens our corporate funding base, complements the financing we arrange for individual campuses' - to support Pure DC's development pipeline and the acquisition of future sites across Europe and the Middle East. Three new lenders (Citigroup Global Markets, First Abu Dhabi Bank, Infranity) join ABN AMRO, Allianz Global Investors and SMBC: banks alongside institutional infrastructure-debt investors. Coupon, margin, tenor and security are NOT disclosed. Context in the release: follows $2.7bn announced in May 2026 (a $2.15bn facility secured against the Dublin and Amsterdam campuses and an increase in corporate-level financing to $550m) and EUR1.3bn of committed senior debt in July 2026 for Phase 1 of the Seinajoki AI campus in Finland - none of which is in the ledger (BACKFILL candidates); 'Over $6.2billion now secured in last 12 months'; over 1GW of capacity live or under development. The release itself concedes that 'lenders scrutinize development schedules and execution risk more closely'. First Pure DC row. JUDGMENT CALLS: (1) amount = the $780m committed facility; the $1.1bn accordion is excluded (mirrors terawulf-revolver-upsize-2026) - the headline '~$2 billion' is facility plus accordion; (2) the release does not say whether the $780m replaces or sits on top of the $550m corporate-level financing of May 2026, so new money may be as little as ~$230m - FLAG; (3) instrument=private_credit (corporate bank/institutional facility; mirrors vantage-development-facility-2026 and switch-revolver-lc-2026); (4) in scope as external credit to a hyperscale / AI data-centre capital holder (AirTrunk / STTGDC / Vantage precedent), F3 non-circular; (5) drawn_fraction=0.2 estimated - growth facility, no utilisation stated - FLAG; (6) announced_date = release date 2026-11-04.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
+  },
+  {
+   "id": "pdg-jh1-green-financing-2026",
+   "announced_date": "2026-11-04",
+   "parties": "Princeton Digital Group (PDG; private; Singapore-headquartered Asia-Pacific data-centre developer-operator backed by Warburg Pincus, Ontario Teachers' Pension Plan, Mubadala and Stonepeak; borrower) / Affin Bank, HSBC, Maybank, OCBC, Standard Chartered and UOB (underwriting banks)",
+   "instrument": "private_credit",
+   "amount_usd": 1300000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://princetondg.com/press-releases/pdg-secures-usd-1-3-billion-for-jh1-campus-in-johor/",
+   "discovery_source": "Cowork scheduled harvest 2026-11-09 (Perplexity research + Perplexity search); primary = PDG press release of 2026-11-04 (Johor dateline) on princetondg.com, fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": false,
+   "notes": "Approximately USD 1.3bn (~RM 5.1bn) of green financing secured for PDG's JH1 campus in Sedenak Tech Park, Johor, Malaysia, announced 2026-11-04 and underwritten by six banks (Affin Bank, HSBC, Maybank, OCBC, Standard Chartered, UOB). 'It builds on the financing secured for earlier phases of the JH1 campus, which was first secured from three banks in April 2024, and subsequently upsized with four banks in October 2025'; proceeds 'to finance the continued development and expansion of the campus'. Structured under PDG's Green Finance Framework (JH1 holds GBI Gold for Design and LEED Gold for Operations). JH1 is 'a 200 MW campus designed to support high-density AI and cloud workloads'; the CEO cites 'deep hyperscaler partnerships' (tenants not named). Part of PDG's plan, announced March 2026, 'to raise up to USD 5 billion in debt financing to fund the delivery of contracted data center capacity across Asia Pacific'; total portfolio exceeds 1.8 GW across eight countries. Tenor, pricing and currency split are NOT disclosed. First PDG and first Malaysian row; a third Asia-Pacific bank green loan after airtrunk-syd3-green-loan-2026 and sttgdc-tokyo-green-loan-2026 of 2026-10-27. JUDGMENT CALLS: (1) amount = ~USD 1.3bn as stated in the release, amount_basis=disclosed although 'approximately' (RM 5.1bn is the release's own equivalent; no FX conversion made here); (2) the release does not say whether the USD 1.3bn is all new money or includes a refinancing of the April 2024 / October 2025 facilities - FLAG; (3) instrument=private_credit (underwritten bank green loan; mirrors the AirTrunk / STTGDC coding); (4) in scope as external bank credit to a data-centre capital holder serving AI and hyperscale tenants, F3 non-circular; (5) drawn_fraction=0.2 estimated - expansion facility, no utilisation stated - FLAG; (6) announced_date = release date 2026-11-04.",
    "entered_by": "claude",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
