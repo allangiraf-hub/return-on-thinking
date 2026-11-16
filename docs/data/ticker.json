@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T14:29:10+00:00",
+ "generated_at": "2026-11-16T14:05:43+00:00",
  "financing_f1": [
   {
    "ticker": "MSFT",
@@ -319,6 +319,11 @@
    },
    {
     "date": "2026-06-22",
+    "value": 1.9743,
+    "gpu_model": "H200"
+   },
+   {
+    "date": "2026-06-22",
     "value": 0.1689,
     "gpu_model": "RTX 4090"
    },
@@ -326,16 +331,6 @@
     "date": "2026-06-22",
     "value": 3.7103,
     "gpu_model": "B200"
-   },
-   {
-    "date": "2026-06-22",
-    "value": 1.9743,
-    "gpu_model": "H200"
-   },
-   {
-    "date": "2026-06-29",
-    "value": 0.1517,
-    "gpu_model": "RTX 4090"
    },
    {
     "date": "2026-06-29",
@@ -346,6 +341,11 @@
     "date": "2026-06-29",
     "value": 2.4851,
     "gpu_model": "H200"
+   },
+   {
+    "date": "2026-06-29",
+    "value": 0.1517,
+    "gpu_model": "RTX 4090"
    },
    {
     "date": "2026-07-06",
@@ -364,11 +364,6 @@
    },
    {
     "date": "2026-07-13",
-    "value": 1.4678,
-    "gpu_model": "H100 SXM"
-   },
-   {
-    "date": "2026-07-13",
     "value": 0.2952,
     "gpu_model": "RTX 4090"
    },
@@ -378,14 +373,19 @@
     "gpu_model": "H200"
    },
    {
-    "date": "2026-07-20",
-    "value": 0.1356,
-    "gpu_model": "RTX 4090"
+    "date": "2026-07-13",
+    "value": 1.4678,
+    "gpu_model": "H100 SXM"
    },
    {
     "date": "2026-07-20",
     "value": 1.9372,
     "gpu_model": "H200"
+   },
+   {
+    "date": "2026-07-20",
+    "value": 0.1356,
+    "gpu_model": "RTX 4090"
    },
    {
     "date": "2026-07-27",
@@ -429,13 +429,13 @@
    },
    {
     "date": "2026-09-21",
-    "value": 0.1144,
-    "gpu_model": "RTX 4090"
+    "value": 1.4674,
+    "gpu_model": "H100 SXM"
    },
    {
     "date": "2026-09-21",
-    "value": 1.4674,
-    "gpu_model": "H100 SXM"
+    "value": 0.1144,
+    "gpu_model": "RTX 4090"
    },
    {
     "date": "2026-09-28",
@@ -476,6 +476,11 @@
     "date": "2026-11-09",
     "value": 0.1207,
     "gpu_model": "RTX 4090"
+   },
+   {
+    "date": "2026-11-16",
+    "value": 0.1081,
+    "gpu_model": "RTX 4090"
    }
   ]
  },
@@ -484,22 +489,6 @@
    "unit": "percent",
    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
    "points": [
-    {
-     "date": "2025-11-07",
-     "value": 4.11
-    },
-    {
-     "date": "2025-11-10",
-     "value": 4.13
-    },
-    {
-     "date": "2025-11-12",
-     "value": 4.08
-    },
-    {
-     "date": "2025-11-13",
-     "value": 4.11
-    },
     {
      "date": "2025-11-14",
      "value": 4.14
@@ -1483,6 +1472,22 @@
     {
      "date": "2026-11-06",
      "value": 4.86
+    },
+    {
+     "date": "2026-11-09",
+     "value": 4.88
+    },
+    {
+     "date": "2026-11-10",
+     "value": 4.98
+    },
+    {
+     "date": "2026-11-12",
+     "value": 5.1
+    },
+    {
+     "date": "2026-11-13",
+     "value": 5.15
     }
    ]
   },
@@ -1490,22 +1495,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
    "points": [
-    {
-     "date": "2026-05-15",
-     "value": 4.59
-    },
-    {
-     "date": "2026-05-18",
-     "value": 4.61
-    },
-    {
-     "date": "2026-05-19",
-     "value": 4.67
-    },
-    {
-     "date": "2026-05-20",
-     "value": 4.57
-    },
     {
      "date": "2026-05-21",
      "value": 4.57
@@ -1969,6 +1958,22 @@
     {
      "date": "2026-11-05",
      "value": 4.84
+    },
+    {
+     "date": "2026-11-06",
+     "value": 4.86
+    },
+    {
+     "date": "2026-11-09",
+     "value": 4.88
+    },
+    {
+     "date": "2026-11-10",
+     "value": 4.98
+    },
+    {
+     "date": "2026-11-12",
+     "value": 5.1
     }
    ]
   },
@@ -1976,22 +1981,6 @@
    "unit": "percent",
    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y",
    "points": [
-    {
-     "date": "2026-05-15",
-     "value": 1.62
-    },
-    {
-     "date": "2026-05-18",
-     "value": 1.59
-    },
-    {
-     "date": "2026-05-19",
-     "value": 1.57
-    },
-    {
-     "date": "2026-05-20",
-     "value": 1.59
-    },
     {
      "date": "2026-05-21",
      "value": 1.59
@@ -2455,6 +2444,22 @@
     {
      "date": "2026-11-05",
      "value": 1.57
+    },
+    {
+     "date": "2026-11-06",
+     "value": 1.56
+    },
+    {
+     "date": "2026-11-09",
+     "value": 1.51
+    },
+    {
+     "date": "2026-11-10",
+     "value": 1.51
+    },
+    {
+     "date": "2026-11-12",
+     "value": 1.48
     }
    ]
   }

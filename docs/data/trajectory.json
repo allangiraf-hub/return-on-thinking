@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09",
+ "generated_at": "2026-11-16",
  "revision_band": 0.2,
  "call_rule": "A move is 'called' only when the fixed-mid value leaves the prior quarter's +/-20% revision band AND the next quarter confirms it (two-quarter rule) - so single-quarter noise is never a call.",
  "note": "Historical backfill. The capital stock (denominator) and F come from filed capex/cash-flow truncated at each quarter-end; the Cp numerator is AI revenue stated on or before each quarter; the Cs numerator is a fixed forward projection (no quarterly history), so only its denominator moves. See methodology.",
@@ -233,9 +233,9 @@
    "quarter": "2025-Q2",
    "asof": "2025-06-30",
    "cp": [
-    0.041864484835648766,
-    0.1042547960898112,
-    0.22764609517872628
+    0.03446120648975285,
+    0.08803770659902779,
+    0.19603973865100568
    ],
    "cs10": [
     0.1724009447080147,
@@ -245,7 +245,7 @@
    "F": 0.6656452978608538,
    "stage": "speculative",
    "color": "#BA7517",
-   "ai_revenue_usd": 22663551000.0,
+   "ai_revenue_usd": 19138180000.0,
    "user_cost_usd": 108693085834.03821,
    "K_total_usd": 559868997132.4738,
    "calls": {
@@ -358,46 +358,46 @@
    "quarter": "2026-Q3",
    "asof": "2026-09-30",
    "cp": [
-    0.09741522260034438,
-    0.256560989073402,
-    0.5589249034502255
+    0.09897390833388718,
+    0.25993747253564786,
+    0.56377275001387
    ],
    "cs10": [
-    0.08847781204114277,
-    0.6682104573663772,
-    3.706594729817139
+    0.08780745509154649,
+    0.6631765934165118,
+    3.6717594173897727
    ],
-   "F": 0.8303036938017038,
+   "F": 0.8831416754361575,
    "stage": "ponzi",
    "color": "#E24B4A",
-   "ai_revenue_usd": 103568546000.0,
-   "user_cost_usd": 201840011558.36102,
-   "K_total_usd": 989777749654.579,
+   "ai_revenue_usd": 105864870000.0,
+   "user_cost_usd": 203635260755.799,
+   "K_total_usd": 997934122575.5374,
    "calls": {
     "cp": null,
     "cs10": null,
-    "F": null
+    "F": "up"
    }
   },
   {
    "quarter": "2026-Q4",
-   "asof": "2026-11-09",
+   "asof": "2026-11-16",
    "cp": [
-    0.0988130990147092,
-    0.261666262109136,
-    0.570777233667427
+    0.09945645604660139,
+    0.2616909742506869,
+    0.5678247664562964
    ],
    "cs10": [
-    0.08974008744631616,
-    0.6814353434296069,
-    3.7848374939032032
+    0.08823784369176646,
+    0.6676752597356556,
+    3.6983138993022857
    ],
-   "F": 0.8303036938017038,
+   "F": 0.8831416754361575,
    "stage": "ponzi",
    "color": "#E24B4A",
-   "ai_revenue_usd": 103568546000.0,
-   "user_cost_usd": 197901986227.02747,
-   "K_total_usd": 989777749654.579,
+   "ai_revenue_usd": 105864870000.0,
+   "user_cost_usd": 202270770520.70346,
+   "K_total_usd": 997934122575.5374,
    "provisional": true,
    "calls": {
     "cp": null,
