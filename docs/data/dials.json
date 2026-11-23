@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-16",
+ "generated_at": "2026-11-23",
  "quarter": "2026-Q4",
  "earnings_cp": {
-  "cp_low": 0.09945645604660139,
-  "cp_mid": 0.2616909742506869,
-  "cp_high": 0.5678247664562964,
+  "cp_low": 0.10018521802390808,
+  "cp_mid": 0.2643496313500431,
+  "cp_high": 0.5739638819153913,
   "realized_ai_revenue_usd": 105864870000.0,
-  "user_cost_mid_usd": 202270770520.70346,
+  "user_cost_mid_usd": 200236462330.86142,
   "K_total_mid_usd": 997934122575.5374,
   "firms": [
    "MSFT",
@@ -71,31 +71,31 @@
   "note": "v3: AI-attributed revenue of every measurable K-holder (stated AI ARR + cloud-segment x AI-share + neocloud total) over the AI-attributed user cost of the same firms. Meta excluded (AI monetized via ad uplift, no revenue line). Population-consistent."
  },
  "earnings_cp_ecosystem": {
-  "cp_eco_low": 0.1166086441278726,
-  "cp_eco_mid": 0.3522505986237255,
-  "cp_eco_high": 0.8427568530521569,
+  "cp_eco_low": 0.1174630878658021,
+  "cp_eco_mid": 0.3558292988729985,
+  "cp_eco_high": 0.8518684345302234,
   "ecosystem_revenue_low_usd": 110000000000.0,
   "ecosystem_revenue_high_usd": 175000000000.0,
-  "kholder_cp_mid": 0.2616909742506869,
-  "wedge_mid": 0.0905596243730386,
+  "kholder_cp_mid": 0.2643496313500431,
+  "wedge_mid": 0.09147966752295544,
   "source": "Exponential View, The State of the AI Economy (2026), deduplicated; tier T2",
   "note": "Ecosystem quasi-rents (full GenAI stack, deduplicated) over the K-holder user cost - the ecosystem line the framework reports ALONGSIDE the K-holder Cp (S2). Revenue is an external-model estimate (EV), banded 110bn TTM to 175bn run-rate, flagged distinct from the filed K-holder line and NOT put on the trajectory. The wedge (ecosystem minus K-holder) is the value captured above the capital-holders - the S5 competition read-out."
  },
  "benefit_cs": {
   "cs": {
    "low": {
-    "h10": 0.08823784369176646,
-    "h30": 0.08823784369176645,
+    "h10": 0.08887558930596197,
+    "h30": 0.088875589305962,
     "annual_flow_usd": 29223695239.92
    },
    "mid": {
-    "h10": 0.6676752597356556,
-    "h30": 1.1094906883655193,
+    "h10": 0.6743680145755467,
+    "h30": 1.1206121865281324,
     "annual_flow_usd": 122739520007.664
    },
    "high": {
-    "h10": 3.6983138993022857,
-    "h30": 12.153644058285632,
+    "h10": 3.737808277860972,
+    "h30": 12.283433100637076,
     "annual_flow_usd": 374063299070.976
    }
   },
@@ -111,13 +111,13 @@
    "centre_external_share": 0.0,
    "edge_external_share": 0.7331416754361575,
    "off_balance_ledger_intensity": 0.060773159933164324,
-   "circularity_flags": 17,
+   "circularity_flags": 25,
    "circularity_bonus_applied": 0.15,
-   "ledger_debt_like_usd": 73530700000.0,
+   "ledger_debt_like_usd": 74262300000.0,
    "ledger_off_balance_debt_usd": 33760600000.0,
-   "ledger_off_balance_committed_usd": 349760600000.0,
+   "ledger_off_balance_committed_usd": 358760600000.0,
    "ledger_off_balance_estimated_drawn_usd": 7644600000.0,
-   "ledger_equity_usd": 83512000000.0,
+   "ledger_equity_usd": 107262000000.0,
    "ai_capex_ttm_usd": 555518259000.0,
    "edge_plus_offbalance_variant": 0.7939148353693218
   },
@@ -126,7 +126,7 @@
  "flows": {
   "private_earnings_flow_usd": 52932435000.0,
   "social_value_flow_usd": 122739520007.664,
-  "capital_cost_usd": 202270770520.70346
+  "capital_cost_usd": 200236462330.86142
  },
  "methodology_version": "v5.2"
 }

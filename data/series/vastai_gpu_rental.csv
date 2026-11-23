@@ -8,9 +8,9 @@ vastai_gpu_rental,2026-06-15,3.9768,USD/GPU-hr,https://console.vast.ai/api/v0/bu
 vastai_gpu_rental,2026-06-22,3.7103,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-22T11:28:07+00:00,T1,B200,8
 vastai_gpu_rental,2026-06-22,1.9743,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-22T11:28:07+00:00,T1,H200,9
 vastai_gpu_rental,2026-06-22,0.1689,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-22T11:28:07+00:00,T1,RTX 4090,7
+vastai_gpu_rental,2026-06-29,0.1517,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-29T10:16:22+00:00,T1,RTX 4090,6
 vastai_gpu_rental,2026-06-29,4.3472,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-29T10:16:22+00:00,T1,B200,11
 vastai_gpu_rental,2026-06-29,2.4851,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-29T10:16:22+00:00,T1,H200,6
-vastai_gpu_rental,2026-06-29,0.1517,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-06-29T10:16:22+00:00,T1,RTX 4090,6
 vastai_gpu_rental,2026-07-06,4.9762,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-07-06T09:49:19+00:00,T1,B200,7
 vastai_gpu_rental,2026-07-06,3.0909,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-07-06T09:49:19+00:00,T1,H200,3
 vastai_gpu_rental,2026-07-06,0.1817,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-07-06T09:49:19+00:00,T1,RTX 4090,6
@@ -29,8 +29,8 @@ vastai_gpu_rental,2026-09-07,0.1277,USD/GPU-hr,https://console.vast.ai/api/v0/bu
 vastai_gpu_rental,2026-09-14,0.1081,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-09-14T11:05:00+00:00,T1,RTX 4090,7
 vastai_gpu_rental,2026-09-21,0.1144,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-09-21T11:14:09+00:00,T1,RTX 4090,8
 vastai_gpu_rental,2026-09-21,1.4674,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-09-21T11:14:09+00:00,T1,H100 SXM,3
-vastai_gpu_rental,2026-09-28,2.6693,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-09-28T12:07:49+00:00,T1,H200,3
 vastai_gpu_rental,2026-09-28,0.1144,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-09-28T12:07:49+00:00,T1,RTX 4090,8
+vastai_gpu_rental,2026-09-28,2.6693,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-09-28T12:07:49+00:00,T1,H200,3
 vastai_gpu_rental,2026-10-05,0.1211,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-10-05T12:47:37+00:00,T1,RTX 4090,10
 vastai_gpu_rental,2026-10-12,0.1144,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-10-12T13:39:03+00:00,T1,RTX 4090,8
 vastai_gpu_rental,2026-10-19,0.2937,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-10-19T11:26:55+00:00,T1,RTX 4090,12
@@ -38,3 +38,5 @@ vastai_gpu_rental,2026-10-26,0.1144,USD/GPU-hr,https://console.vast.ai/api/v0/bu
 vastai_gpu_rental,2026-11-02,0.1207,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-11-02T13:57:09+00:00,T1,RTX 4090,7
 vastai_gpu_rental,2026-11-09,0.1207,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-11-09T14:29:08+00:00,T1,RTX 4090,9
 vastai_gpu_rental,2026-11-16,0.1081,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-11-16T14:05:40+00:00,T1,RTX 4090,7
+vastai_gpu_rental,2026-11-23,0.4011,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-11-23T16:37:03+00:00,T1,A100 SXM4,3
+vastai_gpu_rental,2026-11-23,0.1144,USD/GPU-hr,https://console.vast.ai/api/v0/bundles/,2026-11-23T16:37:03+00:00,T1,RTX 4090,8

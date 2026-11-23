@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16",
+ "generated_at": "2026-11-23",
  "revision_band": 0.2,
  "call_rule": "A move is 'called' only when the fixed-mid value leaves the prior quarter's +/-20% revision band AND the next quarter confirms it (two-quarter rule) - so single-quarter noise is never a call.",
  "note": "Historical backfill. The capital stock (denominator) and F come from filed capex/cash-flow truncated at each quarter-end; the Cp numerator is AI revenue stated on or before each quarter; the Cs numerator is a fixed forward projection (no quarterly history), so only its denominator moves. See methodology.",
@@ -381,22 +381,22 @@
   },
   {
    "quarter": "2026-Q4",
-   "asof": "2026-11-16",
+   "asof": "2026-11-23",
    "cp": [
-    0.09945645604660139,
-    0.2616909742506869,
-    0.5678247664562964
+    0.10018521802390808,
+    0.2643496313500431,
+    0.5739638819153913
    ],
    "cs10": [
-    0.08823784369176646,
-    0.6676752597356556,
-    3.6983138993022857
+    0.08887558930596197,
+    0.6743680145755467,
+    3.737808277860972
    ],
    "F": 0.8831416754361575,
    "stage": "ponzi",
    "color": "#E24B4A",
    "ai_revenue_usd": 105864870000.0,
-   "user_cost_usd": 202270770520.70346,
+   "user_cost_usd": 200236462330.86142,
    "K_total_usd": 997934122575.5374,
    "provisional": true,
    "calls": {

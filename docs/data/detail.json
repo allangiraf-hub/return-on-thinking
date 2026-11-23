@@ -514,6 +514,11 @@
   },
   {
    "date": "2026-06-22",
+   "value": 3.7103,
+   "gpu_model": "B200"
+  },
+  {
+   "date": "2026-06-22",
    "value": 1.9743,
    "gpu_model": "H200"
   },
@@ -521,16 +526,6 @@
    "date": "2026-06-22",
    "value": 0.1689,
    "gpu_model": "RTX 4090"
-  },
-  {
-   "date": "2026-06-22",
-   "value": 3.7103,
-   "gpu_model": "B200"
-  },
-  {
-   "date": "2026-06-29",
-   "value": 4.3472,
-   "gpu_model": "B200"
   },
   {
    "date": "2026-06-29",
@@ -541,6 +536,11 @@
    "date": "2026-06-29",
    "value": 0.1517,
    "gpu_model": "RTX 4090"
+  },
+  {
+   "date": "2026-06-29",
+   "value": 4.3472,
+   "gpu_model": "B200"
   },
   {
    "date": "2026-07-06",
@@ -559,13 +559,13 @@
   },
   {
    "date": "2026-07-13",
-   "value": 0.2952,
-   "gpu_model": "RTX 4090"
+   "value": 1.9372,
+   "gpu_model": "H200"
   },
   {
    "date": "2026-07-13",
-   "value": 1.9372,
-   "gpu_model": "H200"
+   "value": 0.2952,
+   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-07-13",
@@ -574,13 +574,13 @@
   },
   {
    "date": "2026-07-20",
-   "value": 1.9372,
-   "gpu_model": "H200"
+   "value": 0.1356,
+   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-07-20",
-   "value": 0.1356,
-   "gpu_model": "RTX 4090"
+   "value": 1.9372,
+   "gpu_model": "H200"
   },
   {
    "date": "2026-07-27",
@@ -624,13 +624,13 @@
   },
   {
    "date": "2026-09-21",
-   "value": 1.4674,
-   "gpu_model": "H100 SXM"
+   "value": 0.1144,
+   "gpu_model": "RTX 4090"
   },
   {
    "date": "2026-09-21",
-   "value": 0.1144,
-   "gpu_model": "RTX 4090"
+   "value": 1.4674,
+   "gpu_model": "H100 SXM"
   },
   {
    "date": "2026-09-28",
@@ -675,6 +675,16 @@
   {
    "date": "2026-11-16",
    "value": 0.1081,
+   "gpu_model": "RTX 4090"
+  },
+  {
+   "date": "2026-11-23",
+   "value": 0.4011,
+   "gpu_model": "A100 SXM4"
+  },
+  {
+   "date": "2026-11-23",
+   "value": 0.1144,
    "gpu_model": "RTX 4090"
   }
  ],
@@ -4108,14 +4118,14 @@
    "amount_basis": "disclosed",
    "location_bucket": "F4",
    "primary_source_url": "https://www.globenewswire.com/news-release/2026/07/22/3331418/0/en/amd-and-anthropic-announce-strategic-partnership-to-deploy-up-to-2-gigawatts-of-amd-instinct-mi450-series-gpus.html",
-   "discovery_source": "Cowork contemporaneous harvest 2026-07-27 (Perplexity/Exa/FMP; Firecrawl+Tavily unavailable this session)",
+   "discovery_source": "AMENDED 2026-11-23 harvest: drawn_fraction 0.1 estimated -> 0.5 reported on Anthropic's 424B4 of 2026-11-19 (https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm), fetched via curl on the Mac in this run and the AMD Agreement passage read verbatim; primary unchanged. ORIGINAL: Cowork contemporaneous harvest 2026-07-27 (Perplexity/Exa/FMP; Firecrawl+Tavily unavailable this session)",
    "circularity_flag": true,
-   "notes": "AMD committed to a strategic equity investment of UP TO $5bn in Anthropic (per primary PR: in the future; per Reuters/WSJ: tied to deployment milestones), alongside Anthropic deploying up to 2GW of AMD Instinct MI450/Helios rack-scale systems (first GW from H1-2027; chip purchases worth tens of billions per Reuters). AMD's first direct investment in an AI lab; announced at Advancing AI 2026, Jul 22. CIRCULAR: chip vendor equity into a customer buying its chips at GW scale -> F4, circularity_flag=true (mirrors anthropic-series-g / helix / together-ai vendor-equity coding; instrument=equity rather than enum equity_loop per house style). JUDGMENT CALLS: (1) amount=$5bn disclosed CEILING (up-to, milestone-tied, unfunded at announcement); (2) drawn_fraction=0.1 estimated since no funding has flowed yet - flagged for Allan; consider 0.0 if house rule prefers. Reuters also reported AMD in talks to backstop Anthropic data-centre leases - NOT in the primary PR, watch item.",
+   "notes": "UPDATE 2026-11-23 harvest (FIRST DRAW $2.5bn): Anthropic's final IPO prospectus (424B4, MD&A - AMD Agreement): 'Pursuant to the terms of the Hardware Supply Agreement, AMD has provided a commitment to purchase up to $5.0 billion of our Class N common stock (the \"AMD Equity Commitment\"), which becomes available for us to draw on in increments following the achievement of specified AMD GPU delivery and deployment milestones. In connection with the concurrent private placement, we entered into a letter agreement with AMD under which, upon the closing of the concurrent private placement, the $2.5 billion purchase price paid by AMD for shares of our Class N common stock in the concurrent private placement will satisfy a portion of the AMD Equity Commitment by reducing, on a dollar-for-dollar basis, the amount available for us to draw.' AMD bought 30,120,481 Class N shares at the $83.00 IPO price (~$2.5bn) in the placement that closed 2026-11-20; remaining capacity up to $2.5bn, drawable after the first AMD GPU delivery and deployment milestones in 2027 at a 30-day VWAP price. drawn_fraction 0.1 estimated -> 0.5 reported; amount stays $5.0bn (the commitment). The other six Class N purchasers are new rows (nvidia-/google-/broadcom-/micron-/microsoft-/tsmc-anthropic-class-n-2026). ORIGINAL NOTES: AMD committed to a strategic equity investment of UP TO $5bn in Anthropic (per primary PR: in the future; per Reuters/WSJ: tied to deployment milestones), alongside Anthropic deploying up to 2GW of AMD Instinct MI450/Helios rack-scale systems (first GW from H1-2027; chip purchases worth tens of billions per Reuters). AMD's first direct investment in an AI lab; announced at Advancing AI 2026, Jul 22. CIRCULAR: chip vendor equity into a customer buying its chips at GW scale -> F4, circularity_flag=true (mirrors anthropic-series-g / helix / together-ai vendor-equity coding; instrument=equity rather than enum equity_loop per house style). JUDGMENT CALLS: (1) amount=$5bn disclosed CEILING (up-to, milestone-tied, unfunded at announcement); (2) drawn_fraction=0.1 estimated since no funding has flowed yet - flagged for Allan; consider 0.0 if house rule prefers. Reuters also reported AMD in talks to backstop Anthropic data-centre leases - NOT in the primary PR, watch item.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.1,
-   "drawn_source": "estimated"
+   "drawn_fraction": 0.5,
+   "drawn_source": "reported"
   },
   {
    "id": "aligned-abs-2026",
@@ -4482,13 +4492,13 @@
    "announced_date": "2026-09-15",
    "parties": "Nscale Limited (private; London; filed Form S-1 for an NYSE listing as 'NSCL' on 2026-09-18) / pre-IPO investors under a Subscription Agreement (Third Point-led per Reuters/Bloomberg; Goldman Sachs structuring)",
    "instrument": "convertible_notes",
-   "amount_usd": 2360000000,
+   "amount_usd": 1360000000,
    "amount_basis": "disclosed",
    "location_bucket": "F3",
-   "primary_source_url": "https://www.prnewswire.com/news-releases/nscale-raises-3-36b-in-pre-ipo-convertible-financing-302890199.html",
-   "discovery_source": "AMENDED 2026-09-28 harvest: third-party tranche restated $2.1bn (S-1 minimum) -> $2.36bn on Nscale's 2026-09-25 closing PR; primary re-pointed to the PR (verified via web_fetch HTTP 200); the S-1 (sec.gov/Archives/edgar/data/0002110365/000119312526395475/ck0002110365-20260918.htm) is retained as corroborating. ORIGINAL: Cowork contemporaneous harvest 2026-09-21 (Perplexity sonar-pro + WebSearch; Exa search/fetch, Firecrawl and Tavily unavailable or auto-declined this session); primary verified via web_fetch (HTTP 200); Reuters 2026-09-04 report of a ~$3.5bn pre-IPO raise resolved to the definitive terms in the S-1 (quoted verbatim from the prospectus summary); Nscale newsroom watchlist surfaced the S-1 press release",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "discovery_source": "AMENDED 2026-11-23 harvest: amount restated $2.36bn -> $1.36bn (the $2.36bn tranche less NVIDIA's $1.0bn subscription within it, now carried in nscale-nvidia-convertible-2026) on Nscale's S-1/A of 2026-11-12 (acc. 0001193125-26-458722), fetched via curl on the Mac in this run; primary re-pointed to the S-1/A; the 2026-09-25 closing PR (prnewswire 302890199) is retained as the source for the closing. PREVIOUS: AMENDED 2026-09-28 harvest: third-party tranche restated $2.1bn (S-1 minimum) -> $2.36bn on Nscale's 2026-09-25 closing PR; primary re-pointed to the PR (verified via web_fetch HTTP 200); the S-1 (sec.gov/Archives/edgar/data/0002110365/000119312526395475/ck0002110365-20260918.htm) is retained as corroborating. ORIGINAL: Cowork contemporaneous harvest 2026-09-21 (Perplexity sonar-pro + WebSearch; Exa search/fetch, Firecrawl and Tavily unavailable or auto-declined this session); primary verified via web_fetch (HTTP 200); Reuters 2026-09-04 report of a ~$3.5bn pre-IPO raise resolved to the definitive terms in the S-1 (quoted verbatim from the prospectus summary); Nscale newsroom watchlist surfaced the S-1 press release",
    "circularity_flag": false,
-   "notes": "CLOSED per Nscale PR 2026-09-25 (London): '$3.36bn raise via convertible loan notes, led by Third Point ... The financing consists of an initial $2.36bn tranche at closing and an additional $1bn commitment from NVIDIA with funding expected in mid-November, 2026. The loan notes are convertible into ordinary shares (or non-voting shares in the case of NVIDIA) automatically upon completion of Nscale's initial public offering.' Investors alongside Third Point: NVIDIA, funds managed by Apollo, Citadel, Hudson Bay Capital, Abu Dhabi Investment Council, 8090 Industries; plus Davidson Kempner, Qube Research & Technologies, Context Capital, Longaeva Partners, Wellington Management, Castleknight, Ghisallo, LionTree Investment Fund, Javelin Venture Partners, Irving Investors. Goldman Sachs placement agent. THIS ROW = the $2.36bn third-party tranche (up from the $2.1bn S-1 minimum); the $1.0bn NVIDIA leg remains nscale-nvidia-convertible-2026 ($3.36bn combined - do NOT double count). Note that APOLLO - one of the six NVIDIA $500bn platform partners - now sits inside a neocloud's pre-IPO convert. Coupon and IPO discount still undisclosed. drawn_fraction raised 0.1 -> 1.0 reported ('initial $2.36bn tranche at closing'). ORIGINAL 2026-09-21 NOTES: Per the Form S-1 filed 2026-09-18: 'On September 15, 2026, we entered into a Subscription Agreement for subscriptions in an aggregate principal amount of a minimum of $3.1 billion, comprising of $2.1 billion of unsecured convertible loan notes (the Convertible Loan Notes) and a further $1.0 billion of unsecured convertible loan notes or Non-Voting Shares (as applicable) that will be issued to NVIDIA (the NVIDIA Sale). The Convertible Loan Notes are convertible into ordinary shares ... automatically upon completion of this offering.' THIS ROW = the $2.1bn third-party tranche; the NVIDIA $1.0bn leg is ledgered separately as nscale-nvidia-convertible-2026 (do NOT double count; $3.1bn combined MINIMUM - the package may upsize). Press (Reuters 2026-09-04, Bloomberg, TechCrunch): Third Point-led, Goldman-structured, converting at a double-digit discount to the IPO price. Coupon, discount and funding date sit in the S-1's Indebtedness section, beyond the fetched excerpt - FLAG FOR ALLAN to read. Context: Nscale is the FIRST private neocloud in the ledger to reach a public filing - H1-2026 revenue $140.6m vs net loss $1.02bn; $103.4bn active + contracted TCV as of 2026-08-31 (Microsoft, Anthropic ~$45bn West Virginia, Figure $3.5bn); IPO bookrunners Goldman, JPMorgan, Morgan Stanley; Reuters puts the target valuation near $30bn. Third Nscale entry after nscale-revolver-2026 ($900m) and nscale-ddtl-2026 ($3.05bn) - ~$6bn of external capital in ten weeks. JUDGMENT CALLS: (1) instrument=convertible_notes (unsecured loan notes that auto-convert at IPO - economically pre-IPO equity, coded by legal form like the other converts); (2) announced_date = Subscription Agreement date 2026-09-15, not the 2026-09-18 S-1 filing date; (3) drawn_fraction=0.1 estimated because the fetched S-1 excerpt does not state when the $2.1bn funds - set to 1.0 if the Indebtedness section shows the notes were issued at signing; (4) F3 non-circular for the third-party tranche.",
+   "notes": "UPDATE 2026-11-23 harvest (RESTATED $2.36bn -> $1.36bn): Nscale's S-1/A of 2026-11-12 says the $2.36bn tranche of Convertible Loan Notes was 'issued to several investors (including NVIDIA)' and, in Certain Relationships: '$1.0 billion of which was subscribed by NVIDIA'. NVIDIA's $1.0bn inside this tranche is moved to nscale-nvidia-convertible-2026 (F4, circular), leaving $1.36bn here for Third Point, Apollo funds, Citadel, Hudson Bay, ADIC, 8090 Industries and the other third-party investors. The $3.36bn package total is unchanged; the two rows must be read together. amount_basis stays disclosed: $2.36bn and $1.0bn are both stated in the S-1/A, the $1.36bn is their difference. drawn_fraction stays 1.0 reported (tranche funded at the 2026-09-25 closing). PREVIOUS NOTES: CLOSED per Nscale PR 2026-09-25 (London): '$3.36bn raise via convertible loan notes, led by Third Point ... The financing consists of an initial $2.36bn tranche at closing and an additional $1bn commitment from NVIDIA with funding expected in mid-November, 2026. The loan notes are convertible into ordinary shares (or non-voting shares in the case of NVIDIA) automatically upon completion of Nscale's initial public offering.' Investors alongside Third Point: NVIDIA, funds managed by Apollo, Citadel, Hudson Bay Capital, Abu Dhabi Investment Council, 8090 Industries; plus Davidson Kempner, Qube Research & Technologies, Context Capital, Longaeva Partners, Wellington Management, Castleknight, Ghisallo, LionTree Investment Fund, Javelin Venture Partners, Irving Investors. Goldman Sachs placement agent. THIS ROW = the $2.36bn third-party tranche (up from the $2.1bn S-1 minimum); the $1.0bn NVIDIA leg remains nscale-nvidia-convertible-2026 ($3.36bn combined - do NOT double count). Note that APOLLO - one of the six NVIDIA $500bn platform partners - now sits inside a neocloud's pre-IPO convert. Coupon and IPO discount still undisclosed. drawn_fraction raised 0.1 -> 1.0 reported ('initial $2.36bn tranche at closing'). ORIGINAL 2026-09-21 NOTES: Per the Form S-1 filed 2026-09-18: 'On September 15, 2026, we entered into a Subscription Agreement for subscriptions in an aggregate principal amount of a minimum of $3.1 billion, comprising of $2.1 billion of unsecured convertible loan notes (the Convertible Loan Notes) and a further $1.0 billion of unsecured convertible loan notes or Non-Voting Shares (as applicable) that will be issued to NVIDIA (the NVIDIA Sale). The Convertible Loan Notes are convertible into ordinary shares ... automatically upon completion of this offering.' THIS ROW = the $2.1bn third-party tranche; the NVIDIA $1.0bn leg is ledgered separately as nscale-nvidia-convertible-2026 (do NOT double count; $3.1bn combined MINIMUM - the package may upsize). Press (Reuters 2026-09-04, Bloomberg, TechCrunch): Third Point-led, Goldman-structured, converting at a double-digit discount to the IPO price. Coupon, discount and funding date sit in the S-1's Indebtedness section, beyond the fetched excerpt - FLAG FOR ALLAN to read. Context: Nscale is the FIRST private neocloud in the ledger to reach a public filing - H1-2026 revenue $140.6m vs net loss $1.02bn; $103.4bn active + contracted TCV as of 2026-08-31 (Microsoft, Anthropic ~$45bn West Virginia, Figure $3.5bn); IPO bookrunners Goldman, JPMorgan, Morgan Stanley; Reuters puts the target valuation near $30bn. Third Nscale entry after nscale-revolver-2026 ($900m) and nscale-ddtl-2026 ($3.05bn) - ~$6bn of external capital in ten weeks. JUDGMENT CALLS: (1) instrument=convertible_notes (unsecured loan notes that auto-convert at IPO - economically pre-IPO equity, coded by legal form like the other converts); (2) announced_date = Subscription Agreement date 2026-09-15, not the 2026-09-18 S-1 filing date; (3) drawn_fraction=0.1 estimated because the fetched S-1 excerpt does not state when the $2.1bn funds - set to 1.0 if the Indebtedness section shows the notes were issued at signing; (4) F3 non-circular for the third-party tranche.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
@@ -4500,17 +4510,17 @@
    "announced_date": "2026-09-15",
    "parties": "Nscale Limited / NVIDIA (NASDAQ: NVDA) - strategic investor via unsecured convertible loan notes or Non-Voting Shares, and Nscale's GPU supplier",
    "instrument": "convertible_notes",
-   "amount_usd": 1000000000,
+   "amount_usd": 2000000000,
    "amount_basis": "disclosed",
    "location_bucket": "F4",
-   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/0002110365/000119312526395475/ck0002110365-20260918.htm",
-   "discovery_source": "Cowork contemporaneous harvest 2026-09-21 (Perplexity sonar-pro + WebSearch; Exa search/fetch, Firecrawl and Tavily unavailable or auto-declined this session); primary verified via web_fetch (HTTP 200); terms quoted verbatim from the S-1 prospectus summary (same filing as nscale-pre-ipo-convertible-2026); 2026-09-28: confirmed by Nscale's closing PR (prnewswire 302890199, verified via web_fetch HTTP 200)",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+   "discovery_source": "AMENDED 2026-11-23 harvest: amount restated $1.0bn -> $2.0bn on Nscale's S-1/A of 2026-11-12 (acc. 0001193125-26-458722), fetched via curl on the Mac in this run and the Certain Relationships passage read verbatim; primary re-pointed to the S-1/A (the original S-1 of 2026-09-18, acc. 0001193125-26-395475, carries the same $1.0bn NVIDIA Sale language). ORIGINAL: Cowork contemporaneous harvest 2026-09-21 (Perplexity sonar-pro + WebSearch; Exa search/fetch, Firecrawl and Tavily unavailable or auto-declined this session); primary verified via web_fetch (HTTP 200); terms quoted verbatim from the S-1 prospectus summary (same filing as nscale-pre-ipo-convertible-2026); 2026-09-28: confirmed by Nscale's closing PR (prnewswire 302890199, verified via web_fetch HTTP 200)",
    "circularity_flag": true,
-   "notes": "UPDATE 2026-09-28 harvest: Nscale's 2026-09-25 closing PR confirms the NVIDIA leg at $1bn 'with funding expected in mid-November, 2026', converting into NON-VOTING shares automatically at IPO; no change to amount or drawn_fraction (unfunded until ~2026-11-16). ORIGINAL NOTES: The NVIDIA leg of the 2026-09-15 Subscription Agreement disclosed in Nscale's S-1: 'a further $1.0 billion of unsecured convertible loan notes or Non-Voting Shares (as applicable) that will be issued to NVIDIA (the NVIDIA Sale). ... The NVIDIA Sale will close on or around November 16, 2026. If the NVIDIA Sale closes before the effectiveness of the registration statement ... it will be satisfied by the issue of additional unsecured convertible loan notes (which automatically convert into Non-Voting Shares upon completion of this offering); if it closes on or after effectiveness ... it will instead be satisfied by the issue of Non-Voting Shares' at the IPO price. Sibling of nscale-pre-ipo-convertible-2026 ($2.1bn third-party tranche) - $3.1bn combined minimum, do NOT double count. Press had reported NVIDIA at ~$2bn (Reuters/Bloomberg 2026-09-04); the definitive figure is $1.0bn. NVIDIA also holds warrants exercisable into Non-Voting Shares per the S-1 (not ledgered - no amount). CIRCULAR: the chip vendor funds a pre-IPO neocloud whose $103bn backlog is built on NVIDIA GB300/VR200 systems (see nscale-ddtl-2026) and takes NON-VOTING paper - capital without governance, the purest form of vendor credit-substitution in the ledger -> F4, circularity_flag=true (mirrors nvidia-naver-equity / nvidia-sbenergy coding). JUDGMENT CALLS: (1) instrument=convertible_notes although it may settle as non-voting shares - coded by the S-1's primary description; (2) drawn_fraction=0.1 estimated - unfunded until ~2026-11-16 (mirrors nvidia-naver-equity-2026 / amd-anthropic-equity-2026); (3) circularity flagged on this leg only, the third-party tranche stays false.",
+   "notes": "UPDATE 2026-11-23 harvest (RESTATED $1.0bn -> $2.0bn): Nscale's S-1/A of 2026-11-12 states, in Certain Relationships and Related Party Transactions: 'On September 15, 2026, we entered into a Subscription Agreement for subscriptions in the Convertible Loan Notes, $1.0 billion of which was subscribed by NVIDIA and a further $1.0 billion of unsecured convertible loan notes or Non-Voting Shares (as applicable) that will be issued in the NVIDIA Sale.' So NVIDIA holds $1.0bn INSIDE the $2.36bn 'Convertible Loan Notes' tranche (which the summary describes as 'issued to several investors (including NVIDIA)') PLUS the $1.0bn NVIDIA Sale: $2.0bn in total, of the $3.36bn package. This row now carries both NVIDIA legs; nscale-pre-ipo-convertible-2026 is cut to the $1.36bn held by non-NVIDIA investors ($3.36bn combined unchanged - do NOT double count). The S-1/A repeats that 'The NVIDIA Sale will close on or around November 16, 2026'; no closing confirmation found by 2026-11-23. drawn_fraction 0.1 -> 0.5 estimated: the first $1.0bn funded with the tranche 'at closing' (Nscale PR 2026-09-25), the NVIDIA Sale $1.0bn unconfirmed - FLAG. The S-1/A also puts Nscale's Anthropic Services Agreements at 'aggregate payments to us of up to approximately $44.6 billion' and total equity raised at 'more than $6.7 billion' incl. the $3.36bn converts (which Nscale itself counts as equity). Bloomberg (2026-11-13) read the amendment as NVIDIA 'doubling' to $2bn; on the filing's own words the $1.0bn-in-tranche fact was already in the September S-1 and the ledger's earlier split was the error. ORIGINAL NOTES: UPDATE 2026-09-28 harvest: Nscale's 2026-09-25 closing PR confirms the NVIDIA leg at $1bn 'with funding expected in mid-November, 2026', converting into NON-VOTING shares automatically at IPO; no change to amount or drawn_fraction (unfunded until ~2026-11-16). ORIGINAL NOTES: The NVIDIA leg of the 2026-09-15 Subscription Agreement disclosed in Nscale's S-1: 'a further $1.0 billion of unsecured convertible loan notes or Non-Voting Shares (as applicable) that will be issued to NVIDIA (the NVIDIA Sale). ... The NVIDIA Sale will close on or around November 16, 2026. If the NVIDIA Sale closes before the effectiveness of the registration statement ... it will be satisfied by the issue of additional unsecured convertible loan notes (which automatically convert into Non-Voting Shares upon completion of this offering); if it closes on or after effectiveness ... it will instead be satisfied by the issue of Non-Voting Shares' at the IPO price. Sibling of nscale-pre-ipo-convertible-2026 ($2.1bn third-party tranche) - $3.1bn combined minimum, do NOT double count. Press had reported NVIDIA at ~$2bn (Reuters/Bloomberg 2026-09-04); the definitive figure is $1.0bn. NVIDIA also holds warrants exercisable into Non-Voting Shares per the S-1 (not ledgered - no amount). CIRCULAR: the chip vendor funds a pre-IPO neocloud whose $103bn backlog is built on NVIDIA GB300/VR200 systems (see nscale-ddtl-2026) and takes NON-VOTING paper - capital without governance, the purest form of vendor credit-substitution in the ledger -> F4, circularity_flag=true (mirrors nvidia-naver-equity / nvidia-sbenergy coding). JUDGMENT CALLS: (1) instrument=convertible_notes although it may settle as non-voting shares - coded by the S-1's primary description; (2) drawn_fraction=0.1 estimated - unfunded until ~2026-11-16 (mirrors nvidia-naver-equity-2026 / amd-anthropic-equity-2026); (3) circularity flagged on this leg only, the third-party tranche stays false.",
    "entered_by": "claude+allan",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
-   "drawn_fraction": 0.1,
+   "drawn_fraction": 0.5,
    "drawn_source": "estimated"
   },
   {
@@ -4770,13 +4780,13 @@
    "announced_date": "2026-10-26",
    "parties": "Space Exploration Technologies Corp. (Nasdaq: SPCX; lessee) / entity managed by Apollo Global Management, Inc. (NYSE: APO; lessor) / Goldman Sachs (sole structuring agent; co-lead) / anchor commitments from funds and accounts managed by BlackRock and Goldman Sachs Asset Management and capital accounts advised by KKR",
    "instrument": "lease",
-   "amount_usd": 40000000000,
+   "amount_usd": 44000000000,
    "amount_basis": "disclosed",
    "location_bucket": "F3",
-   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926118614/tm2628247d1_8k.htm",
-   "discovery_source": "Cowork scheduled harvest 2026-11-02 (Perplexity research + Exa search); primary = SEC Form 8-K (Item 8.01; event date 2026-10-24, signed 2026-10-26; acc. 0001104659-26-118614) fetched via Exa fetch in this run and the terms read from it; company release of 2026-10-26 on ir.spacex.com and Apollo's copy (apollo.com/insights-news/pressreleases) read via Exa search highlights; was 'pending primary source' in the 2026-10-26 harvest (X post only)",
+   "primary_source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion",
+   "discovery_source": "AMENDED 2026-11-23 harvest: amount restated ~$40bn -> ~$44bn on pricing; primary re-pointed to Apollo's 2026-11-20 release (GlobeNewswire) on ir.apollo.com, fetched via Exa fetch in this run and the terms read from it; the SpaceX 8-K of 2026-10-26 (sec.gov/Archives/edgar/data/1181412/000110465926118614/tm2628247d1_8k.htm) is retained as the source of the lease mechanics. ORIGINAL: Cowork scheduled harvest 2026-11-02 (Perplexity research + Exa search); primary = SEC Form 8-K (Item 8.01; event date 2026-10-24, signed 2026-10-26; acc. 0001104659-26-118614) fetched via Exa fetch in this run and the terms read from it; company release of 2026-10-26 on ir.spacex.com and Apollo's copy (apollo.com/insights-news/pressreleases) read via Exa search highlights; was 'pending primary source' in the 2026-10-26 harvest (X post only)",
    "circularity_flag": false,
-   "notes": "Binding commitment letter dated 2026-10-24 (announced 2026-10-26) to enter into a master finance lease under which the Apollo-managed lessor 'will acquire and lease to the Company certain graphics processing unit pods and related equipment' for use at data centers selected by SpaceX; the release says the lease 'will deliver the next generation of NVIDIA Vera Rubin chips for SpaceX's terrestrial compute buildout' and calls it 'the largest committed GPU financing'. Equipment delivered in tranches, each under a separate lease schedule with a term of approximately five to five-and-one-quarter years from commencement; rent payable quarterly in advance = one-twentieth of the financed cost of the tranche plus an amount at a FIXED rate p.a. on the outstanding lease balance plus ongoing costs; the fixed rate 'will be determined at pricing' before entry into the master lease. Aggregate principal payments over the schedules expected to total approximately $40bn. Entry into the lease is subject to closing conditions and expected before year-end 2026; schedules expected to commence in H1 2027 on GPU delivery. Release: financing committed by parties led by Apollo and Goldman Sachs (sole structuring agent) with anchor commitments from BlackRock, GSAM and KKR-advised accounts; CFO Johnsen cites 'less than one year payback periods' on SI infrastructure and Q4 capex guidance of $35-40bn (Reuters). Largest single row in the ledger after the two Broadcom SPVs; a finance lease to a listed company rather than an SPV with vendor backstop - NVIDIA is supplier only and provides no stated credit support. JUDGMENT CALLS: (1) instrument=lease (master finance lease; the enum's spv coding is reserved for vendor-backstopped vehicles) - reverse to spv if the Apollo lessor is treated like the Broadcom SPVs; (2) amount = ~$40bn aggregate principal payments, amount_basis=disclosed although 'approximately'; (3) F3 non-circular; (4) drawn_fraction=0.0 estimated - not yet closed, nothing delivered - FLAG; (5) announced_date = 8-K filing / release date 2026-10-26, not the 2026-10-24 commitment letter.",
+   "notes": "UPDATE 2026-11-23 harvest (PRICED, UPSIZED): Apollo and Goldman Sachs 'announced the successful pricing of approximately $44 billion of senior and subordinated notes to fund the purchase of GPUs and related equipment for SpaceX (NASDAQ: SPCX). The transaction, which was oversubscribed and upsized as a result of strong investor demand, will deliver the next generation of NVIDIA Vera Rubin chips for SpaceX's terrestrial compute buildout and represents the largest GPU financing executed to date. Lease schedules are expected to commence upon delivery of GPUs and related equipment in the first half of 2027.' Committed by Apollo- and Goldman-managed funds with anchor commitments from BlackRock, GSAM and KKR-advised accounts; Apollo Global Securities and Goldman Sachs co-global coordinators, Goldman sole structuring agent. Coupons and maturities are NOT in the release; Reuters (2026-11-20, 'a source familiar') reported $25.17bn of senior secured A3 notes due April 2033 at 8.259%, ~$4.4bn of A2 notes due April 2031 at 7.66% and $2.564bn of class B subordinated notes due April 2033 at 8.36% - press, not primary, and ~$32bn of the ~$44bn. SpaceX had filed no 8-K on the pricing by 2026-11-23. amount_usd restated 40,000,000,000 -> 44,000,000,000 (amount_basis stays disclosed although 'approximately'); drawn_fraction stays 0.0 estimated - notes priced but lease schedules commence on H1 2027 delivery. JUDGMENT CALL: the ~$44bn is the notes issued by the Apollo lessor vehicle, taken as the new size of the lease financing that the 8-K put at ~$40bn of aggregate principal payments; instrument stays lease (reverse to spv if the notes-funded lessor is read as an SPV like the Broadcom vehicles) - FLAG. ORIGINAL NOTES: Binding commitment letter dated 2026-10-24 (announced 2026-10-26) to enter into a master finance lease under which the Apollo-managed lessor 'will acquire and lease to the Company certain graphics processing unit pods and related equipment' for use at data centers selected by SpaceX; the release says the lease 'will deliver the next generation of NVIDIA Vera Rubin chips for SpaceX's terrestrial compute buildout' and calls it 'the largest committed GPU financing'. Equipment delivered in tranches, each under a separate lease schedule with a term of approximately five to five-and-one-quarter years from commencement; rent payable quarterly in advance = one-twentieth of the financed cost of the tranche plus an amount at a FIXED rate p.a. on the outstanding lease balance plus ongoing costs; the fixed rate 'will be determined at pricing' before entry into the master lease. Aggregate principal payments over the schedules expected to total approximately $40bn. Entry into the lease is subject to closing conditions and expected before year-end 2026; schedules expected to commence in H1 2027 on GPU delivery. Release: financing committed by parties led by Apollo and Goldman Sachs (sole structuring agent) with anchor commitments from BlackRock, GSAM and KKR-advised accounts; CFO Johnsen cites 'less than one year payback periods' on SI infrastructure and Q4 capex guidance of $35-40bn (Reuters). Largest single row in the ledger after the two Broadcom SPVs; a finance lease to a listed company rather than an SPV with vendor backstop - NVIDIA is supplier only and provides no stated credit support. JUDGMENT CALLS: (1) instrument=lease (master finance lease; the enum's spv coding is reserved for vendor-backstopped vehicles) - reverse to spv if the Apollo lessor is treated like the Broadcom SPVs; (2) amount = ~$40bn aggregate principal payments, amount_basis=disclosed although 'approximately'; (3) F3 non-circular; (4) drawn_fraction=0.0 estimated - not yet closed, nothing delivered - FLAG; (5) announced_date = 8-K filing / release date 2026-10-26, not the 2026-10-24 commitment letter.",
    "entered_by": "claude",
    "discovery_mode": "contemporaneous",
    "pr_number": null,
@@ -4997,6 +5007,222 @@
    "discovery_mode": "contemporaneous",
    "pr_number": null,
    "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
+  },
+  {
+   "id": "nvidia-anthropic-class-n-2026",
+   "announced_date": "2026-11-18",
+   "parties": "Anthropic, PBC (Nasdaq: ANT; issuer) / NVIDIA Corporation (NASDAQ: NVDA; purchaser of Class N non-voting common stock in the concurrent private placement; GPU supplier to Anthropic directly and through neoclouds such as Nscale)",
+   "instrument": "equity",
+   "amount_usd": 10000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search); primary = Anthropic final prospectus, Form 424B4 (acc. 0001628280-26-074944, filed 2026-11-19), fetched via curl on the Mac in this run and the 'The Offering' / 'Concurrent Private Placement' passages read verbatim; Anthropic's pricing release (2026-11-18) and closing release (2026-11-20) on anthropic.com/news fetched via Exa fetch in this run",
+   "circularity_flag": true,
+   "notes": "'NVIDIA Corporation (\"NVIDIA\") will purchase 120,481,927 shares of our Class N common stock for approximately $10.0 billion' (424B4, The Offering). Concurrent private placement alongside Anthropic's IPO (priced 2026-11-18 at $83.00 per Class A share; closed 2026-11-20): Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners 'have agreed, severally and not jointly, to purchase an aggregate of $26.0 billion of our Class N common stock in a private placement at a price per share equal to the initial public offering price' - 313,253,007 Class N shares in all. Class N is NON-VOTING common stock; the shares are unregistered 'restricted securities', not subject to lock-up or market-standoff agreements; no underwriting discount; Anthropic receives all proceeds. Anthropic's 2026-11-20 release confirms the placement closed 'for an aggregate purchase price of approximately $26.0 billion'. The IPO itself (1,127,000,000 Class A shares incl. the full over-allotment, ~$93.5bn gross, ~$91.6bn to Anthropic) is public equity and is NOT ledgered. Sibling rows: nvidia-anthropic-class-n-2026 ($10.0bn), google-anthropic-class-n-2026 ($10.0bn), broadcom-anthropic-class-n-2026 ($1.0bn), micron-anthropic-class-n-2026 ($1.0bn), microsoft-anthropic-class-n-2026 ($1.0bn), tsmc-anthropic-class-n-2026 ($0.5bn) = $23.5bn of new rows; AMD's $2.5bn 'will satisfy a portion of its commitment to purchase our Class N common stock under the Hardware Supply Agreement' and is booked as a draw on the existing amd-anthropic-equity-2026, NOT as a new row (do not double count). The largest single vendor equity cheque in the ledger: the dominant GPU supplier buys NON-VOTING paper in one of its largest customers; Anthropic is also the anchor customer of Nscale's Vera Rubin build (Nscale S-1/A: Anthropic Services Agreements of up to ~$44.6bn), itself part-funded by NVIDIA (nscale-nvidia-convertible-2026). The prospectus passages read in this run do not say whether this purchase sits under the NVIDIA-Microsoft-Anthropic compute partnership reported by the press in November 2025 (NVIDIA 'up to $10bn'); that commitment is not in the ledger, so there is no double count - FLAG. JUDGMENT CALLS (all six Class N rows): (a) one row per vendor purchaser, mirroring nvidia-meta-equity-2026 / amd-meta-equity-2026, rather than a single $26bn row - delete rows individually if a purchaser is judged out of scope; (b) F4 / circularity_flag=true: a supplier to Anthropic's compute stack buys non-voting equity in the lab, the same dollars flowing as investment and as revenue; (c) announced_date = pricing date 2026-11-18, when the allocations were fixed in the final prospectus; (d) amount = shares x $83.00, amount_basis=disclosed although the prospectus says 'approximately'; (e) drawn_fraction=1.0 reported - closed 2026-11-20.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "google-anthropic-class-n-2026",
+   "announced_date": "2026-11-18",
+   "parties": "Anthropic, PBC (Nasdaq: ANT; issuer) / Google LLC (Alphabet; purchaser of Class N non-voting common stock in the concurrent private placement; TPU and cloud supplier to Anthropic and existing investor)",
+   "instrument": "equity",
+   "amount_usd": 10000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search); primary = Anthropic final prospectus, Form 424B4 (acc. 0001628280-26-074944, filed 2026-11-19), fetched via curl on the Mac in this run and the 'The Offering' / 'Concurrent Private Placement' passages read verbatim; Anthropic's pricing release (2026-11-18) and closing release (2026-11-20) on anthropic.com/news fetched via Exa fetch in this run",
+   "circularity_flag": true,
+   "notes": "'Google LLC will purchase 120,481,927 shares of our Class N common stock for approximately $10.0 billion' (424B4, The Offering). 'Google's purchase in the concurrent private placement constitutes its exercise in full of its option under the Google 2026 NPA to purchase our Class N common stock in connection with this offering and will reduce the remaining amount available under the Google 2026 NPA.' The Google 2026 NPA is the note purchase agreement of March 2026 'which included a commitment to sell 38.6 million shares of the Company's Series G-2 redeemable convertible preferred stock at $259.1364 per share' (~$10.0bn) and 'provides for potential future financing capacity, subject to certain conditions' (424B4, MD&A and note F-31). Concurrent private placement alongside Anthropic's IPO (priced 2026-11-18 at $83.00 per Class A share; closed 2026-11-20): Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners 'have agreed, severally and not jointly, to purchase an aggregate of $26.0 billion of our Class N common stock in a private placement at a price per share equal to the initial public offering price' - 313,253,007 Class N shares in all. Class N is NON-VOTING common stock; the shares are unregistered 'restricted securities', not subject to lock-up or market-standoff agreements; no underwriting discount; Anthropic receives all proceeds. Anthropic's 2026-11-20 release confirms the placement closed 'for an aggregate purchase price of approximately $26.0 billion'. The IPO itself (1,127,000,000 Class A shares incl. the full over-allotment, ~$93.5bn gross, ~$91.6bn to Anthropic) is public equity and is NOT ledgered. Sibling rows: nvidia-anthropic-class-n-2026 ($10.0bn), google-anthropic-class-n-2026 ($10.0bn), broadcom-anthropic-class-n-2026 ($1.0bn), micron-anthropic-class-n-2026 ($1.0bn), microsoft-anthropic-class-n-2026 ($1.0bn), tsmc-anthropic-class-n-2026 ($0.5bn) = $23.5bn of new rows; AMD's $2.5bn 'will satisfy a portion of its commitment to purchase our Class N common stock under the Hardware Supply Agreement' and is booked as a draw on the existing amd-anthropic-equity-2026, NOT as a new row (do not double count). Google is Anthropic's TPU supplier and a cloud provider to it (and a guarantor of TeraWulf's Anthropic leases, terawulf rows), so the equity is circular in the F4 sense. SPECIFIC JUDGMENT CALL: the March 2026 Google 2026 NPA commitment was never ledgered; this row books it at funding (announced_date 2026-11-18) rather than backfilling a March 2026 row - reverse to a retrospective March row if Allan prefers commitment dating - FLAG. JUDGMENT CALLS (all six Class N rows): (a) one row per vendor purchaser, mirroring nvidia-meta-equity-2026 / amd-meta-equity-2026, rather than a single $26bn row - delete rows individually if a purchaser is judged out of scope; (b) F4 / circularity_flag=true: a supplier to Anthropic's compute stack buys non-voting equity in the lab, the same dollars flowing as investment and as revenue; (c) announced_date = pricing date 2026-11-18, when the allocations were fixed in the final prospectus; (d) amount = shares x $83.00, amount_basis=disclosed although the prospectus says 'approximately'; (e) drawn_fraction=1.0 reported - closed 2026-11-20.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "broadcom-anthropic-class-n-2026",
+   "announced_date": "2026-11-18",
+   "parties": "Anthropic, PBC (Nasdaq: ANT; issuer) / Broadcom Inc. (NASDAQ: AVGO; purchaser of Class N non-voting common stock in the concurrent private placement; custom-silicon (TPU/XPU) vendor and residual-value guarantor of the AI XPV SPVs leasing to Anthropic)",
+   "instrument": "equity",
+   "amount_usd": 1000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search); primary = Anthropic final prospectus, Form 424B4 (acc. 0001628280-26-074944, filed 2026-11-19), fetched via curl on the Mac in this run and the 'The Offering' / 'Concurrent Private Placement' passages read verbatim; Anthropic's pricing release (2026-11-18) and closing release (2026-11-20) on anthropic.com/news fetched via Exa fetch in this run",
+   "circularity_flag": true,
+   "notes": "'Broadcom Inc. (\"Broadcom\") will purchase 12,048,192 shares of our Class N common stock for approximately $1.0 billion' (424B4, The Offering). Concurrent private placement alongside Anthropic's IPO (priced 2026-11-18 at $83.00 per Class A share; closed 2026-11-20): Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners 'have agreed, severally and not jointly, to purchase an aggregate of $26.0 billion of our Class N common stock in a private placement at a price per share equal to the initial public offering price' - 313,253,007 Class N shares in all. Class N is NON-VOTING common stock; the shares are unregistered 'restricted securities', not subject to lock-up or market-standoff agreements; no underwriting discount; Anthropic receives all proceeds. Anthropic's 2026-11-20 release confirms the placement closed 'for an aggregate purchase price of approximately $26.0 billion'. The IPO itself (1,127,000,000 Class A shares incl. the full over-allotment, ~$93.5bn gross, ~$91.6bn to Anthropic) is public equity and is NOT ledgered. Sibling rows: nvidia-anthropic-class-n-2026 ($10.0bn), google-anthropic-class-n-2026 ($10.0bn), broadcom-anthropic-class-n-2026 ($1.0bn), micron-anthropic-class-n-2026 ($1.0bn), microsoft-anthropic-class-n-2026 ($1.0bn), tsmc-anthropic-class-n-2026 ($0.5bn) = $23.5bn of new rows; AMD's $2.5bn 'will satisfy a portion of its commitment to purchase our Class N common stock under the Hardware Supply Agreement' and is booked as a draw on the existing amd-anthropic-equity-2026, NOT as a new row (do not double count). Broadcom already sits on both sides of Anthropic's compute: vendor of the TPU/XPU silicon and residual-value guarantor in broadcom-aixpv-anthropic-2026 ($35bn) and broadcom-anthropic-spv-oct-2026; this row adds equity in the lessee to that loop. JUDGMENT CALLS (all six Class N rows): (a) one row per vendor purchaser, mirroring nvidia-meta-equity-2026 / amd-meta-equity-2026, rather than a single $26bn row - delete rows individually if a purchaser is judged out of scope; (b) F4 / circularity_flag=true: a supplier to Anthropic's compute stack buys non-voting equity in the lab, the same dollars flowing as investment and as revenue; (c) announced_date = pricing date 2026-11-18, when the allocations were fixed in the final prospectus; (d) amount = shares x $83.00, amount_basis=disclosed although the prospectus says 'approximately'; (e) drawn_fraction=1.0 reported - closed 2026-11-20.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "micron-anthropic-class-n-2026",
+   "announced_date": "2026-11-18",
+   "parties": "Anthropic, PBC (Nasdaq: ANT; issuer) / Micron Technology, Inc. (NASDAQ: MU; purchaser of Class N non-voting common stock in the concurrent private placement; memory (HBM/DRAM) vendor to the accelerators Anthropic rents and buys)",
+   "instrument": "equity",
+   "amount_usd": 1000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search); primary = Anthropic final prospectus, Form 424B4 (acc. 0001628280-26-074944, filed 2026-11-19), fetched via curl on the Mac in this run and the 'The Offering' / 'Concurrent Private Placement' passages read verbatim; Anthropic's pricing release (2026-11-18) and closing release (2026-11-20) on anthropic.com/news fetched via Exa fetch in this run",
+   "circularity_flag": true,
+   "notes": "'Micron Technology, Inc. (\"Micron\") will purchase 12,048,192 shares of our Class N common stock for approximately $1.0 billion' (424B4, The Offering). Concurrent private placement alongside Anthropic's IPO (priced 2026-11-18 at $83.00 per Class A share; closed 2026-11-20): Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners 'have agreed, severally and not jointly, to purchase an aggregate of $26.0 billion of our Class N common stock in a private placement at a price per share equal to the initial public offering price' - 313,253,007 Class N shares in all. Class N is NON-VOTING common stock; the shares are unregistered 'restricted securities', not subject to lock-up or market-standoff agreements; no underwriting discount; Anthropic receives all proceeds. Anthropic's 2026-11-20 release confirms the placement closed 'for an aggregate purchase price of approximately $26.0 billion'. The IPO itself (1,127,000,000 Class A shares incl. the full over-allotment, ~$93.5bn gross, ~$91.6bn to Anthropic) is public equity and is NOT ledgered. Sibling rows: nvidia-anthropic-class-n-2026 ($10.0bn), google-anthropic-class-n-2026 ($10.0bn), broadcom-anthropic-class-n-2026 ($1.0bn), micron-anthropic-class-n-2026 ($1.0bn), microsoft-anthropic-class-n-2026 ($1.0bn), tsmc-anthropic-class-n-2026 ($0.5bn) = $23.5bn of new rows; AMD's $2.5bn 'will satisfy a portion of its commitment to purchase our Class N common stock under the Hardware Supply Agreement' and is booked as a draw on the existing amd-anthropic-equity-2026, NOT as a new row (do not double count). First memory-vendor row in the ledger: Micron does not sell to Anthropic directly but supplies the HBM in the GPUs/TPUs Anthropic's capex buys - circular one tier up the supply chain. SPECIFIC JUDGMENT CALL: F4/true on the supply-chain reading; reverse to F3/false if Allan limits circularity to direct vendors - FLAG. JUDGMENT CALLS (all six Class N rows): (a) one row per vendor purchaser, mirroring nvidia-meta-equity-2026 / amd-meta-equity-2026, rather than a single $26bn row - delete rows individually if a purchaser is judged out of scope; (b) F4 / circularity_flag=true: a supplier to Anthropic's compute stack buys non-voting equity in the lab, the same dollars flowing as investment and as revenue; (c) announced_date = pricing date 2026-11-18, when the allocations were fixed in the final prospectus; (d) amount = shares x $83.00, amount_basis=disclosed although the prospectus says 'approximately'; (e) drawn_fraction=1.0 reported - closed 2026-11-20.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "microsoft-anthropic-class-n-2026",
+   "announced_date": "2026-11-18",
+   "parties": "Anthropic, PBC (Nasdaq: ANT; issuer) / Microsoft Corporation (NASDAQ: MSFT; purchaser of Class N non-voting common stock in the concurrent private placement; Azure compute supplier and distribution partner of Anthropic)",
+   "instrument": "equity",
+   "amount_usd": 1000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search); primary = Anthropic final prospectus, Form 424B4 (acc. 0001628280-26-074944, filed 2026-11-19), fetched via curl on the Mac in this run and the 'The Offering' / 'Concurrent Private Placement' passages read verbatim; Anthropic's pricing release (2026-11-18) and closing release (2026-11-20) on anthropic.com/news fetched via Exa fetch in this run",
+   "circularity_flag": true,
+   "notes": "'Microsoft Corporation (\"Microsoft\") will purchase 12,048,192 shares of our Class N common stock for approximately $1.0 billion' (424B4, The Offering). Concurrent private placement alongside Anthropic's IPO (priced 2026-11-18 at $83.00 per Class A share; closed 2026-11-20): Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners 'have agreed, severally and not jointly, to purchase an aggregate of $26.0 billion of our Class N common stock in a private placement at a price per share equal to the initial public offering price' - 313,253,007 Class N shares in all. Class N is NON-VOTING common stock; the shares are unregistered 'restricted securities', not subject to lock-up or market-standoff agreements; no underwriting discount; Anthropic receives all proceeds. Anthropic's 2026-11-20 release confirms the placement closed 'for an aggregate purchase price of approximately $26.0 billion'. The IPO itself (1,127,000,000 Class A shares incl. the full over-allotment, ~$93.5bn gross, ~$91.6bn to Anthropic) is public equity and is NOT ledgered. Sibling rows: nvidia-anthropic-class-n-2026 ($10.0bn), google-anthropic-class-n-2026 ($10.0bn), broadcom-anthropic-class-n-2026 ($1.0bn), micron-anthropic-class-n-2026 ($1.0bn), microsoft-anthropic-class-n-2026 ($1.0bn), tsmc-anthropic-class-n-2026 ($0.5bn) = $23.5bn of new rows; AMD's $2.5bn 'will satisfy a portion of its commitment to purchase our Class N common stock under the Hardware Supply Agreement' and is booked as a draw on the existing amd-anthropic-equity-2026, NOT as a new row (do not double count). Microsoft is a compute supplier (Azure) and distribution partner to Anthropic; the press reported in November 2025 a Microsoft commitment of 'up to $5bn' alongside NVIDIA's 'up to $10bn' - the prospectus passages read in this run do not link this purchase to it, and that commitment is not in the ledger - FLAG. JUDGMENT CALLS (all six Class N rows): (a) one row per vendor purchaser, mirroring nvidia-meta-equity-2026 / amd-meta-equity-2026, rather than a single $26bn row - delete rows individually if a purchaser is judged out of scope; (b) F4 / circularity_flag=true: a supplier to Anthropic's compute stack buys non-voting equity in the lab, the same dollars flowing as investment and as revenue; (c) announced_date = pricing date 2026-11-18, when the allocations were fixed in the final prospectus; (d) amount = shares x $83.00, amount_basis=disclosed although the prospectus says 'approximately'; (e) drawn_fraction=1.0 reported - closed 2026-11-20.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "tsmc-anthropic-class-n-2026",
+   "announced_date": "2026-11-18",
+   "parties": "Anthropic, PBC (Nasdaq: ANT; issuer) / TSMC Partners, Ltd. (Taiwan Semiconductor Manufacturing Company affiliate; purchaser of Class N non-voting common stock in the concurrent private placement; foundry for the GPUs and TPUs/XPUs Anthropic's compute runs on)",
+   "instrument": "equity",
+   "amount_usd": 500000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search); primary = Anthropic final prospectus, Form 424B4 (acc. 0001628280-26-074944, filed 2026-11-19), fetched via curl on the Mac in this run and the 'The Offering' / 'Concurrent Private Placement' passages read verbatim; Anthropic's pricing release (2026-11-18) and closing release (2026-11-20) on anthropic.com/news fetched via Exa fetch in this run",
+   "circularity_flag": true,
+   "notes": "'TSMC Partners, Ltd. (\"TSMC\") will purchase 6,024,096 shares of our Class N common stock for approximately $500 million' (424B4, The Offering). Concurrent private placement alongside Anthropic's IPO (priced 2026-11-18 at $83.00 per Class A share; closed 2026-11-20): Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners 'have agreed, severally and not jointly, to purchase an aggregate of $26.0 billion of our Class N common stock in a private placement at a price per share equal to the initial public offering price' - 313,253,007 Class N shares in all. Class N is NON-VOTING common stock; the shares are unregistered 'restricted securities', not subject to lock-up or market-standoff agreements; no underwriting discount; Anthropic receives all proceeds. Anthropic's 2026-11-20 release confirms the placement closed 'for an aggregate purchase price of approximately $26.0 billion'. The IPO itself (1,127,000,000 Class A shares incl. the full over-allotment, ~$93.5bn gross, ~$91.6bn to Anthropic) is public equity and is NOT ledgered. Sibling rows: nvidia-anthropic-class-n-2026 ($10.0bn), google-anthropic-class-n-2026 ($10.0bn), broadcom-anthropic-class-n-2026 ($1.0bn), micron-anthropic-class-n-2026 ($1.0bn), microsoft-anthropic-class-n-2026 ($1.0bn), tsmc-anthropic-class-n-2026 ($0.5bn) = $23.5bn of new rows; AMD's $2.5bn 'will satisfy a portion of its commitment to purchase our Class N common stock under the Hardware Supply Agreement' and is booked as a draw on the existing amd-anthropic-equity-2026, NOT as a new row (do not double count). The furthest-upstream vendor in the ledger: the foundry that fabricates NVIDIA's, AMD's and Broadcom's silicon takes equity in the lab whose demand fills those wafers. SPECIFIC JUDGMENT CALL: F4/true on the supply-chain reading; reverse to F3/false if circularity is kept to direct vendors - FLAG. JUDGMENT CALLS (all six Class N rows): (a) one row per vendor purchaser, mirroring nvidia-meta-equity-2026 / amd-meta-equity-2026, rather than a single $26bn row - delete rows individually if a purchaser is judged out of scope; (b) F4 / circularity_flag=true: a supplier to Anthropic's compute stack buys non-voting equity in the lab, the same dollars flowing as investment and as revenue; (c) announced_date = pricing date 2026-11-18, when the allocations were fixed in the final prospectus; (d) amount = shares x $83.00, amount_basis=disclosed although the prospectus says 'approximately'; (e) drawn_fraction=1.0 reported - closed 2026-11-20.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "chronoscale-equity-2026",
+   "announced_date": "2026-11-18",
+   "parties": "ChronoScale Holdings Corporation (Nasdaq: CHRN; issuer) / strategic investors incl. a leading frontier AI lab (unnamed; the partnership's anchor customer), Nutanix, Empery Digital Inc., a storage infrastructure company (unnamed) and Applied Digital Corporation (NASDAQ: APLD; holds part of the common equity via a note converting in Q4 2026) plus other institutional investors / Goldman Sachs (lead placement agent), Northland Capital Markets (co-placement agent)",
+   "instrument": "equity",
+   "amount_usd": 250000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://ir.chronoscale.com/financials-filings/all-sec-filings/content/0001493152-26-052998/ex99-1.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity search + Exa search + Perplexity research); primary = ChronoScale press release of 2026-11-18 (Menlo Park dateline) filed as Exhibit 99.1 to its Form 8-K (acc. 0001493152-26-052998) on ir.chronoscale.com, fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": true,
+   "notes": "$250m common-equity leg of ChronoScale's $750m financing. Announced 2026-11-18 with a 50/50 development partnership with STN, Inc. for an AI data-centre campus in Odessa, Texas: 'The partnership's site will house a large-scale AI infrastructure deployment with a leading frontier AI lab' (unnamed), three phases, first 65 MW ordered for deployment in H1 2027, right of first offer on a further 285 MW; 'a substantial portion of the first phase is backstopped by credit support from an investment-grade technology company' and 'up to $7.5 billion in total contract value' over six years to the partnership; ~$20.8m annual revenue per MW blended; each partner contributes $390m in value for 50%. 'The financing consists of $250 million in equity and an up to $500 million convertible preferred facility.' 'Four strategic investors are participating in the financing: a leading frontier AI lab, Nutanix, Empery Digital Inc., and a storage infrastructure company.' 'A portion of the common equity will be initially issued pursuant to a note structure held by Applied Digital Corporation, subject to conversion into underlying shares of common equity in Q4 2026.' Goldman Sachs exclusive capital markets advisor and lead placement agent; Northland co-placement agent. Closings of partnership and financing 'each expected to occur on November 18, 2026, subject to the satisfaction or waiver of the closing conditions'. Coupon/dividend rate of the preferred NOT disclosed in the release. Sibling row: the other ChronoScale leg of the same $750m package - do not double count. JUDGMENT CALLS: (1) split into two rows (equity $250m here; convertible preferred facility $500m in chronoscale-convertible-preferred-facility-2026) because the drawn fractions differ so much; (2) F4 / circularity_flag=true: the unnamed frontier AI lab that will rent the campus is also an equity investor in the landlord-operator (lab-to-cloud equity loop), and Applied Digital - a data-centre landlord - takes paper too; reverse to F3/false if Allan reads the lab's stake as too small to matter (the release does not give the split); (3) the $97m Applied Digital note / $153m share split reported in press from Applied Digital's 13D/A was NOT read in the primary fetched here and is not booked; (4) drawn_fraction=1.0 reported - closing expected the same day, subject to conditions - FLAG if the closing 8-K says otherwise; (5) announced_date = release date 2026-11-18.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "chronoscale-convertible-preferred-facility-2026",
+   "announced_date": "2026-11-18",
+   "parties": "ChronoScale Holdings Corporation (Nasdaq: CHRN; issuer) / strategic investors incl. a leading frontier AI lab (unnamed), Nutanix, Empery Digital Inc. and a storage infrastructure company (unnamed) and other institutional investors (facility providers) / Goldman Sachs (lead placement agent), Northland Capital Markets (co-placement agent)",
+   "instrument": "convertible_notes",
+   "amount_usd": 500000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F4",
+   "primary_source_url": "https://ir.chronoscale.com/financials-filings/all-sec-filings/content/0001493152-26-052998/ex99-1.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity search + Exa search + Perplexity research); primary = ChronoScale press release of 2026-11-18 (Menlo Park dateline) filed as Exhibit 99.1 to its Form 8-K (acc. 0001493152-26-052998) on ir.chronoscale.com, fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": true,
+   "notes": "Up to $500m convertible preferred facility, the second leg of ChronoScale's $750m financing: 'structured with an initial minimum conversion price of $12 per share and may be drawn by the Company over a four-year period, subject to certain customary draw conditions for facilities of this type. Upon closing, the Company expects to draw $10 million under the convertible preferred facility, with the remaining capacity providing ChronoScale with additional financing to support future deployment requirements.' Announced 2026-11-18 with a 50/50 development partnership with STN, Inc. for an AI data-centre campus in Odessa, Texas: 'The partnership's site will house a large-scale AI infrastructure deployment with a leading frontier AI lab' (unnamed), three phases, first 65 MW ordered for deployment in H1 2027, right of first offer on a further 285 MW; 'a substantial portion of the first phase is backstopped by credit support from an investment-grade technology company' and 'up to $7.5 billion in total contract value' over six years to the partnership; ~$20.8m annual revenue per MW blended; each partner contributes $390m in value for 50%. 'The financing consists of $250 million in equity and an up to $500 million convertible preferred facility.' 'Four strategic investors are participating in the financing: a leading frontier AI lab, Nutanix, Empery Digital Inc., and a storage infrastructure company.' 'A portion of the common equity will be initially issued pursuant to a note structure held by Applied Digital Corporation, subject to conversion into underlying shares of common equity in Q4 2026.' Goldman Sachs exclusive capital markets advisor and lead placement agent; Northland co-placement agent. Closings of partnership and financing 'each expected to occur on November 18, 2026, subject to the satisfaction or waiver of the closing conditions'. Coupon/dividend rate of the preferred NOT disclosed in the release. Sibling row: the other ChronoScale leg of the same $750m package - do not double count. JUDGMENT CALLS: (1) instrument=convertible_notes - the enum has no 'preferred'; the paper is convertible preferred stock drawn like a facility; (2) amount = the $500m ceiling, amount_basis=disclosed although 'up to'; (3) F4 / circularity_flag=true as for chronoscale-equity-2026 (same investor group); (4) drawn_fraction=0.02 reported - $10m expected at closing out of $500m; (5) announced_date = release date 2026-11-18.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 0.02,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "whitefiber-nc1-term-loan-2026",
+   "announced_date": "2026-11-10",
+   "parties": "WhiteFiber, Inc. (Nasdaq: WYFI; parent, not a guarantor) / Enovum NC-1 Bidco, LLC (borrower) and Enovum NC-1 Midco, LLC (Holdings; guarantor), indirect wholly owned subsidiaries / Morgan Stanley Senior Funding, Inc. (administrative and collateral agent, lead arranger, lead bookrunner) and a consortium of lenders",
+   "instrument": "private_credit",
+   "amount_usd": 300000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2042022/000121390026117723/ea0311622-8k_whitefiber.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Exa search; previous week's harvest did not run, so the 2026-11-10 filing is picked up here); primary = WhiteFiber Form 8-K (Item 1.01; event date 2026-11-09, filed 2026-11-10; acc. 0001213900-26-117723), fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": false,
+   "notes": "Term Loan Credit Agreement of 2026-11-09 providing '$300.0 million of term loan commitments, consisting of a $200.0 million initial term loan facility and a $100.0 million delayed-draw term loan facility' for WhiteFiber's NC-1 data centre in Madison, North Carolina (Phase 1, first 40 MW). Pricing: 'Term SOFR, subject to a 2.00% floor, plus 6.00% per annum, or the base rate, subject to a 3.00% floor, plus 5.00% per annum'; commitment fee on unused commitments; +2.00% default rate; arranger/structuring fees and lender premiums incl. an upfront premium at closing and funding premiums on each borrowing. 'Both facilities mature on the fifth anniversary of the initial funding date'; quarterly amortisation of 2.50% from the quarter ending 2027-03-31; make-whole before year 2, then 2%/1% call premiums. Initial funding 'subject to satisfaction or waiver of conditions relating to readiness and customer acceptance of the first 40 megawatts', scheduled within 30 days of closing (two 30-day extensions); delayed draw available for six months after initial funding, conditioned on final completion of Phase 1 and pro-forma tests. 'As of the date of this report, no loans had been funded under the Credit Agreement.' Security: substantially all assets of Borrower and Holdings, Holdings' equity in Borrower, a mortgage on NC-1 as a condition to funding; completion guarantee from White Fiber Operating Partnership LP; 'The loans are not guaranteed by WhiteFiber, Inc.' Proceeds may reimburse Phase 1 construction costs, fund reserves and 'make permitted distributions to equity holders'. First WhiteFiber (formerly Bit Digital's HPC arm) row; project-level, non-recourse construction take-out at SOFR+600 - roughly 400bp wide of the Blue Owl Gainesville mortgage of the same week, the spread between a lease-up risk shell and a stabilised hyperscaler-leased one. JUDGMENT CALLS: (1) instrument=private_credit (bank-arranged term loan to a project SPV; mirrors nscale-ddtl-2026 coding); (2) amount = $300m total commitments incl. the $100m delayed-draw tranche; (3) F3 non-circular; (4) drawn_fraction=0.0 reported - nothing funded at filing; (5) announced_date = 8-K filing date 2026-11-10 (agreement dated 2026-11-09).",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 0.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "rowan-corporate-facilities-2026",
+   "announced_date": "2026-11-12",
+   "parties": "Rowan Digital Infrastructure (private; Denver; Quinbrook- and Blackstone-backed hyperscale data-centre developer; borrower) / Apterra Infrastructure Capital (lead arranger, $600m holding-company term loan upsize) / Citibank, N.A. (lead left arranger and administrative agent, $590m revolving credit facility and $355m letter of credit facility) with Mizuho Bank, MUFG Bank, Goldman Sachs Bank USA, Societe Generale, Sumitomo Mitsui Banking Corporation and Huntington National Bank",
+   "instrument": "private_credit",
+   "amount_usd": 1545000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.businesswire.com/news/home/20261111637854/en/Rowan-Digital-Infrastructure-Secures-$1.5-Billion-in-New-Corporate-Financing-For-Its-Hyperscale-Development-Platform",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity search + Exa search + Perplexity research; previous week's harvest did not run, so the 2026-11-12 release is picked up here); primary = Rowan Business Wire release of 2026-11-12 (Denver dateline), fetched via Exa fetch in this run (HTTP 200) and the terms read from it; rowan.com copy read via Exa search highlights",
+   "circularity_flag": false,
+   "notes": "Corporate-level financings announced 2026-11-12 that 'add more than $1.5 billion in new capital capacity: a $600 million upsize of its holding company term loan led by Apterra Infrastructure Capital together with a new $590 million revolving credit facility and a new $355 million letter of credit facility, each led by Citibank, N.A.' The term-loan upsize takes the Apterra corporate facility closed in September 2025 ('originally a $300 million term loan and letter of credit facility for early-stage development') to $900m. The revolver and L/C facility total $945m with an accordion 'to up to $2 billion and the letter of credit facility to up to $1 billion, subject to certain terms and conditions'. Purpose: parent-level capital 'to move quickly through the earliest stages of project development, from securing land and power to ordering long-lead equipment, across the company's 5.5 GW project pipeline'; the L/C line meets 'collateral requirements tied to site development, such as utility interconnection deposits and obligations to equipment vendors, without posting cash'. Rowan says it has raised more than $8bn from more than 40 lenders over 18 months, incl. ~$3bn for the 300 MW Temple campus (May 2026), $550m for Cinco (Feb 2026) and $925m for Bauxite Phase III - none ledgered (BACKFILL candidates); 'more than 1.2 GW already contracted'. Coupon, margin, tenor and security NOT disclosed. First Rowan row; pre-tenant, platform-level development credit of the Pure DC / Vantage type, now from a bank syndicate. JUDGMENT CALLS: (1) amount = $600m + $590m + $355m = $1,545m, the committed facilities incl. the L/C tranche (switch-revolver-lc-2026 / corescientific-credit-facilities-2026 precedent) and excl. the accordion (terawulf-revolver-upsize-2026 precedent) - the release rounds to '$1.5 billion'; (2) only the $600m upsize is booked for the term loan, not the $900m total, because $300m was committed in September 2025 (pre-ledger); (3) instrument=private_credit (bank/infra-credit corporate facilities); (4) F3 non-circular; (5) drawn_fraction=0.2 estimated - development revolver, no utilisation stated - FLAG; (6) announced_date = release date 2026-11-12.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 0.2,
+   "drawn_source": "estimated"
+  },
+  {
+   "id": "blueowl-gainesville-mortgage-2026",
+   "announced_date": "2026-11-12",
+   "parties": "Blue Owl Digital Infrastructure Trust (non-traded REIT; sponsor Blue Owl Capital) / GCDC Purchaser Phase 3 LLC (property owner; borrower) / NVA11C LLC (purchaser) / Citibank, N.A. and Wells Fargo Bank, National Association (mortgage lenders) / Blue Owl Digital Infrastructure Operating Partnership LP (non-recourse carve-out guarantor)",
+   "instrument": "private_credit",
+   "amount_usd": 512600000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.sec.gov/Archives/edgar/data/2069692/000206969226000072/osnl-20261110.htm",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research; previous week's harvest did not run, so the 2026-11-12 filing is picked up here); primary = Blue Owl Digital Infrastructure Trust Form 8-K (Items 1.01, 2.01, 2.03; event date 2026-11-10, filed 2026-11-12; acc. 0002069692-26-000072), fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": false,
+   "notes": "Acquisition financing closed 2026-11-10: the Trust's subsidiary 'completed the acquisition of the membership interests ... for an aggregate purchase price of approximately $779.5 million' of GCDC Purchaser Phase 3 LLC, owner of 'a 54-megawatt data center facility located in Gainesville, Virginia' that 'is currently 100% leased to a hyperscaler customer' (unnamed). Funded with the Trust's cash (continuous private offering proceeds) and 'a new property-level mortgage loan': the property owner 'entered into a Loan Agreement with Citibank, N.A. and Wells Fargo Bank, National Association, to borrow an aggregate principal amount of approximately $512.6 million under a secured mortgage loan with a floating rate secured primarily by a mortgage on the Property'. Terms: 'initial maturity date in December 2028, with one twelve-month extension option'; 'one-month Term SOFR plus a spread of 2.00% per annum through November 9, 2027, increasing to 2.25% per annum thereafter through the initial maturity date and to 2.50% per annum during the extension term'; prepayable with a 0.25% exit fee; customary non-recourse guaranty from the Operating Partnership. ~66% loan-to-cost. Bloomberg (2026-11-19) reports Blue Owl planning a ~$513m CMBS on an Amazon-leased data centre - very likely the securitisation of this loan, NOT ledgered separately (would double count) - watch item. First Blue Owl REIT borrowing row (Blue Owl appears elsewhere as lender/JV equity: iren-blueowl-mackenzie-2026, meta-blackrock-elpaso-spv-2026 context). JUDGMENT CALLS: (1) in scope as external bank credit to a data-centre capital holder serving a hyperscaler tenant (AirTrunk / PDG / Pure DC precedent) even though it is stabilised real-estate finance rather than build-out finance - reverse if Allan wants the ledger kept to development and compute; (2) instrument=private_credit (enum lacks 'mortgage'; bank balance-sheet loan at closing); (3) amount = ~$512.6m, amount_basis=disclosed although 'approximately'; (4) F3 non-circular; (5) drawn_fraction=1.0 reported - borrowed and applied at the 2026-11-10 closing; (6) announced_date = 8-K filing date 2026-11-12 (loan dated 2026-11-10).",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 1.0,
+   "drawn_source": "reported"
+  },
+  {
+   "id": "bxdc-aws-jv-2026",
+   "announced_date": "2026-11-16",
+   "parties": "Blackstone Digital Infrastructure Trust Inc. (NYSE: BXDC; acquirer of a 75% interest; externally managed by Blackstone) / Amazon Web Services (AWS; seller, retains 25% of the joint ventures and leases back 100% of the portfolio) / two joint ventures owning 13 powered shells on two AWS campuses / advisors Morgan Stanley, CBRE Capital Markets, Citi, Goldman Sachs, J.P. Morgan, Wells Fargo",
+   "instrument": "spv",
+   "amount_usd": 5000000000,
+   "amount_basis": "disclosed",
+   "location_bucket": "F3",
+   "primary_source_url": "https://www.blackstone.com/news/press/blackstone-digital-infrastructure-trust-announces-5-billion-acquisition-of-stabilized-data-center-portfolio/",
+   "discovery_source": "Cowork scheduled harvest 2026-11-23 (Perplexity research + Perplexity search, domain-restricted watchlist pass); primary = Blackstone press release of 2026-11-16 (New York dateline) on blackstone.com/news/press, fetched via Exa fetch in this run and the terms read from it",
+   "circularity_flag": false,
+   "notes": "Definitive agreement announced 2026-11-16: BXDC 'to acquire a 75% majority interest in two joint ventures with Amazon Web Services (\"AWS\"), in a transaction valued at approximately $5 billion reflecting an initial capitalization rate of 7.0%'. 'The joint ventures will own 13 newly constructed powered shells across two AWS data center campuses, with AWS retaining a 25% interest in the joint ventures. AWS will lease back 100% of the portfolio on a triple net basis with an initial lease term of 12 years and a fully extended lease term of 32 years.' BXDC's inaugural investment, deploying its IPO proceeds (BXDC listed May 2026, prospectus 2026-05-15). Closing 'expected in the fourth quarter of 2026 and is subject to certain closing conditions'. Debt, if any, at the JV level is NOT disclosed; the 7.0% cap rate is a yield, not a coupon. Why it is here: a hyperscaler sells 75% of newly built shells to an external capital holder and rents them back - the capital-light turn in hyperscaler build-out that F3 is meant to capture (meta-blackrock-elpaso-spv-2026 precedent, though that was development finance and this is a stabilised sale-leaseback). JUDGMENT CALLS: (1) amount = the ~$5bn transaction value as stated; the release does not say whether $5bn is the price of BXDC's 75% or the value of the whole portfolio, so BXDC's cheque may be ~$3.75bn - amount_basis=disclosed but FLAG; (2) instrument=spv (JV equity in asset-owning vehicles with a hyperscaler lessee; 'lease' would describe AWS's side, not the external capital); (3) F3 non-circular (no vendor money); (4) in scope although it is a stabilised real-estate trade rather than new construction - reverse if Allan wants only primary-market finance; (5) drawn_fraction=0.0 estimated - signed, not closed - FLAG; (6) announced_date = release date 2026-11-16.",
+   "entered_by": "claude",
+   "discovery_mode": "contemporaneous",
+   "pr_number": null,
+   "drawn_fraction": 0.0,
    "drawn_source": "estimated"
   }
  ]
